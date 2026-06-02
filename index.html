@@ -29,6 +29,18 @@
     --muted: #9090b8;
     --app-url: "https://app.pollslide.com/presenter";
   }
+  body.light {
+    --bg: #ffffff;
+    --bg2: #f6f7fb;
+    --surface: #ffffff;
+    --surface2: #f0f2f8;
+    --border: rgba(0,0,0,0.09);
+    --border2: rgba(0,0,0,0.14);
+    --text: #15152a;
+    --muted: #5a5a78;
+  }
+  body.light .glow { opacity:0.28; }
+  body, body * { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body {
@@ -204,6 +216,20 @@
   .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
   .reveal.in { opacity:1; transform:translateY(0); }
 
+  /* ── FAQ ── */
+  .faq-list { display:flex; flex-direction:column; gap:12px; }
+  .faq-item { background:var(--surface); border:1px solid var(--border); border-radius:13px; overflow:hidden; }
+  .faq-q {
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-family:'Syne',sans-serif; font-size:16px; font-weight:700; color:var(--text);
+  }
+  .faq-icon { font-size:22px; color:var(--accent); flex-shrink:0; transition:transform 0.25s; font-weight:400; }
+  .faq-item.open .faq-icon { transform:rotate(45deg); }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+  .faq-item.open .faq-a { max-height:300px; }
+  .faq-a p { padding:0 22px 20px; color:var(--muted); font-size:15px; line-height:1.6; }
+
   /* ── RESPONSIVE ── */
   @media (max-width:860px) {
     .cards-3, .steps, .feat-grid { grid-template-columns:1fr; }
@@ -211,6 +237,8 @@
     .hv-phone { display:none; }
     .nav-links a:not(.nav-mobile-cta) { display:none; }
     .nav-mobile-cta { display:inline-flex; }
+    #themeToggle { display:inline-flex !important; width:34px; height:34px; }
+    .nav-links { gap:10px; }
     .hero { padding:60px 0 50px; }
     section { padding:62px 0; }
     .cta-box { padding:46px 24px; }
@@ -230,7 +258,8 @@
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
-      <a href="#uses">Use cases</a>
+      <a href="#faq">FAQ</a>
+      <button onclick="toggleTheme()" id="themeToggle" aria-label="Toggle theme" style="background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);display:inline-flex;align-items:center;justify-content:center;">🌙</button>
       <a href="https://app.pollslide.com/presenter" class="btn btn-primary">Try Free</a>
       <a href="https://app.pollslide.com/presenter" class="btn btn-primary nav-mobile-cta">Try Free</a>
     </div>
@@ -374,6 +403,53 @@
   </div>
 </section>
 
+<!-- ── FAQ ── -->
+<section id="faq" class="features">
+  <div class="container" style="max-width:780px;">
+    <div class="section-tag reveal">FAQ</div>
+    <h2 class="section-title reveal">Questions, answered</h2>
+    <p class="section-sub reveal">Everything you need to know to get started.</p>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do my audience members need to download an app?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>No. They simply scan a QR code with their phone camera and answer right in their browser. Nothing to install, no account to create.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Does it work with Keynote and PowerPoint?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes. PollSlide works alongside Keynote, PowerPoint and Google Slides. You can show a poll in a separate window, on a second screen, or display the QR code on your slide. Deeper native integrations are on the way.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Is it really free?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes — you can create presentations and run live polls for free, no credit card required. Paid plans with higher limits, image hosting and advanced features are coming soon.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How many people can answer at once?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>PollSlide handles audiences large and small in real time. Whether it's a classroom of 20 or an auditorium of hundreds, responses appear live on your screen as they come in.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What kinds of questions can I ask?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Single choice, multiple choice, open text, and rating scales — with quizzes that track correct answers and crown a winner. You can add images and GIFs to your questions and answers, set countdown timers, and choose how results display.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Is my data private and secure?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes. Your account and presentations are private to you, protected by secure sign-in. Your audience answers anonymously unless you ask for their name.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── CTA ── -->
 <section class="cta-final">
   <div class="container">
@@ -393,6 +469,7 @@
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
       <a href="#uses">Use cases</a>
+      <a href="#faq">FAQ</a>
       <a href="https://app.pollslide.com/presenter">Launch App</a>
     </div>
     <div class="foot-copy">© 2025 PollSlide. Made for people with something to say.</div>
@@ -400,6 +477,27 @@
 </footer>
 
 <script>
+  // Theme toggle
+  function toggleTheme() {
+    const isLight = document.body.classList.toggle('light');
+    localStorage.setItem('pollslide_theme', isLight ? 'light' : 'dark');
+    document.getElementById('themeToggle').textContent = isLight ? '☀️' : '🌙';
+  }
+  // Restore saved theme
+  if (localStorage.getItem('pollslide_theme') === 'light') {
+    document.body.classList.add('light');
+    var tt = document.getElementById('themeToggle');
+    if (tt) tt.textContent = '☀️';
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
   // Scroll reveal
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
