@@ -67,6 +67,7 @@
     background:rgba(7,7,15,0.7);
     border-bottom:1px solid var(--border);
   }
+  body.light nav { background:rgba(255,255,255,0.82); }
   .nav-inner { display:flex; align-items:center; justify-content:space-between; height:66px; }
   .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:21px; letter-spacing:-0.02em; display:flex; align-items:center; gap:9px; color:var(--text); text-decoration:none; }
   .logo-mark {
@@ -258,8 +259,10 @@
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
+      <a href="/setup">Setup guide</a>
       <a href="#faq">FAQ</a>
       <button onclick="toggleTheme()" id="themeToggle" aria-label="Toggle theme" style="background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);display:inline-flex;align-items:center;justify-content:center;">🌙</button>
+      <a href="https://app.pollslide.com/presenter" class="btn btn-ghost" style="background:var(--surface2);border:1px solid var(--border2);color:var(--text);">Log in</a>
       <a href="https://app.pollslide.com/presenter" class="btn btn-primary">Try Free</a>
       <a href="https://app.pollslide.com/presenter" class="btn btn-primary nav-mobile-cta">Try Free</a>
     </div>
