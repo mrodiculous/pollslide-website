@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download — PollSlide Companion for Mac</title>
+<meta name="description" content="Download the PollSlide Companion app for Mac. Live poll results float over your Keynote presentation automatically — no clicker changes needed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#07070f; --bg2:#0d0d18; --surface:#13131f; --surface2:#1a1a2c;
+    --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+    --accent:#6c63ff; --accent-l:#8b84ff; --accent2:#ff6584;
+    --accent3:#43e97b; --accent4:#f7b731;
+    --text:#f4f4fc; --muted:#9090b8;
+  }
+  body.light {
+    --bg:#ffffff; --bg2:#f6f7fb; --surface:#ffffff; --surface2:#f0f2f8;
+    --border:rgba(0,0,0,0.09); --border2:rgba(0,0,0,0.14);
+    --text:#15152a; --muted:#5a5a78;
+  }
+  body,body *{transition:background-color .3s,border-color .3s,color .3s;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,0.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,0.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .logo-dot{width:11px;height:11px;border-radius:50%;background:var(--accent);}
+  .nav-links{display:flex;align-items:center;gap:22px;font-size:15px;font-weight:500;}
+  .nav-links a{color:var(--muted);}
+  .nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;text-decoration:none;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-l);}
+  .btn-ghost{background:var(--surface2);border:1px solid var(--border2);color:var(--text);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);display:inline-flex;align-items:center;justify-content:center;}
+
+  /* Hero */
+  .hero{padding:72px 0 56px;text-align:center;}
+  .app-icon{width:100px;height:100px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:24px;margin:0 auto 28px;display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 0 0 1px rgba(255,255,255,0.1);}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.1;margin-bottom:14px;}
+  .hero p{font-size:18px;color:var(--muted);max-width:500px;margin:0 auto 32px;}
+  .dl-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--accent);color:#fff;border-radius:14px;font-family:'Syne',sans-serif;font-weight:700;font-size:17px;transition:background .15s,transform .1s;cursor:pointer;border:none;}
+  .dl-btn:hover{background:var(--accent-l);}
+  .dl-btn:active{transform:scale(0.98);}
+  .dl-btn svg{width:22px;height:22px;flex-shrink:0;}
+  .dl-coming{display:inline-flex;align-items:center;gap:9px;padding:14px 28px;background:var(--surface2);border:1px dashed var(--border2);border-radius:14px;font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--muted);}
+  .version-info{margin-top:12px;font-size:13px;color:var(--muted);}
+  .req{font-size:13px;color:var(--muted);margin-top:6px;}
+
+  /* Steps */
+  .after{padding:56px 0 0;}
+  .after h2{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;text-align:center;margin-bottom:36px;}
+  .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+  .step-card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:20px;}
+  .step-num{width:34px;height:34px;border-radius:10px;background:rgba(108,99,255,0.16);color:var(--accent);font-family:'Syne',sans-serif;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .step-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;margin-bottom:5px;}
+  .step-card p{font-size:13.5px;color:var(--muted);line-height:1.5;}
+
+  /* Privacy callout */
+  .privacy{margin:40px 0;padding:18px 20px;background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--accent3);border-radius:12px;display:flex;gap:14px;align-items:flex-start;border-top-left-radius:0;border-bottom-left-radius:0;}
+  .privacy-icon{font-size:22px;flex-shrink:0;margin-top:1px;}
+  .privacy-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:4px;}
+  .privacy-body p{font-size:13.5px;color:var(--muted);line-height:1.5;}
+
+  /* What's inside */
+  .features{padding:0 0 56px;}
+  .features h2{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;text-align:center;margin-bottom:32px;}
+  .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+  .feat{padding:16px 18px;background:var(--surface);border:1px solid var(--border2);border-radius:14px;}
+  .feat-icon{font-size:22px;margin-bottom:8px;}
+  .feat h3{font-family:'Syne',sans-serif;font-weight:700;font-size:13.5px;margin-bottom:3px;}
+  .feat p{font-size:12.5px;color:var(--muted);line-height:1.5;}
+
+  /* Sysreqs */
+  .sysreq{padding:0 0 64px;}
+  .sysreq h2{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;margin-bottom:14px;}
+  .req-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .req-table td{padding:10px 0;border-bottom:1px solid var(--border);vertical-align:top;}
+  .req-table td:first-child{color:var(--muted);width:180px;}
+  .req-table tr:last-child td{border-bottom:none;}
+
+  /* FAQ */
+  .faq{padding:0 0 80px;}
+  .faq h2{font-family:'Syne',sans-serif;font-weight:800;font-size:24px;margin-bottom:18px;}
+  .faq-item{border:1px solid var(--border2);border-radius:12px;margin-bottom:10px;overflow:hidden;background:var(--surface);}
+  .faq-q{padding:16px 18px;font-weight:600;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .faq-a{padding:0 18px;max-height:0;overflow:hidden;color:var(--muted);font-size:14px;transition:max-height .3s ease,padding .3s ease;}
+  .faq-a.open{max-height:200px;padding:0 18px 16px;}
+  .chev{transition:transform .2s;color:var(--muted);}
+  .chev.open{transform:rotate(180deg);}
+
+  /* Footer */
+  footer{padding:28px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:14px;}
+  footer a{color:var(--muted);}
+  footer a:hover{color:var(--text);}
+
+  @media(max-width:600px){.nav-links a{display:none;}.nav-links a.btn-ghost,.nav-links button{display:inline-flex;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span>PollSlide</a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/setup">Setup guide</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+      <a href="https://app.pollslide.com/presenter" class="btn btn-ghost">Log in</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="app-icon" aria-hidden="true">📊</div>
+      <h1>PollSlide Companion<br>for Mac</h1>
+      <p>Live poll results that float over your Keynote slides — and appear automatically when your QR is on screen.</p>
+
+      <!-- DOWNLOAD BUTTON — swap the href when you have the notarized .dmg -->
+      <div id="dlArea">
+        <div class="dl-coming" id="dlComing">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Coming soon — notarization in progress
+        </div>
+        <!-- When ready, replace the div above with this button (remove the comment):
+        <a href="REPLACE_WITH_DMG_URL" class="dl-btn" id="dlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download for Mac — Free
+        </a>
+        -->
+      </div>
+      <div class="version-info" id="versionInfo">Version 1.0 · macOS 12 or later</div>
+      <div class="req">Apple Silicon &amp; Intel · 8 MB</div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <section class="after">
+      <h2>Up and running in three steps</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Allow Screen Recording</h3>
+          <p>macOS will explain why, then take you straight to the setting. Toggle it on and reopen the app — one time only.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Pair with your account</h3>
+          <p>Click the menu-bar icon, choose Connect Mac App, and enter the 6-character code from PollSlide's account menu.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Present normally</h3>
+          <p>That's it. Advance to a slide with your PollSlide QR and the results window appears. Move past it and it disappears.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="privacy" role="note">
+      <div class="privacy-icon" aria-hidden="true">🔒</div>
+      <div class="privacy-body">
+        <h3>What Screen Recording actually does here</h3>
+        <p>The companion watches your screen only to detect the PollSlide QR code on your slides. Nothing is ever recorded, saved, or sent anywhere. macOS requires this permission for any app that reads the screen — there is no way around it, by design. The moment the app is closed, it stops entirely.</p>
+      </div>
+    </div>
+
+    <section class="features" style="padding-top:40px;">
+      <h2>What's in the app</h2>
+      <div class="feat-grid">
+        <div class="feat">
+          <div class="feat-icon" aria-hidden="true">📍</div>
+          <h3>Auto-detect from your slides</h3>
+          <p>Scans your screen at 6fps. Detects the PollSlide QR and switches to the exact matching question.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-icon" aria-hidden="true">🪟</div>
+          <h3>Floating over full-screen Keynote</h3>
+          <p>A draggable, resizable window that sits above Keynote without touching your slides or animations.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-icon" aria-hidden="true">📊</div>
+          <h3>Live results, all display styles</h3>
+          <p>Bar chart, donut, leaderboard, big numbers — switch modes live. Window auto-sizes to fit every response.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-icon" aria-hidden="true">🎉</div>
+          <h3>Confetti on reveal</h3>
+          <p>When the answer is revealed — automatically or when you click Reveal now — a burst of confetti fires across the window.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-icon" aria-hidden="true">⌨️</div>
+          <h3>Hotkey control</h3>
+          <p>Control + Option + Y shows or hides the window at any time, even in full-screen Keynote.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-icon" aria-hidden="true">🔗</div>
+          <h3>One-click pairing</h3>
+          <p>Links to your pollslide.com account with a 6-character code. No passwords stored on the Mac.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sysreq">
+      <h2>System requirements</h2>
+      <table class="req-table" aria-label="System requirements">
+        <tbody>
+          <tr><td>macOS version</td><td>macOS 12 Monterey or later</td></tr>
+          <tr><td>Architecture</td><td>Apple Silicon (M1/M2/M3) and Intel — universal binary</td></tr>
+          <tr><td>Download size</td><td>~8 MB</td></tr>
+          <tr><td>Permissions needed</td><td>Screen Recording (for QR detection) · Accessibility (for keyboard hotkey)</td></tr>
+          <tr><td>Internet</td><td>Required — poll data syncs through PollSlide's Firebase backend</td></tr>
+          <tr><td>Presentation software</td><td>Keynote (macOS). PowerPoint support coming.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="faq">
+      <h2>Common questions</h2>
+      <div id="faqList"></div>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> PollSlide ·
+    <a href="/">Home</a> ·
+    <a href="/setup">Setup guide</a> ·
+    <a href="https://app.pollslide.com/presenter">Open app</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  document.getElementById('themeToggle').textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
+  localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+}
+if (localStorage.getItem('theme') === 'light' ||
+    (!localStorage.getItem('theme') && matchMedia('(prefers-color-scheme: light)').matches)) {
+  document.body.classList.add('light');
+  document.getElementById('themeToggle').textContent = '☀️';
+}
+
+const faqs = [
+  { q: 'Do I need the companion app to run polls?',
+    a: 'No. Your audience scans the QR and answers without any app on your side. The companion app is what lets YOU see live results floating over Keynote, and auto-shows the matching poll when the right slide is on screen.' },
+  { q: 'Will it work on my Windows PC?',
+    a: 'Not yet. The companion app is macOS only for now. PowerPoint support on Windows is on the roadmap — the QR-on-slide approach will work the same way there.' },
+  { q: 'Do I have to keep the companion app open the whole time?',
+    a: 'It runs as a menu-bar app, so it stays in the background without a Dock icon. Open it once before your presentation and leave it — it handles everything from there.' },
+  { q: 'The Screen Recording permission makes me nervous.',
+    a: 'That\'s completely understandable. The app uses it only to scan for the PollSlide QR code on your screen — the same technology that reads QR codes with your camera. Nothing is recorded, stored, or sent. You can verify this yourself: quit the app and the permission does nothing.' },
+  { q: 'Why does macOS say "unidentified developer" on older versions?',
+    a: 'This happens when an app isn\'t notarized by Apple yet. The current beta build requires right-clicking and choosing Open the first time. The release version will be fully notarized and opens normally.' },
+  { q: 'How do I update the app?',
+    a: 'Download the new version from this page, open the .dmg, and drag it over your existing installation to replace it. Automatic updates are on the roadmap.' },
+];
+
+const list = document.getElementById('faqList');
+faqs.forEach(f => {
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `<div class="faq-q">${f.q}<span class="chev">▾</span></div><div class="faq-a">${f.a}</div>`;
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  const chev = item.querySelector('.chev');
+  q.addEventListener('click', () => {
+    const open = a.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.chev').forEach(el => el.classList.remove('open'));
+    if (!open) { a.classList.add('open'); chev.classList.add('open'); }
+  });
+  list.appendChild(item);
+});
+</script>
+</body>
+</html>
