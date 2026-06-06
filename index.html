@@ -467,21 +467,24 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <div class="container foot-inner">
-    <a href="#" class="logo"><span class="logo-mark"></span>PollSlide</a>
-    <div class="foot-links">
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#uses">Use cases</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://app.pollslide.com/presenter">Launch App</a>
+  <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:14px;">
+      <a href="/">Home</a>
+      <a href="/setup">Setup guide</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download app</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
     </div>
-    <div class="foot-copy">© 2025 PollSlide. Made for people with something to say.</div>
+    <div style="font-size:13px;">© <span id="footYr"></span> PollSlide Technologies LLC · Wyoming, USA</div>
   </div>
 </footer>
 
 <script>
   // Theme toggle
+  document.getElementById('footYr').textContent = new Date().getFullYear();
   function toggleTheme() {
     const isLight = document.body.classList.toggle('light');
     localStorage.setItem('pollslide_theme', isLight ? 'light' : 'dark');
@@ -513,5 +516,6 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
+<script src="/consent.js"></script>
 </body>
 </html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — PollSlide</title>
+<meta name="description" content="Privacy Policy for PollSlide Technologies LLC. GDPR and CCPA compliant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal-shared.css">
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span>PollSlide</a>
+    <div class="nav-links">
+      <a href="/terms">Terms of Service</a>
+      <a href="/cookies">Cookie Policy</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">PollSlide Technologies LLC · Effective date: <span id="effDate"></span> · Last updated: <span id="updDate"></span></div>
+  </div>
+
+  <div class="legal-body">
+
+    <div class="highlight-box gdpr">
+      <strong>Summary (not a substitute for the full policy):</strong> We collect only what we need to run the service. We do not sell your data. EU/EEA users have full GDPR rights. California users have CCPA rights. You can request deletion of your data at any time by emailing <a href="mailto:help@pollslide.com">help@pollslide.com</a>.
+    </div>
+
+    <div class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#data-collected">What data we collect</a></li>
+        <li><a href="#how-used">How we use your data</a></li>
+        <li><a href="#legal-basis">Legal basis for processing (GDPR)</a></li>
+        <li><a href="#sharing">Who we share data with</a></li>
+        <li><a href="#transfers">International data transfers</a></li>
+        <li><a href="#retention">How long we keep your data</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#rights-gdpr">Your rights — EEA / UK users (GDPR)</a></li>
+        <li><a href="#rights-ccpa">Your rights — California users (CCPA)</a></li>
+        <li><a href="#children">Children's privacy</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact and DPA</a></li>
+      </ol>
+    </div>
+
+    <h2 id="who">1. Who we are</h2>
+    <p><strong>PollSlide Technologies LLC</strong> is a Wyoming limited liability company and the data controller for personal data collected through the Service.</p>
+    <p><strong>Contact:</strong> <a href="mailto:help@pollslide.com">help@pollslide.com</a></p>
+    <p>For GDPR purposes, we act as a <strong>data controller</strong> for presenter account data, and as a <strong>data processor</strong> on behalf of presenters for participant response data that they collect using the Service.</p>
+
+    <h2 id="data-collected">2. What data we collect</h2>
+
+    <h3>Account holders (presenters)</h3>
+    <ul>
+      <li><strong>Registration data:</strong> Email address, authentication method (email/password or Google OAuth)</li>
+      <li><strong>Profile data:</strong> Display name (if provided via Google OAuth)</li>
+      <li><strong>Subscription data:</strong> Plan tier, billing dates (payment card details are held by Stripe, not by us)</li>
+      <li><strong>Usage data:</strong> Presentations created, questions built, last login timestamp</li>
+      <li><strong>Support data:</strong> Messages and support tickets you send us</li>
+    </ul>
+
+    <h3>Participants (audience members who answer polls)</h3>
+    <ul>
+      <li><strong>Name:</strong> The display name entered voluntarily before answering (maximum 60 characters). This is the only personally identifying information collected from participants.</li>
+      <li><strong>Poll responses:</strong> The answers submitted to a specific question</li>
+      <li><strong>Timing data:</strong> How long it took to answer (used for leaderboard ranking)</li>
+      <li><strong>Submission timestamp:</strong> When the answer was submitted</li>
+    </ul>
+    <p>Participants do not create accounts. Their data is associated with a session code and stored under the presenter's account. No participant email address or device identifier is collected.</p>
+
+    <h3>Technical data (all users)</h3>
+    <ul>
+      <li>IP address (logged by Firebase/Google infrastructure for security purposes)</li>
+      <li>Browser type and version</li>
+      <li>Referring URL</li>
+      <li>Firebase session tokens (stored locally in your browser)</li>
+    </ul>
+
+    <h3>macOS Companion app</h3>
+    <p>The companion app captures your screen locally to detect PollSlide QR codes. <strong>No screen content is transmitted to our servers.</strong> The detection runs entirely on your device. The app communicates with Firebase only to read session data and display poll results, using the same data described above.</p>
+
+    <h2 id="how-used">3. How we use your data</h2>
+    <ul>
+      <li><strong>Service delivery:</strong> Authenticating you, synchronising your poll data in real time, displaying results</li>
+      <li><strong>Account management:</strong> Processing subscription payments (via Stripe), sending receipts and upgrade/downgrade confirmations</li>
+      <li><strong>Support:</strong> Responding to support tickets and technical queries</li>
+      <li><strong>Security:</strong> Detecting and preventing fraud, abuse, and unauthorised access</li>
+      <li><strong>Service improvement:</strong> Analysing aggregate usage patterns to improve the product (no individual-level behavioural profiling)</li>
+      <li><strong>Legal compliance:</strong> Complying with applicable laws and responding to lawful requests</li>
+      <li><strong>Communications:</strong> Sending transactional emails (receipts, security alerts) and, with your consent, product updates</li>
+    </ul>
+    <p>We do <strong>not</strong> use your data for advertising, sell it to third parties, or use it to train AI models.</p>
+
+    <h2 id="legal-basis">4. Legal basis for processing (GDPR)</h2>
+    <p>For users in the EEA, UK, or Switzerland, our legal bases are:</p>
+    <ul>
+      <li><strong>Contract performance (Art. 6(1)(b)):</strong> Processing necessary to provide the Service you signed up for — authentication, data sync, billing</li>
+      <li><strong>Legitimate interests (Art. 6(1)(f)):</strong> Security monitoring, fraud prevention, aggregate analytics, improving the Service</li>
+      <li><strong>Legal obligation (Art. 6(1)(c)):</strong> Tax records, responding to lawful government requests</li>
+      <li><strong>Consent (Art. 6(1)(a)):</strong> Marketing emails (you can withdraw consent at any time)</li>
+    </ul>
+    <p>For participant data, we process as a <strong>data processor</strong> on behalf of the presenter (who is the data controller). Presenters are responsible for having an appropriate legal basis to collect participant responses under their applicable law.</p>
+
+    <h2 id="sharing">5. Who we share data with</h2>
+    <p>We do not sell or rent personal data. We share it only with the following categories of sub-processors:</p>
+    <ul>
+      <li><strong>Google Firebase / Google LLC</strong> — Real-time database, authentication, storage. Data is stored on Google Cloud infrastructure. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a></li>
+      <li><strong>Stripe, Inc.</strong> — Payment processing. Stripe holds billing and card data; we receive only subscription status and billing dates. <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe Privacy Policy</a></li>
+      <li><strong>Vercel, Inc.</strong> — Web hosting and serverless functions. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel Privacy Policy</a></li>
+    </ul>
+    <p>We may also disclose data: (a) to comply with a legal obligation or valid court order; (b) to protect the rights or safety of PollSlide, our users, or the public; or (c) in connection with a merger, acquisition, or sale of assets, where the acquirer will be bound by this policy.</p>
+
+    <h2 id="transfers">6. International data transfers</h2>
+    <p>PollSlide Technologies LLC is based in the United States. Your data is stored on Google Firebase infrastructure, which may be located in the US or other countries. When we transfer data from the EEA, UK, or Switzerland to the US, we rely on:</p>
+    <ul>
+      <li>The EU–US Data Privacy Framework (where applicable)</li>
+      <li>Standard Contractual Clauses (SCCs) adopted by the European Commission</li>
+    </ul>
+    <p>You may request a copy of the relevant transfer mechanisms by emailing <a href="mailto:help@pollslide.com">help@pollslide.com</a>.</p>
+
+    <h2 id="retention">7. How long we keep your data</h2>
+    <ul>
+      <li><strong>Account data:</strong> Retained for the duration of your account plus 30 days after deletion</li>
+      <li><strong>Participant response data:</strong> Retained for as long as the associated presentation exists. Presenters can delete it at any time using the Reset Tally or Delete Presentation functions.</li>
+      <li><strong>Billing records:</strong> Retained for 7 years as required for tax purposes</li>
+      <li><strong>Support correspondence:</strong> Retained for 3 years</li>
+      <li><strong>Security logs:</strong> Retained for 90 days</li>
+    </ul>
+    <p>After the retention period, data is deleted or anonymised.</p>
+
+    <h2 id="security">8. Security</h2>
+    <p>We take the security of your data seriously. Our measures include:</p>
+    <ul>
+      <li>All data in transit is encrypted using TLS 1.2 or higher</li>
+      <li>Firebase Realtime Database rules enforce per-user access controls — your data is not readable by other users</li>
+      <li>Passwords are hashed by Firebase Authentication; we never see or store plaintext passwords</li>
+      <li>The admin panel is restricted to authorised personnel only and requires authentication</li>
+      <li>The macOS Companion app processes screen content locally; no screen data is transmitted</li>
+    </ul>
+    <p>No system is perfectly secure. In the event of a data breach affecting your rights, we will notify you and relevant supervisory authorities as required by law.</p>
+
+    <h2 id="rights-gdpr">9. Your rights — EEA / UK users (GDPR)</h2>
+    <div class="highlight-box gdpr">
+      You have the following rights regarding your personal data. To exercise any of them, email <a href="mailto:help@pollslide.com">help@pollslide.com</a>. We will respond within 30 days.
+    </div>
+    <ul>
+      <li><strong>Right of access (Art. 15):</strong> Request a copy of the personal data we hold about you</li>
+      <li><strong>Right to rectification (Art. 16):</strong> Request correction of inaccurate data</li>
+      <li><strong>Right to erasure / "right to be forgotten" (Art. 17):</strong> Request deletion of your personal data (subject to legal retention obligations)</li>
+      <li><strong>Right to restriction (Art. 18):</strong> Request that we restrict processing of your data in certain circumstances</li>
+      <li><strong>Right to data portability (Art. 20):</strong> Receive your data in a structured, machine-readable format</li>
+      <li><strong>Right to object (Art. 21):</strong> Object to processing based on legitimate interests</li>
+      <li><strong>Right to withdraw consent:</strong> Where processing is based on consent, withdraw it at any time without affecting prior processing</li>
+      <li><strong>Right to lodge a complaint:</strong> You have the right to lodge a complaint with your local data protection authority. In the EU, find your authority at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">edpb.europa.eu</a>.</li>
+    </ul>
+
+    <h2 id="rights-ccpa">10. Your rights — California users (CCPA/CPRA)</h2>
+    <p>California residents have the following rights under the California Consumer Privacy Act:</p>
+    <ul>
+      <li><strong>Right to know:</strong> Request disclosure of the categories and specific pieces of personal information collected about you in the past 12 months</li>
+      <li><strong>Right to delete:</strong> Request deletion of your personal information, subject to certain exceptions</li>
+      <li><strong>Right to correct:</strong> Request correction of inaccurate personal information</li>
+      <li><strong>Right to opt-out of sale/sharing:</strong> We do not sell or share personal information for cross-context behavioural advertising</li>
+      <li><strong>Right to non-discrimination:</strong> We will not discriminate against you for exercising your privacy rights</li>
+    </ul>
+    <p>To exercise these rights, email <a href="mailto:help@pollslide.com">help@pollslide.com</a> with the subject line "California Privacy Request". We will respond within 45 days.</p>
+
+    <h2 id="children">11. Children's privacy</h2>
+    <p>The Service is not directed to children under 13. We do not knowingly collect personal data from children under 13. If you believe a child under 13 has provided us with personal data, contact us at <a href="mailto:help@pollslide.com">help@pollslide.com</a> and we will delete it promptly.</p>
+    <p>For users aged 13–16, we require parental or guardian consent. Educators using PollSlide with students should ensure they have appropriate consent and data processing agreements in place under applicable law (e.g. FERPA in the US, GDPR in the EU).</p>
+
+    <h2 id="cookies">12. Cookies</h2>
+    <p>We use cookies and similar technologies. For full details see our <a href="/cookies">Cookie Policy</a>. You can manage your cookie preferences at any time by clicking "Cookie settings" in the footer.</p>
+
+    <h2 id="changes">13. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of material changes by email and by posting a notice in the Service at least 30 days before they take effect. Continued use of the Service after changes take effect constitutes acceptance of the updated policy.</p>
+
+    <h2 id="contact">14. Contact and DPA</h2>
+    <p>For any privacy-related questions or to exercise your rights:</p>
+    <div class="highlight-box">
+      <strong>PollSlide Technologies LLC</strong><br>
+      Data Protection Contact<br>
+      Email: <a href="mailto:help@pollslide.com">help@pollslide.com</a><br>
+      Wyoming, United States
+    </div>
+    <p>B2B customers who require a Data Processing Agreement (DPA) for GDPR compliance may request one by emailing <a href="mailto:help@pollslide.com">help@pollslide.com</a>.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> PollSlide Technologies LLC ·
+    <a href="/terms">Terms</a> ·
+    <a href="/privacy">Privacy</a> ·
+    <a href="/cookies">Cookies</a> ·
+    <a href="mailto:help@pollslide.com">help@pollslide.com</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const d = 'June 6, 2025';
+document.getElementById('effDate').textContent = d;
+document.getElementById('updDate').textContent = d;
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>
