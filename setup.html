@@ -160,12 +160,15 @@
     .nav-links a.muted { display:none; }
   }
 </style>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="/" class="logo"><span class="logo-dot"></span>PollSlide</a>
+    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
     <div class="nav-links">
       <a href="/#how" class="muted">How it works</a>
       <a href="/#features" class="muted">Features</a>
@@ -313,7 +316,16 @@
 </section>
 
 <footer>
-  <div class="wrap">© <span id="yr"></span> PollSlide · <a href="/" style="color:var(--muted);">Home</a> · <a href="/setup" style="color:var(--muted);">Setup guide</a></div>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/pricing">Pricing</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
+    </div>
+    <div style="font-size:12px;color:var(--muted);">© <span class="fy"></span> PollSlide Technologies LLC · Wyoming, USA</div>
+  </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -367,5 +379,6 @@
     list.appendChild(item);
   });
 </script>
+<script src="/consent.js"></script>
 </body>
 </html>
