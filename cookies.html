@@ -111,7 +111,7 @@
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-document.getElementById('effDate').textContent = 'June 6, 2025';
+document.getElementById('effDate').textContent = 'June 1, 2026';
 function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
 if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
 document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());

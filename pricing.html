@@ -133,11 +133,15 @@ footer a:hover{color:var(--text);}
 </section>
 
 <footer>
-  <div class="wrap">
-    © <span id="yr"></span> PollSlide ·
-    <a href="/">Home</a> ·
-    <a href="/setup">Setup guide</a> ·
-    <a href="/download">Download app</a>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/pricing">Pricing</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
+    </div>
+    <div style="font-size:12px;color:var(--muted);">© <span class="fy"></span> PollSlide Technologies LLC · Wyoming, USA</div>
   </div>
 </footer>
 
@@ -197,6 +201,7 @@ const PLANS = [
       { yes: true, text: 'All question types' },
       { yes: true, text: 'Live results & leaderboard' },
       { yes: true, text: 'Keynote companion app' },
+      { yes: true, text: 'PowerPoint & Google Slides <span style="font-size:10px;background:rgba(247,183,49,.2);color:#f7b731;padding:1px 6px;border-radius:100px;margin-left:4px;">coming soon</span>' },
       { yes: true, text: 'Response reports & CSV export' },
       { yes: true, text: 'Polly AI question designer' },
       { yes: false, text: 'Team workspace', muted: true },
@@ -221,6 +226,25 @@ const PLANS = [
       { yes: true, text: 'Usage analytics' },
       { yes: true, text: 'Custom branding (coming soon)' },
     ]
+,
+  {
+    name: 'White Label',
+    desc: 'PollSlide technology, your brand. Custom domain, branded experience, reseller rights.',
+    monthly: null, annual: null,
+    cta: 'Contact us',
+    ctaUrl: 'mailto:help@pollslide.com?subject=White Label enquiry',
+    ctaStyle: 'btn-outline',
+    featured: false,
+    features: [
+      { yes: true, text: 'Everything in Team' },
+      { yes: true, text: 'Custom domain & branding' },
+      { yes: true, text: 'Remove PollSlide branding' },
+      { yes: true, text: 'Dedicated Polly AI instance' },
+      { yes: true, text: 'Custom onboarding & support SLA' },
+      { yes: true, text: 'Reseller & multi-tenant options' },
+      { yes: true, text: 'Custom integrations' },
+      { yes: true, text: 'Volume pricing' },
+    ]
   }
 ];
 
@@ -228,7 +252,7 @@ function renderPlans() {
   const grid = document.getElementById('plansGrid');
   grid.innerHTML = PLANS.map(p => {
     const price = billing === 'annual' ? p.annual : p.monthly;
-    const annualNote = billing === 'annual' && p.annual > 0
+    const annualNote = billing === 'annual' && p.annual != null && p.annual > 0
       ? `<div class="price-annual">Billed $${p.annual * 12}/year · save $${(p.monthly - p.annual) * 12}</div>`
       : billing === 'monthly' && p.monthly > 0
       ? `<div class="price-annual">Save $${(p.monthly - p.annual) * 12}/yr with annual</div>`
@@ -240,8 +264,8 @@ function renderPlans() {
       <div class="plan-name">${p.name}</div>
       <div class="plan-desc">${p.desc}</div>
       <div class="price">
-        <span class="price-val">${price === 0 ? 'Free' : '$' + price}</span>
-        ${price > 0 ? '<span class="price-period">/mo</span>' : ''}
+        <span class="price-val">${price === null ? 'Custom' : price === 0 ? 'Free' : '$' + price}</span>
+        ${price > 0 && price !== null ? '<span class="price-period">/mo</span>' : ''}
       </div>
       ${annualNote}
       <a href="${p.ctaUrl}" class="btn ${p.ctaStyle} btn-full">${p.cta}</a>
@@ -283,5 +307,6 @@ faqs.forEach(f => {
   faqGrid.appendChild(item);
 });
 </script>
+<script src="/consent.js"></script>
 </body>
 </html>
