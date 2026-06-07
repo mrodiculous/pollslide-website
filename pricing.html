@@ -5,310 +5,223 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plans & Pricing — PollSlide</title>
 <meta name="description" content="Start free, upgrade when you need more. PollSlide plans for individuals, professionals, and teams.">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
-body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,0.09);--border2:rgba(0,0,0,0.14);--text:#15152a;--muted:#5a5a78;}
+:root{--bg:#07070f;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+body.light{--bg:#fff;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,0.09);--border2:rgba(0,0,0,0.14);--text:#15152a;--muted:#5a5a78;}
 body,body *{transition:background-color .3s,border-color .3s,color .3s;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
 a{color:inherit;text-decoration:none;}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
-
-/* Nav */
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
 nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,0.7);border-bottom:1px solid var(--border);}
 body.light nav{background:rgba(255,255,255,0.82);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.ni{display:flex;align-items:center;justify-content:space-between;height:64px;}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
-.logo-dot{width:11px;height:11px;border-radius:50%;background:var(--accent);}
-.nav-links{display:flex;align-items:center;gap:20px;font-size:15px;}
-.nav-links a{color:var(--muted);}
-.nav-links a:hover{color:var(--text);}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;text-decoration:none;transition:opacity .15s;}
+.nl{display:flex;align-items:center;gap:20px;font-size:15px;}
+.nl a{color:var(--muted);}
+.nl a:hover{color:var(--text);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;text-decoration:none;}
 .btn:hover{opacity:.88;}
-.btn-primary{background:var(--accent);color:#fff;}
-.btn-ghost{background:var(--surface2);border:1px solid var(--border2);color:var(--text);}
-.btn-outline{background:transparent;border:1.5px solid var(--accent);color:var(--accent);}
-.btn-lg{padding:14px 32px;font-size:16px;border-radius:13px;}
-.btn-full{width:100%;padding:14px;}
-.theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);display:inline-flex;align-items:center;justify-content:center;}
-
-/* Hero */
+.bp{background:var(--accent);color:#fff;}
+.bg{background:var(--surface2);border:1px solid var(--border2);color:var(--text);}
+.bo{background:transparent;border:1.5px solid var(--accent);color:var(--accent);}
+.bf{width:100%;padding:14px;}
+.tb{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);display:inline-flex;align-items:center;justify-content:center;}
 .hero{text-align:center;padding:64px 0 48px;}
 .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);line-height:1.08;margin-bottom:14px;}
 .hero p{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto 28px;}
-.toggle-wrap{display:inline-flex;background:var(--surface2);border:1px solid var(--border2);border-radius:100px;padding:4px;margin-bottom:0;}
-.toggle-opt{padding:7px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted);transition:background .15s,color .15s;}
-.toggle-opt.active{background:var(--accent);color:#fff;}
-
-/* Plans grid */
-.plans{padding:0 0 64px;}
-.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:start;}
+.tw{display:inline-flex;background:var(--surface2);border:1px solid var(--border2);border-radius:100px;padding:4px;}
+.to{padding:7px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted);}
+.to.active{background:var(--accent);color:#fff;}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:0 0 64px;}
 .plan{background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:28px;position:relative;}
-.plan.featured{border-color:var(--accent);border-width:2px;}
-.featured-label{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;padding:4px 14px;border-radius:100px;white-space:nowrap;}
-.plan-name{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;margin-bottom:6px;}
-.plan-desc{color:var(--muted);font-size:14px;margin-bottom:20px;line-height:1.5;}
-.price{display:flex;align-items:baseline;gap:4px;margin-bottom:6px;}
-.price-val{font-family:'Syne',sans-serif;font-weight:800;font-size:40px;}
-.price-period{color:var(--muted);font-size:14px;}
-.price-annual{font-size:12px;color:var(--accent3);margin-bottom:20px;min-height:18px;}
-.features-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
-.features-list li{display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.4;}
-.f-check{color:var(--accent3);font-size:15px;flex-shrink:0;margin-top:1px;}
-.f-dash{color:var(--border2);font-size:15px;flex-shrink:0;margin-top:1px;}
-.f-muted{color:var(--muted);}
-.divider{height:1px;background:var(--border);margin:20px 0;}
-
-/* FAQ */
-.faq{padding:0 0 80px;}
-.faq h2{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;text-align:center;margin-bottom:32px;}
-.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}
-.faq-item{border:1px solid var(--border2);border-radius:13px;overflow:hidden;background:var(--surface);}
-.faq-q{padding:16px 18px;font-weight:600;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
-.faq-a{padding:0 18px;max-height:0;overflow:hidden;color:var(--muted);font-size:14px;transition:max-height .3s,padding .3s;}
-.faq-a.open{max-height:300px;padding:0 18px 16px;}
-.chev{transition:transform .2s;color:var(--muted);}
-.chev.open{transform:rotate(180deg);}
-
-/* CTA */
-.cta{text-align:center;padding:56px 0;border-top:1px solid var(--border);}
-.cta h2{font-family:'Syne',sans-serif;font-weight:800;font-size:30px;margin-bottom:10px;}
-.cta p{color:var(--muted);margin-bottom:24px;}
-
+.plan.ft{border-color:var(--accent);border-width:2px;}
+.fl{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;padding:4px 14px;border-radius:100px;white-space:nowrap;}
+.pn{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;margin-bottom:6px;}
+.pd{color:var(--muted);font-size:14px;margin-bottom:20px;line-height:1.5;}
+.pr{display:flex;align-items:baseline;gap:4px;margin-bottom:6px;}
+.pv{font-family:'Syne',sans-serif;font-weight:800;font-size:40px;}
+.pp{color:var(--muted);font-size:14px;}
+.pa{font-size:12px;color:var(--accent3);margin-bottom:20px;min-height:18px;}
+.fl2{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
+.fl2 li{display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.4;}
+.fc{color:var(--accent3);flex-shrink:0;}
+.fd{color:var(--border2);flex-shrink:0;}
+.fm{color:var(--muted);}
+.dv{height:1px;background:var(--border);margin:20px 0;}
+.sn{font-size:10px;background:rgba(247,183,49,.2);color:var(--accent4);padding:1px 6px;border-radius:100px;margin-left:4px;}
+.fs{padding:0 0 80px;}
+.fs h2{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;text-align:center;margin-bottom:32px;}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}
+.fi{border:1px solid var(--border2);border-radius:13px;overflow:hidden;background:var(--surface);}
+.fq{padding:16px 18px;font-weight:600;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.fa{padding:0 18px;max-height:0;overflow:hidden;color:var(--muted);font-size:14px;transition:max-height .3s,padding .3s;line-height:1.6;}
+.fa.open{max-height:300px;padding:0 18px 16px;}
+.ch{transition:transform .2s;color:var(--muted);}
+.ch.open{transform:rotate(180deg);}
+.ct{text-align:center;padding:56px 0;border-top:1px solid var(--border);}
+.ct h2{font-family:'Syne',sans-serif;font-weight:800;font-size:30px;margin-bottom:10px;}
+.ct p{color:var(--muted);margin-bottom:24px;}
 footer{padding:28px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:14px;}
 footer a{color:var(--muted);}
 footer a:hover{color:var(--text);}
-
-@media(max-width:640px){.plans-grid{grid-template-columns:1fr;}.nav-links a{display:none;}.faq-grid{grid-template-columns:1fr;}}
+@media(max-width:640px){.pg{grid-template-columns:1fr;}.nl a{display:none;}.fg{grid-template-columns:1fr;}}
 </style>
-<link rel="icon" type="image/svg+xml" href="/logo.svg">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
 </head>
 <body>
-
-<nav>
-  <div class="wrap nav-inner">
-    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
-    <div class="nav-links">
-      <a href="/#features">Features</a>
-      <a href="/setup">Setup guide</a>
-      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-      <a href="https://app.pollslide.com/presenter" class="btn btn-ghost btn-sm" style="padding:8px 16px;font-size:13px;">Log in</a>
-      <a href="https://app.pollslide.com/presenter" class="btn btn-primary" style="padding:9px 18px;">Try Free</a>
-    </div>
+<nav><div class="wrap ni">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
+  <div class="nl">
+    <a href="/#features">Features</a>
+    <a href="/setup">Setup guide</a>
+    <button onclick="toggleTheme()" id="themeToggle" class="tb" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/presenter" class="btn bg" style="padding:8px 16px;font-size:13px;">Log in</a>
+    <a href="https://app.pollslide.com/presenter" class="btn bp" style="padding:9px 18px;">Try Free</a>
   </div>
-</nav>
+</div></nav>
 
-<section class="hero">
-  <div class="wrap">
-    <h1>Simple, transparent pricing</h1>
-    <p>Start free. Upgrade when you need more participants, more presentations, or AI-powered question design.</p>
-    <div class="toggle-wrap" role="group" aria-label="Billing period">
-      <div class="toggle-opt active" id="monthlyBtn" onclick="setBilling('monthly')">Monthly</div>
-      <div class="toggle-opt" id="annualBtn" onclick="setBilling('annual')">Annual <span style="background:rgba(67,233,123,.2);color:var(--accent3);font-size:10px;padding:2px 7px;border-radius:100px;margin-left:4px;">Save 20%</span></div>
-    </div>
+<section class="hero"><div class="wrap">
+  <h1>Simple, transparent pricing</h1>
+  <p>Start free. Upgrade when you need more participants, more presentations, or AI-powered question design.</p>
+  <div class="tw">
+    <div class="to active" id="mBtn" onclick="setB('m')">Monthly</div>
+    <div class="to" id="aBtn" onclick="setB('a')">Annual <span style="background:rgba(67,233,123,.2);color:var(--accent3);font-size:10px;padding:2px 7px;border-radius:100px;margin-left:4px;">Save 20%</span></div>
   </div>
-</section>
+</div></section>
 
-<section class="plans">
-  <div class="wrap">
-    <div class="plans-grid" id="plansGrid"></div>
+<section style="padding:0 0 64px;"><div class="wrap">
+  <div class="pg" id="PG">
+    <!-- Plans render here via JS. If you see this text, JavaScript failed to load. -->
+    <p style="text-align:center;color:var(--muted);grid-column:1/-1;padding:40px;">Loading plans...</p>
   </div>
-</section>
+</div></section>
 
-<section class="faq">
-  <div class="wrap">
-    <h2>Frequently asked questions</h2>
-    <div class="faq-grid" id="faqGrid"></div>
+<section class="fs"><div class="wrap">
+  <h2>Frequently asked questions</h2>
+  <div class="fg" id="FG">
+    <p style="text-align:center;color:var(--muted);grid-column:1/-1;padding:40px;">Loading FAQ...</p>
   </div>
-</section>
+</div></section>
 
-<section class="cta">
-  <div class="wrap">
-    <h2>Ready to try it?</h2>
-    <p>No credit card needed. Up and running in minutes.</p>
-    <a href="https://app.pollslide.com/presenter" class="btn btn-primary btn-lg">Get started free →</a>
-  </div>
-</section>
+<section class="ct"><div class="wrap">
+  <h2>Ready to try it?</h2>
+  <p>No credit card needed. Up and running in minutes.</p>
+  <a href="https://app.pollslide.com/presenter" class="btn bp" style="font-size:16px;padding:14px 32px;">Get started free →</a>
+</div></section>
 
-<footer>
-  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
-      <a href="/terms">Terms of Service</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/cookies">Cookie Policy</a>
-      <a href="/pricing">Pricing</a>
-      <a href="mailto:help@pollslide.com">Contact</a>
-    </div>
-    <div style="font-size:12px;color:var(--muted);">© <span class="fy"></span> PollSlide Technologies LLC · Wyoming, USA</div>
+<footer><div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+    <a href="/terms">Terms of Service</a> <a href="/privacy">Privacy Policy</a> <a href="/cookies">Cookie Policy</a> <a href="mailto:help@pollslide.com">Contact</a>
   </div>
-</footer>
+  <div style="font-size:12px;">© <span id="yr">2026</span> PollSlide Technologies LLC</div>
+</div></footer>
 
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
+// Theme
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';try{localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')}catch(e){}}
+try{if(localStorage.getItem('theme')==='light'||(window.matchMedia&&matchMedia('(prefers-color-scheme:light)').matches&&!localStorage.getItem('theme'))){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}}catch(e){}
+try{document.getElementById('yr').textContent=new Date().getFullYear();}catch(e){}
 
-function toggleTheme() {
-  document.body.classList.toggle('light');
-  document.getElementById('themeToggle').textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
-  localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-}
-if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && matchMedia('(prefers-color-scheme: light)').matches)) {
-  document.body.classList.add('light');
-  document.getElementById('themeToggle').textContent = '☀️';
-}
-
-var billing = 'monthly';
-function setBilling(b) {
-  billing = b;
-  document.getElementById('monthlyBtn').classList.toggle('active', b === 'monthly');
-  document.getElementById('annualBtn').classList.toggle('active', b === 'annual');
-  renderPlans();
+// Billing toggle
+var bill='m';
+function setB(b){
+  bill=b;
+  document.getElementById('mBtn').className='to'+(b==='m'?' active':'');
+  document.getElementById('aBtn').className='to'+(b==='a'?' active':'');
+  doPlans();
 }
 
-var PLANS = [
-  {
-    name: 'Free',
-    desc: 'Perfect for trying PollSlide and occasional presentations.',
-    monthly: 0, annual: 0,
-    cta: 'Get started free',
-    ctaUrl: 'https://app.pollslide.com/presenter',
-    ctaStyle: 'btn-ghost',
-    features: [
-      { yes: true,  text: '25 participants per poll' },
-      { yes: true,  text: '3 saved presentations' },
-      { yes: true,  text: 'All question types' },
-      { yes: true,  text: 'Live results & leaderboard' },
-      { yes: true,  text: 'Keynote companion app' },
-      { yes: false, text: 'Unlimited participants', muted: true },
-      { yes: false, text: 'Unlimited presentations', muted: true },
-      { yes: false, text: 'Polly AI question designer', muted: true },
-      { yes: false, text: 'Response reports & export', muted: true }
-    ]
-  },
-  {
-    name: 'Pro',
-    desc: 'For presenters who run polls regularly and want no limits.',
-    monthly: 12, annual: 10,
-    cta: 'Start Pro',
-    ctaUrl: 'https://app.pollslide.com/presenter',
-    ctaStyle: 'btn-primary',
-    featured: true,
-    featuredLabel: 'Most popular',
-    features: [
-      { yes: true, text: 'Unlimited participants' },
-      { yes: true, text: 'Unlimited presentations' },
-      { yes: true, text: 'All question types' },
-      { yes: true, text: 'Live results & leaderboard' },
-      { yes: true, text: 'Keynote companion app' },
-      { yes: true, text: 'PowerPoint & Google Slides (coming soon)' },
-      { yes: true, text: 'Response reports & CSV export' },
-      { yes: true, text: 'Polly AI question designer (20/month)' },
-      { yes: false, text: 'Team workspace', muted: true }
-    ]
-  },
-  {
-    name: 'Team',
-    desc: 'For organisations running polls across multiple presenters.',
-    monthly: 39, annual: 32,
-    cta: 'Start Team',
-    ctaUrl: 'https://app.pollslide.com/presenter',
-    ctaStyle: 'btn-outline',
-    features: [
-      { yes: true, text: 'Everything in Pro' },
-      { yes: true, text: 'Up to 10 team members' },
-      { yes: true, text: 'Shared presentation library' },
-      { yes: true, text: 'Team billing & invoices' },
-      { yes: true, text: 'Advanced Polly AI (100/month)' },
-      { yes: true, text: 'Priority support' },
-      { yes: true, text: 'Admin controls' },
-      { yes: true, text: 'Usage analytics' },
-      { yes: true, text: 'Custom branding (coming soon)' }
-    ]
-  },
-  {
-    name: 'White Label',
-    desc: 'PollSlide technology, your brand. Custom domain, branded experience, reseller rights.',
-    monthly: null, annual: null,
-    cta: 'Contact us',
-    ctaUrl: 'mailto:help@pollslide.com?subject=White%20Label%20enquiry',
-    ctaStyle: 'btn-outline',
-    features: [
-      { yes: true, text: 'Everything in Team' },
-      { yes: true, text: 'Custom domain & branding' },
-      { yes: true, text: 'Remove PollSlide branding' },
-      { yes: true, text: 'Dedicated Polly AI instance' },
-      { yes: true, text: 'Custom onboarding & support SLA' },
-      { yes: true, text: 'Reseller & multi-tenant options' },
-      { yes: true, text: 'Custom integrations' },
-      { yes: true, text: 'Volume pricing' }
-    ]
-  }
+// Plans data
+var P=[
+  {n:'Free',d:'Perfect for trying PollSlide and occasional presentations.',m:0,a:0,c:'Get started free',u:'https://app.pollslide.com/presenter',s:'bg',f:[
+    [1,'25 participants per poll'],[1,'3 saved presentations'],[1,'All question types'],[1,'Live results & leaderboard'],[1,'Keynote companion app'],
+    [0,'Unlimited participants'],[0,'Unlimited presentations'],[0,'Polly AI question designer'],[0,'Response reports & export']]},
+  {n:'Pro',d:'For presenters who run polls regularly and want no limits.',m:12,a:10,c:'Start Pro',u:'https://app.pollslide.com/presenter',s:'bp',ft:1,lb:'Most popular',f:[
+    [1,'Unlimited participants'],[1,'Unlimited presentations'],[1,'All question types'],[1,'Live results & leaderboard'],[1,'Keynote companion app'],
+    [1,'PowerPoint & Google Slides <span class="sn">coming soon</span>'],[1,'Response reports & CSV export'],[1,'Polly AI question designer (20/mo)'],[0,'Team workspace']]},
+  {n:'Team',d:'For organisations running polls across multiple presenters.',m:39,a:32,c:'Start Team',u:'https://app.pollslide.com/presenter',s:'bo',f:[
+    [1,'Everything in Pro'],[1,'Up to 10 team members'],[1,'Shared presentation library'],[1,'Team billing & invoices'],[1,'Advanced Polly AI (100/mo)'],
+    [1,'Priority support'],[1,'Admin controls'],[1,'Usage analytics'],[1,'Custom branding <span class="sn">coming soon</span>']]},
+  {n:'White Label',d:'PollSlide technology, your brand. Custom domain, branded experience, reseller rights.',m:-1,a:-1,c:'Contact us',u:'mailto:help@pollslide.com?subject=White%20Label%20enquiry',s:'bo',f:[
+    [1,'Everything in Team'],[1,'Custom domain & branding'],[1,'Remove PollSlide branding'],[1,'Dedicated Polly AI instance'],
+    [1,'Custom onboarding & support SLA'],[1,'Reseller & multi-tenant options'],[1,'Custom integrations'],[1,'Volume pricing']]}
 ];
 
-function renderPlans() {
-  var grid = document.getElementById('plansGrid');
-  grid.innerHTML = PLANS.map(function(p) {
-    var price = billing === 'annual' ? p.annual : p.monthly;
-    var annualNote = '';
-    if (price === null) {
-      annualNote = '<div class="price-annual">&nbsp;</div>';
-    } else if (billing === 'annual' && price > 0) {
-      annualNote = '<div class="price-annual">Billed $' + (p.annual * 12) + '/year &middot; save $' + ((p.monthly - p.annual) * 12) + '</div>';
-    } else if (billing === 'monthly' && p.monthly > 0 && p.annual !== null) {
-      annualNote = '<div class="price-annual">Save $' + ((p.monthly - p.annual) * 12) + '/yr with annual</div>';
-    } else {
-      annualNote = '<div class="price-annual">&nbsp;</div>';
+function doPlans(){
+  var g=document.getElementById('PG');
+  if(!g){console.error('PG element not found');return;}
+  var h='';
+  for(var i=0;i<P.length;i++){
+    var p=P[i];
+    var pr=bill==='a'?p.a:p.m;
+    var custom=pr<0;
+    var pStr=custom?'Custom':(pr===0?'Free':'$'+pr);
+    var per=(!custom&&pr>0)?'<span class="pp">/mo</span>':'';
+    var an='&nbsp;';
+    if(!custom&&bill==='a'&&p.a>0)an='Billed $'+(p.a*12)+'/year &middot; save $'+((p.m-p.a)*12);
+    else if(!custom&&bill==='m'&&p.m>0&&p.a>0)an='Save $'+((p.m-p.a)*12)+'/yr with annual';
+    var fl='';
+    for(var j=0;j<p.f.length;j++){
+      var ok=p.f[j][0];
+      var tx=p.f[j][1];
+      fl+='<li><span class="'+(ok?'fc':'fd')+'">'+(ok?'✓':'—')+'</span><span'+(ok?'':' class="fm"')+'>'+tx+'</span></li>';
     }
-
-    var priceDisplay = price === null ? 'Custom' : (price === 0 ? 'Free' : '$' + price);
-    var periodDisplay = (price !== null && price > 0) ? '<span class="price-period">/mo</span>' : '';
-
-    return '<div class="plan' + (p.featured ? ' featured' : '') + '">' +
-      (p.featuredLabel ? '<div class="featured-label">' + p.featuredLabel + '</div>' : '') +
-      '<div class="plan-name">' + p.name + '</div>' +
-      '<div class="plan-desc">' + p.desc + '</div>' +
-      '<div class="price"><span class="price-val">' + priceDisplay + '</span>' + periodDisplay + '</div>' +
-      annualNote +
-      '<a href="' + p.ctaUrl + '" class="btn ' + p.ctaStyle + ' btn-full">' + p.cta + '</a>' +
-      '<div class="divider"></div>' +
-      '<ul class="features-list">' +
-        p.features.map(function(f) {
-          return '<li><span class="' + (f.yes ? 'f-check' : 'f-dash') + '">' + (f.yes ? '✓' : '—') + '</span>' +
-            '<span class="' + (!f.yes && f.muted ? 'f-muted' : '') + '">' + f.text + '</span></li>';
-        }).join('') +
-      '</ul></div>';
-  }).join('');
+    h+='<div class="plan'+(p.ft?' ft':'')+'">';
+    if(p.lb)h+='<div class="fl">'+p.lb+'</div>';
+    h+='<div class="pn">'+p.n+'</div><div class="pd">'+p.d+'</div>';
+    h+='<div class="pr"><span class="pv">'+pStr+'</span>'+per+'</div>';
+    h+='<div class="pa">'+an+'</div>';
+    h+='<a href="'+p.u+'" class="btn '+p.s+' bf">'+p.c+'</a>';
+    h+='<div class="dv"></div><ul class="fl2">'+fl+'</ul></div>';
+  }
+  g.innerHTML=h;
 }
-renderPlans();
 
-var faqs = [
-  { q: 'Is there really a free plan?', a: 'Yes — fully functional, no credit card required. You get 3 presentations and 25 participants per poll. For occasional use or trying the product, free is enough.' },
-  { q: 'What counts as a "participant"?', a: 'One person scanning the QR and submitting at least one answer counts as one participant. The free plan cap of 25 is per poll session — reset the tally before each new session to start fresh.' },
-  { q: 'Can I change plans at any time?', a: 'Yes. Upgrade whenever you need more. Downgrades take effect at the end of your current billing period.' },
-  { q: 'Do I need the Mac app for every plan?', a: 'The Mac companion app (Keynote auto-detection) is included on every plan including Free. The only difference is what you can do inside the web app.' },
-  { q: 'What is Polly AI?', a: "Polly is PollSlide's AI assistant. On Pro and Team, she can generate complete sets of questions on any topic in seconds — you describe what you need and she builds the poll. Launching soon." },
-  { q: 'Does my team share one account?', a: 'On the Team plan, each member has their own login, all under a shared workspace with a shared presentation library and centralised billing.' },
-  { q: "Is my audience's data private?", a: 'Responses are stored in your private Firebase session and are never sold or shared. Participants only provide a name and their answer — no email or account is required.' },
-  { q: 'What if I need more than 10 team members?', a: 'Contact us at help@pollslide.com and we will set up a custom plan.' }
+// FAQ
+var Q=[
+  ['Is there really a free plan?','Yes — fully functional, no credit card required. You get 3 presentations and 25 participants per poll. For occasional use or trying the product, free is enough.'],
+  ['What counts as a "participant"?','One person scanning the QR and submitting at least one answer counts as one participant. The cap is per poll session — reset the tally before each new session to start fresh.'],
+  ['Can I change plans at any time?','Yes. Upgrade whenever you need more. Downgrades take effect at the end of your current billing period.'],
+  ['Do I need the Mac app for every plan?','The Mac companion app (Keynote auto-detection) is included on every plan including Free. The only difference is what you can do inside the web app.'],
+  ['What is Polly AI?','Polly is PollSlide\'s AI assistant. On Pro and Team, she can generate complete sets of questions on any topic in seconds — you describe what you need and she builds the poll. Launching soon.'],
+  ['Does my team share one account?','On the Team plan, each member has their own login, all under a shared workspace with a shared presentation library and centralised billing.'],
+  ['Is my audience\'s data private?','Responses are stored in your private Firebase session and are never sold or shared. Participants only provide a name and their answer — no email or account is required.'],
+  ['What if I need more than 10 team members?','Contact us at help@pollslide.com and we\'ll set up a custom plan.']
 ];
 
-var faqGrid = document.getElementById('faqGrid');
-faqs.forEach(function(f) {
-  var item = document.createElement('div'); item.className = 'faq-item';
-  item.innerHTML = '<div class="faq-q">' + f.q + '<span class="chev">▾</span></div><div class="faq-a">' + f.a + '</div>';
-  var qEl = item.querySelector('.faq-q'), aEl = item.querySelector('.faq-a'), chev = item.querySelector('.chev');
-  qEl.addEventListener('click', function() {
-    var isOpen = aEl.classList.contains('open');
-    document.querySelectorAll('.faq-a').forEach(function(e) { e.classList.remove('open'); });
-    document.querySelectorAll('.chev').forEach(function(e) { e.classList.remove('open'); });
-    if (!isOpen) { aEl.classList.add('open'); chev.classList.add('open'); }
-  });
-  faqGrid.appendChild(item);
-});
+function doFAQ(){
+  var g=document.getElementById('FG');
+  if(!g){console.error('FG element not found');return;}
+  g.innerHTML='';
+  for(var i=0;i<Q.length;i++){
+    var d=document.createElement('div');d.className='fi';
+    d.innerHTML='<div class="fq">'+Q[i][0]+'<span class="ch">▾</span></div><div class="fa">'+Q[i][1]+'</div>';
+    (function(el){
+      var q=el.querySelector('.fq'),a=el.querySelector('.fa'),c=el.querySelector('.ch');
+      q.onclick=function(){
+        var was=a.classList.contains('open');
+        var aa=document.querySelectorAll('.fa'),cc=document.querySelectorAll('.ch');
+        for(var x=0;x<aa.length;x++)aa[x].classList.remove('open');
+        for(var x=0;x<cc.length;x++)cc[x].classList.remove('open');
+        if(!was){a.classList.add('open');c.classList.add('open');}
+      };
+    })(d);
+    g.appendChild(d);
+  }
+}
+
+// Run on DOM ready — belt and suspenders
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',function(){try{doPlans();doFAQ();}catch(e){console.error('Pricing init error:',e);}});
+}else{
+  try{doPlans();doFAQ();}catch(e){console.error('Pricing init error:',e);}
+}
 </script>
 </body>
 </html>
