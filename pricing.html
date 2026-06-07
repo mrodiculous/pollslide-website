@@ -75,12 +75,12 @@ body.light nav{background:rgba(255,255,255,0.82);}
 .plan-name{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;margin-bottom:6px;}
 .plan-desc{color:var(--muted);font-size:13px;line-height:1.5;margin-bottom:20px;min-height:52px;}
 /* price block: fixed height so all cards align */
-.price-block{margin-bottom:6px;height:56px;display:flex;align-items:baseline;gap:4px;}
+.price-block{margin-bottom:6px;min-height:52px;display:flex;align-items:baseline;gap:4px;flex-wrap:wrap;}
 .price-val{font-family:'Syne',sans-serif;font-weight:800;line-height:1;}
 .price-val.big{font-size:40px;}
 .price-val.med{font-size:26px;} /* for "Custom" and "Free" */
 .price-period{color:var(--muted);font-size:14px;}
-.price-note{font-size:12px;color:var(--accent3);min-height:18px;margin-bottom:20px;}
+.price-note{font-size:12px;color:var(--accent3);height:18px;overflow:hidden;margin-bottom:20px;}
 .plan-cta{display:flex;width:100%;padding:13px;align-items:center;justify-content:center;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;transition:opacity .15s;margin-bottom:0;}
 .plan-cta:hover{opacity:.88;}
 .cta-primary{background:var(--accent);color:#fff;border:none;}
@@ -265,14 +265,19 @@ function buildPlans(){
     var price=custom?null:(bill==='a'?p.yr:p.mo);
     var free=(price===0);
 
-    // Price display
+    // Price display — inline styles are bulletproof, CSS classes can be overridden
+    var PRICE_STYLE="font-family:'Syne',sans-serif;font-weight:800;line-height:1;";
     var priceHTML='';
     if(custom){
-      priceHTML='<div class="price-val med" style="color:var(--accent4);">Custom</div>';
+      // "Custom" — smaller to fit card, amber brand colour
+      priceHTML='<div style="'+PRICE_STYLE+'font-size:24px;color:var(--accent4);">Custom</div>';
     } else if(free){
-      priceHTML='<div class="price-val med">Free</div>';
+      // "Free" — same weight as paid prices but word instead of number
+      priceHTML='<div style="'+PRICE_STYLE+'font-size:36px;">Free</div>';
     } else {
-      priceHTML='<div class="price-val big">$'+price+'</div><div class="price-period">/mo</div>';
+      // Paid price like $12 or $39
+      priceHTML='<div style="'+PRICE_STYLE+'font-size:42px;display:inline-block;">$'+price+'</div>'
+               +'<div class="price-period">/mo</div>';
     }
 
     // Annual note
