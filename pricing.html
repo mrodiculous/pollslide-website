@@ -46,7 +46,7 @@ body.light nav{background:rgba(255,255,255,0.82);}
 .pn{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;margin-bottom:6px;}
 .pd{color:var(--muted);font-size:14px;margin-bottom:20px;line-height:1.5;}
 .pr{display:flex;align-items:baseline;gap:4px;margin-bottom:6px;}
-.pv{font-family:'Syne',sans-serif;font-weight:800;font-size:40px;}
+.pv{font-family:'Syne',sans-serif;font-weight:800;font-size:40px;overflow:hidden;}
 .pp{color:var(--muted);font-size:14px;}
 .pa{font-size:12px;color:var(--accent3);margin-bottom:20px;min-height:18px;}
 .fl2{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
@@ -161,7 +161,7 @@ function doPlans(){
     var p=P[i];
     var pr=bill==='a'?p.a:p.m;
     var custom=pr<0;
-    var pStr=custom?'Custom':(pr===0?'Free':'$'+pr);
+    var pStr=custom?'<span style="font-size:22px;">Custom</span>':(pr===0?'Free':'$'+pr);
     var per=(!custom&&pr>0)?'<span class="pp">/mo</span>':'';
     var an='&nbsp;';
     if(!custom&&bill==='a'&&p.a>0)an='Billed $'+(p.a*12)+'/year &middot; save $'+((p.m-p.a)*12);
