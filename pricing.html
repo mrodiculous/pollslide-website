@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plans & Pricing — PollSlide</title>
-<meta name="description" content="Start free, upgrade when you need more. PollSlide plans for individuals, professionals, and teams.">
+<meta name="description" content="One plan for the whole suite — live polls, surveys, quizzes and study sets, with Polly AI. Start free; upgrade for unlimited participants and team features.">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
@@ -133,8 +133,8 @@ footer a:hover{color:var(--text);}
 </div></nav>
 
 <section class="hero"><div class="wrap">
-  <h1>Simple, transparent pricing</h1>
-  <p>Start free. Upgrade when you need more participants, AI question design, or team features.</p>
+  <h1>One price, the whole suite</h1>
+  <p>Polls, surveys, quizzes and study sets — all in one plan. Start free; upgrade when you need more participants, Polly AI, or team features.</p>
   <div class="toggle-wrap">
     <div class="to on" id="mBtn" onclick="setB('m')">Monthly</div>
     <div class="to" id="aBtn" onclick="setB('a')">Annual&nbsp;<span style="background:rgba(67,233,123,.2);color:var(--accent3);font-size:10px;padding:2px 7px;border-radius:100px;">−20%</span></div>
@@ -190,67 +190,68 @@ function setB(b){
 
 var PLANS=[
   { name:'Free',
-    desc:'Perfect for trying PollSlide and occasional presentations.',
+    desc:'Try the whole suite — polls, surveys, quizzes and study sets.',
     mo:0, yr:0,
     cta:'Get started free', url:'https://app.pollslide.com/presenter', ctaClass:'cta-ghost',
     features:[
-      [true,'25 participants per poll'],
-      [true,'3 saved presentations'],
-      [true,'All question types'],
+      [true,'All 4 products: Poll, Survey, Quiz & Study'],
+      [true,'25 participants per session'],
+      [true,'3 saved projects'],
       [true,'Live results & leaderboard'],
-      [true,'Keynote companion app'],
+      [true,'Mac companion app'],
       [false,'Unlimited participants'],
-      [false,'Unlimited presentations'],
-      [false,'AI question designer'],
+      [false,'Unlimited projects'],
+      [false,'Polly AI question designer'],
       [false,'Response reports & export']
     ]
   },
   { name:'Pro',
-    desc:'For presenters who run polls regularly and want no limits.',
+    desc:'For creators running polls, surveys, quizzes and study sets with no limits.',
     mo:12, yr:10,
     cta:'Start Pro', url:'https://app.pollslide.com/presenter', ctaClass:'cta-primary',
     featured:true, label:'Most popular',
     features:[
+      [true,'All 4 products: Poll, Survey, Quiz & Study'],
       [true,'Unlimited participants'],
-      [true,'Unlimited presentations'],
-      [true,'All question types'],
+      [true,'Unlimited projects'],
       [true,'Live results & leaderboard'],
-      [true,'Keynote companion app'],
-      [true,'PowerPoint & Google Slides','coming soon'],
-      [true,'Response reports & CSV export'],
+      [true,'Mac companion — live on ANY platform'],
+      [true,'Windows companion','coming soon'],
+      [true,'Async assignments & study sets'],
+      [true,'Email + QR / link distribution'],
+      [true,'Reports, CSV export & dated history'],
       [true,'Polly AI designer (20/month)'],
-      [false,'Team workspace']
+      [false,'Team workspace & admin']
     ]
   },
-  { name:'Team',
-    desc:'For organisations running polls across multiple presenters.',
+  { name:'Team Small',
+    desc:'For small teams running the full suite together under one shared workspace.',
     mo:39, yr:32,
-    cta:'Start Team', url:'https://app.pollslide.com/presenter', ctaClass:'cta-outline',
+    cta:'Start Team Small', url:'https://app.pollslide.com/presenter', ctaClass:'cta-outline',
     features:[
       [true,'Everything in Pro'],
-      [true,'Up to 10 team members'],
-      [true,'Shared presentation library'],
-      [true,'Team billing & invoices'],
+      [true,'Up to 5 team members'],
+      [true,'Shared question & deck library'],
+      [true,'Team admin panel & roles'],
+      [true,'Centralised billing & invoices'],
       [true,'Advanced Polly AI (100/month)'],
       [true,'Priority support'],
-      [true,'Admin controls'],
-      [true,'Usage analytics'],
-      [true,'Custom branding','coming soon']
+      [true,'Usage analytics']
     ]
   },
-  { name:'White Label',
-    desc:'PollSlide technology under your brand. Custom domain, full white-label experience.',
-    mo:-1, yr:-1,
-    cta:'Contact us', url:'mailto:help@pollslide.com?subject=White%20Label%20enquiry', ctaClass:'cta-outline',
+  { name:'Team Large',
+    desc:'For departments and institutions that need scale, oversight and control.',
+    mo:199, yr:165,
+    cta:'Start Team Large', url:'https://app.pollslide.com/presenter', ctaClass:'cta-outline',
     features:[
-      [true,'Everything in Team'],
-      [true,'Custom domain & branding'],
-      [true,'Remove PollSlide branding'],
-      [true,'Dedicated AI instance'],
-      [true,'Custom onboarding & SLA'],
-      [true,'Reseller & multi-tenant'],
-      [true,'Custom integrations'],
-      [true,'Volume pricing']
+      [true,'Everything in Team Small'],
+      [true,'Up to 25 team members'],
+      [true,'Org-wide usage analytics'],
+      [true,'Bulk member management'],
+      [true,'SSO / SAML','coming soon'],
+      [true,'Dedicated onboarding'],
+      [true,'Advanced Polly AI (300/month)'],
+      [true,'Priority support']
     ]
   }
 ];
@@ -326,9 +327,9 @@ var FAQS=[
   ['Can I change plans at any time?','Yes. Upgrade whenever you need more. Downgrades take effect at the end of your current billing period. Your data is always preserved.'],
   ['Do I need the Mac app?','The Mac companion app (Keynote auto-detection) is included on every plan including Free. It is optional — your audience can always scan and answer without it.'],
   ['What is Polly AI?','Polly is PollSlide\'s AI assistant. On Pro and Team, she generates complete sets of questions on any topic in seconds. Launching soon.'],
-  ['Does my team share one account?','On the Team plan, each member has their own login under a shared workspace with a shared presentation library and centralised billing.'],
+  ['Does my team share one account?','On the Team plans, each member has their own login under a shared workspace with a shared question & deck library, a team admin panel, and centralised billing.'],
   ['Is my audience\'s data private?','Responses are stored in your private session and are never sold or shared. Participants only provide a display name and their answer — no email or account needed.'],
-  ['What if I need more than 10 team members?','Contact us at help@pollslide.com and we\'ll set up a custom arrangement.']
+  ['What if I need more than 25 team members?','Team Large covers up to 25. If you need more, contact us at help@pollslide.com and we\'ll set up a custom arrangement.']
 ];
 
 function buildFAQ(){
