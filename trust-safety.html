@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust &amp; Safety — PollSlide</title>
+<meta name="description" content="How PollSlide keeps live audience participation safe: content moderation, link filtering, presenter controls, data security, and how to report content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal-shared.css">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
+    <div class="nav-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy Policy</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <div class="eyebrow">Trust &amp; Safety</div>
+    <h1>Keeping live participation safe</h1>
+    <div class="meta">PollSlide Technologies LLC · Last updated: <span id="updDate"></span></div>
+  </div>
+
+  <div class="legal-body">
+
+    <div class="highlight-box">
+      <strong>Our commitment.</strong> PollSlide lets an audience respond in real time. We take reasonable, good-faith measures — described below — to reduce abuse and protect personal data. These safeguards are provided on a best-effort basis and are not a guarantee; presenters remain responsible for moderating their own sessions. See our <a href="/terms#content">Terms</a> for the full legal position.
+    </div>
+
+    <h2 id="moderation">1. Content moderation</h2>
+    <ul>
+      <li><strong>Profanity filtering.</strong> Free-text answers, participant display names, and live audience questions are automatically screened against a profanity filter and masked.</li>
+      <li><strong>Link &amp; spam filtering.</strong> Web links are automatically stripped from audience-submitted text and names, reducing spam and phishing risk on the projected screen.</li>
+      <li><strong>Name moderation.</strong> Display names are filtered for profanity and links; a name that fails moderation is rejected.</li>
+      <li><strong>Presenter moderation controls.</strong> Hosts can hide, mark-answered, remove, and reset audience questions and responses at any time.</li>
+      <li><strong>AI image safety.</strong> AI-generated images run through the provider's safety filter.</li>
+      <li><strong>Flood protection.</strong> Rate limits and per-session caps limit how much any single participant can submit.</li>
+    </ul>
+
+    <h2 id="privacy">2. Privacy by design</h2>
+    <ul>
+      <li><strong>Minimal data.</strong> Audience members don't create accounts — they join with a code or QR and provide only a display name and their answers.</li>
+      <li><strong>Clear data roles.</strong> The presenter is the data controller for their participants' data; PollSlide acts as a processor on their behalf. See our <a href="/privacy">Privacy Policy</a>.</li>
+      <li><strong>Sensitive data.</strong> Our <a href="/terms#acceptable-use">Acceptable Use</a> rules prohibit collecting sensitive personal data without explicit, informed consent.</li>
+      <li><strong>Your data, recoverable &amp; deletable.</strong> Presenters can export their data (CSV) and delete it; resets are snapshotted first so nothing is lost by accident.</li>
+    </ul>
+
+    <h2 id="security">3. Security</h2>
+    <ul>
+      <li><strong>Encryption in transit.</strong> All traffic uses HTTPS/TLS.</li>
+      <li><strong>Trusted infrastructure.</strong> Authentication and data are handled by Google Firebase; the app is served on Vercel.</li>
+      <li><strong>Access controls.</strong> Team workspaces use role-based permissions; seat limits are enforced server-side.</li>
+    </ul>
+
+    <h2 id="report">4. Report content or abuse</h2>
+    <p>If you encounter content that violates our <a href="/terms">Terms</a> — harassment, hate, illegal material, spam, or infringement — please report it so we can act:</p>
+    <div class="highlight-box">
+      <strong>Email:</strong> <a href="mailto:help@pollslide.com">help@pollslide.com</a><br>
+      Include the session code and a description (and a screenshot if possible). We review reports promptly and may remove content or suspend the session or account responsible.
+    </div>
+
+    <h2 id="shared">5. Shared responsibility</h2>
+    <p>PollSlide provides the tools and automated safeguards above. Because content can be submitted by an audience live, the host of each session is responsible for moderating their own session and the content shown to their audience. We do not pre-screen or monitor all content and may, but are not obligated to, remove content or suspend accounts. Full terms are in our <a href="/terms#content">Terms of Service</a>.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> PollSlide Technologies LLC ·
+    <a href="/terms">Terms</a> ·
+    <a href="/privacy">Privacy</a> ·
+    <a href="/trust-safety">Trust &amp; Safety</a> ·
+    <a href="mailto:help@pollslide.com">help@pollslide.com</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('updDate').textContent = 'June 26, 2026';
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+</script>
+</body>
+</html>

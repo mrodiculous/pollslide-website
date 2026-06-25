@@ -120,6 +120,8 @@
     <p><strong>Licence to us:</strong> By using the Service, you grant PollSlide a limited, non-exclusive, royalty-free licence to store, process, and transmit your User Content solely as necessary to provide the Service.</p>
     <p><strong>Responsibility:</strong> You are solely responsible for your User Content. You represent that you have all rights necessary to share it and that it does not violate any third-party rights or applicable law.</p>
     <p><strong>Participant data:</strong> Participant responses (names and answers) are User Content belonging to you as the poll creator. Participants submit their data directly to your session. You are responsible for complying with applicable data protection laws regarding that data.</p>
+    <p><strong>Data processing roles:</strong> With respect to personal data collected from your participants, you act as the <em>data controller</em> and PollSlide acts as a <em>data processor</em>, processing that data on your behalf and in accordance with our <a href="/privacy">Privacy Policy</a> and applicable law.</p>
+    <p><strong>Moderation and audience-submitted content:</strong> Some User Content — including free-text answers, participant display names, and live audience questions — is submitted by your audience in real time and may be displayed immediately. PollSlide provides automated safeguards on a reasonable-efforts basis, including a profanity filter, link/spam filtering, AI image safety filtering, and presenter moderation controls (hide, mark answered, remove, and reset). <strong>These safeguards are provided "as is", are not guaranteed to detect or remove all objectionable content, and do not constitute a warranty.</strong> PollSlide does not pre-screen, monitor, or endorse User Content or audience submissions and is not responsible or liable for them. As the host of a session, <strong>you are solely responsible for moderating your own session</strong> and the content presented to your audience. PollSlide may, but is under no obligation to, review, remove, or restrict any content or suspend any session or account. To report content that violates these Terms, contact <a href="mailto:help@pollslide.com">help@pollslide.com</a>.</p>
 
     <h2 id="ip">7. Intellectual property</h2>
     <p>The PollSlide name, logo, website design, application code, and all associated intellectual property are owned by PollSlide Technologies LLC. These Terms do not grant you any rights to use our trademarks or other intellectual property beyond what is necessary to use the Service.</p>
@@ -177,15 +179,15 @@
     <a href="/terms">Terms</a> ·
     <a href="/privacy">Privacy</a> ·
     <a href="/cookies">Cookies</a> ·
+    <a href="/trust-safety">Trust &amp; Safety</a> ·
     <a href="mailto:help@pollslide.com">help@pollslide.com</a>
   </div>
 </footer>
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-const d = 'June 1, 2026';
-document.getElementById('effDate').textContent = d;
-document.getElementById('updDate').textContent = d;
+document.getElementById('effDate').textContent = 'June 1, 2026';
+document.getElementById('updDate').textContent = 'June 26, 2026';
 function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
 if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
 document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());
