@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrations & Add-ins — PollSlide</title>
+<meta name="description" content="Use PollSlide inside Keynote (Mac companion), PowerPoint and Google Slides. Setup guides, walkthrough videos, and current approval status for each.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07070f; --bg2: #0d0d18; --surface: #13131f; --surface2: #1a1a2c;
+    --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+    --accent: #6c63ff; --accent-light: #8b84ff; --accent2: #ff6584;
+    --accent3: #43e97b; --accent4: #f7b731; --text: #f4f4fc; --muted: #9090b8;
+  }
+  body.light {
+    --bg: #ffffff; --bg2: #f6f7fb; --surface: #ffffff; --surface2: #f0f2f8;
+    --border: rgba(0,0,0,0.09); --border2: rgba(0,0,0,0.14); --text: #15152a; --muted: #5a5a78;
+  }
+  body, body * { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  nav { position:sticky; top:0; z-index:100; background:color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:21px; display:flex; align-items:center; gap:9px; }
+  .nav-links { display:flex; align-items:center; gap:22px; font-size:15px; font-weight:500; }
+  .nav-links a.muted { color:var(--muted); }
+  .nav-links a.muted:hover { color:var(--text); }
+  .btn { background:var(--accent); color:#fff; padding:10px 20px; border-radius:11px; font-family:'Syne',sans-serif; font-weight:700; font-size:14px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:7px; }
+  .btn:hover { background:var(--accent-light); }
+  .theme-btn { background:var(--surface2); border:1px solid var(--border2); border-radius:9px; width:38px; height:38px; cursor:pointer; font-size:16px; color:var(--text); display:inline-flex; align-items:center; justify-content:center; }
+
+  .hero { padding:64px 0 32px; text-align:center; }
+  .hero h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(32px,5vw,52px); line-height:1.08; margin-bottom:16px; }
+  .hero p { font-size:18px; color:var(--muted); max-width:600px; margin:0 auto; }
+  .hero .accent { color:var(--accent); }
+
+  .pill { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; padding:5px 12px; border-radius:100px; }
+  .pill-amber { background:rgba(247,183,49,0.16); color:var(--accent4); }
+  .pill-green { background:rgba(67,233,123,0.14); color:var(--accent3); }
+  .pill-dot { width:7px; height:7px; border-radius:50%; background:currentColor; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.35;} }
+  .pill-amber .pill-dot { animation:pulse 1.6s ease-in-out infinite; }
+
+  .integrations { padding:24px 0 56px; display:flex; flex-direction:column; gap:26px; }
+  .card { background:var(--surface); border:1px solid var(--border2); border-radius:20px; overflow:hidden; scroll-margin-top:84px; }
+  .card-head { display:flex; align-items:flex-start; gap:16px; padding:24px 26px 18px; flex-wrap:wrap; }
+  .card-ico { width:52px; height:52px; border-radius:14px; background:var(--surface2); border:1px solid var(--border2); display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0; }
+  .card-head h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:22px; margin-bottom:4px; }
+  .card-head .sub { color:var(--muted); font-size:14.5px; }
+  .card-head .grow { flex:1; min-width:180px; }
+
+  .card-body { display:grid; grid-template-columns:1.1fr 1fr; gap:24px; padding:6px 26px 26px; }
+  .how h3 { font-size:13px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:12px; font-weight:700; }
+  .how ol { margin:0 0 0 18px; }
+  .how li { margin-bottom:10px; font-size:15px; }
+  .how li strong { font-weight:600; }
+
+  .video { background:var(--surface2); border:1px solid var(--border2); border-radius:14px; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center; padding:18px; }
+  .video .play { width:54px; height:54px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; }
+  .video .vlabel { font-size:13.5px; color:var(--muted); font-weight:500; }
+
+  .note { display:flex; gap:12px; padding:14px 16px; border-radius:12px; background:var(--surface2); border:1px solid var(--border2); border-left:3px solid var(--accent4); font-size:14.5px; margin:0 26px 24px; }
+  .note .ico { font-size:18px; flex-shrink:0; }
+
+  .cta { text-align:center; padding:48px 0; border-top:1px solid var(--border); }
+  .cta h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:30px; margin-bottom:10px; }
+  .cta p { color:var(--muted); margin-bottom:22px; }
+  footer { padding:28px 0; border-top:1px solid var(--border); text-align:center; color:var(--muted); font-size:14px; }
+  footer a { color:var(--muted); }
+
+  @media (max-width:760px) {
+    .card-body { grid-template-columns:1fr; }
+    .nav-links a.muted { display:none; }
+  }
+</style>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
+    <div class="nav-links">
+      <a href="/#how" class="muted">How it works</a>
+      <a href="/setup" class="muted">Setup guide</a>
+      <a href="/integrations" class="muted" style="color:var(--accent);">Integrations</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+      <a href="https://app.pollslide.com/presenter" class="btn">Open PollSlide</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>PollSlide in <span class="accent">your slides</span></h1>
+    <p>Keynote works today via the Mac companion. The PowerPoint and Google Slides add-ins are built and <strong>in review with each platform</strong> — here's the status, how to set each one up, and a walkthrough video.</p>
+  </div>
+</header>
+
+<main class="wrap integrations">
+
+  <!-- ── Mac companion (Apple) ────────────────────────────────────────────── -->
+  <section class="card" id="mac">
+    <div class="card-head">
+      <div class="card-ico"></div>
+      <div class="grow">
+        <h2>Mac Companion (Keynote)</h2>
+        <div class="sub">A floating window that shows live results over your Keynote slides and auto-detects your poll's QR.</div>
+      </div>
+      <span class="pill pill-amber"><span class="pill-dot"></span>Awaiting Apple App Store review</span>
+    </div>
+    <div class="card-body">
+      <div class="how">
+        <h3>How to set it up</h3>
+        <ol>
+          <li>Once approved, install from the <strong>Mac App Store</strong> (or download the notarized app from this site).</li>
+          <li>Open it and <strong>allow Screen Recording</strong> when macOS asks — it's used only to spot your slide's QR code; nothing is recorded.</li>
+          <li>Sign in at <strong>app.pollslide.com</strong> → account menu → <strong>Connect Mac App</strong>, and type the 6-character code into the companion.</li>
+          <li>Present from Keynote — the matching poll appears automatically whenever your QR is on screen.</li>
+        </ol>
+      </div>
+      <div>
+        <!-- Paste your walkthrough embed here, e.g. a YouTube/Loom iframe, to replace the placeholder -->
+        <div class="video" id="video-mac">
+          <div class="play">▶</div>
+          <div class="vlabel">Walkthrough video — coming soon</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PowerPoint add-in (Microsoft) ────────────────────────────────────── -->
+  <section class="card" id="powerpoint">
+    <div class="card-head">
+      <div class="card-ico">📊</div>
+      <div class="grow">
+        <h2>PowerPoint Add-in</h2>
+        <div class="sub">Works in PowerPoint on Windows, Mac and the web — insert live polls and results right onto your slides.</div>
+      </div>
+      <span class="pill pill-amber"><span class="pill-dot"></span>Awaiting Microsoft AppSource approval</span>
+    </div>
+    <div class="card-body">
+      <div class="how">
+        <h3>How to set it up</h3>
+        <ol>
+          <li>Once approved, get it from <strong>Microsoft AppSource</strong> — or in PowerPoint, <strong>Insert → Get Add-ins</strong> and search “PollSlide”.</li>
+          <li>Open the <strong>PollSlide</strong> pane and sign in / pair with your account.</li>
+          <li>Pick a poll and <strong>insert its QR or live-results</strong> onto the slide.</li>
+          <li>Present as usual — your audience scans and answers come in live.</li>
+        </ol>
+      </div>
+      <div>
+        <!-- Paste your walkthrough embed here to replace the placeholder -->
+        <div class="video" id="video-powerpoint">
+          <div class="play">▶</div>
+          <div class="vlabel">Walkthrough video — coming soon</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Google Slides add-in (Google) ────────────────────────────────────── -->
+  <section class="card" id="google-slides">
+    <div class="card-head">
+      <div class="card-ico">🟡</div>
+      <div class="grow">
+        <h2>Google Slides Add-in</h2>
+        <div class="sub">Bring live polls into Google Slides from the Extensions menu — no app to install for your audience.</div>
+      </div>
+      <span class="pill pill-amber"><span class="pill-dot"></span>Awaiting Google Workspace Marketplace approval</span>
+    </div>
+    <div class="card-body">
+      <div class="how">
+        <h3>How to set it up</h3>
+        <ol>
+          <li>Once approved, install from the <strong>Google Workspace Marketplace</strong> — or in Slides, <strong>Extensions → Add-ons → Get add-ons</strong> and search “PollSlide”.</li>
+          <li>Open <strong>Extensions → PollSlide</strong>, then authorize and pair with your account.</li>
+          <li><strong>Insert a poll's QR or link</strong> onto your slide.</li>
+          <li>Present — results update live as people answer.</li>
+        </ol>
+      </div>
+      <div>
+        <!-- Paste your walkthrough embed here to replace the placeholder -->
+        <div class="video" id="video-google-slides">
+          <div class="play">▶</div>
+          <div class="vlabel">Walkthrough video — coming soon</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="note"><span class="ico">⏳</span><div><strong>Why “awaiting approval”?</strong> Each platform (Apple, Microsoft, Google) reviews new apps and add-ins before they go live in their store. PollSlide is fully built and submitted — we'll flip these to “Available” and add download links the moment each one is approved.</div></div>
+
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Don't want to wait?</h2>
+    <p>You can use PollSlide right now in any deck — just drop the poll's QR code on a slide. No add-in required.</p>
+    <a href="https://app.pollslide.com/presenter" class="btn" style="font-size:16px;padding:13px 28px;">Open PollSlide →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/setup">Setup guide</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
+    </div>
+    <div style="font-size:12px;color:var(--muted);">© <span id="yr"></span> PollSlide Technologies LLC · Wyoming, USA</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  function toggleTheme() {
+    document.body.classList.toggle('light');
+    document.getElementById('themeToggle').textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
+  }
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    document.body.classList.add('light');
+    document.getElementById('themeToggle').textContent = '☀️';
+  }
+</script>
+</body>
+</html>
