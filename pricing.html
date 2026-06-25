@@ -124,17 +124,19 @@ footer a:hover{color:var(--text);}
 <nav><div class="wrap ni">
   <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
   <div class="nl">
-    <a href="/#features">Features</a>
-    <a href="/setup">Setup guide</a>
+    <a href="/#features" data-i18n="nav.features">Features</a>
+    <a href="/setup" data-i18n="nav.setup">Setup guide</a>
+    <a href="/integrations" data-i18n="nav.integrations">Integrations</a>
+    <span id="langSelWrap"></span>
     <button onclick="toggleTheme()" id="themeToggle" class="tb" aria-label="Toggle theme">🌙</button>
-    <a href="https://app.pollslide.com/presenter" class="btn bg" style="padding:8px 16px;font-size:13px;">Log in</a>
-    <a href="https://app.pollslide.com/presenter" class="btn bp" style="padding:9px 18px;">Try Free</a>
+    <a href="https://app.pollslide.com/presenter" class="btn bg" style="padding:8px 16px;font-size:13px;" data-i18n="nav.login">Log in</a>
+    <a href="https://app.pollslide.com/presenter" class="btn bp" style="padding:9px 18px;" data-i18n="nav.try">Try Free</a>
   </div>
 </div></nav>
 
 <section class="hero"><div class="wrap">
-  <h1>One price, the whole suite</h1>
-  <p>Polls, surveys, quizzes and study sets — all in one plan. Start free; upgrade when you need more participants, Polly AI, or team features.</p>
+  <h1 data-i18n="price.h1">One price, the whole suite</h1>
+  <p data-i18n="price.lead">Polls, surveys, quizzes and study sets — all in one plan. Start free; upgrade when you need more participants, Polly AI, or team features.</p>
   <div class="toggle-wrap">
     <div class="to on" id="mBtn" onclick="setB('m')">Monthly</div>
     <div class="to" id="aBtn" onclick="setB('a')">Annual&nbsp;<span style="background:rgba(67,233,123,.2);color:var(--accent3);font-size:10px;padding:2px 7px;border-radius:100px;">−20%</span></div>
@@ -146,14 +148,14 @@ footer a:hover{color:var(--text);}
 </div></section>
 
 <section class="faq-section"><div class="wrap">
-  <h2>Frequently asked questions</h2>
+  <h2 data-i18n="faq.freq">Frequently asked questions</h2>
   <div class="faq-grid" id="FG"></div>
 </div></section>
 
 <section class="cta-section"><div class="wrap">
-  <h2>Ready to try it?</h2>
+  <h2 data-i18n="cta.ready">Ready to try it?</h2>
   <p>No credit card needed. Up and running in minutes.</p>
-  <a href="https://app.pollslide.com/presenter" class="btn bp" style="font-size:16px;padding:14px 32px;">Get started free →</a>
+  <a href="https://app.pollslide.com/presenter" class="btn bp" style="font-size:16px;padding:14px 32px;" data-i18n="hero.cta1">Get started free →</a>
 </div></section>
 
 <footer><div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
@@ -354,5 +356,6 @@ function buildFAQ(){
   }
 }
 </script>
+<script src="/i18n.js"></script>
 </body>
 </html>

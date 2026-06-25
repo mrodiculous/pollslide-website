@@ -170,19 +170,20 @@
   <div class="wrap nav-inner">
     <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
     <div class="nav-links">
-      <a href="/#how" class="muted">How it works</a>
-      <a href="/setup" class="muted" style="color:var(--accent);">Setup guide</a>
-      <a href="/integrations" class="muted">Integrations</a>
+      <a href="/#how" class="muted" data-i18n="nav.how">How it works</a>
+      <a href="/setup" class="muted" style="color:var(--accent);" data-i18n="nav.setup">Setup guide</a>
+      <a href="/integrations" class="muted" data-i18n="nav.integrations">Integrations</a>
+      <span id="langSelWrap"></span>
       <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-      <a href="https://app.pollslide.com/presenter" class="btn">Open PollSlide</a>
+      <a href="https://app.pollslide.com/presenter" class="btn" data-i18n="cta.openShort">Open PollSlide</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <h1>Up and running in <span class="accent">six steps</span></h1>
-    <p>Build a <strong>poll, survey, quiz or study set</strong> — by hand or with <strong>✨ Polly AI</strong> — drop a QR on your slide (or share a link / email it), and watch answers roll in live.</p>
+    <h1 data-i18n-html="set.h1">Up and running in <span class="accent">six steps</span></h1>
+    <p data-i18n-html="set.lead">Build a <strong>poll, survey, quiz or study set</strong> — by hand or with <strong>✨ Polly AI</strong> — drop a QR on your slide (or share a link / email it), and watch answers roll in live.</p>
     <div class="rail">
       <span class="rail-chip" onclick="document.getElementById('s1').scrollIntoView()">1 · Create a project</span>
       <span class="rail-chip" onclick="document.getElementById('s2').scrollIntoView()">2 · Add the QR</span>
@@ -199,7 +200,7 @@
   <section class="step" id="s1">
     <div class="step-num">1</div>
     <div class="step-body">
-      <h2>Create your first project</h2>
+      <h2 data-i18n="set.h2_1">Create your first project</h2>
       <p class="lead">Everything starts in the PollSlide presenter — no install needed for this part. The same flow builds all four: <strong>Poll, Survey, Quiz</strong> and <strong>Study</strong> — just pick the tab.</p>
       <ol>
         <li>Go to <a href="https://app.pollslide.com/presenter" style="color:var(--accent);">app.pollslide.com</a> and sign in (or create a free account).</li>
@@ -232,7 +233,7 @@
   <section class="step" id="s2">
     <div class="step-num">2</div>
     <div class="step-body">
-      <h2>Put the QR code on your slide</h2>
+      <h2 data-i18n="set.h2_2">Put the QR code on your slide</h2>
       <p class="lead">This is how your audience joins — and how the companion app knows which poll to show.</p>
       <ol>
         <li>In the live view of any question, click <strong>📋 Copy QR box for slide</strong>.</li>
@@ -256,7 +257,7 @@
   <section class="step" id="s3">
     <div class="step-num">3</div>
     <div class="step-body">
-      <h2>Present from Keynote — normally</h2>
+      <h2 data-i18n="set.h2_3">Present from Keynote — normally</h2>
       <p class="lead">No special mode. You present exactly as you always do.</p>
       <ul>
         <li>Run your Keynote slideshow full-screen, clicker and all.</li>
@@ -271,7 +272,7 @@
   <section class="step" id="s4">
     <div class="step-num">4</div>
     <div class="step-body">
-      <h2>Install the Mac companion app</h2>
+      <h2 data-i18n="set.h2_4">Install the Mac companion app</h2>
       <p class="lead">A small floating window that shows live results over your slides — and appears automatically when your QR is on screen.</p>
       <ol>
         <li><a href="/download" style="color:var(--accent);font-weight:600;">Download the PollSlide Companion</a> and open it.</li>
@@ -286,7 +287,7 @@
   <section class="step" id="s5">
     <div class="step-num">5</div>
     <div class="step-body">
-      <h2>Go live — it's automatic</h2>
+      <h2 data-i18n="set.h2_5">Go live — it's automatic</h2>
       <p class="lead">With the companion paired, presenting is hands-off.</p>
       <ul>
         <li>Start presenting. When a QR slide appears, the results window <strong>pops up automatically</strong>, showing exactly that question.</li>
@@ -301,7 +302,7 @@
   <section class="step">
     <div class="step-num">6</div>
     <div class="step-body">
-      <h2>See results, export &amp; keep your data</h2>
+      <h2 data-i18n="set.h2_6">See results, export &amp; keep your data</h2>
       <p class="lead">Everything your audience submits is yours — live, downloadable, and recoverable.</p>
       <ul>
         <li><strong>Live as it happens:</strong> the right panel shows results in real time — poll bars, a survey feed, a quiz leaderboard, or study progress.</li>
@@ -318,7 +319,7 @@
 <!-- FAQ -->
 <section class="faq">
   <div class="wrap">
-    <h2>Common questions</h2>
+    <h2 data-i18n="faq.common">Common questions</h2>
     <div id="faqList"></div>
   </div>
 </section>
@@ -326,9 +327,9 @@
 <!-- CTA -->
 <section class="cta">
   <div class="wrap">
-    <h2>Ready to try it?</h2>
+    <h2 data-i18n="cta.ready">Ready to try it?</h2>
     <p>Build your first poll in a couple of minutes — free to start.</p>
-    <a href="https://app.pollslide.com/presenter" class="btn" style="font-size:16px;padding:13px 28px;">Open PollSlide →</a>
+    <a href="https://app.pollslide.com/presenter" class="btn" style="font-size:16px;padding:13px 28px;" data-i18n="cta.open">Open PollSlide →</a>
   </div>
 </section>
 
@@ -397,5 +398,6 @@
   });
 </script>
 <script src="/consent.js"></script>
+<script src="/i18n.js"></script>
 </body>
 </html>

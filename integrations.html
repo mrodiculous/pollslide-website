@@ -90,19 +90,20 @@
   <div class="wrap nav-inner">
     <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
     <div class="nav-links">
-      <a href="/#how" class="muted">How it works</a>
-      <a href="/setup" class="muted">Setup guide</a>
-      <a href="/integrations" class="muted" style="color:var(--accent);">Integrations</a>
+      <a href="/#how" class="muted" data-i18n="nav.how">How it works</a>
+      <a href="/setup" class="muted" data-i18n="nav.setup">Setup guide</a>
+      <a href="/integrations" class="muted" style="color:var(--accent);" data-i18n="nav.integrations">Integrations</a>
+      <span id="langSelWrap"></span>
       <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-      <a href="https://app.pollslide.com/presenter" class="btn">Open PollSlide</a>
+      <a href="https://app.pollslide.com/presenter" class="btn" data-i18n="cta.openShort">Open PollSlide</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <h1>PollSlide in <span class="accent">your slides</span></h1>
-    <p>Keynote works today via the Mac companion. The PowerPoint and Google Slides add-ins are built and <strong>in review with each platform</strong> — here's the status, how to set each one up, and a walkthrough video.</p>
+    <h1 data-i18n-html="int.h1">PollSlide in <span class="accent">your slides</span></h1>
+    <p data-i18n-html="int.lead">Keynote works today via the Mac companion. The PowerPoint and Google Slides add-ins are built and <strong>in review with each platform</strong> — here's the status, how to set each one up, and a walkthrough video.</p>
   </div>
 </header>
 
@@ -113,14 +114,14 @@
     <div class="card-head">
       <div class="card-ico">🖥️</div>
       <div class="grow">
-        <h2>Mac Companion (Keynote)</h2>
-        <div class="sub">A floating window that shows live results over your Keynote slides and auto-detects your poll's QR.</div>
+        <h2 data-i18n="int.mac">Mac Companion (Keynote)</h2>
+        <div class="sub" data-i18n="int.macSub">A floating window that shows live results over your Keynote slides and auto-detects your poll's QR.</div>
       </div>
-      <span class="pill pill-amber"><span class="pill-dot"></span>Awaiting Apple App Store review</span>
+      <span class="pill pill-amber"><span class="pill-dot"></span><span data-i18n="int.macStatus">Awaiting Apple App Store review</span></span>
     </div>
     <div class="card-body">
       <div class="how">
-        <h3>How to set it up</h3>
+        <h3 data-i18n="int.howto">How to set it up</h3>
         <ol>
           <li>Once approved, install from the <strong>Mac App Store</strong> (or download the notarized app from this site).</li>
           <li>Open it and <strong>allow Screen Recording</strong> when macOS asks — it's used only to spot your slide's QR code; nothing is recorded.</li>
@@ -132,7 +133,7 @@
         <!-- Paste your walkthrough embed here, e.g. a YouTube/Loom iframe, to replace the placeholder -->
         <div class="video" id="video-mac">
           <div class="play">▶</div>
-          <div class="vlabel">Walkthrough video — coming soon</div>
+          <div class="vlabel" data-i18n="int.video">Walkthrough video — coming soon</div>
         </div>
       </div>
     </div>
@@ -143,14 +144,14 @@
     <div class="card-head">
       <div class="card-ico">📊</div>
       <div class="grow">
-        <h2>PowerPoint Add-in</h2>
-        <div class="sub">Works in PowerPoint on Windows, Mac and the web — insert live polls and results right onto your slides.</div>
+        <h2 data-i18n="int.ppt">PowerPoint Add-in</h2>
+        <div class="sub" data-i18n="int.pptSub">Works in PowerPoint on Windows, Mac and the web — insert live polls and results right onto your slides.</div>
       </div>
-      <span class="pill pill-amber"><span class="pill-dot"></span>Awaiting Microsoft AppSource approval</span>
+      <span class="pill pill-amber"><span class="pill-dot"></span><span data-i18n="int.pptStatus">Awaiting Microsoft AppSource approval</span></span>
     </div>
     <div class="card-body">
       <div class="how">
-        <h3>How to set it up</h3>
+        <h3 data-i18n="int.howto">How to set it up</h3>
         <ol>
           <li>Once approved, get it from <strong>Microsoft AppSource</strong> — or in PowerPoint, <strong>Insert → Get Add-ins</strong> and search “PollSlide”.</li>
           <li>Open the <strong>PollSlide</strong> pane and sign in / pair with your account.</li>
@@ -162,7 +163,7 @@
         <!-- Paste your walkthrough embed here to replace the placeholder -->
         <div class="video" id="video-powerpoint">
           <div class="play">▶</div>
-          <div class="vlabel">Walkthrough video — coming soon</div>
+          <div class="vlabel" data-i18n="int.video">Walkthrough video — coming soon</div>
         </div>
       </div>
     </div>
@@ -173,14 +174,14 @@
     <div class="card-head">
       <div class="card-ico">🟡</div>
       <div class="grow">
-        <h2>Google Slides Add-in</h2>
-        <div class="sub">Bring live polls into Google Slides from the Extensions menu — no app to install for your audience.</div>
+        <h2 data-i18n="int.gs">Google Slides Add-in</h2>
+        <div class="sub" data-i18n="int.gsSub">Bring live polls into Google Slides from the Extensions menu — no app to install for your audience.</div>
       </div>
-      <span class="pill pill-amber"><span class="pill-dot"></span>Awaiting Google Workspace Marketplace approval</span>
+      <span class="pill pill-amber"><span class="pill-dot"></span><span data-i18n="int.gsStatus">Awaiting Google Workspace Marketplace approval</span></span>
     </div>
     <div class="card-body">
       <div class="how">
-        <h3>How to set it up</h3>
+        <h3 data-i18n="int.howto">How to set it up</h3>
         <ol>
           <li>Once approved, install from the <strong>Google Workspace Marketplace</strong> — or in Slides, <strong>Extensions → Add-ons → Get add-ons</strong> and search “PollSlide”.</li>
           <li>Open <strong>Extensions → PollSlide</strong>, then authorize and pair with your account.</li>
@@ -192,7 +193,7 @@
         <!-- Paste your walkthrough embed here to replace the placeholder -->
         <div class="video" id="video-google-slides">
           <div class="play">▶</div>
-          <div class="vlabel">Walkthrough video — coming soon</div>
+          <div class="vlabel" data-i18n="int.video">Walkthrough video — coming soon</div>
         </div>
       </div>
     </div>
@@ -204,9 +205,9 @@
 
 <section class="cta">
   <div class="wrap">
-    <h2>Don't want to wait?</h2>
+    <h2 data-i18n="int.ctah">Don't want to wait?</h2>
     <p>You can use PollSlide right now in any deck — just drop the poll's QR code on a slide. No add-in required.</p>
-    <a href="https://app.pollslide.com/presenter" class="btn" style="font-size:16px;padding:13px 28px;">Open PollSlide →</a>
+    <a href="https://app.pollslide.com/presenter" class="btn" style="font-size:16px;padding:13px 28px;" data-i18n="cta.open">Open PollSlide →</a>
   </div>
 </section>
 
@@ -235,5 +236,6 @@
     document.getElementById('themeToggle').textContent = '☀️';
   }
 </script>
+<script src="/i18n.js"></script>
 </body>
 </html>
