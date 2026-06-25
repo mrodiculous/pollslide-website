@@ -260,16 +260,17 @@
   <div class="container nav-inner">
     <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg><span class="logo-mark" style="display:none;"></span>PollSlide</a>
     <div class="nav-links">
-      <a href="#suite">Products</a>
+      <a href="#suite" data-i18n="nav.products">Products</a>
       <a href="#polly">Polly AI</a>
-      <a href="#how">How it works</a>
-      <a href="/integrations">Integrations</a>
-      <a href="/pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="/integrations" data-i18n="nav.integrations">Integrations</a>
+      <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <span id="langSelWrap"></span>
       <button onclick="toggleTheme()" id="themeToggle" aria-label="Toggle theme" style="background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);display:inline-flex;align-items:center;justify-content:center;">🌙</button>
-      <a href="https://app.pollslide.com/presenter" class="btn btn-ghost" style="background:var(--surface2);border:1px solid var(--border2);color:var(--text);">Log in</a>
-      <a href="https://app.pollslide.com/presenter" class="btn btn-primary">Try Free</a>
-      <a href="https://app.pollslide.com/presenter" class="btn btn-primary nav-mobile-cta">Try Free</a>
+      <a href="https://app.pollslide.com/presenter" class="btn btn-ghost" style="background:var(--surface2);border:1px solid var(--border2);color:var(--text);" data-i18n="nav.login">Log in</a>
+      <a href="https://app.pollslide.com/presenter" class="btn btn-primary" data-i18n="nav.try">Try Free</a>
+      <a href="https://app.pollslide.com/presenter" class="btn btn-primary nav-mobile-cta" data-i18n="nav.try">Try Free</a>
     </div>
   </div>
 </nav>
@@ -277,14 +278,14 @@
 <!-- ── HERO ── -->
 <header class="hero">
   <div class="container">
-    <div class="badge reveal"><span class="dot"></span>One engine · four products · powered by Polly AI</div>
-    <h1 class="reveal">Make Every Slide<br><span class="grad">Come Alive</span></h1>
-    <p class="sub reveal">Live <b>polls</b>, async <b>surveys</b>, graded <b>quizzes</b> and <b>study sets</b> — running right over your Keynote, PowerPoint or Google Slides. <b>Polly AI</b> drafts them in seconds; your audience just scans a QR and watches results appear live.</p>
+    <div class="badge reveal"><span class="dot"></span><span data-i18n="hero.badge">One engine · four products · powered by Polly AI</span></div>
+    <h1 class="reveal" data-i18n-html="hero.h1">Make Every Slide<br><span class="grad">Come Alive</span></h1>
+    <p class="sub reveal" data-i18n-html="hero.sub">Live <b>polls</b>, async <b>surveys</b>, graded <b>quizzes</b> and <b>study sets</b> — running right over your Keynote, PowerPoint or Google Slides. <b>Polly AI</b> drafts them in seconds; your audience just scans a QR and watches results appear live.</p>
     <div class="hero-cta reveal">
-      <a href="https://app.pollslide.com/presenter" class="btn btn-primary btn-lg">Start for Free →</a>
-      <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+      <a href="https://app.pollslide.com/presenter" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Start for Free →</a>
+      <a href="#how" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">See how it works</a>
     </div>
-    <p class="hero-note reveal"><strong>No credit card.</strong> No app downloads for your audience. Free to try.</p>
+    <p class="hero-note reveal" data-i18n-html="hero.note"><strong>No credit card.</strong> No app downloads for your audience. Free to try.</p>
 
     <!-- Hero visual -->
     <div class="hero-visual reveal">
@@ -661,5 +662,6 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 <script src="/consent.js"></script>
+<script src="/i18n.js"></script>
 </body>
 </html>
