@@ -56,8 +56,7 @@
       <div id="ps-consent-inner">
         <div id="ps-consent-text">
           <strong>We use cookies</strong>
-          We use strictly necessary cookies to keep you signed in and remember your preferences.
-          We don't use advertising or tracking cookies.
+          <span>We use strictly necessary cookies to keep you signed in and remember your preferences. We don't use advertising or tracking cookies.</span>
           <a href="/cookies" style="color:#8b84ff;text-decoration:underline;">Learn more</a>
         </div>
         <div id="ps-consent-btns">

@@ -106,6 +106,35 @@
 
   let lang = detect();
 
+  // Full-page text-node translation (everything NOT covered by a curated data-i18n element),
+  // keyed by the exact English text in window.PS_I18N (generated in translations.js).
+  const SKIP_TAGS = { SCRIPT:1, STYLE:1, NOSCRIPT:1, SVG:1, CODE:1, KBD:1, OPTION:1, TEXTAREA:1, SELECT:1, PRE:1 };
+  function isCuratedOrSkipped(node) {
+    let el = node.parentElement;
+    while (el) {
+      if (SKIP_TAGS[el.tagName]) return true;
+      if (el.nodeType === 1 && (el.hasAttribute('data-i18n') || el.hasAttribute('data-i18n-html') || el.hasAttribute('data-i18n-ph') || el.hasAttribute('data-i18n-skip') || el.id === 'langSelWrap')) return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+  function walkAndTranslate(l) {
+    if (!document.body) return;
+    const auto = (window.PS_I18N && window.PS_I18N[l]) || null;
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+    const nodes = []; let n;
+    while ((n = w.nextNode())) nodes.push(n);
+    nodes.forEach(node => {
+      const raw = node.nodeValue;
+      if (!raw || !raw.trim()) return;
+      if (isCuratedOrSkipped(node)) return;
+      if (node._psOrig === undefined) node._psOrig = raw;      // pristine English (with whitespace) — captured once
+      const orig = node._psOrig, trimmed = orig.trim();
+      const outTrim = (l !== 'en' && auto && auto[trimmed] != null) ? auto[trimmed] : trimmed;
+      node.nodeValue = orig.replace(trimmed, outTrim);          // string arg = literal, preserves surrounding whitespace
+    });
+  }
+
   function apply(l) {
     lang = l;
     document.documentElement.lang = l;
@@ -114,10 +143,29 @@
     document.querySelectorAll('[data-i18n]').forEach(el => { const v = get(el.getAttribute('data-i18n')); if (v != null) el.textContent = v; });
     document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = get(el.getAttribute('data-i18n-html')); if (v != null) el.innerHTML = v; });
     document.querySelectorAll('[data-i18n-ph]').forEach(el => { const v = get(el.getAttribute('data-i18n-ph')); if (v != null) el.setAttribute('placeholder', v); });
+    walkAndTranslate(l);   // translate the rest of the page
     const sel = document.getElementById('langSel'); if (sel) sel.value = l;
   }
 
-  function setLang(l) { localStorage.setItem('ps_lang', l); apply(l); }
+  // Re-translate when new DOM is injected after load (e.g. the cookie banner / modals).
+  // Disconnect during our own apply() so innerHTML changes don't loop.
+  let _mo = null, _moPending = null;
+  function reapply() {
+    if (_mo) _mo.disconnect();
+    apply(lang);
+    if (_mo) _mo.observe(document.body, { childList: true, subtree: true });
+  }
+  function startObserver() {
+    if (_mo || !window.MutationObserver || !document.body) return;
+    _mo = new MutationObserver(muts => {
+      for (let i = 0; i < muts.length; i++) {
+        if (muts[i].addedNodes && muts[i].addedNodes.length) { clearTimeout(_moPending); _moPending = setTimeout(reapply, 80); break; }
+      }
+    });
+    _mo.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function setLang(l) { localStorage.setItem('ps_lang', l); lang = l; reapply(); }
   window.psSetLang = setLang;
 
   function mount() {
@@ -132,6 +180,7 @@
       host.appendChild(sel);
     }
     apply(lang);
+    startObserver();   // catch dynamically-injected content (cookie banner, modals)
   }
 
   if (document.readyState !== 'loading') mount();
