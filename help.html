@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PollSlide — Help Center</title>
+<style>
+  :root{
+    --bg:#0d0d18; --surface:#16161f; --surface2:#1e1e2b; --border:#2a2a3a;
+    --text:#f4f4f8; --muted:#9a9ab0; --accent:#6c63ff; --pink:#ff6584; --yellow:#f7b731; --green:#26d07c;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  /* top bar */
+  header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;padding:14px 26px;background:rgba(13,13,24,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.3px}
+  .logo svg{width:28px;height:28px;flex-shrink:0}
+  header .spacer{flex:1}
+  header .tag{font-size:13px;color:var(--muted)}
+  /* layout */
+  .wrap{display:grid;grid-template-columns:248px 1fr;max-width:1180px;margin:0 auto;gap:40px;padding:0 26px}
+  nav.toc{position:sticky;top:74px;align-self:start;height:calc(100vh - 90px);overflow:auto;padding:28px 0;font-size:14px}
+  nav.toc h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:18px 0 8px}
+  nav.toc a{display:block;color:var(--muted);padding:6px 12px;border-radius:8px;border-left:2px solid transparent}
+  nav.toc a:hover{color:var(--text);background:var(--surface)}
+  main{padding:36px 0 120px;min-width:0}
+  /* hero */
+  .hero{background:linear-gradient(135deg,rgba(108,99,255,.18),rgba(255,101,132,.08));border:1px solid var(--border);border-radius:20px;padding:40px;margin-bottom:14px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.5px;margin-bottom:12px}
+  .hero p{color:var(--muted);font-size:16px;max-width:62ch}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .pill{display:flex;align-items:center;gap:7px;background:var(--surface2);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:600}
+  /* sections */
+  section{padding:46px 0;border-bottom:1px solid var(--border)}
+  section h2{font-size:25px;letter-spacing:-.3px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  section .lead{color:var(--muted);margin-bottom:22px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  @media(max-width:860px){.wrap{grid-template-columns:1fr}nav.toc{display:none}.grid{grid-template-columns:1fr}}
+  video,.shot{width:100%;border-radius:var(--radius);border:1px solid var(--border);background:#000;display:block}
+  figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+  ol.steps{counter-reset:s;list-style:none;display:flex;flex-direction:column;gap:14px}
+  ol.steps li{position:relative;padding-left:42px;font-size:15px}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  ol.steps li b{color:var(--text)}
+  .callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--yellow);border-radius:10px;padding:14px 18px;margin-top:18px;font-size:14.5px;color:var(--muted)}
+  .callout b{color:var(--text)}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+  .card h3{font-size:17px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .card p{font-size:14px;color:var(--muted)}
+  .shotgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+  @media(max-width:680px){.shotgrid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px 18px;margin-bottom:10px}
+  details summary{cursor:pointer;font-weight:600;padding:12px 0;list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details summary::before{content:"›";display:inline-block;margin-right:10px;transition:transform .2s;color:var(--accent);font-weight:800}
+  details[open] summary::before{transform:rotate(90deg)}
+  details p{padding:0 0 14px;color:var(--muted);font-size:14.5px}
+  footer{max-width:1180px;margin:0 auto;padding:30px 26px 60px;color:var(--muted);font-size:13px}
+  .kbd{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:1px 7px;font-size:13px;font-family:ui-monospace,monospace}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="/" style="color:inherit;text-decoration:none;">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>
+    PollSlide <span style="font-weight:500;color:var(--muted)">Help</span>
+  </a>
+  <span class="spacer"></span>
+  <span id="langSelWrap" style="margin-right:14px;"></span>
+  <a href="/" style="color:var(--muted);font-size:14px;">&larr; Back to pollslide.com</a>
+</header>
+
+<div class="wrap">
+  <nav class="toc">
+    <h4>Get started</h4>
+    <a href="#welcome">Welcome</a>
+    <a href="#create">Create your first poll</a>
+    <a href="#questions">Add a question</a>
+    <a href="#images">Add an image (AI)</a>
+    <h4>Run it live</h4>
+    <a href="#present">Present</a>
+    <a href="#postreveal">Post-reveal &amp; results</a>
+    <a href="#reveal">Reveal live</a>
+    <h4>Mac Companion</h4>
+    <a href="#companion">What it is</a>
+    <a href="#connect">Connect it</a>
+    <h4>More</h4>
+    <a href="#products">Poll · Survey · Quiz · Study</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <h1>Live polls that play right over your slides.</h1>
+      <p>PollSlide turns any presentation into a two-way conversation. Build questions in minutes, drop a QR code on your slide, and your audience answers from their phones — results appear instantly. This guide walks you through everything, step by step.</p>
+      <div class="pills">
+        <span class="pill">🗳️ Polls</span><span class="pill">📋 Surveys</span><span class="pill">🏆 Quizzes</span><span class="pill">📚 Study</span>
+      </div>
+    </div>
+
+    <section id="welcome">
+      <h2>👋 Welcome — the 3-step idea</h2>
+      <p class="lead">Every PollSlide presentation works the same way, whether it's a poll, survey, quiz, or study set.</p>
+      <div class="cards">
+        <div class="card"><h3>1 · Build</h3><p>Create a presentation and add questions — type them yourself or let AI draft them for you.</p></div>
+        <div class="card"><h3>2 · Stamp your slide</h3><p>Each question has a QR code. Drop it on your Keynote, PowerPoint, or Google Slides.</p></div>
+        <div class="card"><h3>3 · Go live</h3><p>Present. Your audience scans the QR, answers, and results animate in real time.</p></div>
+      </div>
+      <div style="margin-top:26px">
+        <video controls preload="metadata" src="help-assets/how-to/howto_full_walkthrough.mp4"></video>
+        <figcaption>▶ Full 45-second tour of the PollSlide editor and live presenting.</figcaption>
+      </div>
+    </section>
+
+    <section id="create">
+      <h2>🗳️ Create your first poll</h2>
+      <p class="lead">From a blank account to a ready question in under a minute.</p>
+      <div class="grid">
+        <figure>
+          <video controls preload="metadata" src="help-assets/how-to/create_first_poll.mp4"></video>
+          <figcaption>▶ Create → name → add a question → add an AI image → present → reveal.</figcaption>
+        </figure>
+        <ol class="steps">
+          <li>Sign in at <b>app.pollslide.com</b>.</li>
+          <li>Pick a product tab — for this example, <b>🗳️ Polls</b>.</li>
+          <li>Click <b>+ New Poll</b>. A fresh presentation is created.</li>
+          <li>Give it a <b>name</b> (e.g. "Team Trivia Night") and save.</li>
+          <li>You're ready to add questions — see below.</li>
+        </ol>
+      </div>
+      <div class="callout"><b>Tip:</b> On the Free plan you can keep 3 presentations. Upgrade to Pro for unlimited polls, surveys, quizzes, and study sets.</div>
+    </section>
+
+    <section id="questions">
+      <h2>➕ Add a question</h2>
+      <div class="grid">
+        <figure>
+          <video controls preload="metadata" src="help-assets/how-to/clips/C2_add_question.mp4"></video>
+          <figcaption>▶ Typing a question and four answer options.</figcaption>
+        </figure>
+        <ol class="steps">
+          <li>Click <b>+ Add Question</b>.</li>
+          <li>Type your question in the <b>question box</b>.</li>
+          <li>Fill in the <b>answer options</b> (A, B, C, D…).</li>
+          <li>Choose a question <b>type</b> — single choice, multi-select, rating, word cloud, or free text.</li>
+          <li>Mark the <b>correct answer</b> (for quizzes) by tapping the ✓ next to an option.</li>
+        </ol>
+      </div>
+      <div class="callout"><b>In a hurry?</b> Click <b>✨ Ask Polly</b> and give it a topic or paste your notes — Polly drafts a full set of questions for you to edit.</div>
+    </section>
+
+    <section id="images">
+      <h2>🖼️ Add an image with AI</h2>
+      <div class="grid">
+        <ol class="steps">
+          <li>Open a question and find the <b>image</b> row.</li>
+          <li>Click <b>✨ Generate with AI</b> — PollSlide creates an image from your question text.</li>
+          <li>Pick a <b>style</b> (Illustration, Realistic, 3D, Cartoon, Minimal, Watercolor).</li>
+          <li>Prefer your own? Click <b>⬆ Upload</b> or paste an image / GIF / video URL.</li>
+          <li>Use the <b>S / M / L / ⛶</b> buttons to size the media on the slide.</li>
+        </ol>
+        <figure>
+          <video controls preload="metadata" src="help-assets/how-to/clips/C3_add_image.mp4"></video>
+          <figcaption>▶ One click turns "Which planet is the Red Planet?" into a custom illustration.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="present">
+      <h2>⛶ Present</h2>
+      <p class="lead">Present mode shows your question full-screen with a QR code your audience scans to answer.</p>
+      <div class="grid">
+        <figure>
+          <video controls preload="metadata" src="help-assets/how-to/clips/C4_present.mp4"></video>
+          <figcaption>▶ Full-screen present mode with the live QR code.</figcaption>
+        </figure>
+        <ol class="steps">
+          <li>Click <b>⛶ Present</b> on any question.</li>
+          <li>Your audience points their phone camera at the <b>QR code</b> — no app needed.</li>
+          <li>Watch responses roll in live. Switch chart styles anytime.</li>
+          <li>Use <b>📋 Copy QR box for slide</b> to paste the QR straight onto your own Keynote / PowerPoint / Google Slides.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="postreveal">
+      <h2>📊 Post-reveal &amp; results</h2>
+      <p class="lead">When you reveal the answer, PollSlide celebrates with leaderboards, podiums, insight chips, and confetti.</p>
+      <div class="shotgrid">
+        <figure><img class="shot" src="help-assets/screenshots/3_leaderboard_fastest.png" alt="Leaderboard"><figcaption>Leaderboard with ⚡ Fastest badge</figcaption></figure>
+        <figure><img class="shot" src="help-assets/screenshots/6_podium_top3.png" alt="Podium"><figcaption>Top-3 podium</figcaption></figure>
+        <figure><img class="shot" src="help-assets/screenshots/2_postreveal_insight.png" alt="Insight"><figcaption>Smart insight + confetti</figcaption></figure>
+      </div>
+      <div class="grid" style="margin-top:26px">
+        <figure>
+          <video controls preload="metadata" src="help-assets/how-to/clips/5_post_reveal.mp4"></video>
+          <figcaption>▶ Setting the correct answer and post-reveal style on a question.</figcaption>
+        </figure>
+        <ol class="steps">
+          <li>In the editor, choose a <b>post-reveal</b> style: <b>Leaderboard</b>, <b>Podium</b>, <b>Scorecard</b>, or an <b>Explainer / Did-you-know card</b>.</li>
+          <li>Set how long after the first answer to <b>auto-reveal</b> (or reveal manually).</li>
+          <li>Add optional <b>explainer text</b> shown after the reveal.</li>
+          <li>Turn on <b>auto-advance</b> to flow to the next question hands-free.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="reveal">
+      <h2>🎉 Reveal live</h2>
+      <div class="grid">
+        <figure>
+          <video controls preload="metadata" src="help-assets/how-to/clips/C5_reveal.mp4"></video>
+          <figcaption>▶ Revealing the correct answer in present mode.</figcaption>
+        </figure>
+        <ol class="steps">
+          <li>Click <b>Reveal now</b> (or let the timer auto-reveal).</li>
+          <li>The correct answer highlights in <b>green</b>; results lock.</li>
+          <li>The leaderboard / podium appears with names and response times.</li>
+          <li>Advance to the next question and keep the momentum going.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="companion">
+      <h2>🖥️ The Mac Companion</h2>
+      <p class="lead">PollSlide Companion is a free macOS app that floats your live results over <em>any</em> presentation — it even auto-detects the on-screen QR code and shows the matching poll.</p>
+      <div class="grid">
+        <figure><video controls preload="metadata" src="help-assets/previews/preview_1_live_to_leaderboard.mp4"></video><figcaption>▶ Live results → reveal → leaderboard, in the floating companion.</figcaption></figure>
+        <figure><video controls preload="metadata" src="help-assets/previews/preview_2_bars_to_podium.mp4"></video><figcaption>▶ Bars → reveal → podium.</figcaption></figure>
+      </div>
+      <div class="shotgrid" style="margin-top:24px">
+        <figure><img class="shot" src="help-assets/screenshots/4_live_bars.png" alt="Bars"><figcaption>Live bar chart</figcaption></figure>
+        <figure><img class="shot" src="help-assets/screenshots/1_live_numbers.png" alt="Numbers"><figcaption>Numbers view</figcaption></figure>
+        <figure><img class="shot" src="help-assets/screenshots/5_reveal_correct.png" alt="Reveal"><figcaption>Reveal with correct answer</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="connect">
+      <h2>🔗 Connect the Mac Companion</h2>
+      <div class="grid">
+        <ol class="steps">
+          <li>Open <b>PollSlide Companion</b> — its icon appears in your menu bar (top-right).</li>
+          <li>On the web, click your <b>account menu → Connect Mac App</b> to get a 6-character code.</li>
+          <li>In the companion, choose <b>Disconnect Account (Re-pair)</b> if needed, then type the <b>6-character code</b>.</li>
+          <li>Start presenting — the companion <b>auto-shows</b> the right poll when it sees your slide's QR code.</li>
+          <li>Toggle the window anytime with the global hotkey <span class="kbd">Control-Option-Y</span>.</li>
+        </ol>
+        <div class="card">
+          <h3>👀 First-launch permission</h3>
+          <p>macOS will ask for <b>Screen Recording</b> the first time. This is used <i>only</i> to detect the PollSlide QR code on your slide so the matching poll appears — nothing is recorded or transmitted. You can also run the companion without it using the hotkey above.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2>🧩 Poll · Survey · Quiz · Study</h2>
+      <p class="lead">One engine, four modes. Switch with the tabs at the top of your dashboard.</p>
+      <div class="cards">
+        <div class="card"><h3>🗳️ Poll</h3><p>Quick opinion checks. Instant bars, columns, donuts, pies, or word clouds — no right answer needed.</p></div>
+        <div class="card"><h3>📋 Survey</h3><p>Multi-question forms your audience completes at their own pace. Great for feedback and data collection.</p></div>
+        <div class="card"><h3>🏆 Quiz</h3><p>Right/wrong answers, timers, scoring, leaderboards and podiums. Perfect for classrooms and trivia.</p></div>
+        <div class="card"><h3>📚 Study</h3><p>Flashcard sets with spaced repetition — front/back cards learners review on their own.</p></div>
+      </div>
+    </section>
+
+    <section id="faq" style="border-bottom:none">
+      <h2>❓ FAQ</h2>
+      <details><summary>Does my audience need to install anything?</summary><p>No. They just scan the QR code with their phone camera and answer in the browser.</p></details>
+      <details><summary>Can I use PollSlide with Keynote / PowerPoint / Google Slides?</summary><p>Yes. Use <b>Copy QR box for slide</b> to paste the QR onto any slide, or run the Mac Companion to float results over your existing deck. There's also a PowerPoint add-in.</p></details>
+      <details><summary>How do I show results on the projector?</summary><p>Use Present mode in the browser, or run the Mac Companion app for a floating results window that stays on top of your slides.</p></details>
+      <details><summary>What's the difference between Reveal and Post-reveal?</summary><p><b>Reveal</b> locks responses and highlights the correct answer. <b>Post-reveal</b> is what shows next — a leaderboard, podium, scorecard, or explainer card.</p></details>
+      <details><summary>Why does the companion ask for Screen Recording?</summary><p>Only to read the QR code on your current slide so it shows the right poll automatically. Nothing is captured or sent.</p></details>
+    </section>
+  </main>
+</div>
+<footer>
+  PollSlide Help Center · For the most up-to-date help, visit <a href="https://pollslide.com">pollslide.com</a>.
+</footer>
+<script src="/translations.js?v=5"></script>
+<script src="/help-translations.js?v=1"></script>
+<script src="/i18n.js?v=5"></script>
+<script src="/consent.js?v=4"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@
 
   const I18N = {
     en: {
-      'nav.products': 'Products', 'nav.how': 'How it works', 'nav.integrations': 'Integrations',
+      'nav.products': 'Products', 'nav.how': 'How it works', 'nav.integrations': 'Integrations', 'nav.help': 'Help',
       'nav.pricing': 'Pricing', 'nav.faq': 'FAQ', 'nav.login': 'Log in', 'nav.try': 'Try Free',
       'hero.badge': 'One engine · four products · powered by Polly AI',
       'hero.h1': 'Make Every Slide<br><span class="grad">Come Alive</span>',
@@ -26,7 +26,7 @@
       'int.h1': 'PollSlide in <span class="accent">your slides</span>', 'int.lead': 'Keynote works today via the Mac companion. The PowerPoint and Google Slides add-ins are built and <strong>in review with each platform</strong> — here\'s the status, how to set each one up, and a walkthrough video.', 'int.mac': 'Mac Companion (Keynote)', 'int.macSub': "A floating window that shows live results over your Keynote slides and auto-detects your poll's QR.", 'int.macStatus': 'Awaiting Apple App Store review', 'int.ppt': 'PowerPoint Add-in', 'int.pptSub': 'Works in PowerPoint on Windows, Mac and the web — insert live polls and results right onto your slides.', 'int.pptStatus': 'Awaiting Microsoft AppSource approval', 'int.gs': 'Google Slides Add-in', 'int.gsSub': 'Bring live polls into Google Slides from the Extensions menu — no app to install for your audience.', 'int.gsStatus': 'Awaiting Google Workspace Marketplace approval', 'int.howto': 'How to set it up', 'int.video': 'Walkthrough video — coming soon', 'int.ctah': "Don't want to wait?",
     },
     es: {
-      'nav.products': 'Productos', 'nav.how': 'Cómo funciona', 'nav.integrations': 'Integraciones',
+      'nav.products': 'Productos', 'nav.how': 'Cómo funciona', 'nav.integrations': 'Integraciones', 'nav.help': 'Ayuda',
       'nav.pricing': 'Precios', 'nav.faq': 'Preguntas', 'nav.login': 'Iniciar sesión', 'nav.try': 'Probar gratis',
       'hero.badge': 'Un motor · cuatro productos · con Polly AI',
       'hero.h1': 'Haz que cada diapositiva<br><span class="grad">cobre vida</span>',
@@ -40,7 +40,7 @@
       'int.h1': 'PollSlide en <span class="accent">tus diapositivas</span>', 'int.lead': 'Keynote ya funciona con la app companion para Mac. Los complementos de PowerPoint y Google Slides están listos y <strong>en revisión por cada plataforma</strong> — aquí tienes el estado, cómo configurar cada uno y un video guía.', 'int.mac': 'Companion para Mac (Keynote)', 'int.macSub': 'Una ventana flotante que muestra resultados en vivo sobre tus diapositivas de Keynote y detecta el QR de tu encuesta automáticamente.', 'int.macStatus': 'En revisión por la App Store de Apple', 'int.ppt': 'Complemento para PowerPoint', 'int.pptSub': 'Funciona en PowerPoint en Windows, Mac y la web — inserta encuestas y resultados en vivo en tus diapositivas.', 'int.pptStatus': 'En revisión por Microsoft AppSource', 'int.gs': 'Complemento para Google Slides', 'int.gsSub': 'Lleva encuestas en vivo a Google Slides desde el menú Extensiones — tu público no instala nada.', 'int.gsStatus': 'En revisión por Google Workspace Marketplace', 'int.howto': 'Cómo configurarlo', 'int.video': 'Video guía — próximamente', 'int.ctah': '¿No quieres esperar?',
     },
     de: {
-      'nav.products': 'Produkte', 'nav.how': 'So funktioniert’s', 'nav.integrations': 'Integrationen',
+      'nav.products': 'Produkte', 'nav.how': 'So funktioniert’s', 'nav.integrations': 'Integrationen', 'nav.help': 'Hilfe',
       'nav.pricing': 'Preise', 'nav.faq': 'FAQ', 'nav.login': 'Anmelden', 'nav.try': 'Kostenlos testen',
       'hero.badge': 'Eine Engine · vier Produkte · mit Polly AI',
       'hero.h1': 'Erwecke jede Folie<br><span class="grad">zum Leben</span>',
@@ -54,7 +54,7 @@
       'int.h1': 'PollSlide in <span class="accent">deinen Folien</span>', 'int.lead': 'Keynote funktioniert heute über die Mac-Companion-App. Die Add-ins für PowerPoint und Google Slides sind fertig und <strong>bei jeder Plattform in Prüfung</strong> — hier sind der Status, die Einrichtung und ein Walkthrough-Video.', 'int.mac': 'Mac Companion (Keynote)', 'int.macSub': 'Ein schwebendes Fenster, das Live-Ergebnisse über deinen Keynote-Folien zeigt und den QR-Code deiner Umfrage automatisch erkennt.', 'int.macStatus': 'In Prüfung durch den Apple App Store', 'int.ppt': 'PowerPoint-Add-in', 'int.pptSub': 'Funktioniert in PowerPoint unter Windows, Mac und im Web — füge Live-Umfragen und Ergebnisse direkt in deine Folien ein.', 'int.pptStatus': 'In Prüfung durch Microsoft AppSource', 'int.gs': 'Google-Slides-Add-in', 'int.gsSub': 'Bring Live-Umfragen über das Menü „Erweiterungen“ in Google Slides — dein Publikum installiert nichts.', 'int.gsStatus': 'In Prüfung durch den Google Workspace Marketplace', 'int.howto': 'So richtest du es ein', 'int.video': 'Walkthrough-Video — folgt in Kürze', 'int.ctah': 'Nicht warten wollen?',
     },
     fr: {
-      'nav.products': 'Produits', 'nav.how': 'Comment ça marche', 'nav.integrations': 'Intégrations',
+      'nav.products': 'Produits', 'nav.how': 'Comment ça marche', 'nav.integrations': 'Intégrations', 'nav.help': 'Aide',
       'nav.pricing': 'Tarifs', 'nav.faq': 'FAQ', 'nav.login': 'Connexion', 'nav.try': 'Essai gratuit',
       'hero.badge': 'Un moteur · quatre produits · propulsé par Polly AI',
       'hero.h1': 'Donnez vie à<br><span class="grad">chaque diapo</span>',
@@ -68,7 +68,7 @@
       'int.h1': 'PollSlide dans <span class="accent">vos diapos</span>', 'int.lead': 'Keynote fonctionne déjà via l\'app companion pour Mac. Les add-ins PowerPoint et Google Slides sont prêts et <strong>en cours d\'examen par chaque plateforme</strong> — voici le statut, comment configurer chacun et une vidéo de démonstration.', 'int.mac': 'Companion Mac (Keynote)', 'int.macSub': 'Une fenêtre flottante qui affiche les résultats en direct au-dessus de vos diapos Keynote et détecte automatiquement le QR de votre sondage.', 'int.macStatus': 'En cours d\'examen par l\'App Store d\'Apple', 'int.ppt': 'Add-in PowerPoint', 'int.pptSub': 'Fonctionne dans PowerPoint sur Windows, Mac et le web — insérez des sondages et des résultats en direct dans vos diapos.', 'int.pptStatus': 'En cours d\'examen par Microsoft AppSource', 'int.gs': 'Add-in Google Slides', 'int.gsSub': 'Ajoutez des sondages en direct dans Google Slides depuis le menu Extensions — votre public n\'installe rien.', 'int.gsStatus': 'En cours d\'examen par Google Workspace Marketplace', 'int.howto': 'Comment le configurer', 'int.video': 'Vidéo de démonstration — bientôt disponible', 'int.ctah': 'Vous ne voulez pas attendre ?',
     },
     pt: {
-      'nav.products': 'Produtos', 'nav.how': 'Como funciona', 'nav.integrations': 'Integrações',
+      'nav.products': 'Produtos', 'nav.how': 'Como funciona', 'nav.integrations': 'Integrações', 'nav.help': 'Ajuda',
       'nav.pricing': 'Preços', 'nav.faq': 'Perguntas', 'nav.login': 'Entrar', 'nav.try': 'Testar grátis',
       'hero.badge': 'Um motor · quatro produtos · com Polly AI',
       'hero.h1': 'Faça cada slide<br><span class="grad">ganhar vida</span>',
@@ -82,7 +82,7 @@
       'int.h1': 'PollSlide nos <span class="accent">seus slides</span>', 'int.lead': 'O Keynote já funciona pelo app companion para Mac. Os complementos do PowerPoint e do Google Slides estão prontos e <strong>em análise por cada plataforma</strong> — veja o status, como configurar cada um e um vídeo guia.', 'int.mac': 'Companion para Mac (Keynote)', 'int.macSub': 'Uma janela flutuante que mostra resultados ao vivo sobre seus slides do Keynote e detecta o QR da sua enquete automaticamente.', 'int.macStatus': 'Em análise pela App Store da Apple', 'int.ppt': 'Complemento para PowerPoint', 'int.pptSub': 'Funciona no PowerPoint no Windows, Mac e na web — insira enquetes e resultados ao vivo nos seus slides.', 'int.pptStatus': 'Em análise pela Microsoft AppSource', 'int.gs': 'Complemento para Google Slides', 'int.gsSub': 'Leve enquetes ao vivo para o Google Slides pelo menu Extensões — seu público não instala nada.', 'int.gsStatus': 'Em análise pelo Google Workspace Marketplace', 'int.howto': 'Como configurar', 'int.video': 'Vídeo guia — em breve', 'int.ctah': 'Não quer esperar?',
     },
     it: {
-      'nav.products': 'Prodotti', 'nav.how': 'Come funziona', 'nav.integrations': 'Integrazioni',
+      'nav.products': 'Prodotti', 'nav.how': 'Come funziona', 'nav.integrations': 'Integrazioni', 'nav.help': 'Aiuto',
       'nav.pricing': 'Prezzi', 'nav.faq': 'FAQ', 'nav.login': 'Accedi', 'nav.try': 'Prova gratis',
       'hero.badge': 'Un motore · quattro prodotti · con Polly AI',
       'hero.h1': 'Dai vita a<br><span class="grad">ogni slide</span>',
