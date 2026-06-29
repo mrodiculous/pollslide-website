@@ -14,7 +14,7 @@
     en: {
       'nav.products': 'Products', 'nav.how': 'How it works', 'nav.integrations': 'Integrations', 'nav.help': 'Help',
       'nav.pricing': 'Pricing', 'nav.faq': 'FAQ', 'nav.login': 'Log in', 'nav.try': 'Try Free',
-      'hero.badge': 'One engine · four products · powered by Polly AI',
+      'hero.badge': 'One engine · five products · powered by Polly AI',
       'hero.h1': 'Make Every Slide<br><span class="grad">Come Alive</span>',
       'hero.sub': 'Live <b>polls</b>, async <b>surveys</b>, graded <b>quizzes</b> and <b>study sets</b> — running right over your Keynote, PowerPoint or Google Slides. <b>Polly AI</b> drafts them in seconds; your audience just scans a QR and watches results appear live.',
       'hero.cta1': 'Start for Free →', 'hero.cta2': 'See how it works',
@@ -28,7 +28,7 @@
     es: {
       'nav.products': 'Productos', 'nav.how': 'Cómo funciona', 'nav.integrations': 'Integraciones', 'nav.help': 'Ayuda',
       'nav.pricing': 'Precios', 'nav.faq': 'Preguntas', 'nav.login': 'Iniciar sesión', 'nav.try': 'Probar gratis',
-      'hero.badge': 'Un motor · cuatro productos · con Polly AI',
+      'hero.badge': 'Un motor · cinco productos · con Polly AI',
       'hero.h1': 'Haz que cada diapositiva<br><span class="grad">cobre vida</span>',
       'hero.sub': '<b>Encuestas</b> en vivo, <b>sondeos</b> asíncronos, <b>cuestionarios</b> calificados y <b>sets de estudio</b> — sobre tu Keynote, PowerPoint o Google Slides. <b>Polly AI</b> los crea en segundos; tu público solo escanea un QR y ve los resultados en vivo.',
       'hero.cta1': 'Empieza gratis →', 'hero.cta2': 'Ver cómo funciona',
@@ -42,7 +42,7 @@
     de: {
       'nav.products': 'Produkte', 'nav.how': 'So funktioniert’s', 'nav.integrations': 'Integrationen', 'nav.help': 'Hilfe',
       'nav.pricing': 'Preise', 'nav.faq': 'FAQ', 'nav.login': 'Anmelden', 'nav.try': 'Kostenlos testen',
-      'hero.badge': 'Eine Engine · vier Produkte · mit Polly AI',
+      'hero.badge': 'Eine Engine · fünf Produkte · mit Polly AI',
       'hero.h1': 'Erwecke jede Folie<br><span class="grad">zum Leben</span>',
       'hero.sub': 'Live-<b>Umfragen</b>, asynchrone <b>Befragungen</b>, benotete <b>Quizze</b> und <b>Lernsets</b> — direkt über deinem Keynote, PowerPoint oder Google Slides. <b>Polly AI</b> erstellt sie in Sekunden; dein Publikum scannt einfach einen QR-Code und sieht die Ergebnisse live.',
       'hero.cta1': 'Kostenlos starten →', 'hero.cta2': 'So funktioniert’s',
@@ -56,7 +56,7 @@
     fr: {
       'nav.products': 'Produits', 'nav.how': 'Comment ça marche', 'nav.integrations': 'Intégrations', 'nav.help': 'Aide',
       'nav.pricing': 'Tarifs', 'nav.faq': 'FAQ', 'nav.login': 'Connexion', 'nav.try': 'Essai gratuit',
-      'hero.badge': 'Un moteur · quatre produits · propulsé par Polly AI',
+      'hero.badge': 'Un moteur · cinq produits · propulsé par Polly AI',
       'hero.h1': 'Donnez vie à<br><span class="grad">chaque diapo</span>',
       'hero.sub': '<b>Sondages</b> en direct, <b>enquêtes</b> asynchrones, <b>quiz</b> notés et <b>jeux de révision</b> — directement sur votre Keynote, PowerPoint ou Google Slides. <b>Polly AI</b> les rédige en quelques secondes ; votre public scanne un QR et voit les résultats en direct.',
       'hero.cta1': 'Commencer gratuitement →', 'hero.cta2': 'Voir comment ça marche',
@@ -70,7 +70,7 @@
     pt: {
       'nav.products': 'Produtos', 'nav.how': 'Como funciona', 'nav.integrations': 'Integrações', 'nav.help': 'Ajuda',
       'nav.pricing': 'Preços', 'nav.faq': 'Perguntas', 'nav.login': 'Entrar', 'nav.try': 'Testar grátis',
-      'hero.badge': 'Um motor · quatro produtos · com Polly AI',
+      'hero.badge': 'Um motor · cinco produtos · com Polly AI',
       'hero.h1': 'Faça cada slide<br><span class="grad">ganhar vida</span>',
       'hero.sub': '<b>Enquetes</b> ao vivo, <b>pesquisas</b> assíncronas, <b>quizzes</b> avaliados e <b>conjuntos de estudo</b> — direto sobre seu Keynote, PowerPoint ou Google Slides. A <b>Polly AI</b> cria tudo em segundos; seu público só escaneia um QR e vê os resultados ao vivo.',
       'hero.cta1': 'Começar grátis →', 'hero.cta2': 'Ver como funciona',
@@ -84,7 +84,7 @@
     it: {
       'nav.products': 'Prodotti', 'nav.how': 'Come funziona', 'nav.integrations': 'Integrazioni', 'nav.help': 'Aiuto',
       'nav.pricing': 'Prezzi', 'nav.faq': 'FAQ', 'nav.login': 'Accedi', 'nav.try': 'Prova gratis',
-      'hero.badge': 'Un motore · quattro prodotti · con Polly AI',
+      'hero.badge': 'Un motore · cinque prodotti · con Polly AI',
       'hero.h1': 'Dai vita a<br><span class="grad">ogni slide</span>',
       'hero.sub': '<b>Sondaggi</b> live, <b>survey</b> asincroni, <b>quiz</b> con voto e <b>set di studio</b> — direttamente sopra Keynote, PowerPoint o Google Slides. <b>Polly AI</b> li crea in secondi; il tuo pubblico scansiona un QR e vede i risultati in diretta.',
       'hero.cta1': 'Inizia gratis →', 'hero.cta2': 'Scopri come funziona',
