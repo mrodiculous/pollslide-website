@@ -184,8 +184,8 @@
     document.getElementById('overallTitle').textContent =
       data.overall==='up' ? 'All systems operational' :
       data.overall==='degraded' ? 'Some systems are degraded' : 'Service disruption';
-    document.getElementById('overallMeta').textContent =
-      'Last checked ' + new Date(data.checkedAt).toLocaleTimeString() + ' · checks again every ' + REFRESH_S + 's';
+    document.getElementById('overallMeta').innerHTML =
+      'Last checked <span>' + new Date(data.checkedAt).toLocaleTimeString() + ' ·</span> checks again every 60s';
 
     const groups = { products: [], platform: [] };
     (data.components||[]).forEach(c => (groups[c.group]||groups.platform).push(c));
@@ -205,7 +205,7 @@
     const b = document.getElementById('overall');
     b.className = 'banner down';
     document.getElementById('overallTitle').textContent = 'Status check unavailable';
-    document.getElementById('overallMeta').textContent = 'We could not reach the PollSlide API from your browser. That can mean an outage on our side — or a network issue on yours. Retrying every '+REFRESH_S+'s.';
+    document.getElementById('overallMeta').textContent = 'We could not reach the PollSlide API from your browser. That can mean an outage on our side — or a network issue on yours. Retrying every 60s.';
   }
 
   // Baked sample so the page can be previewed without the API (?demo=1).
@@ -248,7 +248,7 @@
   check();
 </script>
 <script src="/consent.js?v=4"></script>
-<script src="/translations.js?v=5"></script>
+<script src="/translations.js?v=6"></script>
 <script src="/i18n.js?v=5"></script>
 </body>
 </html>
