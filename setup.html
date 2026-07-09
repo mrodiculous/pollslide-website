@@ -132,6 +132,8 @@
   .callout.tip { border-left:3px solid var(--accent3); }
   .callout.note { border-left:3px solid var(--accent4); }
   .callout.key { border-left:3px solid var(--accent); }
+  .callout.important { border-left:4px solid var(--accent4); background:rgba(247,183,49,0.10); }
+  .callout.important .ico { font-size:20px; }
 
   /* QR demo box */
   .qr-demo { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
@@ -277,7 +279,8 @@
       <h2 data-i18n="set.h2_4">Install the Mac companion app</h2>
       <p class="lead">A small floating window that shows live results over your slides — and appears automatically when your QR is on screen.</p>
       <ol>
-        <li><a href="/download" style="color:var(--accent);font-weight:600;">Download the PollSlide Companion</a> and open it.</li>
+        <li><a href="/download" style="color:var(--accent);font-weight:600;">Download PollSlide Companion</a>, open the downloaded file, and drag the app into your <strong>Applications</strong> folder.</li>
+        <li>Double-click to open it. The first time, macOS confirms you're opening an app downloaded from the internet — click <strong>Open</strong>. It's signed and <strong>notarized by Apple</strong>, so there are no security warnings to work around.</li>
         <li>On first launch it'll explain that it watches your screen <strong>only for your QR code</strong> — nothing is recorded or sent. Allow Screen Recording when macOS asks, then reopen the app.</li>
         <li>Pair it with your account: click the menu-bar icon → <strong>Connect Mac App</strong>, get a 6-character code from the presenter's 👤 menu, and enter it.</li>
       </ol>
@@ -291,7 +294,9 @@
     <div class="step-body">
       <h2 data-i18n="set.h2_5">Go live — it's automatic</h2>
       <p class="lead">With the companion paired, presenting is hands-off.</p>
+      <div class="callout important"><span class="ico">🖥️</span><div><strong>Using more than one screen? Do a 30-second dry run first — this is the single most important step for a trouble-free presentation.</strong> With multiple displays connected, the results window can open on the wrong screen. Before your audience is watching, bring up a QR slide so the window appears, and if it lands on the wrong display, simply <strong>drag it by its top bar onto the screen where your slides are showing</strong>. It stays there for the rest of your talk. Repeat this quick check any time your setup changes — a new room, projector, or TV.</div></div>
       <ul>
+        <li><strong>Do the quick dry run above</strong> if you're using multiple screens, then relax — everything below is automatic.</li>
         <li>Start presenting. When a QR slide appears, the results window <strong>pops up automatically</strong>, showing exactly that question.</li>
         <li>Move to the next slide and it <strong>disappears</strong> on its own, keeping Keynote clean.</li>
         <li>Drag the window's top bar to reposition it; grab a corner to resize. It remembers nothing you don't want it to.</li>
