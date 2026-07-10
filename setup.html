@@ -241,7 +241,7 @@
       <p class="lead">This is how your audience joins — and how the companion app knows which poll to show.</p>
       <ol>
         <li>In the live view of any question, click <strong>📋 Copy QR box for slide</strong>.</li>
-        <li>Switch to Keynote and <strong>paste</strong> (⌘V) onto the slide where you want the poll.</li>
+        <li>Switch to your presentation app — Keynote, PowerPoint or Google Slides — and <strong>paste</strong> (⌘V) onto the slide where you want the poll.</li>
         <li>Position it wherever looks good — a corner works well. Each question has its own unique QR.</li>
       </ol>
       <div class="mock">
@@ -261,14 +261,14 @@
   <section class="step" id="s3">
     <div class="step-num">3</div>
     <div class="step-body">
-      <h2 data-i18n="set.h2_3">Present from Keynote — normally</h2>
+      <h2 data-i18n="set.h2_3">Present your slides — normally</h2>
       <p class="lead">No special mode. You present exactly as you always do.</p>
       <ul>
-        <li>Run your Keynote slideshow full-screen, clicker and all.</li>
+        <li>Run your slideshow full-screen — Keynote, PowerPoint, Google Slides, a PDF, whatever you use — clicker and all.</li>
         <li>When you reach a slide with a PollSlide QR, your audience scans it and starts answering.</li>
         <li>Results update live — but where do <em>you</em> see them while presenting? That's the companion app, next.</li>
       </ul>
-      <div class="callout key"><span class="ico">✨</span><div><strong>The PollSlide difference:</strong> your beautiful Keynote animations and videos stay exactly as you built them. PollSlide floats <em>over</em> Keynote — it doesn't replace it.</div></div>
+      <div class="callout key"><span class="ico">✨</span><div><strong>The PollSlide difference:</strong> your beautiful slide animations and videos stay exactly as you built them. PollSlide floats <em>over</em> your presentation — it doesn't replace it.</div></div>
     </div>
   </section>
 
@@ -298,7 +298,7 @@
       <ul>
         <li><strong>Do the quick dry run above</strong> if you're using multiple screens, then relax — everything below is automatic.</li>
         <li>Start presenting. When a QR slide appears, the results window <strong>pops up automatically</strong>, showing exactly that question.</li>
-        <li>Move to the next slide and it <strong>disappears</strong> on its own, keeping Keynote clean.</li>
+        <li>Move to the next slide and it <strong>disappears</strong> on its own, keeping your slides clean.</li>
         <li>Drag the window's top bar to reposition it; grab a corner to resize. It remembers nothing you don't want it to.</li>
         <li>When the answer reveals, you'll get a confetti celebration on the results. 🎉</li>
       </ul>
@@ -394,8 +394,8 @@
   // FAQ
   const faqs = [
     { q: 'Does my audience need to install anything?', a: 'No. They just scan the QR code with their phone camera and answer in their browser. The companion app is only for you, the presenter.' },
-    { q: 'Do I have to use the Mac companion app?', a: 'Not necessarily — your audience can always scan and answer. The companion app is what lets YOU see live results floating over Keynote, and makes the poll appear and disappear automatically as you move between slides.' },
-    { q: 'Will PollSlide mess up my Keynote animations or videos?', a: 'No. PollSlide floats a separate window over Keynote — it never touches your slides. All your transitions, builds, and looping videos work exactly as designed.' },
+    { q: 'Do I have to use the Mac companion app?', a: 'Not necessarily — your audience can always scan and answer. The companion app is what lets YOU see live results floating over your presentation, and makes the poll appear and disappear automatically as you move between slides.' },
+    { q: 'Will PollSlide mess up my slide animations or videos?', a: 'No. PollSlide floats a separate window over your presentation — it never touches your slides. All your transitions, builds, and looping videos work exactly as designed. It works the same over Keynote, PowerPoint, Google Slides or a PDF.' },
     { q: 'What does the Screen Recording permission actually do?', a: 'The companion watches your screen only to detect the PollSlide QR code, so it knows when to show the matching poll. Nothing is ever recorded, saved, or sent anywhere. macOS requires this permission for any app that reads the screen — there is no way around it, by design.' },
     { q: 'Can I control when the answer is revealed?', a: 'Yes. Per question, choose a countdown (which starts after the first person answers) or Manual only, where the answer stays hidden until you click Reveal now.' },
     { q: 'Does PowerPoint work too?', a: 'Yes — the PowerPoint add-in is built and currently in review with Microsoft. See the <a href="/integrations" style="color:var(--accent);">Integrations</a> page for status and setup. In the meantime you can drop a poll\'s QR code on any slide in any tool today.' },
@@ -421,6 +421,7 @@
 </script>
 <script src="/consent.js?v=4"></script>
 <script src="/translations.js?v=6"></script>
-<script src="/i18n.js?v=5"></script>
+<script src="/companion-i18n.js?v=1"></script>
+<script src="/i18n.js?v=6"></script>
 </body>
 </html>
