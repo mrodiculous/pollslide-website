@@ -75,6 +75,10 @@
   .ss-illo{filter:drop-shadow(0 10px 26px rgba(0,0,0,.4))}
   .ss-illo svg{width:100%;height:auto;display:block;border-radius:12px}
   .setup-tip{margin-top:20px}
+  /* ── Flow explainer illustrations (Polly / Share / Results) ── */
+  .flow-illo{margin:2px 0 24px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.42))}
+  .flow-illo svg{width:100%;height:auto;display:block;border-radius:14px}
+  .flow-illo figcaption{margin-top:10px;text-align:center}
 </style>
 </head>
 <body>
@@ -183,6 +187,47 @@
     <section id="polly">
       <h2>✨ Draft it with Polly AI</h2>
       <p class="lead">Polly is PollSlide's built-in AI. Give it a topic — or paste your notes, an outline, or a paragraph — and it writes a whole set of questions in seconds. It works for every product: polls, surveys, quizzes and study sets.</p>
+      <figure class="flow-illo">
+        <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Type a topic into Polly and it drafts a full set of questions">
+          <rect x="4" y="4" width="672" height="292" rx="16" fill="#16161f" stroke="#2a2a3a"/>
+          <rect x="4" y="4" width="672" height="34" rx="16" fill="#1e1e2b"/><rect x="4" y="22" width="672" height="16" fill="#1e1e2b"/>
+          <circle cx="26" cy="21" r="5" fill="#ff6584"/><circle cx="44" cy="21" r="5" fill="#f7b731"/><circle cx="62" cy="21" r="5" fill="#26d07c"/>
+          <text x="340" y="25" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#9a9ab0">app.pollslide.com</text>
+          <!-- Polly prompt card (left) -->
+          <rect x="28" y="60" width="288" height="204" rx="13" fill="#1e1e2b" stroke="#6c63ff" stroke-width="1.4"/>
+          <text x="46" y="88" font-family="system-ui,sans-serif" font-size="14" font-weight="800" fill="#f4f4f8">✨ Ask Polly</text>
+          <rect x="46" y="102" width="252" height="70" rx="9" fill="#0d0d18" stroke="#2a2a3a"/>
+          <text x="58" y="126" font-family="system-ui,sans-serif" font-size="12.5" fill="#c9c9d6">5 trivia questions about</text>
+          <text x="58" y="145" font-family="system-ui,sans-serif" font-size="12.5" fill="#c9c9d6">the solar system</text>
+          <text x="58" y="164" font-family="system-ui,sans-serif" font-size="12.5" fill="#6c63ff">|</text>
+          <!-- count + style chips -->
+          <rect x="46" y="184" width="60" height="26" rx="8" fill="#12121b" stroke="#2a2a3a"/><text x="76" y="201" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#f4f4f8">5 Q</text>
+          <rect x="114" y="184" width="86" height="26" rx="8" fill="#12121b" stroke="#2a2a3a"/><text x="157" y="201" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#f4f4f8">🎨 Realistic</text>
+          <rect x="46" y="222" width="252" height="30" rx="9" fill="#6c63ff"/><text x="172" y="242" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">✨ Draft with Polly</text>
+          <!-- arrow -->
+          <path d="M326 158 h30" fill="none" stroke="#26d07c" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <path d="M356 158 l-10 -5 l0 10 z" fill="#26d07c"/>
+          <text x="341" y="146" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#26d07c">seconds</text>
+          <!-- generated questions (right) -->
+          <text x="374" y="76" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#9a9ab0">Polly drafted 5 questions</text>
+          <g font-family="system-ui,sans-serif">
+            <rect x="374" y="86" width="278" height="52" rx="9" fill="#1e1e2b" stroke="#2a2a3a"/>
+            <text x="388" y="106" font-size="12.5" font-weight="700" fill="#f4f4f8">1 · Which planet is the Red Planet?</text>
+            <rect x="388" y="114" width="80" height="16" rx="5" fill="#12121b"/><text x="396" y="126" font-size="10" fill="#26d07c">✓ Mars</text>
+            <rect x="474" y="114" width="70" height="16" rx="5" fill="#12121b"/><text x="482" y="126" font-size="10" fill="#9a9ab0">Venus</text>
+            <rect x="550" y="114" width="70" height="16" rx="5" fill="#12121b"/><text x="558" y="126" font-size="10" fill="#9a9ab0">Jupiter</text>
+            <rect x="374" y="146" width="278" height="52" rx="9" fill="#1e1e2b" stroke="#2a2a3a"/>
+            <text x="388" y="166" font-size="12.5" font-weight="700" fill="#f4f4f8">2 · Largest moon in the solar system?</text>
+            <rect x="388" y="174" width="86" height="16" rx="5" fill="#12121b"/><text x="396" y="186" font-size="10" fill="#26d07c">✓ Ganymede</text>
+            <rect x="480" y="174" width="64" height="16" rx="5" fill="#12121b"/><text x="488" y="186" font-size="10" fill="#9a9ab0">Titan</text>
+            <rect x="374" y="206" width="278" height="46" rx="9" fill="#1e1e2b" stroke="#2a2a3a"/>
+            <text x="388" y="226" font-size="12.5" font-weight="700" fill="#f4f4f8">3 · The Sun is mostly made of…</text>
+            <rect x="388" y="232" width="94" height="15" rx="5" fill="#12121b"/><text x="396" y="243" font-size="10" fill="#26d07c">✓ Hydrogen</text>
+            <text x="638" y="245" font-size="11" fill="#6c63ff">✏️</text>
+          </g>
+        </svg>
+        <figcaption>Type a topic — Polly drafts the questions, options and correct answers. Edit anything before you go live.</figcaption>
+      </figure>
       <div class="grid">
         <ol class="steps">
           <li>Click <b>✨ Ask Polly</b> on any presentation, or <b>✨ New with Polly</b> to start a brand-new one from scratch.</li>
@@ -243,6 +288,43 @@
     <section id="share">
       <h2>🔗 Share without presenting</h2>
       <p class="lead">Not every project is presented live. Surveys, quizzes and study sets can be sent out and answered at your audience's own pace — no QR on a slide required.</p>
+      <figure class="flow-illo">
+        <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Share a survey by link, QR code, email, or a 6-character join code">
+          <rect x="4" y="4" width="672" height="292" rx="16" fill="#16161f" stroke="#2a2a3a"/>
+          <rect x="4" y="4" width="672" height="34" rx="16" fill="#1e1e2b"/><rect x="4" y="22" width="672" height="16" fill="#1e1e2b"/>
+          <circle cx="26" cy="21" r="5" fill="#ff6584"/><circle cx="44" cy="21" r="5" fill="#f7b731"/><circle cx="62" cy="21" r="5" fill="#26d07c"/>
+          <!-- Share modal (left) -->
+          <rect x="28" y="60" width="330" height="204" rx="13" fill="#1e1e2b" stroke="#6c63ff" stroke-width="1.4"/>
+          <text x="46" y="88" font-family="system-ui,sans-serif" font-size="14" font-weight="800" fill="#f4f4f8">🔗 Share this survey</text>
+          <!-- join link row -->
+          <rect x="46" y="102" width="220" height="30" rx="8" fill="#0d0d18" stroke="#2a2a3a"/>
+          <text x="58" y="121" font-family="ui-monospace,Menlo,monospace" font-size="11.5" fill="#c9c9d6">pollslide.com/join</text>
+          <rect x="274" y="102" width="66" height="30" rx="8" fill="#2a2a3a"/><text x="307" y="121" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#f4f4f8">Copy</text>
+          <!-- QR -->
+          <rect x="46" y="146" width="86" height="86" rx="8" fill="#fff"/>
+          <g fill="#0d0d18"><rect x="56" y="156" width="22" height="22"/><rect x="100" y="156" width="22" height="22"/><rect x="56" y="200" width="22" height="22"/><rect x="86" y="186" width="8" height="8"/><rect x="100" y="200" width="8" height="8"/><rect x="112" y="212" width="10" height="10"/><rect x="86" y="212" width="8" height="8"/><rect x="100" y="186" width="8" height="8"/></g>
+          <!-- code + email -->
+          <text x="150" y="162" font-family="system-ui,sans-serif" font-size="11" fill="#9a9ab0">or enter code</text>
+          <rect x="150" y="170" width="120" height="34" rx="8" fill="#0d0d18" stroke="#6c63ff"/><text x="210" y="193" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="17" font-weight="800" letter-spacing="3" fill="#f4f4f8">AB12CD</text>
+          <rect x="150" y="212" width="192" height="30" rx="8" fill="#6c63ff"/><text x="246" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#fff">✉️ Email it to a list</text>
+          <!-- arrow to phone -->
+          <path d="M366 165 q26 0 40 0" fill="none" stroke="#26d07c" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <path d="M406 165 l-10 -5 l0 10 z" fill="#26d07c"/>
+          <!-- phone (right) answering -->
+          <rect x="430" y="66" width="120" height="196" rx="18" fill="#0d0d18" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="442" y="82" width="96" height="164" rx="8" fill="#16161f"/>
+          <text x="490" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#9a9ab0">Your survey</text>
+          <text x="454" y="126" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#f4f4f8">How was today?</text>
+          <rect x="454" y="134" width="72" height="20" rx="6" fill="#1e1e2b" stroke="#6c63ff"/><text x="462" y="148" font-family="system-ui,sans-serif" font-size="10" fill="#f4f4f8">😍 Loved it</text>
+          <rect x="454" y="160" width="72" height="20" rx="6" fill="#1e1e2b"/><text x="462" y="174" font-family="system-ui,sans-serif" font-size="10" fill="#9a9ab0">🙂 It was ok</text>
+          <rect x="454" y="186" width="72" height="20" rx="6" fill="#1e1e2b"/><text x="462" y="200" font-family="system-ui,sans-serif" font-size="10" fill="#9a9ab0">😐 Meh</text>
+          <rect x="454" y="216" width="72" height="22" rx="7" fill="#26d07c"/><text x="490" y="231" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#0d1a12">Submit</text>
+          <text x="600" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#9a9ab0">answers</text>
+          <text x="600" y="166" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#9a9ab0">anytime,</text>
+          <text x="600" y="182" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#9a9ab0">one tally</text>
+        </svg>
+        <figcaption>Send a link, QR or email — or just a 6-character code. Everyone lands in the same session.</figcaption>
+      </figure>
       <div class="grid">
         <ol class="steps">
           <li>Open your presentation and click <b>🔗 Share</b>.</li>
@@ -299,6 +381,42 @@
     <section id="results">
       <h2>📊 Results, reports &amp; export</h2>
       <p class="lead">Every response is saved. Review results live during your talk, or come back to them any time afterward — and take the raw data with you.</p>
+      <figure class="flow-illo">
+        <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Response Report with live bars, a per-question breakdown, and a one-click CSV export button">
+          <rect x="4" y="4" width="672" height="292" rx="16" fill="#16161f" stroke="#2a2a3a"/>
+          <rect x="4" y="4" width="672" height="34" rx="16" fill="#1e1e2b"/><rect x="4" y="22" width="672" height="16" fill="#1e1e2b"/>
+          <circle cx="26" cy="21" r="5" fill="#ff6584"/><circle cx="44" cy="21" r="5" fill="#f7b731"/><circle cx="62" cy="21" r="5" fill="#26d07c"/>
+          <!-- report header -->
+          <text x="28" y="72" font-family="system-ui,sans-serif" font-size="15" font-weight="800" fill="#f4f4f8">📊 Response Report</text>
+          <text x="28" y="90" font-family="system-ui,sans-serif" font-size="11.5" fill="#9a9ab0">Team Trivia · 42 participants · 5 questions</text>
+          <!-- CSV button (highlighted) -->
+          <rect x="556" y="58" width="96" height="32" rx="9" fill="#26d07c"/><text x="604" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#0d1a12">⬇ CSV</text>
+          <rect x="550" y="52" width="108" height="44" rx="12" fill="none" stroke="#26d07c" stroke-width="2.4" stroke-dasharray="7 6"/>
+          <text x="604" y="108" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#26d07c">export everything</text>
+          <!-- live bars (left) -->
+          <rect x="28" y="110" width="330" height="162" rx="12" fill="#1e1e2b" stroke="#2a2a3a"/>
+          <text x="46" y="134" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#f4f4f8">Q1 · Which planet is the Red Planet?</text>
+          <g font-family="system-ui,sans-serif" font-size="11">
+            <text x="46" y="158" fill="#c9c9d6">Mars</text><rect x="92" y="150" width="228" height="12" rx="6" fill="#12121b"/><rect x="92" y="150" width="205" height="12" rx="6" fill="#26d07c"/><text x="330" y="160" text-anchor="end" fill="#26d07c" font-weight="700">88%</text>
+            <text x="46" y="182" fill="#c9c9d6">Venus</text><rect x="92" y="174" width="228" height="12" rx="6" fill="#12121b"/><rect x="92" y="174" width="20" height="12" rx="6" fill="#6c63ff"/><text x="330" y="184" text-anchor="end" fill="#9a9ab0">7%</text>
+            <text x="46" y="206" fill="#c9c9d6">Jupiter</text><rect x="92" y="198" width="228" height="12" rx="6" fill="#12121b"/><rect x="92" y="198" width="12" height="12" rx="6" fill="#6c63ff"/><text x="330" y="208" text-anchor="end" fill="#9a9ab0">5%</text>
+          </g>
+          <rect x="46" y="228" width="300" height="30" rx="8" fill="#12121b"/>
+          <text x="58" y="247" font-family="system-ui,sans-serif" font-size="11" fill="#9a9ab0">Live bars · donuts · leaderboards · podiums</text>
+          <!-- per-question / per-person breakdown (right) -->
+          <rect x="374" y="122" width="278" height="150" rx="12" fill="#1e1e2b" stroke="#2a2a3a"/>
+          <text x="390" y="144" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#f4f4f8">Per-participant answers</text>
+          <g font-family="system-ui,sans-serif" font-size="11" fill="#c9c9d6">
+            <line x1="390" y1="154" x2="636" y2="154" stroke="#2a2a3a"/>
+            <text x="390" y="172">Ava</text><text x="560" y="172" fill="#26d07c">5 / 5 ⚡</text>
+            <text x="390" y="194">Ben</text><text x="560" y="194">4 / 5</text>
+            <text x="390" y="216">Chloe</text><text x="560" y="216">4 / 5</text>
+            <text x="390" y="238">Dev</text><text x="560" y="238">3 / 5</text>
+          </g>
+          <rect x="390" y="250" width="246" height="14" rx="5" fill="#12121b"/><text x="398" y="261" font-family="system-ui,sans-serif" font-size="9.5" fill="#9a9ab0">Every reset saved with its date — nothing is lost</text>
+        </svg>
+        <figcaption>The full Response Report — live results, per-question and per-person — with one-click CSV export.</figcaption>
+      </figure>
       <div class="grid">
         <ol class="steps">
           <li>During a session, watch results update live — bars, donuts, word clouds, leaderboards and podiums.</li>
