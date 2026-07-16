@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Processing Agreement (DPA) — PollSlide</title>
+<meta name="description" content="PollSlide Data Processing Agreement (DPA) under Article 28 GDPR — download or print. Covers processor obligations, security, subprocessors, breach notification and international transfers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal-shared.css">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+<style>
+  .dpa-actions{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 4px;}
+  .dpa-btn{font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:10px;border:1px solid var(--border,#33334a);background:var(--accent,#6c63ff);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+  .dpa-btn.ghost{background:transparent;color:var(--accent,#6c63ff);}
+  .dpa-table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:14px;}
+  .dpa-table th,.dpa-table td{border:1px solid var(--border,#33334a);padding:9px 11px;vertical-align:top;text-align:left;}
+  .dpa-table th{background:rgba(108,99,255,.10);font-weight:600;width:32%;}
+  .tbl-scroll{overflow-x:auto;}
+  @media print{
+    nav,footer,.dpa-actions,.theme-btn{display:none !important;}
+    body{background:#fff;color:#000;}
+    a{color:#000;text-decoration:underline;}
+    .legal-hero .eyebrow{color:#000;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;" role="img" aria-label="PollSlide logo"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
+    <div class="nav-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/subprocessors">Subprocessors</a>
+      <a href="/terms">Terms</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <div class="eyebrow">Legal · Data protection</div>
+    <h1>Data Processing Agreement</h1>
+    <div class="meta">PollSlide Technologies LLC · Version 1.0 · Effective: <span id="effDate"></span></div>
+    <div class="dpa-actions">
+      <button class="dpa-btn" onclick="window.print()">⬇︎ Download / Print (PDF)</button>
+      <a class="dpa-btn ghost" href="mailto:help@pollslide.com?subject=Counter-signed%20DPA%20request">Request a counter-signed copy</a>
+    </div>
+  </div>
+
+  <div class="legal-body">
+    <p>This Data Processing Agreement ("<strong>DPA</strong>") forms part of the Agreement between <strong>PollSlide Technologies LLC</strong> ("<strong>PollSlide</strong>", "Processor") and the customer identified in the Agreement ("<strong>Customer</strong>", "Controller") and governs PollSlide's processing of Personal Data on the Customer's behalf. It reflects the requirements of <strong>Article 28 of the EU General Data Protection Regulation (Regulation (EU) 2016/679, "GDPR")</strong> and, where applicable, the UK GDPR. To put it into effect, download it, complete the signature block, and email a signed copy to <a href="mailto:help@pollslide.com">help@pollslide.com</a>; we will counter-sign. Where this DPA conflicts with the Agreement on data protection, this DPA controls.</p>
+
+    <h2 id="definitions">1. Definitions</h2>
+    <p>"<strong>Personal Data</strong>", "<strong>Controller</strong>", "<strong>Processor</strong>", "<strong>Data Subject</strong>", "<strong>Processing</strong>", and "<strong>Supervisory Authority</strong>" have the meanings given in the GDPR. "<strong>Subprocessor</strong>" means any third party engaged by PollSlide to process Personal Data. "<strong>Standard Contractual Clauses (SCCs)</strong>" means the clauses approved by EU Commission Decision 2021/914 for transfers to third countries. "<strong>Data Protection Laws</strong>" means all laws applicable to the processing of Personal Data under the Agreement, including the GDPR, UK GDPR, and applicable US state privacy laws (e.g. CCPA/CPRA).</p>
+
+    <h2 id="roles">2. Roles and scope</h2>
+    <p>As between the parties, the Customer is the Controller and PollSlide is the Processor of the Personal Data described in <strong>Annex&nbsp;A</strong>. PollSlide processes Personal Data only to provide and support the Service. Where the Customer is itself a processor for a third-party controller (for example, a school acting for a district), PollSlide acts as a sub-processor and these terms apply accordingly.</p>
+
+    <h2 id="instructions">3. Processing on documented instructions</h2>
+    <p>PollSlide will process Personal Data only on the Customer's documented instructions — including as set out in the Agreement, this DPA, and the Customer's configuration and use of the Service — unless required to act by applicable law, in which case PollSlide will (where legally permitted) inform the Customer first. PollSlide will inform the Customer if, in its opinion, an instruction infringes Data Protection Laws.</p>
+
+    <h2 id="confidentiality">4. Confidentiality</h2>
+    <p>PollSlide ensures that persons authorised to process Personal Data are bound by confidentiality obligations and process Personal Data only as necessary to provide the Service.</p>
+
+    <h2 id="security">5. Security of processing</h2>
+    <p>PollSlide implements appropriate technical and organisational measures ("<strong>TOMs</strong>") to ensure a level of security appropriate to the risk, as described in <strong>Annex&nbsp;B</strong>, taking into account the state of the art, the costs of implementation, and the nature, scope, context and purposes of processing.</p>
+
+    <h2 id="subprocessors">6. Subprocessors</h2>
+    <p>The Customer grants PollSlide general authorisation to engage the Subprocessors listed at <a href="/subprocessors">pollslide.com/subprocessors</a>. PollSlide imposes data-protection obligations on each Subprocessor no less protective than those in this DPA and remains liable for their performance. PollSlide will give at least <strong>30 days' notice</strong> of any intended addition or replacement of a Subprocessor (via the notification list described on that page), during which the Customer may object on reasonable data-protection grounds; if the parties cannot resolve the objection, the Customer may terminate the affected Service.</p>
+
+    <h2 id="rights">7. Data subject rights</h2>
+    <p>Taking into account the nature of the processing, PollSlide will assist the Customer by appropriate technical and organisational measures, insofar as possible, to respond to requests from Data Subjects exercising their rights (access, rectification, erasure, restriction, portability, and objection). If PollSlide receives such a request directly, it will promptly forward it to the Customer and not respond except on the Customer's instruction. Self-service tools for many of these requests are available in the product and via Admin support.</p>
+
+    <h2 id="assistance">8. Assistance with obligations</h2>
+    <p>PollSlide will assist the Customer, taking into account the nature of processing and information available to PollSlide, in ensuring compliance with its obligations under Articles 32–36 GDPR, including security of processing, breach notification, data protection impact assessments, and prior consultation.</p>
+
+    <h2 id="breach">9. Personal data breach notification</h2>
+    <p>PollSlide will notify the Customer <strong>without undue delay, and in any event within 72 hours</strong>, after becoming aware of a Personal Data Breach affecting the Customer's Personal Data. The notice will describe, to the extent known: the nature of the breach and categories/approximate number of Data Subjects and records affected; the likely consequences; the measures taken or proposed to address it and mitigate harm; and a contact point for more information. PollSlide will cooperate with the Customer and take reasonable steps to mitigate and remediate.</p>
+
+    <h2 id="deletion">10. Return and deletion</h2>
+    <p>On termination of the Service, and at the Customer's choice, PollSlide will delete or return all Personal Data and delete existing copies, unless retention is required by law. Routine deletion timelines are described in our <a href="/privacy">Privacy Policy</a>. Backups are purged on our standard rotation.</p>
+
+    <h2 id="audit">11. Audits</h2>
+    <p>PollSlide will make available to the Customer information reasonably necessary to demonstrate compliance with Article 28 GDPR and will allow for and contribute to audits, including inspections, conducted by the Customer or an auditor it mandates. To minimise disruption, PollSlide may satisfy audit requests by providing its security documentation and responding to a reasonable number of written questions; on-site audits are by prior written agreement, during business hours, and subject to confidentiality.</p>
+
+    <h2 id="transfers">12. International transfers</h2>
+    <p>Where PollSlide processes Personal Data originating from the EEA, UK or Switzerland in a country without an adequacy decision, such transfers are governed by the <strong>Standard Contractual Clauses</strong>, which are incorporated into this DPA by reference (Module Two: Controller-to-Processor, or Module Three where PollSlide acts as sub-processor), with PollSlide as "data importer". The UK Addendum and Swiss amendments apply where relevant. Annex details in this DPA populate the corresponding SCC annexes.</p>
+
+    <h2 id="term">13. Term, liability and law</h2>
+    <p>This DPA takes effect on the Effective Date and continues while PollSlide processes Personal Data for the Customer. Each party's liability under this DPA is subject to the limitations of liability in the Agreement. This DPA is governed by the law stated in the Agreement; where the Agreement is silent and the Customer is in the EEA/UK, the SCCs' governing-law and forum provisions apply to transfer matters.</p>
+
+    <h2 id="annex-a">Annex A — Details of processing</h2>
+    <div class="tbl-scroll">
+    <table class="dpa-table">
+      <tbody>
+        <tr><th>Subject matter</th><td>Provision of the PollSlide live audience-response service (polls, quizzes, surveys, study sessions) and related support.</td></tr>
+        <tr><th>Duration</th><td>For the term of the Agreement, plus routine deletion/backup-purge periods.</td></tr>
+        <tr><th>Nature &amp; purpose</th><td>Hosting, storage, transmission, display, and analysis of session content and responses; account authentication; billing; transactional email; optional AI-assisted content generation.</td></tr>
+        <tr><th>Categories of Data Subjects</th><td>The Customer's authorised users (presenters/admins) and the Customer's audience participants (who may join anonymously or with a display name).</td></tr>
+        <tr><th>Categories of Personal Data</th><td>Account: name, email, authentication data, billing contact. Usage: session content authored by presenters; audience responses, free-text answers, display names, upvotes; device/IP metadata (transient). Optional AI inputs: prompt/document text submitted by presenters.</td></tr>
+        <tr><th>Special categories</th><td>Not intended. The Customer must not use free-text or survey fields to collect special-category data about participants without an appropriate lawful basis and safeguards.</td></tr>
+        <tr><th>Children</th><td>The Service is not directed to children under 16 (or the applicable local digital-consent age). Educational use is under the supervision of the institution as Controller; see the Privacy Policy.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="annex-b">Annex B — Technical and organisational measures</h2>
+    <ul>
+      <li><strong>Encryption:</strong> data encrypted in transit (TLS) and at rest by our infrastructure providers.</li>
+      <li><strong>Access control:</strong> role-based access, least-privilege administration, authenticated access to production systems, and audited admin actions.</li>
+      <li><strong>Tenant isolation:</strong> session and account data scoped to the owning account.</li>
+      <li><strong>Resilience:</strong> managed, redundant cloud infrastructure with provider backups and the ability to restore service.</li>
+      <li><strong>Payment security:</strong> card data handled by Stripe (PCI-DSS Level 1); PollSlide does not store full card numbers.</li>
+      <li><strong>Content safeguards:</strong> automated profanity, link/spam and AI image-safety filtering, plus presenter moderation controls, on a reasonable-efforts basis.</li>
+      <li><strong>Vendor management:</strong> subprocessors engaged under Article 28 terms with transfer safeguards; a public subprocessor list is maintained.</li>
+      <li><strong>Monitoring &amp; response:</strong> system-health monitoring and a documented breach-notification process (72-hour target).</li>
+      <li><strong>Data minimisation:</strong> anonymous audience participation is supported; we do not sell personal data or use audience responses to train AI models.</li>
+    </ul>
+
+    <h2 id="signature">Signature</h2>
+    <p>By signing the Agreement or a copy of this DPA, the parties agree to these terms. To execute, download this page as a PDF, complete the block below, and return it to <a href="mailto:help@pollslide.com">help@pollslide.com</a>.</p>
+    <div class="highlight-box">
+      <strong>Customer (Controller):</strong> _______________________________  Signature: ______________  Date: __________<br><br>
+      <strong>PollSlide Technologies LLC (Processor):</strong> Authorised signatory ______________  Date: __________
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/trust-safety">Trust &amp; Safety</a>
+      <a href="/accessibility">Accessibility</a>
+      <a href="/vpat">VPAT / 508</a>
+      <a href="/dpa">DPA</a>
+      <a href="/subprocessors">Subprocessors</a>
+      <a href="/status">Status</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
+    </div>
+    <div style="font-size:12px;color:var(--muted);">© <span class="fy"></span> PollSlide Technologies LLC · Wyoming, USA</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('effDate').textContent = 'July 16, 2026';
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>

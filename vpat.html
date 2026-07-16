@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility Conformance Report (VPAT) — PollSlide</title>
+<meta name="description" content="PollSlide Voluntary Product Accessibility Template (VPAT 2.5) — WCAG 2.1 AA, EN 301 549 and Section 508 conformance report for procurement by schools, universities, government and enterprise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal-shared.css">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+<style>
+  .vpat-table{width:100%;border-collapse:collapse;margin:14px 0 26px;font-size:14px;}
+  .vpat-table caption{text-align:left;font-weight:700;padding:10px 0 6px;font-size:15px;}
+  .vpat-table th,.vpat-table td{border:1px solid var(--border,#33334a);padding:9px 11px;vertical-align:top;text-align:left;}
+  .vpat-table th{background:rgba(108,99,255,.10);font-weight:600;}
+  .vpat-table td:first-child{width:34%;}
+  .vpat-table td:nth-child(2){width:20%;white-space:nowrap;}
+  .lvl{display:inline-block;font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;border:1px solid var(--border,#33334a);margin-left:6px;color:var(--muted);}
+  .sup{color:#1f9d55;font-weight:600;}
+  .par{color:#c98a00;font-weight:600;}
+  .non{color:#d64550;font-weight:600;}
+  .na{color:var(--muted);font-weight:600;}
+  .tbl-scroll{overflow-x:auto;}
+  @media (max-width:640px){ .vpat-table td:first-child,.vpat-table td:nth-child(2){width:auto;} }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;" role="img" aria-label="PollSlide logo"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
+    <div class="nav-links">
+      <a href="/accessibility">Accessibility</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy Policy</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <div class="eyebrow">Accessibility · Procurement</div>
+    <h1>Accessibility Conformance Report (VPAT®)</h1>
+    <div class="meta">PollSlide Technologies LLC · Based on VPAT® 2.5 · Report date: <span id="effDate"></span></div>
+  </div>
+
+  <div class="legal-body">
+    <p>This Accessibility Conformance Report (ACR) follows the <strong>Voluntary Product Accessibility Template® (VPAT®) version 2.5</strong> published by the Information Technology Industry Council (ITI). It documents how PollSlide conforms to <strong>WCAG 2.1 Level A and AA</strong>, the EU harmonised standard <strong>EN&nbsp;301&nbsp;549 (V3.2.1)</strong>, and <strong>Revised Section 508</strong> of the U.S. Rehabilitation Act. It is intended for procurement teams at schools, universities, government bodies and enterprises. For a plain-language overview, see our <a href="/accessibility">Accessibility Statement</a>.</p>
+
+    <h2 id="product">Product information</h2>
+    <ul>
+      <li><strong>Name &amp; version:</strong> PollSlide web application (app.pollslide.com), pollslide.com marketing site, and PollSlide Companion for macOS — as of the report date.</li>
+      <li><strong>Product description:</strong> Live audience-response software (polls, quizzes, surveys and study sessions). Presenters build and run interactive decks; audiences join from any device by QR code or short code at <em>pollslide.com/join</em> and answer at <em>app.pollslide.com/answer</em>.</li>
+      <li><strong>Evaluation methods:</strong> Self-assessment combining manual keyboard-only testing, screen-reader spot checks (VoiceOver on macOS/iOS, NVDA on Windows), automated tooling (axe-core, Lighthouse), colour-contrast analysis, and 200% zoom / reflow review.</li>
+      <li><strong>Contact:</strong> <a href="mailto:help@pollslide.com">help@pollslide.com</a></li>
+    </ul>
+
+    <h2 id="terms">Conformance terms</h2>
+    <ul>
+      <li><span class="sup">Supports</span> — the functionality meets the criterion without known defects.</li>
+      <li><span class="par">Partially Supports</span> — some functionality meets the criterion; some does not.</li>
+      <li><span class="non">Does Not Support</span> — the majority of functionality does not meet the criterion.</li>
+      <li><span class="na">Not Applicable</span> — the criterion does not apply to the product.</li>
+    </ul>
+    <p><strong>Overall self-assessed level: Partially Supports WCAG 2.1 AA.</strong> The participant answer flow — the surface used by the widest and most diverse audience — is prioritised and closest to full conformance. Known gaps and target dates are listed at the end of this report.</p>
+
+    <h2 id="tablea">Table 1 — WCAG 2.1 Level A</h2>
+    <div class="tbl-scroll">
+    <table class="vpat-table">
+      <caption>Success Criteria, Level A</caption>
+      <thead><tr><th>Criteria</th><th>Conformance</th><th>Remarks and explanations</th></tr></thead>
+      <tbody>
+        <tr><td>1.1.1 Non-text Content <span class="lvl">A</span></td><td class="par">Partially Supports</td><td>Interactive icons and the participant flow have text alternatives; some decorative and presenter-authored images rely on host-provided context.</td></tr>
+        <tr><td>1.2.1–1.2.3 Time-based Media <span class="lvl">A</span></td><td class="na">Not Applicable</td><td>PollSlide does not supply pre-recorded audio/video content; presenter-embedded media is user-authored and outside our control.</td></tr>
+        <tr><td>1.3.1 Info and Relationships <span class="lvl">A</span></td><td class="par">Partially Supports</td><td>Semantic headings, labels and lists are used throughout the participant flow; some presenter-workspace controls use ARIA that is being expanded.</td></tr>
+        <tr><td>1.3.2 Meaningful Sequence <span class="lvl">A</span></td><td class="sup">Supports</td><td>Reading and focus order follow a logical single-column sequence on the answer page.</td></tr>
+        <tr><td>1.3.3 Sensory Characteristics <span class="lvl">A</span></td><td class="sup">Supports</td><td>Instructions do not rely on shape or position alone; options are labelled A/B/C with text.</td></tr>
+        <tr><td>1.4.1 Use of Color <span class="lvl">A</span></td><td class="sup">Supports</td><td>Colour is not the only means of conveying state; text and icons accompany colour cues.</td></tr>
+        <tr><td>1.4.2 Audio Control <span class="lvl">A</span></td><td class="na">Not Applicable</td><td>No auto-playing audio longer than 3 seconds.</td></tr>
+        <tr><td>2.1.1 Keyboard <span class="lvl">A</span></td><td class="sup">Supports</td><td>The join-and-answer flow (enter code, choose option, type answer, submit) is fully keyboard operable.</td></tr>
+        <tr><td>2.1.2 No Keyboard Trap <span class="lvl">A</span></td><td class="sup">Supports</td><td>Focus can always move away from any component using the keyboard.</td></tr>
+        <tr><td>2.2.1 / 2.2.2 Timing, Pause/Stop/Hide <span class="lvl">A</span></td><td class="sup">Supports</td><td>PollSlide imposes no answer time limit; any countdown is presenter-controlled. Animations respect reduced-motion.</td></tr>
+        <tr><td>2.3.1 Three Flashes <span class="lvl">A</span></td><td class="sup">Supports</td><td>No content flashes more than three times per second.</td></tr>
+        <tr><td>2.4.1–2.4.4 Navigation (bypass, title, focus order, link purpose) <span class="lvl">A</span></td><td class="par">Partially Supports</td><td>Pages have descriptive titles and logical focus order; skip-links are present on the participant flow and being extended to the workspace.</td></tr>
+        <tr><td>3.1.1 Language of Page <span class="lvl">A</span></td><td class="sup">Supports</td><td><code>lang</code> is set; the participant experience is offered in six languages.</td></tr>
+        <tr><td>3.2.1 / 3.2.2 On Focus / On Input <span class="lvl">A</span></td><td class="sup">Supports</td><td>No unexpected context changes occur on focus or input.</td></tr>
+        <tr><td>3.3.1 / 3.3.2 Error Identification, Labels <span class="lvl">A</span></td><td class="sup">Supports</td><td>Form fields are labelled; invalid entries (e.g. wrong join code) are described in text.</td></tr>
+        <tr><td>4.1.1 / 4.1.2 Parsing, Name/Role/Value <span class="lvl">A</span></td><td class="par">Partially Supports</td><td>Markup is valid; native controls expose name/role/value. Custom presenter controls have expanding ARIA coverage.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="tableaa">Table 2 — WCAG 2.1 Level AA</h2>
+    <div class="tbl-scroll">
+    <table class="vpat-table">
+      <caption>Success Criteria, Level AA</caption>
+      <thead><tr><th>Criteria</th><th>Conformance</th><th>Remarks and explanations</th></tr></thead>
+      <tbody>
+        <tr><td>1.4.3 Contrast (Minimum) <span class="lvl">AA</span></td><td class="par">Partially Supports</td><td>The participant flow and core UI meet 4.5:1; a small number of secondary/muted labels are being adjusted. Presenter-chosen slide colours are user-controlled.</td></tr>
+        <tr><td>1.4.4 Resize Text <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Content remains usable at 200% zoom.</td></tr>
+        <tr><td>1.4.5 Images of Text <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Real text is used rather than images of text, except logos.</td></tr>
+        <tr><td>1.4.10 Reflow <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Responsive layouts reflow to a single column without loss of content at 320 CSS px.</td></tr>
+        <tr><td>1.4.11 Non-text Contrast <span class="lvl">AA</span></td><td class="par">Partially Supports</td><td>Primary controls and focus indicators meet 3:1; a few secondary UI borders are being reviewed.</td></tr>
+        <tr><td>1.4.12 Text Spacing <span class="lvl">AA</span></td><td class="sup">Supports</td><td>No loss of content when user text-spacing overrides are applied.</td></tr>
+        <tr><td>1.4.13 Content on Hover or Focus <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Hover/focus content is dismissible and does not obscure the trigger.</td></tr>
+        <tr><td>2.4.5 Multiple Ways <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Content is reachable via navigation, footer links and search on the help site.</td></tr>
+        <tr><td>2.4.6 Headings and Labels <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Headings and labels are descriptive.</td></tr>
+        <tr><td>2.4.7 Focus Visible <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Visible focus indicators are present on interactive elements.</td></tr>
+        <tr><td>3.1.2 Language of Parts <span class="lvl">AA</span></td><td class="par">Partially Supports</td><td>Page language is set; mixed-language presenter content is host-authored.</td></tr>
+        <tr><td>3.2.3 / 3.2.4 Consistent Navigation &amp; Identification <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Navigation and component labelling are consistent across pages.</td></tr>
+        <tr><td>3.3.3 / 3.3.4 Error Suggestion &amp; Prevention <span class="lvl">AA</span></td><td class="sup">Supports</td><td>Errors are described with suggestions; destructive actions in the workspace ask for confirmation.</td></tr>
+        <tr><td>4.1.3 Status Messages <span class="lvl">AA</span></td><td class="par">Partially Supports</td><td>Key participant status changes (submitted, waiting, revealed) are announced; live-result region announcements are being extended.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="en301549">Table 3 — EN 301 549 &amp; Revised Section 508</h2>
+    <p>EN 301 549 (V3.2.1) Chapters 9 (Web), 10 (Documents) and 11 (Software) incorporate the WCAG 2.1 A and AA criteria above by reference; conformance to those tables satisfies the corresponding EN 301 549 and Revised Section 508 (36 CFR Part 1194, chapters 5 &amp; 6) requirements for our web software. Additional platform items:</p>
+    <div class="tbl-scroll">
+    <table class="vpat-table">
+      <thead><tr><th>Requirement</th><th>Conformance</th><th>Remarks and explanations</th></tr></thead>
+      <tbody>
+        <tr><td>EN 301 549 §5.2 Activation of accessibility features / §11 platform APIs</td><td class="sup">Supports</td><td>PollSlide Companion (macOS) uses native controls and respects VoiceOver, Reduce Motion and Increase Contrast.</td></tr>
+        <tr><td>EN 301 549 §7 Video / captions</td><td class="na">Not Applicable</td><td>No product-supplied media requiring captions or audio description.</td></tr>
+        <tr><td>Section 508 §602 Support Docs &amp; §603 Support Services</td><td class="sup">Supports</td><td>Help content is provided as accessible HTML; support is available by email at help@pollslide.com, including alternate formats on request.</td></tr>
+        <tr><td>§412 (telecommunications) / §407 (hardware)</td><td class="na">Not Applicable</td><td>PollSlide is software only; no hardware or telecommunications functions.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="gaps">Known limitations &amp; remediation roadmap</h2>
+    <ul>
+      <li><strong>Presenter workspace ARIA:</strong> some drag-to-arrange and slide-editing controls in the presenter workspace have partial screen-reader coverage. <em>Target: rolling improvements each release.</em></li>
+      <li><strong>Secondary text contrast:</strong> a small set of muted/secondary labels are being raised to 4.5:1. <em>Target: next accessibility pass.</em></li>
+      <li><strong>Live-region announcements:</strong> extending programmatic announcements for live result updates. <em>In progress.</em></li>
+      <li><strong>Host-authored content:</strong> the accessibility of presenter-chosen images, colours and embedded media depends on the host; we provide guidance but cannot guarantee third-party content.</li>
+    </ul>
+    <p>We review this report at least annually and whenever a significant feature ships. To request the latest signed report, an alternate format, or to report a specific barrier, contact <a href="mailto:help@pollslide.com">help@pollslide.com</a> — we aim to respond within 5 business days.</p>
+    <p style="font-size:13px;color:var(--muted);">VPAT® is a registered trademark of the Information Technology Industry Council (ITI). This report is provided in good faith on a self-assessment basis and does not constitute a warranty. Last reviewed: <span class="fy2"></span>.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/trust-safety">Trust &amp; Safety</a>
+      <a href="/accessibility">Accessibility</a>
+      <a href="/vpat">VPAT / 508</a>
+      <a href="/dpa">DPA</a>
+      <a href="/subprocessors">Subprocessors</a>
+      <a href="/status">Status</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
+    </div>
+    <div style="font-size:12px;color:var(--muted);">© <span class="fy"></span> PollSlide Technologies LLC · Wyoming, USA</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('effDate').textContent = 'July 16, 2026';
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());
+document.querySelectorAll('.fy2').forEach(e=>e.textContent='July 16, 2026');
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>

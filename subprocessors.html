@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subprocessors — PollSlide</title>
+<meta name="description" content="The list of third-party subprocessors PollSlide Technologies LLC uses to provide the service, what each one does, and where data is processed. Subscribe to be notified of changes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal-shared.css">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+<style>
+  .sp-table{width:100%;border-collapse:collapse;margin:14px 0 24px;font-size:14px;}
+  .sp-table th,.sp-table td{border:1px solid var(--border,#33334a);padding:9px 11px;vertical-align:top;text-align:left;}
+  .sp-table th{background:rgba(108,99,255,.10);font-weight:600;}
+  .tbl-scroll{overflow-x:auto;}
+  .pill{display:inline-block;font-size:11px;font-weight:600;padding:1px 8px;border-radius:999px;background:rgba(108,99,255,.12);color:var(--accent,#6c63ff);}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;" role="img" aria-label="PollSlide logo"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
+    <div class="nav-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/dpa">DPA</a>
+      <a href="/terms">Terms</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <div class="eyebrow">Legal · Privacy</div>
+    <h1>Subprocessors</h1>
+    <div class="meta">PollSlide Technologies LLC · Last updated: <span id="effDate"></span></div>
+  </div>
+
+  <div class="legal-body">
+    <p>To provide PollSlide, we engage a small number of trusted third-party companies ("subprocessors") that process personal data on our behalf. This page lists them, what they do, and where processing takes place. It supports the transparency commitments in our <a href="/privacy">Privacy Policy</a> and our <a href="/dpa">Data Processing Agreement</a> (DPA), and satisfies our obligation under <strong>Article 28(2) &amp; (4) GDPR</strong> to keep customers informed about the subprocessors we use.</p>
+
+    <div class="highlight-box">
+      <strong>Want to be told before this list changes?</strong> Business customers can subscribe to subprocessor-change notices by emailing <a href="mailto:help@pollslide.com?subject=Subprocessor%20change%20notifications">help@pollslide.com</a> with the subject "Subprocessor change notifications". We aim to give at least <strong>30 days' advance notice</strong> of a new subprocessor, during which you may object on reasonable data-protection grounds.
+    </div>
+
+    <h2 id="infra">Infrastructure &amp; core service</h2>
+    <div class="tbl-scroll">
+    <table class="sp-table">
+      <thead><tr><th>Subprocessor</th><th>Purpose</th><th>Data processed</th><th>Processing location</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Google / Firebase</strong> (Google LLC)</td>
+          <td>Primary application database, real-time sync, authentication and hosting of poll/session data.</td>
+          <td>Account email, session &amp; response data, presenter content, authentication tokens.</td>
+          <td>United States (Google Cloud), with EU Standard Contractual Clauses.</td>
+        </tr>
+        <tr>
+          <td><strong>Vercel</strong> (Vercel Inc.)</td>
+          <td>Web hosting, serverless API functions and content delivery for pollslide.com and app.pollslide.com.</td>
+          <td>Request metadata, IP address (transient), API payloads in transit.</td>
+          <td>United States / global edge network; SCCs in place.</td>
+        </tr>
+        <tr>
+          <td><strong>Stripe</strong> (Stripe, Inc.)</td>
+          <td>Subscription billing and payment processing.</td>
+          <td>Billing name, email, and payment details (card data handled directly by Stripe — PollSlide never sees full card numbers).</td>
+          <td>United States / EU; PCI-DSS Level 1; SCCs in place.</td>
+        </tr>
+        <tr>
+          <td><strong>Resend</strong> (Resend, Inc.)</td>
+          <td>Transactional email delivery (receipts, notifications, invites, survey/quiz share links).</td>
+          <td>Recipient email address and message content.</td>
+          <td>United States; SCCs in place.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="ai">AI features (Polly)</h2>
+    <p>These providers are used <strong>only</strong> when a presenter chooses to use an AI feature (for example, generating draft questions or summarising responses). Prompts and uploaded documents are sent to return a result and are <strong>not</strong> used by these providers to train foundation models. Where feasible, generation runs on our own local models first; the providers below are used for cloud generation and fallback.</p>
+    <div class="tbl-scroll">
+    <table class="sp-table">
+      <thead><tr><th>Subprocessor</th><th>Purpose</th><th>Data processed</th><th>Processing location</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>OpenAI</strong> (OpenAI, L.L.C.)</td>
+          <td>Cloud text generation for AI question drafting and response insights (fallback / cloud tier).</td>
+          <td>The prompt text and any document text a presenter submits to Polly. No audience personal data is sent unless the presenter includes it in a prompt.</td>
+          <td>United States; API data not used for model training; SCCs in place.</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic</strong> (Anthropic PBC)</td>
+          <td>Alternate/cloud text generation for AI drafting and insights.</td>
+          <td>Prompt and submitted document text as above.</td>
+          <td>United States; API data not used for model training; SCCs in place.</td>
+        </tr>
+        <tr>
+          <td><strong>fal.ai</strong> (Features and Labels, Inc.)</td>
+          <td>AI image generation for slide/background visuals when requested by a presenter.</td>
+          <td>The image prompt text submitted by the presenter.</td>
+          <td>United States; SCCs in place.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="notes">Notes</h2>
+    <ul>
+      <li>We do not sell personal data and we do not use audience responses to train AI models.</li>
+      <li>All subprocessors are engaged under written data-protection terms consistent with Article 28 GDPR, including appropriate transfer safeguards (Standard Contractual Clauses) for processing outside the EEA/UK.</li>
+      <li>This list covers subprocessors that process personal data. Purely internal tools that do not process customer personal data are not listed.</li>
+      <li>Changes are recorded in our internal compliance log and, for subscribers, sent by email in advance as described above.</li>
+    </ul>
+    <p>Questions about this list or our data practices: <a href="mailto:help@pollslide.com">help@pollslide.com</a>.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/trust-safety">Trust &amp; Safety</a>
+      <a href="/accessibility">Accessibility</a>
+      <a href="/vpat">VPAT / 508</a>
+      <a href="/dpa">DPA</a>
+      <a href="/subprocessors">Subprocessors</a>
+      <a href="/status">Status</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
+    </div>
+    <div style="font-size:12px;color:var(--muted);">© <span class="fy"></span> PollSlide Technologies LLC · Wyoming, USA</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('effDate').textContent = 'July 16, 2026';
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>
