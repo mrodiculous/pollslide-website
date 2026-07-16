@@ -61,6 +61,11 @@
   footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:13.5px;margin-top:30px;}
   footer a{color:var(--muted);}.disc{font-size:12px;color:var(--muted);opacity:.75;max-width:640px;margin:14px auto 0;}
   @media(max-width:720px){.cards{grid-template-columns:1fr;}.nav-links a:not(.btn){display:none;}}
+  /* Accessibility (WCAG 2.1 AA): keyboard focus visibility + reduced motion */
+  :focus-visible { outline:3px solid var(--accent,#6c63ff); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
 </style>
 <link rel="icon" type="image/svg+xml" href="/logo.svg"><link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
@@ -129,7 +134,7 @@
 
 <footer><div class="wrap">
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
-    <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a>
+    <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
   </div>
   <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
   <p class="disc">Comparison based on publicly available information, July 2026. Competitor features and pricing change often — please verify on their site. Slido and other names are trademarks of their respective owners; this page is not endorsed by or affiliated with them.</p>
@@ -140,7 +145,7 @@
   if(localStorage.getItem('pollslide_theme')==='light'){document.body.classList.add('light');var t=document.getElementById('themeToggle');if(t)t.textContent='☀️';}
 </script>
 <script src="/consent.js?v=4"></script>
-<script src="/translations.js?v=8"></script>
+<script src="/translations.js?v=9"></script>
 <script src="/i18n.js?v=7"></script>
 </body>
 </html>

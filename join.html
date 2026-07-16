@@ -16,6 +16,11 @@
   body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#07070f;color:#f4f4fc;
     display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
   a{color:#6c63ff;font-weight:600;}
+  /* Accessibility (WCAG 2.1 AA): keyboard focus visibility + reduced motion */
+  :focus-visible { outline:3px solid var(--accent,#6c63ff); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
 </style>
 </head>
 <body>

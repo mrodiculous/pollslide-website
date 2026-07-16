@@ -39,3 +39,9 @@ body.light nav{background:rgba(255,255,255,0.82);}
 footer{padding:28px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:14px;}
 footer a{color:var(--muted);}
 footer a:hover{color:var(--text);}
+
+/* Accessibility (WCAG 2.1 AA): keyboard focus visibility + reduced motion */
+:focus-visible { outline:3px solid var(--accent,#6c63ff); outline-offset:2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+}

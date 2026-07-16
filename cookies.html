@@ -105,6 +105,8 @@
       <a href="/terms">Terms of Service</a>
       <a href="/privacy">Privacy Policy</a>
       <a href="/cookies">Cookie Policy</a>
+      <a href="/trust-safety">Trust &amp; Safety</a>
+      <a href="/accessibility">Accessibility</a>
       <a href="/pricing">Pricing</a>
       <a href="/status">Status</a>
       <a href="mailto:help@pollslide.com">Contact</a>
@@ -114,7 +116,7 @@
 </footer>
 
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
+var _yrEl=document.getElementById('yr'); if(_yrEl)_yrEl.textContent=new Date().getFullYear();
 document.getElementById('effDate').textContent = 'June 1, 2026';
 function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
 if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}

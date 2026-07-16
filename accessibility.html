@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility Statement — PollSlide</title>
+<meta name="description" content="Accessibility Statement for PollSlide Technologies LLC — our WCAG 2.1 AA commitment, what works today, known limitations, and how to get help.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal-shared.css">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22" style="flex-shrink:0;" role="img" aria-label="PollSlide logo"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/><polygon points="72,32 72,40 78,36" fill="rgba(255,255,255,0.8)"/></svg>PollSlide</a>
+    <div class="nav-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy Policy</a>
+      <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <div class="eyebrow">Legal</div>
+    <h1>Accessibility Statement</h1>
+    <div class="meta">PollSlide Technologies LLC · Last reviewed: <span id="effDate"></span></div>
+  </div>
+
+  <div class="legal-body">
+
+    <h2 id="commitment">1. Our commitment</h2>
+    <p>PollSlide is used in classrooms, conferences, trainings and meetings — which means our audience is everyone in the room, including people with visual, auditory, motor or cognitive disabilities. PollSlide Technologies LLC is committed to making our websites and applications usable by as many people as possible, and to improving accessibility continuously.</p>
+
+    <h2 id="scope">2. What this statement covers</h2>
+    <ul>
+      <li><strong>pollslide.com</strong> — our marketing and help website.</li>
+      <li><strong>app.pollslide.com</strong> — the PollSlide web application: the presenter workspace, the participant answer page (<em>app.pollslide.com/answer</em>, reached via QR code or <em>pollslide.com/join</em>), live results, reports and shared decks.</li>
+      <li><strong>PollSlide Companion</strong> — our macOS app, which follows Apple's macOS accessibility frameworks (VoiceOver, Reduce Motion, Increase Contrast).</li>
+    </ul>
+
+    <h2 id="standard">3. The standard we aim for</h2>
+    <p>We aim to conform to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong>. WCAG 2.1 AA is the benchmark referenced by the harmonised European standard <strong>EN 301 549</strong> (which underpins the <strong>European Accessibility Act</strong>, Directive (EU) 2019/882), by the UK Equality Act 2010 guidance, and by U.S. ADA web-accessibility best practice and Section&nbsp;508.</p>
+
+    <h2 id="status">4. Conformance status</h2>
+    <p><strong>Partially conformant.</strong> Parts of our websites and applications do not yet fully conform to WCAG 2.1 AA. We review accessibility with every release and prioritise fixes for the participant answer page first, because it is the surface used by general audiences.</p>
+
+    <h2 id="works">5. What works today</h2>
+    <ul>
+      <li><strong>Keyboard access:</strong> the participant answer flow (join by code, choose an option, type an answer, submit) is operable with a keyboard, with visible focus indicators.</li>
+      <li><strong>No forced time limits:</strong> PollSlide itself does not impose time limits on answering; timing is always under the presenter's control.</li>
+      <li><strong>Zoom and reflow:</strong> pages use responsive layouts and remain usable at 200% browser zoom; the participant page is a simple single-column layout.</li>
+      <li><strong>Dark and light themes</strong> across the website and apps, respecting your system preference.</li>
+      <li><strong>Reduced motion:</strong> animations (including celebration effects) are disabled for users whose system requests reduced motion.</li>
+      <li><strong>Multiple languages:</strong> the participant experience is available in English, Spanish, German, French, Portuguese and Italian.</li>
+      <li><strong>Text alternatives to visuals:</strong> live results shown as charts are also available as text and numbers, and presenters can export full results as CSV from the report page.</li>
+    </ul>
+
+    <h2 id="limitations">6. Known limitations</h2>
+    <p>We are honest about where we still fall short. Known limitations we are working on:</p>
+    <ul>
+      <li>Some live visualisations (word clouds, animated result bars, confetti) are inherently visual; equivalent information is available in text form on the report page, but not yet announced live to screen readers.</li>
+      <li>Screen-reader labelling on some icon-only controls in the presenter workspace is still being expanded.</li>
+      <li>Some decorative emoji are not yet consistently hidden from assistive technology.</li>
+      <li>Colour contrast on a small number of decorative gradient elements may fall below AA; core text and controls are prioritised first.</li>
+      <li>QR codes are visual by nature — every QR code is always accompanied by a typed alternative: go to <em>pollslide.com/join</em> and enter the session code.</li>
+    </ul>
+
+    <h2 id="feedback">7. Feedback and assistance</h2>
+    <p>If you encounter an accessibility barrier, or need any content from us in an accessible format, contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:help@pollslide.com?subject=Accessibility">help@pollslide.com</a> (subject: "Accessibility")</li>
+    </ul>
+    <p>We aim to respond within <strong>5 business days</strong>. Accessibility reports are triaged with the same priority as functional bugs.</p>
+
+    <h2 id="enforcement">8. Enforcement and complaints</h2>
+    <p>We would appreciate the chance to fix any problem first — please contact us using the details above. If you are in the European Union and are not satisfied with our response, you may contact the market surveillance or enforcement authority designated in your Member State under the European Accessibility Act. In the United Kingdom, you may contact the Equality Advisory and Support Service (EASS).</p>
+
+    <h2 id="technical">9. Technical information</h2>
+    <p>Our websites and applications are built with standard HTML, CSS and JavaScript and rely on these technologies for conformance. Accessibility is assessed with a combination of keyboard-only testing, macOS VoiceOver spot checks, automated tooling (Lighthouse/axe-style checks), and review of new features before release.</p>
+
+    <h2 id="review">10. Preparation of this statement</h2>
+    <p>This statement was prepared on July 16, 2026, based on self-assessment, and is reviewed at least annually and whenever a significant feature ships. Questions about this statement: <a href="mailto:help@pollslide.com">help@pollslide.com</a>.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px 16px;font-size:13px;">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cookies">Cookie Policy</a>
+      <a href="/trust-safety">Trust &amp; Safety</a>
+      <a href="/accessibility">Accessibility</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/status">Status</a>
+      <a href="mailto:help@pollslide.com">Contact</a>
+    </div>
+    <div style="font-size:12px;color:var(--muted);">© <span class="fy"></span> PollSlide Technologies LLC · Wyoming, USA</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('effDate').textContent = 'July 16, 2026';
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>
