@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# The presenter is the signed-in app UI, not a marketing page.
+Disallow: /presenter
+
+Sitemap: https://pollslide.com/sitemap.xml

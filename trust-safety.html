@@ -12,6 +12,22 @@
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+
+<!-- seo:auto start -->
+  <link rel="canonical" href="https://pollslide.com/trust-safety">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PollSlide">
+  <meta property="og:url" content="https://pollslide.com/trust-safety">
+  <meta property="og:title" content="Trust &amp; Safety — PollSlide">
+  <meta property="og:description" content="How PollSlide keeps live audience participation safe: content moderation, link filtering, presenter controls, data security, and how to report content.">
+  <meta property="og:image" content="https://pollslide.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trust &amp; Safety — PollSlide">
+  <meta name="twitter:description" content="How PollSlide keeps live audience participation safe: content moderation, link filtering, presenter controls, data security, and how to report content.">
+  <meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<!-- seo:auto end -->
 </head>
 <body>
 <nav>
@@ -20,6 +36,7 @@
     <div class="nav-links">
       <a href="/terms">Terms</a>
       <a href="/privacy">Privacy Policy</a>
+      <span id="langSelWrap"></span>
       <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
     </div>
   </div>
@@ -32,7 +49,7 @@
     <div class="meta">PollSlide Technologies LLC · Last updated: <span id="updDate"></span></div>
   </div>
 
-  <div class="legal-body">
+  <div class="legal-body" data-i18n-skip>
 
     <div class="highlight-box">
       <strong>Our commitment.</strong> PollSlide lets an audience respond in real time. We take reasonable, good-faith measures — described below — to reduce abuse and protect personal data. These safeguards are provided on a best-effort basis and are not a guarantee; presenters remain responsible for moderating their own sessions. See our <a href="/terms#content">Terms</a> for the full legal position.
@@ -96,5 +113,7 @@ document.getElementById('updDate').textContent = 'June 26, 2026';
 function toggleTheme(){document.body.classList.toggle('light');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');}
 if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
 </script>
+  <script src="/translations.js?v=9"></script>
+<script src="/i18n.js?v=7"></script>
 </body>
 </html>

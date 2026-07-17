@@ -12,6 +12,22 @@
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+
+<!-- seo:auto start -->
+  <link rel="canonical" href="https://pollslide.com/accessibility">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PollSlide">
+  <meta property="og:url" content="https://pollslide.com/accessibility">
+  <meta property="og:title" content="Accessibility Statement — PollSlide">
+  <meta property="og:description" content="Accessibility Statement for PollSlide Technologies LLC — our WCAG 2.1 AA commitment, what works today, known limitations, and how to get help.">
+  <meta property="og:image" content="https://pollslide.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Accessibility Statement — PollSlide">
+  <meta name="twitter:description" content="Accessibility Statement for PollSlide Technologies LLC — our WCAG 2.1 AA commitment, what works today, known limitations, and how to get help.">
+  <meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<!-- seo:auto end -->
 </head>
 <body>
 <nav>
@@ -20,6 +36,7 @@
     <div class="nav-links">
       <a href="/terms">Terms</a>
       <a href="/privacy">Privacy Policy</a>
+      <span id="langSelWrap"></span>
       <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
     </div>
   </div>
@@ -32,7 +49,7 @@
     <div class="meta">PollSlide Technologies LLC · Last reviewed: <span id="effDate"></span></div>
   </div>
 
-  <div class="legal-body">
+  <div class="legal-body" data-i18n-skip>
 
     <h2 id="commitment">1. Our commitment</h2>
     <p>PollSlide is used in classrooms, conferences, trainings and meetings — which means our audience is everyone in the room, including people with visual, auditory, motor or cognitive disabilities. PollSlide Technologies LLC is committed to making our websites and applications usable by as many people as possible, and to improving accessibility continuously.</p>
@@ -116,5 +133,7 @@ if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&mat
 document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear());
 </script>
 <script src="/consent.js"></script>
+  <script src="/translations.js?v=9"></script>
+<script src="/i18n.js?v=7"></script>
 </body>
 </html>

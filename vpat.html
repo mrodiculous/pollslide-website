@@ -27,6 +27,22 @@
   .tbl-scroll{overflow-x:auto;}
   @media (max-width:640px){ .vpat-table td:first-child,.vpat-table td:nth-child(2){width:auto;} }
 </style>
+
+<!-- seo:auto start -->
+  <link rel="canonical" href="https://pollslide.com/vpat">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PollSlide">
+  <meta property="og:url" content="https://pollslide.com/vpat">
+  <meta property="og:title" content="Accessibility Conformance Report (VPAT) — PollSlide">
+  <meta property="og:description" content="PollSlide Voluntary Product Accessibility Template (VPAT 2.5) — WCAG 2.1 AA, EN 301 549 and Section 508 conformance report for procurement by schools, universities, government and enterprise.">
+  <meta property="og:image" content="https://pollslide.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Accessibility Conformance Report (VPAT) — PollSlide">
+  <meta name="twitter:description" content="PollSlide Voluntary Product Accessibility Template (VPAT 2.5) — WCAG 2.1 AA, EN 301 549 and Section 508 conformance report for procurement by schools, universities, government and enterprise.">
+  <meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<!-- seo:auto end -->
 </head>
 <body>
 <nav>
@@ -36,6 +52,7 @@
       <a href="/accessibility">Accessibility</a>
       <a href="/terms">Terms</a>
       <a href="/privacy">Privacy Policy</a>
+      <span id="langSelWrap"></span>
       <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
     </div>
   </div>
@@ -48,7 +65,7 @@
     <div class="meta">PollSlide Technologies LLC · Based on VPAT® 2.5 · Report date: <span id="effDate"></span></div>
   </div>
 
-  <div class="legal-body">
+  <div class="legal-body" data-i18n-skip>
     <p>This Accessibility Conformance Report (ACR) follows the <strong>Voluntary Product Accessibility Template® (VPAT®) version 2.5</strong> published by the Information Technology Industry Council (ITI). It documents how PollSlide conforms to <strong>WCAG 2.1 Level A and AA</strong>, the EU harmonised standard <strong>EN&nbsp;301&nbsp;549 (V3.2.1)</strong>, and <strong>Revised Section 508</strong> of the U.S. Rehabilitation Act. It is intended for procurement teams at schools, universities, government bodies and enterprises. For a plain-language overview, see our <a href="/accessibility">Accessibility Statement</a>.</p>
 
     <h2 id="product">Product information</h2>
@@ -171,5 +188,7 @@ document.querySelectorAll('.fy').forEach(e=>e.textContent=new Date().getFullYear
 document.querySelectorAll('.fy2').forEach(e=>e.textContent='July 16, 2026');
 </script>
 <script src="/consent.js"></script>
+  <script src="/translations.js?v=9"></script>
+<script src="/i18n.js?v=7"></script>
 </body>
 </html>
