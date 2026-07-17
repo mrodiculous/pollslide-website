@@ -1,0 +1,110 @@
+/* Legal / compliance-page CHROME translations (nav, hero, footer, buttons, date labels).
+   Merged into window.PS_I18N AFTER translations.js, BEFORE i18n.js. The dense legal BODY
+   text stays English (data-i18n-skip) — English is the authoritative version — but the page
+   frame now localizes so compliance pages don't feel stuck in English. Keyed by exact text. */
+(function () {
+  var T = {
+    es: {
+      "Accessibility": "Accesibilidad", "Accessibility Statement": "Declaración de accesibilidad",
+      "Accessibility Conformance Report (VPAT®)": "Informe de conformidad de accesibilidad (VPAT®)",
+      "Accessibility · Procurement": "Accesibilidad · Adquisiciones",
+      "Contact": "Contacto", "Cookie Policy": "Política de cookies",
+      "Data Processing Agreement": "Acuerdo de tratamiento de datos",
+      "Keeping live participation safe": "Mantener segura la participación en vivo",
+      "Legal": "Legal", "Legal · Data protection": "Legal · Protección de datos", "Legal · Privacy": "Legal · Privacidad",
+      "Pricing": "Precios", "Privacy": "Privacidad", "Privacy Policy": "Política de privacidad",
+      "Request a counter-signed copy": "Solicitar una copia contrafirmada", "Status": "Estado",
+      "Subprocessors": "Subprocesadores", "Terms": "Términos", "Terms of Service": "Términos del servicio",
+      "Trust & Safety": "Confianza y seguridad",
+      "PollSlide Technologies LLC · Effective date:": "PollSlide Technologies LLC · Fecha de entrada en vigor:",
+      "PollSlide Technologies LLC · Last updated:": "PollSlide Technologies LLC · Última actualización:",
+      "PollSlide Technologies LLC · Last reviewed:": "PollSlide Technologies LLC · Última revisión:",
+      "PollSlide Technologies LLC · Version 1.0 · Effective:": "PollSlide Technologies LLC · Versión 1.0 · Vigente:",
+      "PollSlide Technologies LLC · Based on VPAT® 2.5 · Report date:": "PollSlide Technologies LLC · Basado en VPAT® 2.5 · Fecha del informe:",
+      "PollSlide Technologies LLC · Wyoming, USA": "PollSlide Technologies LLC · Wyoming, EE. UU.",
+      "· Last updated:": "· Última actualización:", "⬇︎ Download / Print (PDF)": "⬇︎ Descargar / Imprimir (PDF)"
+    },
+    de: {
+      "Accessibility": "Barrierefreiheit", "Accessibility Statement": "Erklärung zur Barrierefreiheit",
+      "Accessibility Conformance Report (VPAT®)": "Bericht zur Barrierefreiheits-Konformität (VPAT®)",
+      "Accessibility · Procurement": "Barrierefreiheit · Beschaffung",
+      "Contact": "Kontakt", "Cookie Policy": "Cookie-Richtlinie",
+      "Data Processing Agreement": "Auftragsverarbeitungsvertrag",
+      "Keeping live participation safe": "Live-Teilnahme sicher gestalten",
+      "Legal": "Rechtliches", "Legal · Data protection": "Rechtliches · Datenschutz", "Legal · Privacy": "Rechtliches · Privatsphäre",
+      "Pricing": "Preise", "Privacy": "Datenschutz", "Privacy Policy": "Datenschutzerklärung",
+      "Request a counter-signed copy": "Gegengezeichnete Kopie anfordern", "Status": "Status",
+      "Subprocessors": "Unterauftragsverarbeiter", "Terms": "AGB", "Terms of Service": "Nutzungsbedingungen",
+      "Trust & Safety": "Vertrauen & Sicherheit",
+      "PollSlide Technologies LLC · Effective date:": "PollSlide Technologies LLC · Gültig ab:",
+      "PollSlide Technologies LLC · Last updated:": "PollSlide Technologies LLC · Zuletzt aktualisiert:",
+      "PollSlide Technologies LLC · Last reviewed:": "PollSlide Technologies LLC · Zuletzt geprüft:",
+      "PollSlide Technologies LLC · Version 1.0 · Effective:": "PollSlide Technologies LLC · Version 1.0 · Gültig ab:",
+      "PollSlide Technologies LLC · Based on VPAT® 2.5 · Report date:": "PollSlide Technologies LLC · Basierend auf VPAT® 2.5 · Berichtsdatum:",
+      "PollSlide Technologies LLC · Wyoming, USA": "PollSlide Technologies LLC · Wyoming, USA",
+      "· Last updated:": "· Zuletzt aktualisiert:", "⬇︎ Download / Print (PDF)": "⬇︎ Herunterladen / Drucken (PDF)"
+    },
+    fr: {
+      "Accessibility": "Accessibilité", "Accessibility Statement": "Déclaration d'accessibilité",
+      "Accessibility Conformance Report (VPAT®)": "Rapport de conformité d'accessibilité (VPAT®)",
+      "Accessibility · Procurement": "Accessibilité · Achats",
+      "Contact": "Contact", "Cookie Policy": "Politique relative aux cookies",
+      "Data Processing Agreement": "Accord de traitement des données",
+      "Keeping live participation safe": "Garantir une participation en direct sûre",
+      "Legal": "Mentions légales", "Legal · Data protection": "Légal · Protection des données", "Legal · Privacy": "Légal · Confidentialité",
+      "Pricing": "Tarifs", "Privacy": "Confidentialité", "Privacy Policy": "Politique de confidentialité",
+      "Request a counter-signed copy": "Demander une copie contresignée", "Status": "État",
+      "Subprocessors": "Sous-traitants", "Terms": "Conditions", "Terms of Service": "Conditions d'utilisation",
+      "Trust & Safety": "Confiance et sécurité",
+      "PollSlide Technologies LLC · Effective date:": "PollSlide Technologies LLC · Date d'entrée en vigueur :",
+      "PollSlide Technologies LLC · Last updated:": "PollSlide Technologies LLC · Dernière mise à jour :",
+      "PollSlide Technologies LLC · Last reviewed:": "PollSlide Technologies LLC · Dernière révision :",
+      "PollSlide Technologies LLC · Version 1.0 · Effective:": "PollSlide Technologies LLC · Version 1.0 · En vigueur :",
+      "PollSlide Technologies LLC · Based on VPAT® 2.5 · Report date:": "PollSlide Technologies LLC · Basé sur VPAT® 2.5 · Date du rapport :",
+      "PollSlide Technologies LLC · Wyoming, USA": "PollSlide Technologies LLC · Wyoming, États-Unis",
+      "· Last updated:": "· Dernière mise à jour :", "⬇︎ Download / Print (PDF)": "⬇︎ Télécharger / Imprimer (PDF)"
+    },
+    pt: {
+      "Accessibility": "Acessibilidade", "Accessibility Statement": "Declaração de acessibilidade",
+      "Accessibility Conformance Report (VPAT®)": "Relatório de conformidade de acessibilidade (VPAT®)",
+      "Accessibility · Procurement": "Acessibilidade · Aquisições",
+      "Contact": "Contato", "Cookie Policy": "Política de cookies",
+      "Data Processing Agreement": "Acordo de Processamento de Dados",
+      "Keeping live participation safe": "Manter a participação ao vivo segura",
+      "Legal": "Jurídico", "Legal · Data protection": "Jurídico · Proteção de dados", "Legal · Privacy": "Jurídico · Privacidade",
+      "Pricing": "Preços", "Privacy": "Privacidade", "Privacy Policy": "Política de privacidade",
+      "Request a counter-signed copy": "Solicitar uma cópia contra-assinada", "Status": "Status",
+      "Subprocessors": "Subprocessadores", "Terms": "Termos", "Terms of Service": "Termos de Serviço",
+      "Trust & Safety": "Confiança e Segurança",
+      "PollSlide Technologies LLC · Effective date:": "PollSlide Technologies LLC · Data de vigência:",
+      "PollSlide Technologies LLC · Last updated:": "PollSlide Technologies LLC · Última atualização:",
+      "PollSlide Technologies LLC · Last reviewed:": "PollSlide Technologies LLC · Última revisão:",
+      "PollSlide Technologies LLC · Version 1.0 · Effective:": "PollSlide Technologies LLC · Versão 1.0 · Em vigor:",
+      "PollSlide Technologies LLC · Based on VPAT® 2.5 · Report date:": "PollSlide Technologies LLC · Baseado no VPAT® 2.5 · Data do relatório:",
+      "PollSlide Technologies LLC · Wyoming, USA": "PollSlide Technologies LLC · Wyoming, EUA",
+      "· Last updated:": "· Última atualização:", "⬇︎ Download / Print (PDF)": "⬇︎ Baixar / Imprimir (PDF)"
+    },
+    it: {
+      "Accessibility": "Accessibilità", "Accessibility Statement": "Dichiarazione di accessibilità",
+      "Accessibility Conformance Report (VPAT®)": "Rapporto di conformità all'accessibilità (VPAT®)",
+      "Accessibility · Procurement": "Accessibilità · Appalti",
+      "Contact": "Contatto", "Cookie Policy": "Informativa sui cookie",
+      "Data Processing Agreement": "Accordo sul trattamento dei dati",
+      "Keeping live participation safe": "Mantenere sicura la partecipazione dal vivo",
+      "Legal": "Note legali", "Legal · Data protection": "Legale · Protezione dei dati", "Legal · Privacy": "Legale · Privacy",
+      "Pricing": "Prezzi", "Privacy": "Privacy", "Privacy Policy": "Informativa sulla privacy",
+      "Request a counter-signed copy": "Richiedi una copia controfirmata", "Status": "Stato",
+      "Subprocessors": "Subresponsabili del trattamento", "Terms": "Termini", "Terms of Service": "Termini di servizio",
+      "Trust & Safety": "Fiducia e sicurezza",
+      "PollSlide Technologies LLC · Effective date:": "PollSlide Technologies LLC · Data di entrata in vigore:",
+      "PollSlide Technologies LLC · Last updated:": "PollSlide Technologies LLC · Ultimo aggiornamento:",
+      "PollSlide Technologies LLC · Last reviewed:": "PollSlide Technologies LLC · Ultima revisione:",
+      "PollSlide Technologies LLC · Version 1.0 · Effective:": "PollSlide Technologies LLC · Versione 1.0 · In vigore:",
+      "PollSlide Technologies LLC · Based on VPAT® 2.5 · Report date:": "PollSlide Technologies LLC · Basato su VPAT® 2.5 · Data del rapporto:",
+      "PollSlide Technologies LLC · Wyoming, USA": "PollSlide Technologies LLC · Wyoming, USA",
+      "· Last updated:": "· Ultimo aggiornamento:", "⬇︎ Download / Print (PDF)": "⬇︎ Scarica / Stampa (PDF)"
+    }
+  };
+  window.PS_I18N = window.PS_I18N || {};
+  for (var l in T) { window.PS_I18N[l] = Object.assign(window.PS_I18N[l] || {}, T[l]); }
+})();

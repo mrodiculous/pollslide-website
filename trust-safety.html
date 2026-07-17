@@ -50,6 +50,7 @@
   </div>
 
   <div class="legal-body" data-i18n-skip>
+    <p data-i18n-skip style="font-size:12.5px;color:var(--muted);border-left:2px solid var(--accent);padding:6px 0 6px 12px;margin:0 0 20px;">🌐 This page is provided in English, the authoritative version. Use the language selector in the header to switch the rest of the site.</p>
 
     <div class="highlight-box">
       <strong>Our commitment.</strong> PollSlide lets an audience respond in real time. We take reasonable, good-faith measures — described below — to reduce abuse and protect personal data. These safeguards are provided on a best-effort basis and are not a guarantee; presenters remain responsible for moderating their own sessions. See our <a href="/terms#content">Terms</a> for the full legal position.
@@ -114,6 +115,7 @@ function toggleTheme(){document.body.classList.toggle('light');document.getEleme
 if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
 </script>
   <script src="/translations.js?v=9"></script>
+<script src="/legal-translations.js?v=1"></script>
 <script src="/i18n.js?v=7"></script>
 </body>
 </html>
