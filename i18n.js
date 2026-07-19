@@ -139,11 +139,23 @@
     lang = l;
     document.documentElement.lang = l;
     const dict = I18N[l] || {}, en = I18N.en;
-    const get = k => (dict[k] != null ? dict[k] : en[k]);
-    document.querySelectorAll('[data-i18n]').forEach(el => { const v = get(el.getAttribute('data-i18n')); if (v != null) el.textContent = v; });
-    document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = get(el.getAttribute('data-i18n-html')); if (v != null) el.innerHTML = v; });
+    // External keyed dictionaries (e.g. legal-body-translations.js) merge in here, so
+    // long block-level content lives in its own file instead of bloating i18n.js.
+    const ext = (window.PS_I18N_KEYS && window.PS_I18N_KEYS[l]) || {};
+    const get = k => (ext[k] != null ? ext[k] : (dict[k] != null ? dict[k] : en[k]));
+    // The English original is captured ONCE (before any replacement) so switching back
+    // to English restores the source markup even for keys that have no English entry.
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (el._psOrigText === undefined) el._psOrigText = el.textContent;
+      const v = get(el.getAttribute('data-i18n')); el.textContent = (v != null) ? v : el._psOrigText; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      if (el._psOrigHTML === undefined) el._psOrigHTML = el.innerHTML;
+      const v = get(el.getAttribute('data-i18n-html')); el.innerHTML = (v != null) ? v : el._psOrigHTML; });
     document.querySelectorAll('[data-i18n-ph]').forEach(el => { const v = get(el.getAttribute('data-i18n-ph')); if (v != null) el.setAttribute('placeholder', v); });
     walkAndTranslate(l);   // translate the rest of the page
+    // Legal bodies are data-i18n-skip (dense inline markup would fragment); legal-i18n.js
+    // swaps whole blocks by content hash instead.
+    if (window.psApplyLegal) window.psApplyLegal(l);
     const sel = document.getElementById('langSel'); if (sel) sel.value = l;
   }
 
