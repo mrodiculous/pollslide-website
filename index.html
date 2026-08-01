@@ -350,6 +350,29 @@
   </div>
 </header>
 
+<!-- ── SEE IT (30s) ──
+     Landing-page video is the highest-leverage proof we have: it shows a real session
+     going from live answers to a leaderboard without asking anyone to read. Muted +
+     autoplay + loop + playsinline so it behaves like a moving screenshot on every device;
+     `controls` so anyone who wants to scrub or hear it still can. preload="metadata"
+     keeps it off the critical path. -->
+<section id="see-it" style="padding:10px 0 56px;">
+  <div class="container" style="text-align:center;">
+    <div class="section-tag reveal">See it in 30 seconds</div>
+    <h2 class="section-title reveal">Live answers, then a leaderboard —<br>without leaving your slides</h2>
+    <div class="reveal" style="max-width:860px;margin:26px auto 0;border-radius:18px;overflow:hidden;border:1px solid var(--border2);background:var(--surface);box-shadow:0 40px 100px rgba(0,0,0,0.55);">
+      <video
+        src="help-assets/previews/preview_1_live_to_leaderboard.mp4"
+        autoplay muted loop playsinline controls preload="metadata"
+        aria-label="A live PollSlide question filling in with audience answers, then revealing the leaderboard"
+        style="display:block;width:100%;height:auto;"></video>
+    </div>
+    <p class="reveal" style="color:var(--muted);font-size:14px;margin-top:16px;">
+      No app for your audience — they scan a QR or type a code at <b>pollslide.com/join</b>.
+    </p>
+  </div>
+</section>
+
 <!-- ── PROBLEM ── -->
 <section class="problem">
   <div class="container">
@@ -522,6 +545,9 @@
       <div class="feat reveal"><span class="ficon">🎲</span><h3>Wager</h3><p>Players bet Safe, Risky or Bold before they answer. Nobody's ever out of it — one brave round changes everything.</p></div>
     </div>
     <p class="section-sub reveal" style="margin-top:26px;">Prefer things exactly as they are? <b>Classic mode is still the default</b> — one point per correct answer, you reveal when you're ready. Nothing changes unless you want it to.</p>
+    <div class="reveal" style="text-align:center;margin-top:22px;">
+      <a href="/game-modes" class="btn btn-ghost" style="background:var(--surface2);border:1px solid var(--border2);color:var(--text);">See every game mode →</a>
+    </div>
   </div>
 </section>
 

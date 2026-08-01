@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pub Quiz Software with Game Modes — Speed, Streak, Survival &amp; Wager | PollSlide</title>
+<meta name="description" content="Free pub quiz software that plays like a game. Run team quizzes with speed rounds, streaks, last-one-standing survival and wager rounds. Players answer on their own phones — no app to install.">
+<link rel="canonical" href="https://pollslide.com/game-modes">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PollSlide">
+<meta property="og:url" content="https://pollslide.com/game-modes">
+<meta property="og:title" content="Pub quiz software that actually plays like a game">
+<meta property="og:description" content="Speed rounds, streaks, last-one-standing survival and wager rounds — with teams, on everyone's own phone. Free to start.">
+<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pub quiz software that actually plays like a game">
+<meta name="twitter:description" content="Speed rounds, streaks, survival and wager rounds — with teams, on everyone's own phone. Free to start.">
+<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+    --accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+  body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.14);--text:#15152a;--muted:#5a5a78;}
+  body,body *{transition:background-color .3s,border-color .3s,color .3s;}*{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}.wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .nav-links{display:flex;align-items:center;gap:20px;font-size:14.5px;font-weight:500;}
+  .nav-links a{color:var(--muted);}.nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;}
+  .btn:hover{background:var(--accent-l);}
+  .btn-lg{padding:15px 30px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);}
+  .hero{padding:64px 0 34px;text-align:center;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(31px,5.4vw,54px);line-height:1.06;letter-spacing:-.02em;margin-bottom:16px;}
+  .hero h1 .g{background:linear-gradient(120deg,var(--accent-l),var(--accent2) 60%,var(--accent4));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero p.lead{color:var(--muted);font-size:clamp(16px,2.1vw,19px);max-width:660px;margin:0 auto 26px;}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;}
+  .sec{padding:44px 0;border-top:1px solid var(--border);}
+  .sec h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(23px,3.4vw,33px);margin-bottom:10px;letter-spacing:-.01em;}
+  .sec p.sub{color:var(--muted);margin-bottom:26px;max-width:700px;}
+  /* mode rows */
+  .mode{display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:center;padding:26px 0;border-bottom:1px solid var(--border);}
+  .mode:last-child{border-bottom:none;}
+  .mode:nth-child(even) .mockup{order:-1;}
+  .mode h3{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+  .mode p{color:var(--muted);font-size:15px;margin-bottom:10px;}
+  .bestfor{display:inline-block;font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;background:rgba(67,233,123,.14);color:var(--accent3);border:1px solid rgba(67,233,123,.3);}
+  /* device mockups — real product UI rebuilt in CSS so it stays crisp and never goes stale */
+  .mockup{display:flex;justify-content:center;}
+  .phone{width:250px;background:#0d0d18;border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:18px 16px;box-shadow:0 24px 60px rgba(0,0,0,.5);color:#f4f4fc;}
+  .screen{width:100%;background:#0d0d18;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px;box-shadow:0 24px 60px rgba(0,0,0,.5);color:#f4f4fc;}
+  .m-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:11px;letter-spacing:.08em;color:#6c63ff;margin-bottom:11px;}
+  .m-badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:20px;background:rgba(108,99,255,.2);color:#a78bfa;margin-bottom:9px;}
+  .m-strip{border-radius:9px;padding:7px 10px;font-size:11px;font-weight:600;text-align:center;margin-bottom:11px;}
+  .m-q{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;line-height:1.35;margin-bottom:11px;}
+  .m-opt{border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:8px 10px;font-size:12px;margin-bottom:6px;background:rgba(255,255,255,.04);}
+  .m-bet{display:flex;align-items:center;gap:9px;border-radius:9px;padding:8px 10px;margin-bottom:6px;background:rgba(255,255,255,.05);}
+  .m-bet b{font-family:'Syne',sans-serif;font-size:16px;min-width:26px;}
+  .m-bet span{font-size:11px;}
+  .m-bet small{display:block;color:#9090b8;font-size:10px;}
+  .hl{display:flex;align-items:center;gap:12px;border-radius:12px;padding:12px 14px;margin-bottom:11px;}
+  .hl .ic{font-size:30px;line-height:1;}
+  .hl .lab{font-family:'Syne',sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.12em;}
+  .hl .nm{font-family:'Syne',sans-serif;font-weight:900;font-size:17px;line-height:1.15;}
+  .hl .ex{font-size:11px;color:#9090b8;}
+  .lbrow{display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px;}
+  .lbrow .r{width:20px;text-align:center;}
+  .lbrow .n{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .lbrow .s{font-family:'Syne',sans-serif;font-weight:800;color:#43e97b;}
+  .up{color:#43e97b;font-size:10px;font-weight:800;}
+  .down{color:#ff6584;font-size:10px;font-weight:800;}
+  /* comparison + faq */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:17px 19px;}
+  .card h4{font-family:'Syne',sans-serif;font-size:15px;margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:13.5px;}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  summary{cursor:pointer;font-weight:600;font-size:15px;}
+  details p{color:var(--muted);font-size:14px;margin-top:8px;}
+  .final{text-align:center;padding:56px 0;}
+  footer{border-top:1px solid var(--border);padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+  @media(max-width:760px){.mode{grid-template-columns:1fr;}.mode:nth-child(even) .mockup{order:0;}.nav-links a:not(.btn){display:none;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
+  <div class="nav-links">
+    <a href="/#features" data-i18n="nav.features">Features</a>
+    <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="/help" data-i18n="nav.help">Help</a>
+    <span id="langSelWrap"></span>
+    <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/presenter" class="btn">Try Free</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Game modes</div>
+  <h1>Pub quiz software that<br><span class="g">actually plays like a game</span></h1>
+  <p class="lead">Most quiz tools give you one flavour: ask a question, watch a bar chart, move on. PollSlide asks how you want to <b>play</b> — speed rounds, streaks, last-one-standing survival, or wager rounds where players bet on themselves. Everyone answers on their own phone. Nothing to install.</p>
+  <div class="cta-row">
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free — no card</a>
+    <a href="/help#gamemodes" class="btn btn-lg btn-ghost">See how it works</a>
+  </div>
+  <div class="note">Free plan runs real quizzes · works with teams · 6 languages on your audience's phones</div>
+</div></header>
+
+<main>
+<section class="sec"><div class="wrap">
+  <h2>Five ways to run the same questions</h2>
+  <p class="sub">You build your quiz once. When you press Present, you choose how it plays — so the same deck can be a calm classroom check-in on Tuesday and a roaring pub quiz on Friday.</p>
+
+  <div class="mode">
+    <div>
+      <h3>⚡ Speed round</h3>
+      <p>The faster you answer correctly, the more you score — up to double points for the quickest in the room. The reveal crowns a <b>Fastest Finger</b>, and suddenly nobody's checking their email.</p>
+      <span class="bestfor">Best for: parties, conferences, waking up a flat room</span>
+    </div>
+    <div class="mockup"><div class="screen">
+      <div class="hl" style="background:linear-gradient(120deg,#38d9f526,#38d9f50d);border:1px solid #38d9f566;">
+        <div class="ic">⚡</div>
+        <div><div class="lab" style="color:#38d9f5;">FASTEST FINGER</div><div class="nm">Ann</div><div class="ex">1.2s</div></div>
+      </div>
+      <div class="lbrow"><span class="r">🥇</span><span class="n">Ann <span class="up">▲2</span></span><span class="s">1.9</span></div>
+      <div class="lbrow"><span class="r">🥈</span><span class="n">Bob</span><span class="s">1.4</span></div>
+      <div class="lbrow"><span class="r">🥉</span><span class="n">Cat <span class="down">▼1</span></span><span class="s">1.1</span></div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>🔥 Streak</h3>
+      <p>Correct answers in a row build a multiplier up to 3×, with flames that grow as you go — and one miss resets it. People start protecting a streak like it's money.</p>
+      <span class="bestfor">Best for: classrooms, training, anything that rewards consistency</span>
+    </div>
+    <div class="mockup"><div class="phone">
+      <div class="m-logo">▎POLLSLIDE</div>
+      <div class="m-badge">QUESTION 4</div>
+      <div class="m-strip" style="background:rgba(247,183,49,.12);border:1px solid rgba(247,183,49,.35);">🔥 <b>3 in a row</b> — keep it going!</div>
+      <div class="m-q">Which planet has the shortest day?</div>
+      <div class="m-opt">Jupiter</div>
+      <div class="m-opt">Mars</div>
+      <div class="m-opt">Venus</div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>💀 Survival</h3>
+      <p>One wrong answer and you're out. Knocked-out players keep watching every question while the big screen counts down who's still standing — until somebody wins the whole room. It's the round people talk about in the car home.</p>
+      <span class="bestfor">Best for: a grand finale, tie-breakers, high drama</span>
+    </div>
+    <div class="mockup"><div class="phone">
+      <div class="m-logo">▎POLLSLIDE</div>
+      <div style="text-align:center;padding:10px 0 2px;">
+        <div style="font-size:42px;line-height:1;">💀</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:900;font-size:20px;margin-top:8px;">You're out!</div>
+        <div style="font-size:12px;color:#9090b8;margin-top:2px;">You survived <b style="color:#f7b731;">4</b> questions.</div>
+      </div>
+      <div style="background:rgba(255,101,132,.1);border:1px solid rgba(255,101,132,.3);border-radius:11px;padding:10px;font-size:11px;color:#9090b8;text-align:center;margin-top:11px;line-height:1.5;">
+        Stay on this screen — you'll still see every question.
+        <div style="margin-top:5px;color:#f4f4fc;font-weight:700;">7 still in</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>🎲 Wager round</h3>
+      <p>Before each question players bet <b>Safe</b>, <b>Risky</b> or <b>Bold</b> — the classic pub-quiz joker. Bold pays triple but costs you when you're wrong, so the team in last place is never actually out of it.</p>
+      <span class="bestfor">Best for: comebacks, joker rounds, keeping everyone in the game</span>
+    </div>
+    <div class="mockup"><div class="phone">
+      <div class="m-logo">▎POLLSLIDE</div>
+      <div class="m-strip" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.35);">🎲 <b>Wager round</b> — bet before you answer</div>
+      <div style="text-align:center;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;margin-bottom:9px;">How confident are you?</div>
+      <div class="m-bet" style="border:1px solid #43e97b55;"><b style="color:#43e97b;">1×</b><span>Safe<small>Win 1 · lose nothing</small></span></div>
+      <div class="m-bet" style="border:1px solid #f7b73155;"><b style="color:#f7b731;">2×</b><span>Risky<small>Win 2 · lose 1</small></span></div>
+      <div class="m-bet" style="border:1px solid #ff658455;"><b style="color:#ff6584;">3×</b><span>Bold<small>Win 3 · lose 2</small></span></div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>🎯 Classic</h3>
+      <p>One point per correct answer, revealed when you're ready. It's the default and it never changes — if you just want a straightforward quiz or a serious poll, press Start and carry on exactly as before.</p>
+      <span class="bestfor">Best for: everything else — and it's still the default</span>
+    </div>
+    <div class="mockup"><div class="screen">
+      <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:10px;letter-spacing:.1em;color:#a78bfa;margin-bottom:9px;">✦ LEADERBOARD</div>
+      <div class="lbrow"><span class="r">🥇</span><span class="n">Ann</span><span class="s">4</span></div>
+      <div class="lbrow"><span class="r">🥈</span><span class="n">Bob</span><span class="s">3</span></div>
+      <div class="lbrow"><span class="r">🥉</span><span class="n">Cat</span><span class="s">3</span></div>
+      <div class="lbrow"><span class="r">#4</span><span class="n">Dan</span><span class="s">2</span></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Built for real pub quizzes, not just classrooms</h2>
+  <p class="sub">Teams, phones, latecomers, and the bit at the end where everyone wants to know who won.</p>
+  <div class="cards">
+    <div class="card"><h4>👥 Proper team play</h4><p>Each table creates a team and everyone answers on their own phone. A team's score is the <b>average</b> of its members, so a table of six has no advantage over a table of two.</p></div>
+    <div class="card"><h4>🎪 Warm-up while they arrive</h4><p>The big screen runs light trivia before you start, so the room is entertained — and looking at your join code — while stragglers get a drink.</p></div>
+    <div class="card"><h4>📱 No app to install</h4><p>Players scan a QR or type a code at <b>pollslide.com/join</b>. Works on any phone, and the questions appear in their own language automatically.</p></div>
+    <div class="card"><h4>🎁 A recap to share after</h4><p>One click makes a page with the winner, the toughest question and the highlights — send the link to the group chat and they'll come back next week.</p></div>
+    <div class="card"><h4>✨ Questions written for you</h4><p>Describe the quiz you want and Polly drafts the questions, with the answers marked. Bring your own rounds or let the AI fill the gaps.</p></div>
+    <div class="card"><h4>📊 Runs over your slides</h4><p>Present from PollSlide, or float live results over Keynote, PowerPoint or a PDF with the free Mac companion.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Is it really free?</summary><p>Yes — the free plan runs real quizzes with all five game modes, teams and the recap. Paid plans lift the limits on audience size, saved quizzes and AI question generation. See <a href="/pricing" style="color:var(--accent);">pricing</a>.</p></details>
+  <details><summary>Do players need to download anything?</summary><p>No. They scan the QR on your screen or go to <b>pollslide.com/join</b> and type the code. It's a normal web page — any phone, no account needed.</p></details>
+  <details><summary>Can I run it in a noisy pub with bad wifi?</summary><p>Players need a data connection, but the pages are small and answers are tiny. Show the join code on screen the whole time so anyone who drops out can rejoin instantly.</p></details>
+  <details><summary>Can I mix modes in one night?</summary><p>Yes — that's the intended way to use it. Start Classic, run a Speed round in the middle, and finish on Survival for the finale. You pick the mode each time you press Present.</p></details>
+  <details><summary>How is this different from Kahoot?</summary><p>Kahoot is a great game-show quiz. PollSlide does gamified quizzes <em>and</em> polls, surveys and study sets, over your real slides, with team scoring that isn't biased toward big teams. See the honest <a href="/vs-kahoot" style="color:var(--accent);">side-by-side</a>.</p></details>
+  <details><summary>What if my questions are in another language?</summary><p>Your audience picks their language on their own phone and the questions are translated for them, in context — so a mixed room can all play the same quiz.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3.6vw,36px);margin-bottom:12px;">Run your next quiz as a game</h2>
+  <p style="color:var(--muted);max-width:520px;margin:0 auto 24px;">Free to start, no card, and your first quiz can be running in about five minutes.</p>
+  <div class="cta-row">
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free</a>
+    <a href="/help#gamemodes" class="btn btn-lg btn-ghost">Read the guide</a>
+  </div>
+  <div class="note">More: <a href="/vs-kahoot" style="color:var(--accent);">vs Kahoot</a> · <a href="/vs-mentimeter" style="color:var(--accent);">vs Mentimeter</a> · <a href="/vs-slido" style="color:var(--accent);">vs Slido</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
+    <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
+  </div>
+  <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is PollSlide really free for pub quizzes?","acceptedAnswer":{"@type":"Answer","text":"Yes. The free plan runs real quizzes with all five game modes, team play and the shareable recap. Paid plans lift limits on audience size, saved quizzes and AI question generation."}},
+{"@type":"Question","name":"Do players need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. Players scan the QR code on screen or go to pollslide.com/join and type the code. It works on any phone in a normal web browser, with no account needed."}},
+{"@type":"Question","name":"Can I mix game modes in one quiz night?","acceptedAnswer":{"@type":"Answer","text":"Yes. You choose the mode each time you press Present, so you can start in Classic, run a Speed round in the middle and finish with Survival as a finale."}},
+{"@type":"Question","name":"How does team scoring work?","acceptedAnswer":{"@type":"Answer","text":"Each table creates a team and everyone answers on their own phone. A team's score is the average of its members, so larger teams have no built-in advantage."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PollSlide","applicationCategory":"BusinessApplication","operatingSystem":"Web, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free pub quiz and live polling software with game modes: speed rounds, streaks, survival and wager rounds, with team play on your audience's own phones."}
+</script>
+<script>
+  document.getElementById('footYr').textContent=new Date().getFullYear();
+  function toggleTheme(){const l=document.body.classList.toggle('light');localStorage.setItem('pollslide_theme',l?'light':'dark');document.getElementById('themeToggle').textContent=l?'☀️':'🌙';}
+  if(localStorage.getItem('pollslide_theme')==='light'){document.body.classList.add('light');var t=document.getElementById('themeToggle');if(t)t.textContent='☀️';}
+</script>
+<script src="/consent.js?v=4"></script>
+<script src="/translations.js?v=10"></script>
+<script src="/i18n.js?v=7"></script>
+</body>
+</html>
