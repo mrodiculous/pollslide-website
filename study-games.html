@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards &amp; Spaced Repetition That Play Like a Game | PollSlide StudySlide</title>
+<meta name="description" content="Free flashcard app with real spaced repetition, daily streaks and study games — Beat the Clock, Climb the Ladder and a pick-a-card board. Turn any quiz or deck into study cards in one click.">
+<link rel="canonical" href="https://pollslide.com/study-games">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PollSlide">
+<meta property="og:url" content="https://pollslide.com/study-games">
+<meta property="og:title" content="Revision that behaves like a game you'd actually open">
+<meta property="og:description" content="Real spaced repetition, a daily streak, and three study games. Turn any deck into flashcards in one click. Free to start.">
+<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Revision that behaves like a game you'd actually open">
+<meta name="twitter:description" content="Spaced repetition, streaks and study games. Turn any deck into flashcards in one click.">
+<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/demos.css?v=1">
+<style>
+  :root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+    --accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+  body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.14);--text:#15152a;--muted:#5a5a78;}
+  body,body *{transition:background-color .3s,border-color .3s,color .3s;}*{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}.wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .nav-links{display:flex;align-items:center;gap:20px;font-size:14.5px;font-weight:500;}
+  .nav-links a{color:var(--muted);}.nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;}
+  .btn:hover{background:var(--accent-l);}
+  .btn-lg{padding:15px 30px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);}
+  .hero{padding:64px 0 34px;text-align:center;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(31px,5.4vw,54px);line-height:1.06;letter-spacing:-.02em;margin-bottom:16px;}
+  .hero h1 .g{background:linear-gradient(120deg,var(--accent-l),var(--accent2) 60%,var(--accent4));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero p.lead{color:var(--muted);font-size:clamp(16px,2.1vw,19px);max-width:660px;margin:0 auto 26px;}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;}
+  .sec{padding:44px 0;border-top:1px solid var(--border);}
+  .sec h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(23px,3.4vw,33px);margin-bottom:10px;letter-spacing:-.01em;}
+  .sec p.sub{color:var(--muted);margin-bottom:26px;max-width:700px;}
+  .mode{display:grid;grid-template-columns:1fr 340px;gap:30px;align-items:center;padding:26px 0;border-bottom:1px solid var(--border);}
+  .mode:last-child{border-bottom:none;}
+  .mode:nth-child(even) .demo{order:-1;}
+  .mode h3{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;margin-bottom:8px;}
+  .mode p{color:var(--muted);font-size:15px;margin-bottom:10px;}
+  .bestfor{display:inline-block;font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;background:rgba(67,233,123,.14);color:var(--accent3);border:1px solid rgba(67,233,123,.3);}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:17px 19px;}
+  .card h4{font-family:'Syne',sans-serif;font-size:15px;margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:13.5px;}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  summary{cursor:pointer;font-weight:600;font-size:15px;}
+  details p{color:var(--muted);font-size:14px;margin-top:8px;}
+  .final{text-align:center;padding:56px 0;}
+  footer{border-top:1px solid var(--border);padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media(max-width:760px){.mode{grid-template-columns:1fr;}.mode:nth-child(even) .demo{order:0;}.nav-links a:not(.btn){display:none;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
+  <div class="nav-links">
+    <a href="/#features" data-i18n="nav.features">Features</a>
+    <a href="/game-modes">Game modes</a>
+    <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="/help" data-i18n="nav.help">Help</a>
+    <span id="langSelWrap"></span>
+    <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/presenter" class="btn">Try Free</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">StudySlide</div>
+  <h1>Revision that behaves like<br><span class="g">a game you'd actually open</span></h1>
+  <p class="lead">Real spaced repetition — the same idea behind Anki — wrapped in a daily streak and three study games. Turn any quiz, poll or deck into flashcards in one click, then actually look forward to revising them.</p>
+  <div class="cta-row">
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free — no card</a>
+    <a href="/help#studygames" class="btn btn-lg btn-ghost">See how it works</a>
+  </div>
+  <div class="note">Free plan · no app for learners · works in 6 languages</div>
+</div></header>
+
+<main>
+<section class="sec"><div class="wrap">
+  <h2>The bit most flashcard apps get wrong</h2>
+  <p class="sub">Spaced repetition works — but only if you keep opening the app. So PollSlide puts the habit first: a streak you don't want to break, a mastery bar you want to finish, and games short enough to play while the kettle boils. Every one of them is real revision underneath.</p>
+
+  <div class="mode">
+    <div>
+      <h3>🔥 A streak worth protecting</h3>
+      <p>Study anything — any set, any mode — and your streak grows. Miss a day and it's gone, which is precisely why it works. One streak across everything you're learning, not one per subject.</p>
+      <span class="bestfor">The habit loop</span>
+    </div>
+    <div class="demo"><div class="psd">
+      <div class="psd-title">Daily streak</div>
+      <div style="text-align:center;padding:6px 0 2px;">
+        <div class="psd-streak-n"><span class="psd-flame">🔥</span> 12</div>
+        <div style="font-size:11.5px;color:var(--psd-muted);margin-top:2px;">days in a row</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>🏆 A bar you want to finish</h3>
+      <p>Every card moves Learning → Familiar → Mastered as it survives longer and longer gaps. You're not staring at an "ease factor of 2.35" — you're watching a bar go green, and wanting the rest of it.</p>
+      <span class="bestfor">The collection loop</span>
+    </div>
+    <div class="demo"><div class="psd">
+      <div class="psd-title">Mastery</div>
+      <div class="psd-bar"><div class="psd-seg-m"></div><div class="psd-seg-f"></div></div>
+      <div class="psd-legend"><span>🌱 Learning</span><span>⭐ Familiar</span><span style="color:#43e97b;">🏆 Mastered</span></div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>⚡ Beat the Clock</h3>
+      <p>Sixty seconds. How many can you get right? There's a personal best sitting there that you will, inevitably, want to beat. Perfect for the two minutes you actually have.</p>
+      <span class="bestfor">Best for: short bursts, exam cramming</span>
+    </div>
+    <div class="demo"><div class="psd">
+      <div class="psd-title">⚡ Beat the Clock</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="font-size:11px;color:var(--psd-muted);">Score</div><div style="font-family:'Syne',sans-serif;font-weight:900;font-size:24px;color:#43e97b;">14</div></div>
+        <div style="text-align:right;"><div style="font-size:11px;color:var(--psd-muted);">Seconds</div><div class="psd-clock">09</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:11.5px;color:var(--psd-muted);text-align:center;">Your best: 17</div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>🪜 Climb the Ladder</h3>
+      <p>Ten rungs of rising stakes with two lifelines and safe havens along the way. Bank what you've earned or push for the top — the decision is the fun, and the revision happens anyway.</p>
+      <span class="bestfor">Best for: a proper session with some tension</span>
+    </div>
+    <div class="demo"><div class="psd">
+      <div class="psd-title">🪜 Climb the Ladder</div>
+      <div class="psd-ladder">
+        <div class="psd-rung"><span>1</span><i></i></div>
+        <div class="psd-rung"><span>2</span><i></i></div>
+        <div class="psd-rung"><span>3</span><i></i><span>🛡</span></div>
+        <div class="psd-rung"><span>4</span><i></i></div>
+        <div class="psd-rung"><span>5</span><i></i></div>
+      </div>
+      <div style="font-size:11.5px;color:var(--psd-muted);text-align:center;margin-top:10px;">🛡 safe haven · 50:50 · skip</div>
+    </div></div>
+  </div>
+
+  <div class="mode">
+    <div>
+      <h3>🎲 Pick-a-Card Board</h3>
+      <p>Choose your squares game-show style. Here's the quiet trick: a card's value comes from how well you know it, so the expensive squares are the ones you keep forgetting. It steers you at your weak spots while feeling like free choice.</p>
+      <span class="bestfor">Best for: study groups, or a big screen</span>
+    </div>
+    <div class="demo"><div class="psd">
+      <div class="psd-title">🎲 Pick-a-Card Board</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;">
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(255,101,132,.14);border:1px solid rgba(255,101,132,.4);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;">500</div>
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(247,183,49,.14);border:1px solid rgba(247,183,49,.4);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;">300</div>
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(255,255,255,.06);opacity:.35;"></div>
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(67,233,123,.12);border:1px solid rgba(67,233,123,.35);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;">100</div>
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(255,101,132,.14);border:1px solid rgba(255,101,132,.4);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;">500</div>
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(255,255,255,.06);opacity:.35;"></div>
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(247,183,49,.14);border:1px solid rgba(247,183,49,.4);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;">300</div>
+        <div style="aspect-ratio:1;border-radius:8px;background:rgba(67,233,123,.12);border:1px solid rgba(67,233,123,.35);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;">100</div>
+      </div>
+      <div style="font-size:11px;color:var(--psd-muted);text-align:center;margin-top:10px;">Higher value = the ones you keep forgetting</div>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Still real studying underneath</h2>
+  <p class="sub">The games aren't a break from revision — they <em>are</em> the revision.</p>
+  <div class="cards">
+    <div class="card"><h4>🧠 One scheduler, four modes</h4><p>Every mode feeds the same spaced-repetition scheduler. Get a card right in Beat the Clock and it's pushed further into the future; get it wrong and it comes back sooner. Nothing you do is wasted.</p></div>
+    <div class="card"><h4>⚡ One click from any deck</h4><p>Already built a quiz? Hit <b>📚 Study this deck</b> and every question becomes a flashcard — question on the front, correct answer on the back.</p></div>
+    <div class="card"><h4>📱 Nothing to install</h4><p>Learners open a link or scan a QR. No account, no app, no setup — and the cards appear in their own language.</p></div>
+    <div class="card"><h4>☁️ Syncs when you're signed in</h4><p>Studying your own material? Progress, streak and mastery follow you between phone and laptop. Anonymous learners stay anonymous — no login is ever forced.</p></div>
+    <div class="card"><h4>👩‍🏫 Or share it with a class</h4><p>Send the set to a group and watch mastery build live on your dashboard — see which cards the room keeps getting wrong.</p></div>
+    <div class="card"><h4>🔊 Read aloud &amp; reminders</h4><p>Cards can be read out, and you can drop your next review into your calendar so the habit survives a busy week.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Is this basically Anki?</summary><p>The scheduling idea is the same — proven spaced repetition, showing you a card just before you'd forget it. The difference is everything around it: a streak, a mastery bar, three games, no install for learners, and one-click conversion from a quiz you already made.</p></details>
+  <details><summary>Do the games actually help me learn?</summary><p>Yes — they use the same cards and the same scheduler as normal review. The only thing that changes is the framing and the scoring. The Board even adapts: high-value squares are the cards you know least well.</p></details>
+  <details><summary>Do learners need an account?</summary><p>No. Studying needs no login at all — progress is saved in their browser. If you <em>are</em> signed in (because it's your own material), progress syncs across your devices as a bonus.</p></details>
+  <details><summary>Can I use it with a class?</summary><p>Yes. Share the set and each learner studies at their own pace, while your dashboard shows overall mastery and the cards the group finds hardest.</p></details>
+  <details><summary>Is it free?</summary><p>Yes, the free plan runs real study sets. Paid plans lift limits on saved sets, audience size and AI question generation. See <a href="/pricing" style="color:var(--accent);">pricing</a>.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3.6vw,36px);margin-bottom:12px;">Start a streak today</h2>
+  <p style="color:var(--muted);max-width:520px;margin:0 auto 24px;">Turn a deck into flashcards, study for two minutes, and see if you can keep it going tomorrow.</p>
+  <div class="cta-row">
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free</a>
+    <a href="/help#studygames" class="btn btn-lg btn-ghost">Read the guide</a>
+  </div>
+  <div class="note">More: <a href="/game-modes" style="color:var(--accent);">live quiz game modes</a> · <a href="/vs-kahoot" style="color:var(--accent);">vs Kahoot</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
+    <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
+  </div>
+  <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is PollSlide StudySlide like Anki?","acceptedAnswer":{"@type":"Answer","text":"The scheduling idea is the same proven spaced repetition, showing a card just before you would forget it. The difference is a daily streak, a mastery bar, three study games, no install for learners, and one-click conversion from an existing quiz."}},
+{"@type":"Question","name":"Do the study games actually help you learn?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every game uses the same cards and the same spaced-repetition scheduler as normal review — only the framing and scoring change. The pick-a-card board is adaptive: high-value squares are the cards you know least well."}},
+{"@type":"Question","name":"Do learners need an account to study?","acceptedAnswer":{"@type":"Answer","text":"No. Studying requires no login and progress is saved in the browser. If you are signed in because it is your own material, progress syncs across your devices as a bonus."}},
+{"@type":"Question","name":"Is the flashcard app free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The free plan runs real study sets with spaced repetition, streaks and all study games. Paid plans lift limits on saved sets, audience size and AI question generation."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PollSlide StudySlide","applicationCategory":"EducationalApplication","operatingSystem":"Web, macOS","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free flashcard and spaced-repetition study app with daily streaks and study games: Beat the Clock, Climb the Ladder and a pick-a-card board."}
+</script>
+<script>
+  document.getElementById('footYr').textContent=new Date().getFullYear();
+  function toggleTheme(){const l=document.body.classList.toggle('light');localStorage.setItem('pollslide_theme',l?'light':'dark');document.getElementById('themeToggle').textContent=l?'☀️':'🌙';}
+  if(localStorage.getItem('pollslide_theme')==='light'){document.body.classList.add('light');var t=document.getElementById('themeToggle');if(t)t.textContent='☀️';}
+</script>
+<script src="/consent.js?v=4"></script>
+<script src="/translations.js?v=12"></script>
+<script src="/i18n.js?v=7"></script>
+</body>
+</html>
