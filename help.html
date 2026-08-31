@@ -40,6 +40,15 @@
   section .lead{color:var(--muted);margin-bottom:22px;max-width:70ch}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
   @media(max-width:860px){.wrap{grid-template-columns:1fr}nav.toc{display:none}.grid{grid-template-columns:1fr}}
+  /* The header is a single flex row with no wrap, so on a phone the logo, the nav,
+     the language picker and the back-link all sat on one line and pushed the document
+     to 554px wide — every page then scrolled sideways, and the fixed cookie banner
+     stretched to match. Letting it wrap is the whole fix. */
+  @media(max-width:640px){
+    header{flex-wrap:wrap;padding:12px 16px;gap:8px 12px}
+    header .spacer{display:none}
+    nav.help-nav{margin-left:0}
+  }
   video,.shot{width:100%;border-radius:var(--radius);border:1px solid var(--border);background:#000;display:block}
   figcaption{font-size:13px;color:var(--muted);margin-top:8px}
   ol.steps{counter-reset:s;list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -136,8 +145,8 @@
     <a href="#reveal">Reveal live</a>
     <a href="#results">Results, reports &amp; export</a>
     <a href="#insights">✨ AI Insights — read the room</a>
-    <a href="#gamemodes">🎮 Game modes</a>
     <a href="#studygames">📚 Study it yourself</a>
+    <a href="#gamemodes">🎮 Game modes</a>
     <a href="#teamplay">👥 Team play (pub-quiz mode)</a>
     <a href="#warmup">🎪 Waiting-room warm-up</a>
     <a href="#copilot">🎯 Polly Live Co-pilot</a>
@@ -146,6 +155,11 @@
     <a href="#organise">📁 Folders, search &amp; pinning</a>
     <a href="#sharedecks">📤 Share a deck with someone</a>
     <a href="#collaborate">🤝 Build a deck together</a>
+    <h4>For teachers</h4>
+    <a href="#classes">👥 Class lists</a>
+    <a href="#verify">🔐 Making sure it's really them</a>
+    <a href="#retakes">🔁 Second attempts</a>
+    <a href="#gradebook">🎓 Gradebook export</a>
     <a href="#focus">👁 Know if someone leaves the screen</a>
     <h4>Mac Companion</h4>
     <a href="#companion">What it is</a>
@@ -700,6 +714,85 @@
       <div class="callout"><b>Note:</b> a shared deck can't be pinned or filed into your folders, because folders are your own filing and the deck lives in its owner's library. Everything else — editing, presenting, reports — works exactly as normal.</div>
     </section>
 
+    <section id="classes">
+      <h2>👥 Class lists — one record per student</h2>
+      <p class="lead">Give a class its list of students once, and every deck you assign to it records who answered <em>by person</em> — not by whatever they typed that day.</p>
+      <div class="grid">
+        <ol class="steps">
+          <li>Open a deck's <b>⋯</b> menu and choose <b>👥 Assign to a class…</b>, then <b>＋ New class</b>.</li>
+          <li>Give it a name — <i>“Biology 101, Period 3”</i> — and paste your list. One name per line, or paste a column straight out of a spreadsheet.</li>
+          <li>Press <b>Save</b>. You'll see exactly who was added.</li>
+          <li>Back in the class list, press <b>Assign</b> to attach this deck to that class.</li>
+          <li>Students now <b>pick their name from a list</b> instead of typing it.</li>
+        </ol>
+        <div class="cards">
+          <div class="card"><h3>📋 Paste it however you have it</h3><p><i>Ruiz, Ana</i> is turned into <i>Ana Ruiz</i>. A header row like <i>Student Name</i> is ignored rather than becoming a student. The same person listed twice becomes one. Extra columns — email, year group — are left alone.</p></div>
+          <div class="card"><h3>🔗 The record follows the student</h3><p>Not the phone. Answer two questions on the school Chromebook and finish on your own phone and it's still one student with one score. Clear the browser, use a different device, spell your name differently — the record holds.</p></div>
+          <div class="card"><h3>🚪 Leaving isn't deleting</h3><p>Re-paste an updated list and anyone no longer on it is marked as having left, never erased — their earlier work stays attached to them. If they come back, they get their original record, not a new one.</p></div>
+        </div>
+      </div>
+      <div class="callout"><b>Two similar names are never merged for you.</b> If a class has <i>Jamie</i> and <i>Jamie Smith</i>, PollSlide flags the pair and leaves them alone. Guessing wrong here means a grade on the wrong child's record, so that decision stays yours.</div>
+      <div class="callout"><b>Privacy:</b> students only ever see first name and last initial — <i>Ana R.</i> Full surnames stay in your account and are never published to the session.</div>
+    </section>
+
+    <section id="verify">
+      <h2>🔐 Making sure it's really them</h2>
+      <p class="lead">A list of names lets a student pick their own — and, without something more, lets them pick somebody else's. Choose how your class proves who they are.</p>
+      <div class="grid">
+        <ol class="steps">
+          <li>Open <b>👥 Assign to a class…</b> → <b>Students</b> on the class you want.</li>
+          <li>Pick one of the three methods below. The class starts on <b>PIN</b>.</li>
+          <li>Students are asked for it once, the first time they answer on a device.</li>
+        </ol>
+        <div class="cards">
+          <div class="card"><h3>🔢 A PIN they choose</h3><p>Nothing to set up and no personal data. The student sets a 4–8 digit PIN the first time they pick their name, and needs it after that. The gap is that first claim — whoever gets there first owns the name — which you can see and clear in seconds.</p></div>
+          <div class="card"><h3>🎟️ Codes you issue</h3><p>PollSlide generates a code per student and gives you a printable sheet to cut up and hand out. Nobody can claim a name they weren't given a code for, and still no personal data is stored. Codes avoid 0/O, 1/I and 5/S, and can't spell a word in front of a class.</p></div>
+          <div class="card"><h3>✉️ Emailed codes</h3><p>The same code, sent to the student's school address — the strongest link to a real person. It's the only method that stores personal data, so it asks you to confirm your school has the right to use those addresses before switching on.</p></div>
+        </div>
+      </div>
+      <div class="callout"><b>Forgotten PIN?</b> Reset it yourself from the class's <b>Students</b> screen — the next PIN they type becomes their new one. You never need to raise a support ticket for this.</div>
+      <div class="callout"><b>What this is honestly for.</b> It stops a classmate answering as someone else, which is the realistic problem in a classroom. It is <em>not</em> exam proctoring: a determined student can pass their code to a friend, and no website can prevent that. For a high-stakes exam you need a proctored environment, not a browser.</div>
+    </section>
+
+    <section id="retakes">
+      <h2>🔁 Second attempts</h2>
+      <p class="lead">By default one answer is final. For a quiz you're using to find out who understood something, you can let students try again — and decide which try counts.</p>
+      <div class="grid">
+        <ol class="steps">
+          <li>Open the deck's <b>⋯</b> menu and choose <b>🔁 Retakes: off</b>.</li>
+          <li>Pick how many tries: <b>2</b>, <b>3</b> or <b>5</b>.</li>
+          <li>Pick which attempt is graded — <b>best</b>, <b>last</b> or <b>first</b>.</li>
+          <li>Students who've answered now see what they said, how many tries are left, and which attempt counts.</li>
+        </ol>
+        <div class="cards">
+          <div class="card"><h3>🏅 Best attempt</h3><p>The usual choice. The point of a retake is to let someone show they've got it now, and a later worse answer never pulls their grade back down.</p></div>
+          <div class="card"><h3>🕐 Last attempt</h3><p>When the most recent answer is where their understanding actually stands — a revision round, or a set they're working through repeatedly.</p></div>
+          <div class="card"><h3>1️⃣ First attempt</h3><p>The retake is recorded for you to look at, but the original is what's graded. Students are told this before they try again, so nobody wastes a go on a promise the deck won't keep.</p></div>
+        </div>
+      </div>
+      <div class="callout"><b>Every attempt is kept</b>, whichever one you grade. In <a href="#results">Reports</a> an answer that came from a later try is marked <i>2nd try</i>, so you can see who needed a second look at what.</div>
+      <div class="callout"><b>Not offered on polls.</b> A poll is a snapshot of what the room thinks right now — letting people revise it turns a reading of the room into a negotiation. Retakes appear on quizzes, surveys and study sets.</div>
+    </section>
+
+    <section id="gradebook">
+      <h2>🎓 Gradebook export</h2>
+      <p class="lead">One row per student, one column per question, a score on the end — the shape your gradebook already has, and the shape Google Classroom and Canvas import.</p>
+      <div class="grid">
+        <ol class="steps">
+          <li>Open <b>Reports</b>.</li>
+          <li>Choose <b>one presentation</b> in the filter — a gradebook is one deck's marks.</li>
+          <li>Press <b>🎓 Gradebook</b>. The file downloads, and PollSlide tells you what it contains and anything it left out.</li>
+          <li>Import it into Classroom or Canvas, or open it in Excel, Numbers or Sheets.</li>
+        </ol>
+        <div class="cards">
+          <div class="card"><h3>⬜ A blank is not a zero</h3><p>A student who never answered and a student who answered wrongly are different facts. Missing answers stay blank and don't count against anyone; a wrong answer is a 0. The <b>Answered</b> column shows the difference at a glance.</p></div>
+          <div class="card"><h3>🧮 Only what's actually graded</h3><p>A reflection prompt with no correct answer isn't part of a grade, so it doesn't become a column of blanks you'd have to delete. You're told how many were left out and why.</p></div>
+          <div class="card"><h3>⤓ Two different exports</h3><p><b>⤓ Answers</b> gives you every response, one row each — for reading what people actually said. <b>🎓 Gradebook</b> gives you the marks. Both are plain CSV that opens anywhere.</p></div>
+        </div>
+      </div>
+      <div class="callout"><b>Assign the deck to a <a href="#classes">class</a> first.</b> Without one, students are matched on the name they typed, so a stray spelling becomes a second row. With a class, each student gets one row and a stable ID column your own system can match on.</div>
+    </section>
+
     <section id="focus">
       <h2>👁 Know if someone leaves the screen</h2>
       <p class="lead">For a graded quiz or a study set, you can be told when a student switches away from PollSlide — and they're told too, the moment it happens.</p>
@@ -1016,6 +1109,7 @@
 </footer>
 <script src="/translations.js?v=15"></script>
 <script src="/help-translations.js?v=14"></script>
+<script src="/help-translations-teachers.js?v=1"></script>
 <script src="/companion-i18n.js?v=3"></script>
 <script src="/i18n.js?v=7"></script>
 <script src="/consent.js?v=4"></script>

@@ -1,0 +1,30 @@
+/* Mobile rules for the legal/compliance pages.
+ *
+ * legal-shared.css styles the nav as a single non-wrapping flex row and carries no
+ * responsive rules at all, so on a phone the links, the language picker and the theme
+ * toggle pushed the document past the screen edge and every one of these pages
+ * scrolled sideways. Terms, Privacy, Cookies, DPA, Subprocessors, Trust & Safety and
+ * the VPAT are exactly the pages a school or a procurement team opens on a phone.
+ *
+ * This lives in its own file, loaded AFTER legal-shared.css, only because that file
+ * could not be edited from here. It belongs merged into legal-shared.css — the rules
+ * are self-contained, so moving them is a copy-paste and deleting this file plus its
+ * seven <link> tags.
+ */
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-wrap: wrap;
+    height: auto;
+    row-gap: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+    font-size: 13.5px;
+  }
+  /* The picker keeps its full language names on a narrow screen otherwise. */
+  #langSelWrap select { max-width: 116px; }
+}

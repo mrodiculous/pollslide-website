@@ -252,6 +252,16 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
   }
+
+  /* Mobile nav overflow: the row could not wrap, so the logo, the remaining links,
+     the language picker and the theme toggle pushed the document wider than the
+     screen and every page scrolled sideways. Wrapping costs one line of height at
+     most and keeps the language picker reachable. */
+  @media (max-width:640px){
+    .nav-inner{flex-wrap:wrap;row-gap:8px;}
+    .nav-links{margin-left:auto;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+    #langSelWrap select{max-width:112px;}
+  }
 </style>
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
