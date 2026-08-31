@@ -113,6 +113,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "PollSlide", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, macOS, Windows", "url": "https://pollslide.com", "description": "PollSlide runs live polls, surveys, quizzes and study sets over any presentation, drafted by Polly AI.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Live polls, surveys, quizzes, study sets, audience Q&A, word clouds, Polly AI question generation, present over any slides"}</script>
 <!-- seo:auto end -->
 <link rel="stylesheet" href="/demos.css?v=1">
+<link rel="stylesheet" href="/consent-mobile.css">
 </head>
 <body>
 <header>
@@ -716,9 +717,9 @@
 
     <section id="classes">
       <h2>👥 Class lists — one record per student</h2>
-      <p class="lead">Give a class its list of students once, and every deck you assign to it records who answered <em>by person</em> — not by whatever they typed that day.</p>
+      <p class="lead" data-i18n-html="t.classes.lead">Give a class its list of students once, and every deck you assign to it records who answered <em>by person</em> — not by whatever they typed that day.</p>
       <div class="grid">
-        <ol class="steps">
+        <ol class="steps" data-i18n-html="t.classes.steps">
           <li>Open a deck's <b>⋯</b> menu and choose <b>👥 Assign to a class…</b>, then <b>＋ New class</b>.</li>
           <li>Give it a name — <i>“Biology 101, Period 3”</i> — and paste your list. One name per line, or paste a column straight out of a spreadsheet.</li>
           <li>Press <b>Save</b>. You'll see exactly who was added.</li>
@@ -726,20 +727,20 @@
           <li>Students now <b>pick their name from a list</b> instead of typing it.</li>
         </ol>
         <div class="cards">
-          <div class="card"><h3>📋 Paste it however you have it</h3><p><i>Ruiz, Ana</i> is turned into <i>Ana Ruiz</i>. A header row like <i>Student Name</i> is ignored rather than becoming a student. The same person listed twice becomes one. Extra columns — email, year group — are left alone.</p></div>
+          <div class="card"><h3>📋 Paste it however you have it</h3><p data-i18n-html="t.classes.card1"><i>Ruiz, Ana</i> is turned into <i>Ana Ruiz</i>. A header row like <i>Student Name</i> is ignored rather than becoming a student. The same person listed twice becomes one. Extra columns — email, year group — are left alone.</p></div>
           <div class="card"><h3>🔗 The record follows the student</h3><p>Not the phone. Answer two questions on the school Chromebook and finish on your own phone and it's still one student with one score. Clear the browser, use a different device, spell your name differently — the record holds.</p></div>
           <div class="card"><h3>🚪 Leaving isn't deleting</h3><p>Re-paste an updated list and anyone no longer on it is marked as having left, never erased — their earlier work stays attached to them. If they come back, they get their original record, not a new one.</p></div>
         </div>
       </div>
-      <div class="callout"><b>Two similar names are never merged for you.</b> If a class has <i>Jamie</i> and <i>Jamie Smith</i>, PollSlide flags the pair and leaves them alone. Guessing wrong here means a grade on the wrong child's record, so that decision stays yours.</div>
-      <div class="callout"><b>Privacy:</b> students only ever see first name and last initial — <i>Ana R.</i> Full surnames stay in your account and are never published to the session.</div>
+      <div class="callout" data-i18n-html="t.classes.callout1"><b>Two similar names are never merged for you.</b> If a class has <i>Jamie</i> and <i>Jamie Smith</i>, PollSlide flags the pair and leaves them alone. Guessing wrong here means a grade on the wrong child's record, so that decision stays yours.</div>
+      <div class="callout" data-i18n-html="t.classes.callout2"><b>Privacy:</b> students only ever see first name and last initial — <i>Ana R.</i> Full surnames stay in your account and are never published to the session.</div>
     </section>
 
     <section id="verify">
       <h2>🔐 Making sure it's really them</h2>
-      <p class="lead">A list of names lets a student pick their own — and, without something more, lets them pick somebody else's. Choose how your class proves who they are.</p>
+      <p class="lead" data-i18n-html="t.verify.lead">A list of names lets a student pick their own — and, without something more, lets them pick somebody else's. Choose how your class proves who they are.</p>
       <div class="grid">
-        <ol class="steps">
+        <ol class="steps" data-i18n-html="t.verify.steps">
           <li>Open <b>👥 Assign to a class…</b> → <b>Students</b> on the class you want.</li>
           <li>Pick one of the three methods below. The class starts on <b>PIN</b>.</li>
           <li>Students are asked for it once, the first time they answer on a device.</li>
@@ -750,15 +751,15 @@
           <div class="card"><h3>✉️ Emailed codes</h3><p>The same code, sent to the student's school address — the strongest link to a real person. It's the only method that stores personal data, so it asks you to confirm your school has the right to use those addresses before switching on.</p></div>
         </div>
       </div>
-      <div class="callout"><b>Forgotten PIN?</b> Reset it yourself from the class's <b>Students</b> screen — the next PIN they type becomes their new one. You never need to raise a support ticket for this.</div>
-      <div class="callout"><b>What this is honestly for.</b> It stops a classmate answering as someone else, which is the realistic problem in a classroom. It is <em>not</em> exam proctoring: a determined student can pass their code to a friend, and no website can prevent that. For a high-stakes exam you need a proctored environment, not a browser.</div>
+      <div class="callout" data-i18n-html="t.verify.callout1"><b>Forgotten PIN?</b> Reset it yourself from the class's <b>Students</b> screen — the next PIN they type becomes their new one. You never need to raise a support ticket for this.</div>
+      <div class="callout" data-i18n-html="t.verify.callout2"><b>What this is honestly for.</b> It stops a classmate answering as someone else, which is the realistic problem in a classroom. It is <em>not</em> exam proctoring: a determined student can pass their code to a friend, and no website can prevent that. For a high-stakes exam you need a proctored environment, not a browser.</div>
     </section>
 
     <section id="retakes">
       <h2>🔁 Second attempts</h2>
-      <p class="lead">By default one answer is final. For a quiz you're using to find out who understood something, you can let students try again — and decide which try counts.</p>
+      <p class="lead" data-i18n-html="t.retakes.lead">By default one answer is final. For a quiz you're using to find out who understood something, you can let students try again — and decide which try counts.</p>
       <div class="grid">
-        <ol class="steps">
+        <ol class="steps" data-i18n-html="t.retakes.steps">
           <li>Open the deck's <b>⋯</b> menu and choose <b>🔁 Retakes: off</b>.</li>
           <li>Pick how many tries: <b>2</b>, <b>3</b> or <b>5</b>.</li>
           <li>Pick which attempt is graded — <b>best</b>, <b>last</b> or <b>first</b>.</li>
@@ -770,27 +771,27 @@
           <div class="card"><h3>1️⃣ First attempt</h3><p>The retake is recorded for you to look at, but the original is what's graded. Students are told this before they try again, so nobody wastes a go on a promise the deck won't keep.</p></div>
         </div>
       </div>
-      <div class="callout"><b>Every attempt is kept</b>, whichever one you grade. In <a href="#results">Reports</a> an answer that came from a later try is marked <i>2nd try</i>, so you can see who needed a second look at what.</div>
-      <div class="callout"><b>Not offered on polls.</b> A poll is a snapshot of what the room thinks right now — letting people revise it turns a reading of the room into a negotiation. Retakes appear on quizzes, surveys and study sets.</div>
+      <div class="callout" data-i18n-html="t.retakes.callout1"><b>Every attempt is kept</b>, whichever one you grade. In <a href="#results">Reports</a> an answer that came from a later try is marked <i>2nd try</i>, so you can see who needed a second look at what.</div>
+      <div class="callout" data-i18n-html="t.retakes.callout2"><b>Not offered on polls.</b> A poll is a snapshot of what the room thinks right now — letting people revise it turns a reading of the room into a negotiation. Retakes appear on quizzes, surveys and study sets.</div>
     </section>
 
     <section id="gradebook">
       <h2>🎓 Gradebook export</h2>
-      <p class="lead">One row per student, one column per question, a score on the end — the shape your gradebook already has, and the shape Google Classroom and Canvas import.</p>
+      <p class="lead" data-i18n-html="t.gradebook.lead">One row per student, one column per question, a score on the end — the shape your gradebook already has, and the shape Google Classroom and Canvas import.</p>
       <div class="grid">
-        <ol class="steps">
+        <ol class="steps" data-i18n-html="t.gradebook.steps">
           <li>Open <b>Reports</b>.</li>
           <li>Choose <b>one presentation</b> in the filter — a gradebook is one deck's marks.</li>
           <li>Press <b>🎓 Gradebook</b>. The file downloads, and PollSlide tells you what it contains and anything it left out.</li>
           <li>Import it into Classroom or Canvas, or open it in Excel, Numbers or Sheets.</li>
         </ol>
         <div class="cards">
-          <div class="card"><h3>⬜ A blank is not a zero</h3><p>A student who never answered and a student who answered wrongly are different facts. Missing answers stay blank and don't count against anyone; a wrong answer is a 0. The <b>Answered</b> column shows the difference at a glance.</p></div>
+          <div class="card"><h3>⬜ A blank is not a zero</h3><p data-i18n-html="t.gradebook.card1">A student who never answered and a student who answered wrongly are different facts. Missing answers stay blank and don't count against anyone; a wrong answer is a 0. The <b>Answered</b> column shows the difference at a glance.</p></div>
           <div class="card"><h3>🧮 Only what's actually graded</h3><p>A reflection prompt with no correct answer isn't part of a grade, so it doesn't become a column of blanks you'd have to delete. You're told how many were left out and why.</p></div>
-          <div class="card"><h3>⤓ Two different exports</h3><p><b>⤓ Answers</b> gives you every response, one row each — for reading what people actually said. <b>🎓 Gradebook</b> gives you the marks. Both are plain CSV that opens anywhere.</p></div>
+          <div class="card"><h3>⤓ Two different exports</h3><p data-i18n-html="t.gradebook.card3"><b>⤓ Answers</b> gives you every response, one row each — for reading what people actually said. <b>🎓 Gradebook</b> gives you the marks. Both are plain CSV that opens anywhere.</p></div>
         </div>
       </div>
-      <div class="callout"><b>Assign the deck to a <a href="#classes">class</a> first.</b> Without one, students are matched on the name they typed, so a stray spelling becomes a second row. With a class, each student gets one row and a stable ID column your own system can match on.</div>
+      <div class="callout" data-i18n-html="t.gradebook.callout1"><b>Assign the deck to a <a href="#classes">class</a> first.</b> Without one, students are matched on the name they typed, so a stray spelling becomes a second row. With a class, each student gets one row and a stable ID column your own system can match on.</div>
     </section>
 
     <section id="focus">
@@ -1110,6 +1111,7 @@
 <script src="/translations.js?v=15"></script>
 <script src="/help-translations.js?v=14"></script>
 <script src="/help-translations-teachers.js?v=1"></script>
+<script src="/help-teachers-blocks.js?v=1"></script>
 <script src="/companion-i18n.js?v=3"></script>
 <script src="/i18n.js?v=7"></script>
 <script src="/consent.js?v=4"></script>

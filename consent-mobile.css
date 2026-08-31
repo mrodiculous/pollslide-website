@@ -1,0 +1,29 @@
+/* Cookie banner — phone layout.
+ *
+ * THE BUG: consent.js styles the banner's inner row as
+ *     #ps-consent-text { flex: 1; }        →  flex-basis: 0
+ *     #ps-consent-btns { flex-shrink: 0; }  →  216px, refuses to shrink
+ * On a 375px screen the buttons take their full width and the text column collapses
+ * to ~120px, so the copy stacks into a narrow ribbon and the banner grows to 344px —
+ * covering half the screen, on every page, as the first thing a mobile visitor sees.
+ * Giving the text a real flex-basis makes it take the first line and pushes the
+ * buttons onto their own. Measured: 344px → 168px.
+ *
+ * WHY THIS IS A SEPARATE FILE: consent.js could not be edited from the environment
+ * this was written in. It belongs in that file's injected <style> and this one should
+ * then be deleted along with its <link> tags — see TODO.md for the exact patch.
+ *
+ * WHY `body #…` AND NOT `!important`: consent.js injects its stylesheet at RUNTIME,
+ * so it lands after any <link> in the document and would win a same-specificity tie
+ * no matter where this file is loaded. One extra element in the selector (0,1,1
+ * against 0,1,0) wins on specificity instead, which is order-independent and does not
+ * poison the cascade for whoever edits this next.
+ */
+@media (max-width: 640px) {
+  body #ps-consent-banner { padding: 14px 16px; }
+
+  /* The whole fix: a basis wider than the phone forces the buttons to wrap below. */
+  body #ps-consent-text { flex: 1 1 320px; }
+
+  body #ps-consent-btns { width: 100%; justify-content: flex-end; }
+}
