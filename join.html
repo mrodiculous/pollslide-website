@@ -8,6 +8,11 @@
 <!-- Short, memorable join URL for people without a phone to scan the QR.
      pollslide.com/join → the answer page (which shows a "enter the code" screen).
      A code in the hash is preserved: pollslide.com/join#ABC123 → straight into that session. -->
+<meta property="og:title" content="Join a PollSlide session">
+<meta property="og:description" content="Enter the code shown next to the QR on the presenter's slide — no app to install.">
+<meta property="og:image" content="https://pollslide.com/og.png">
+<meta property="og:url" content="https://pollslide.com/join">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://app.pollslide.com/answer">
 <meta http-equiv="refresh" content="0; url=https://app.pollslide.com/answer">
 <script>location.replace('https://app.pollslide.com/answer' + (location.hash || ''));</script>
@@ -25,7 +30,7 @@
 </head>
 <body>
   <div>
-    <p>Taking you to PollSlide…</p>
+    <h1 style="font-size:19px;font-weight:600;margin:0 0 8px;">Taking you to PollSlide…</h1>
     <p>If nothing happens, <a href="https://app.pollslide.com/answer">tap here to enter your code</a>.</p>
   </div>
 </body>
