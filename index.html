@@ -262,6 +262,79 @@
     .nav-links{margin-left:auto;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
     #langSelWrap select{max-width:112px;}
   }
+
+  /* ── BIG SCREEN: present mode, rebuilt in CSS ───────────────────────────────
+     Not a screenshot. The same approach /game-modes uses for its device mockups,
+     and for the same reasons: it stays crisp at any DPI, it reflows instead of
+     shrinking to an illegible strip on a phone, it weighs nothing, and it cannot
+     drift out of date the way a PNG of the app silently does the moment the UI
+     moves. (It also sidesteps a real limitation: the DOM-to-canvas capture tools
+     misplace this screen's right-anchored results panel, so a "real" screenshot
+     of it came out with stray numbers down the left edge.)
+
+     The frame keeps the product's dark palette in BOTH site themes, because
+     present mode is dark on the projector either way — the colours here are
+     deliberately literal rather than themed. */
+  .ps-stage{
+    max-width:920px; margin:26px auto 0; text-align:left; color:#f0f0fa;
+    background:linear-gradient(155deg,#1a1637 0%,#100e20 46%,#0a0a12 100%);
+    border:1px solid rgba(255,255,255,0.12); border-radius:16px;
+    box-shadow:0 40px 100px rgba(0,0,0,0.55); padding:15px 17px 13px; overflow:hidden;
+  }
+  .ps-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;}
+  .ps-qno{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:0.14em;color:#9090b8;text-transform:uppercase;}
+  .ps-count{display:flex;align-items:center;gap:6px;color:#9090b8;}
+  .ps-count b{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:#f0f0fa;}
+  .ps-dot{width:7px;height:7px;border-radius:50%;background:#43e97b;flex-shrink:0;}
+  .ps-body{display:grid;grid-template-columns:112px minmax(0,1fr) 234px;gap:16px;margin-top:12px;align-items:start;}
+  .ps-join{text-align:center;font-size:9.5px;color:#9090b8;line-height:1.5;}
+  .ps-qr{width:92px;height:92px;margin:6px auto 7px;border-radius:8px;background:#fff;padding:7px;}
+  .ps-qr svg{display:block;width:100%;height:100%;}
+  .ps-code{font-family:'Syne',sans-serif;font-weight:800;color:#8b83ff;letter-spacing:0.06em;font-size:11px;}
+  .ps-q{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(17px,2.3vw,25px);line-height:1.25;
+        text-align:center;margin:2px 0 15px;text-wrap:balance;}
+  .ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+  .ps-opt{display:flex;align-items:center;gap:9px;border-radius:11px;padding:10px 12px;font-size:12.5px;
+          background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.09);}
+  .ps-opt .ltr{width:21px;height:21px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+               font-family:'Syne',sans-serif;font-weight:800;font-size:10px;color:#0b0b14;flex-shrink:0;}
+  .ps-opt .txt{flex:1;min-width:0;}
+  .ps-opt .n{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;flex-shrink:0;}
+  .ps-opt.dim{opacity:0.52;}
+  .ps-opt.win{background:rgba(67,233,123,0.12);border-color:#43e97b;}
+  /* The app marks the winning card with a ✓ disc. A "CORRECT" word-pill was tried here
+     first and cost ~90px of a 260px card, forcing the longest answer onto four lines
+     while its neighbour sat on one. The disc says the same thing in a fifth of the
+     width; "Answer revealed" in the results panel carries the wording. */
+  .ps-tick{width:20px;height:20px;border-radius:50%;background:#43e97b;color:#06210f;flex-shrink:0;
+           display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;line-height:1;}
+  .ps-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px;}
+  .ps-plab{font-family:'Syne',sans-serif;font-weight:800;font-size:9px;letter-spacing:0.14em;color:#9090b8;text-transform:uppercase;}
+  .ps-revealed{display:inline-block;margin:9px 0 11px;font-size:10.5px;font-weight:700;color:#43e97b;
+               background:rgba(67,233,123,0.12);border:1px solid rgba(67,233,123,0.5);border-radius:20px;padding:4px 10px;}
+  .ps-row{margin-bottom:9px;}
+  .ps-row:last-child{margin-bottom:0;}
+  .ps-rowtop{display:flex;align-items:center;gap:7px;font-size:11px;margin-bottom:4px;}
+  .ps-rowtop .ltr{width:16px;height:16px;border-radius:5px;font-size:8.5px;}
+  .ps-rowtop .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ps-rowtop .n{font-family:'Syne',sans-serif;font-weight:800;flex-shrink:0;}
+  .ps-bar{height:5px;border-radius:100px;background:rgba(255,255,255,0.09);overflow:hidden;}
+  .ps-bar i{display:block;height:100%;border-radius:100px;}
+  .ps-foot{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:13px;padding-top:11px;
+           border-top:1px solid rgba(255,255,255,0.07);font-family:'Syne',sans-serif;font-weight:800;
+           font-size:13px;color:#f0f0fa;letter-spacing:0.01em;}
+  .ps-foot .mk{color:#8b83ff;}
+  /* Below ~860px the three columns would each be too narrow to read, so the frame
+     reflows to one column — the part a PNG of the same screen cannot do. */
+  @media (max-width:860px){
+    .ps-body{grid-template-columns:1fr;gap:13px;}
+    .ps-left{display:flex;align-items:center;justify-content:center;gap:14px;}
+    .ps-qr{margin:0;width:74px;height:74px;}
+    .ps-join{text-align:left;}
+  }
+  @media (max-width:460px){
+    .ps-grid{grid-template-columns:1fr;}
+  }
 </style>
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -363,6 +436,109 @@
     </div>
   </div>
 </header>
+
+<!-- ── BIG SCREEN ──
+     What the room actually sees, which the 30s video below never shows head-on: the
+     question filling the projector, answers landing live, the correct one lighting up
+     on reveal, and the join code sitting on the slide the whole time. Built in CSS —
+     see the .ps-* block in the stylesheet for why this is a mockup and not a PNG.
+
+     The QR here is ILLUSTRATIVE, not scannable: it carries the three finder squares
+     that make a QR read as a QR and nothing else. A dense fake matrix would invite
+     people to scan a code that goes nowhere, so the real join route is spelled out
+     in text right beneath it. -->
+<section id="big-screen" style="padding:10px 0 46px;">
+  <div class="container" style="text-align:center;">
+    <div class="section-tag reveal">On the big screen</div>
+    <h2 class="section-title reveal">This is what the room sees</h2>
+    <p class="section-sub reveal">Your question fills the screen, answers land as people tap, and the right one lights up the moment you reveal it.</p>
+
+    <div class="ps-stage reveal" role="img"
+         aria-label="PollSlide in present mode. The question &quot;Which of the following best describes photosynthesis?&quot; fills the screen with 22 responses in. Of four answers, &quot;Converting light into chemical energy&quot; is marked correct with 13 votes; the others took 4, 3 and 2. A live results panel on the right lists the same four counts, and a join code sits beside the question.">
+      <div class="ps-top">
+        <span class="ps-qno">Question 1 of 3</span>
+        <span class="ps-count"><b>22</b> responses <i class="ps-dot"></i></span>
+      </div>
+
+      <div class="ps-body">
+        <div class="ps-left">
+          <div class="ps-qr" aria-hidden="true">
+            <svg viewBox="0 0 42 42" fill="#0b0b14">
+              <!-- three finder squares: the shape that reads unmistakably as "QR" -->
+              <path d="M0 0h14v14H0V0zm3 3v8h8V3H3zm2 2h4v4H5V5z"/>
+              <path d="M28 0h14v14H28V0zm3 3v8h8V3h-8zm2 2h4v4h-4V5z"/>
+              <path d="M0 28h14v14H0V28zm3 3v8h8v-8H3zm2 2h4v4H5v-4z"/>
+              <!-- sparse, obviously decorative fill -->
+              <path d="M18 2h3v3h-3zM18 8h3v3h-3zM23 5h3v3h-3zM2 18h3v3H2zM8 18h3v3H8zM18 18h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM37 18h3v3h-3zM18 24h3v3h-3zM28 24h3v3h-3zM34 28h3v3h-3zM18 31h3v3h-3zM24 34h3v3h-3zM30 37h3v3h-3zM37 33h3v3h-3z"/>
+            </svg>
+          </div>
+          <div class="ps-join">
+            Scan to answer<br>or go to <b>pollslide.com/join</b><br>
+            code <span class="ps-code">KEPH1X</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="ps-q">Which of the following best describes photosynthesis?</div>
+          <div class="ps-grid">
+            <div class="ps-opt win">
+              <span class="ltr" style="background:#43e97b;">A</span>
+              <span class="txt">Converting light into chemical energy</span>
+              <span class="ps-tick" aria-hidden="true">✓</span>
+              <span class="n" style="color:#43e97b;">13</span>
+            </div>
+            <div class="ps-opt dim">
+              <span class="ltr" style="background:#ff6584;">B</span>
+              <span class="txt">Releasing carbon dioxide</span>
+              <span class="n" style="color:#ff6584;">4</span>
+            </div>
+            <div class="ps-opt dim">
+              <span class="ltr" style="background:#38d9f5;">C</span>
+              <span class="txt">Absorbing water through the stem</span>
+              <span class="n" style="color:#38d9f5;">3</span>
+            </div>
+            <div class="ps-opt dim">
+              <span class="ltr" style="background:#f7b731;">D</span>
+              <span class="txt">Using stored sugar to grow</span>
+              <span class="n" style="color:#f7b731;">2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ps-panel">
+          <div class="ps-plab">Live results</div>
+          <div class="ps-revealed">✓ Answer revealed</div>
+          <div class="ps-row">
+            <div class="ps-rowtop"><span class="ltr" style="background:#43e97b;">A</span>
+              <span class="nm">Converting light…</span><span class="n" style="color:#43e97b;">13</span></div>
+            <div class="ps-bar"><i style="width:59%;background:#43e97b;"></i></div>
+          </div>
+          <div class="ps-row">
+            <div class="ps-rowtop"><span class="ltr" style="background:#ff6584;">B</span>
+              <span class="nm">Releasing carbon dioxide</span><span class="n" style="color:#ff6584;">4</span></div>
+            <div class="ps-bar"><i style="width:18%;background:#ff6584;"></i></div>
+          </div>
+          <div class="ps-row">
+            <div class="ps-rowtop"><span class="ltr" style="background:#38d9f5;">C</span>
+              <span class="nm">Absorbing water…</span><span class="n" style="color:#38d9f5;">3</span></div>
+            <div class="ps-bar"><i style="width:14%;background:#38d9f5;"></i></div>
+          </div>
+          <div class="ps-row">
+            <div class="ps-rowtop"><span class="ltr" style="background:#f7b731;">D</span>
+              <span class="nm">Using stored sugar…</span><span class="n" style="color:#f7b731;">2</span></div>
+            <div class="ps-bar"><i style="width:9%;background:#f7b731;"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ps-foot"><span class="mk">▎</span>PollSlide</div>
+    </div>
+
+    <p class="reveal" style="color:var(--muted);font-size:14px;margin-top:16px;">
+      Run it from PollSlide, or keep your own slides and drop the code on screen — your audience never installs anything.
+    </p>
+  </div>
+</section>
 
 <!-- ── SEE IT (30s) ──
      Landing-page video is the highest-leverage proof we have: it shows a real session
