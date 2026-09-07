@@ -240,3 +240,83 @@ window.PS_I18N_KEYS = window.PS_I18N_KEYS || {};
     't.gifs.callout2': '<b>La tua immagine vince sempre.</b> Se una domanda ha già un’immagine scelta da te, la GIF non la sostituisce. E chi ha chiesto al proprio dispositivo di ridurre il movimento vede un fotogramma fisso invece dell’animazione.',
   },
 });
+
+/* ── CORRECTIONS + ATMOSPHERE (2026-09-01) ────────────────────────────────────
+ * The GIF blocks above documented behaviour that no longer exists: a checkbox called
+ * "on each revealed answer", and a celebration GIF as the fallback. Both changed —
+ * every choice now gets a picture (one on the right answer alone gave it away), the
+ * fallback is a NEUTRAL reaction (a celebration on a wrong answer is a hint too), and
+ * the GIF lands in the same media box you type a URL into, so you can edit it there.
+ * Stale instructions are worse than missing ones, so these override rather than sit
+ * alongside — the loader Object.assigns, so last definition wins.
+ */
+window.PS_I18N_KEYS = window.PS_I18N_KEYS || {};
+(function (B) {
+  for (var l in B) { window.PS_I18N_KEYS[l] = Object.assign(window.PS_I18N_KEYS[l] || {}, B[l]); }
+})({
+  es: {
+    't.gifs.steps': '<li>Abre el menú <b>⋯</b> de una baraja y elige <b>🎞 GIFs</b>.</li> <li>Marca <b>rellenar el cuadro multimedia de cada pregunta</b>, <b>el de cada respuesta</b>, o ambos.</li> <li>Pulsa <b>Find GIFs</b>. Cada uno aparece junto a la pregunta a la que pertenece.</li> <li>Consérvalo, cámbialo (<b>↻</b>) o quítalo (<b>✕</b>) antes de presentar.</li>',
+    't.gifs.card2': 'Una imagen en la respuesta correcta y ninguna en las demás la delata en cuanto aparecen en pantalla. Por eso todas las opciones reciben una. Una respuesta que no se puede ilustrar — <i>42</i>, o <i>B</i> — recibe una reacción neutra en vez de una celebración, porque una celebración en una respuesta incorrecta también es una pista.',
+    't.gifs.callout2': '<b>Tu propia imagen siempre manda.</b> Si una pregunta ya tiene una imagen elegida por ti, el GIF no la sustituye, y <b>Quitar todos</b> solo borra los que encontró PollSlide. Quien haya pedido a su dispositivo que reduzca el movimiento verá un fotograma fijo en lugar de la animación.',
+    't.gifs.callout3': '<b>Van al mismo cuadro en el que escribes tú.</b> Un GIF encontrado rellena el campo de imagen de la pregunta, o el de esa respuesta, así que puedes cambiar la URL, pegar otra o vaciarlo en el editor igual que con cualquier otra imagen. No queda escondido en un ajuste aparte.',
+    't.atmos.lead': 'Entre lanzar una pregunta y revelar la respuesta hay una espera, y lo que la llena debería depender de la sala. Un concurso nocturno y una reunión de dirección quieren cosas opuestas, así que eliges tú.',
+    't.atmos.steps': '<li>Pulsa <b>▶ Presentar</b>. El diálogo que pregunta cómo quieres ejecutarlo tiene ahora una fila <b>Atmósfera</b>.</li> <li>Elige <b>🌿 Tranquila</b>, <b>🎓 Aula</b> o <b>🎤 Concurso</b>.</li> <li>Pulsa <b>▶ Empezar a presentar</b>. Tu elección se recuerda para esa baraja.</li>',
+    't.atmos.calm': 'Sin sonido y sin dramatismo de reloj: los resultados simplemente aparecen. Reuniones, seminarios web, bibliotecas, cualquier sitio donde un ruido sería inoportuno. <b>Es la opción por defecto.</b>',
+    't.atmos.classroom': 'Oyes a la sala respondiendo y los últimos cinco segundos son imposibles de pasar por alto, pero nada te marca el tiempo. Sirve para casi cualquier clase o formación.',
+    't.atmos.gameshow': 'Un reloj que acelera al agotarse, respuestas que se oyen al llegar y un compás de espera antes de la revelación. Concursos, congresos, una ronda final.',
+    't.atmos.callout1': '<b>No cambia nada del cuestionario.</b> Las mismas preguntas, la misma puntuación, la misma revelación y los mismos resultados: solo cómo se siente la espera. Es independiente de los modos de juego, así que puedes jugar a Supervivencia con calma o una encuesta clásica como un concurso.',
+    't.atmos.callout2': '<b>Silenciar tu dispositivo siempre manda.</b> Si has pulsado <b>🔇</b>, una baraja configurada como Concurso seguirá en silencio: un ajuste elegido la semana pasada no puede imponerse a la sala en la que estás hoy. El sonido se sintetiza en el navegador, así que no hay nada que descargar.',
+  },
+  de: {
+    't.gifs.steps': '<li>Öffne das <b>⋯</b>-Menü eines Decks und wähle <b>🎞 GIFs</b>.</li> <li>Setze das Häkchen bei <b>Medienfeld jeder Frage füllen</b>, <b>Medienfeld jeder Antwort füllen</b> oder beidem.</li> <li>Klicke auf <b>Find GIFs</b>. Jedes erscheint bei der Frage, zu der es gehört.</li> <li>Behalte, tausche (<b>↻</b>) oder entferne (<b>✕</b>) es, bevor du präsentierst.</li>',
+    't.gifs.card2': 'Ein Bild nur auf der richtigen Antwort verrät sie, sobald alle zu sehen sind. Deshalb bekommt jede Option eines. Eine Antwort, die sich nicht abbilden lässt — <i>42</i> oder <i>B</i> — bekommt eine neutrale Reaktion statt Jubel, denn Jubel auf einer falschen Antwort ist ebenfalls ein Hinweis.',
+    't.gifs.callout2': '<b>Dein eigenes Bild gewinnt immer.</b> Hat eine Frage schon ein von dir gewähltes Bild, ersetzt das GIF es nicht — und <b>Alle entfernen</b> löscht nur die von PollSlide gefundenen. Wer reduzierte Bewegung eingestellt hat, sieht ein Standbild statt der Animation.',
+    't.gifs.callout3': '<b>Sie landen in genau dem Feld, in das du selbst tippst.</b> Ein gefundenes GIF füllt das Bildfeld der Frage oder das der jeweiligen Antwort — du kannst die URL austauschen, eine andere einfügen oder das Feld im Editor leeren wie bei jedem anderen Bild. Nichts versteckt sich in einer separaten GIF-Einstellung.',
+    't.atmos.lead': 'Zwischen dem Start einer Frage und dem Aufdecken der Antwort liegt eine Wartezeit, und was sie füllt, sollte vom Raum abhängen. Ein Quizabend und eine Vorstandssitzung wollen das Gegenteil voneinander — also entscheidest du.',
+    't.atmos.steps': '<li>Klicke auf <b>▶ Präsentieren</b>. Der Dialog hat jetzt eine Zeile <b>Atmosphäre</b>.</li> <li>Wähle <b>🌿 Ruhig</b>, <b>🎓 Unterricht</b> oder <b>🎤 Quizshow</b>.</li> <li>Klicke auf <b>▶ Präsentation starten</b>. Deine Wahl wird für dieses Deck gemerkt.</li>',
+    't.atmos.calm': 'Kein Ton, keine Uhren-Dramatik — die Ergebnisse erscheinen einfach. Vorstandssitzungen, Webinare, Bibliotheken, überall wo ein Geräusch unhöflich wäre. <b>Das ist die Voreinstellung.</b>',
+    't.atmos.classroom': 'Du hörst den Raum antworten und die letzten fünf Sekunden sind unübersehbar, aber nichts tickt dich an. Passt für die meisten Stunden und Schulungen.',
+    't.atmos.gameshow': 'Eine tickende Uhr, die schneller wird, hörbar eintreffende Antworten und ein gehaltener Moment vor der Auflösung. Quizabende, Konferenzen, ein Finale.',
+    't.atmos.callout1': '<b>Am Quiz ändert sich nichts.</b> Gleiche Fragen, gleiche Wertung, gleiche Auflösung, gleiche Ergebnisse — nur das Warten fühlt sich anders an. Unabhängig von den Spielmodi: Survival geht auch ruhig, eine klassische Umfrage auch als Quizshow.',
+    't.atmos.callout2': '<b>Stummschalten am Gerät gewinnt immer.</b> Wer <b>🔇</b> gedrückt hat, bleibt auch bei einem Deck im Quizshow-Modus still — eine Einstellung von letzter Woche darf sich nicht über den Raum von heute hinwegsetzen. Der Ton wird im Browser erzeugt, es gibt also nichts herunterzuladen.',
+  },
+  fr: {
+    't.gifs.steps': '<li>Ouvrez le menu <b>⋯</b> d’un jeu et choisissez <b>🎞 GIFs</b>.</li> <li>Cochez <b>remplir le champ média de chaque question</b>, <b>celui de chaque réponse</b>, ou les deux.</li> <li>Cliquez sur <b>Find GIFs</b>. Chacun apparaît à côté de la question à laquelle il appartient.</li> <li>Gardez-le, changez-le (<b>↻</b>) ou retirez-le (<b>✕</b>) avant de présenter.</li>',
+    't.gifs.card2': 'Une image sur la bonne réponse et rien sur les autres la trahit dès qu’elles sont à l’écran. Chaque option en reçoit donc une. Une réponse qu’on ne peut pas illustrer — <i>42</i>, ou <i>B</i> — reçoit une réaction neutre plutôt qu’une célébration, car une célébration sur une mauvaise réponse est aussi un indice.',
+    't.gifs.callout2': '<b>Votre propre image l’emporte toujours.</b> Si une question a déjà une image que vous avez choisie, le GIF ne la remplace pas, et <b>Tout retirer</b> n’efface que ceux trouvés par PollSlide. Qui a demandé de réduire les animations verra une image fixe.',
+    't.gifs.callout3': '<b>Ils arrivent dans le champ où vous tapez vous-même.</b> Un GIF trouvé remplit le champ image de la question, ou celui de la réponse concernée — vous pouvez changer l’URL, en coller une autre ou le vider dans l’éditeur comme n’importe quelle image. Rien n’est caché dans un réglage à part.',
+    't.atmos.lead': 'Entre le lancement d’une question et la révélation, il y a une attente, et ce qui la remplit devrait dépendre de la salle. Une soirée quiz et un conseil d’administration veulent l’inverse l’un de l’autre : c’est donc vous qui choisissez.',
+    't.atmos.steps': '<li>Cliquez sur <b>▶ Présenter</b>. La boîte de dialogue comporte désormais une ligne <b>Ambiance</b>.</li> <li>Choisissez <b>🌿 Calme</b>, <b>🎓 Classe</b> ou <b>🎤 Jeu télévisé</b>.</li> <li>Cliquez sur <b>▶ Commencer la présentation</b>. Votre choix est retenu pour ce jeu.</li>',
+    't.atmos.calm': 'Aucun son, aucun suspense d’horloge — les résultats apparaissent, simplement. Réunions, webinaires, bibliothèques, partout où un bruit serait déplacé. <b>C’est l’option par défaut.</b>',
+    't.atmos.classroom': 'Vous entendez la salle répondre et les cinq dernières secondes sont impossibles à manquer, mais rien ne vous égrène le temps. Convient à la plupart des cours et formations.',
+    't.atmos.gameshow': 'Une horloge qui s’accélère, des réponses qu’on entend arriver et un temps suspendu avant la révélation. Soirées quiz, conférences, une finale.',
+    't.atmos.callout1': '<b>Cela ne change rien au questionnaire.</b> Mêmes questions, même score, même révélation, mêmes résultats — seule l’attente change. C’est indépendant des modes de jeu : vous pouvez jouer Survie au calme, ou un sondage classique comme un jeu télévisé.',
+    't.atmos.callout2': '<b>Couper le son sur votre appareil l’emporte toujours.</b> Si vous avez appuyé sur <b>🔇</b>, un jeu réglé sur Jeu télévisé restera muet : un réglage choisi la semaine dernière ne peut pas s’imposer à la salle où vous êtes aujourd’hui. Le son est synthétisé dans le navigateur, il n’y a donc rien à télécharger.',
+  },
+  pt: {
+    't.gifs.steps': '<li>Abra o menu <b>⋯</b> de um baralho e escolha <b>🎞 GIFs</b>.</li> <li>Marque <b>preencher o campo de multimédia de cada pergunta</b>, <b>o de cada resposta</b>, ou ambos.</li> <li>Carregue em <b>Find GIFs</b>. Cada um aparece junto à pergunta a que pertence.</li> <li>Mantenha-o, troque-o (<b>↻</b>) ou remova-o (<b>✕</b>) antes de apresentar.</li>',
+    't.gifs.card2': 'Uma imagem só na resposta certa denuncia-a assim que aparecem no ecrã. Por isso todas as opções recebem uma. Uma resposta que não se pode ilustrar — <i>42</i>, ou <i>B</i> — recebe uma reação neutra em vez de uma celebração, porque uma celebração numa resposta errada também é uma pista.',
+    't.gifs.callout2': '<b>A sua própria imagem manda sempre.</b> Se uma pergunta já tem uma imagem escolhida por si, o GIF não a substitui, e <b>Remover todos</b> só apaga os que o PollSlide encontrou. Quem pediu ao dispositivo para reduzir o movimento vê um fotograma fixo.',
+    't.gifs.callout3': '<b>Vão para o mesmo campo onde escreve.</b> Um GIF encontrado preenche o campo de imagem da pergunta, ou o dessa resposta — pode trocar o URL, colar outro ou limpá-lo no editor como qualquer outra imagem. Nada fica escondido numa definição à parte.',
+    't.atmos.lead': 'Entre lançar uma pergunta e revelar a resposta há uma espera, e o que a preenche deve depender da sala. Um quiz à noite e uma reunião de direção querem coisas opostas — por isso escolhe você.',
+    't.atmos.steps': '<li>Carregue em <b>▶ Apresentar</b>. A caixa que pergunta como quer executar tem agora uma linha <b>Ambiente</b>.</li> <li>Escolha <b>🌿 Calmo</b>, <b>🎓 Sala de aula</b> ou <b>🎤 Concurso</b>.</li> <li>Carregue em <b>▶ Começar a apresentar</b>. A escolha fica guardada para esse baralho.</li>',
+    't.atmos.calm': 'Sem som e sem drama de relógio — os resultados simplesmente aparecem. Reuniões, webinars, bibliotecas, onde um ruído seria indelicado. <b>É a opção predefinida.</b>',
+    't.atmos.classroom': 'Ouve a sala a responder e os últimos cinco segundos são impossíveis de ignorar, mas nada lhe marca o tempo. Serve para a maioria das aulas e formações.',
+    't.atmos.gameshow': 'Um relógio que acelera, respostas que se ouvem a chegar e um compasso de espera antes da revelação. Noites de quiz, conferências, uma final.',
+    't.atmos.callout1': '<b>Não muda nada no questionário.</b> As mesmas perguntas, a mesma pontuação, a mesma revelação e os mesmos resultados — apenas como a espera se sente. É independente dos modos de jogo: pode jogar Sobrevivência com calma ou um inquérito clássico como um concurso.',
+    't.atmos.callout2': '<b>Silenciar o seu dispositivo manda sempre.</b> Se carregou em <b>🔇</b>, um baralho definido como Concurso continua em silêncio — uma definição escolhida na semana passada não se pode impor à sala onde está hoje. O som é sintetizado no navegador, por isso não há nada para descarregar.',
+  },
+  it: {
+    't.gifs.steps': '<li>Apri il menu <b>⋯</b> di un mazzo e scegli <b>🎞 GIFs</b>.</li> <li>Spunta <b>riempi il campo multimediale di ogni domanda</b>, <b>quello di ogni risposta</b>, o entrambi.</li> <li>Premi <b>Find GIFs</b>. Ognuna compare accanto alla domanda a cui appartiene.</li> <li>Tienila, cambiala (<b>↻</b>) o rimuovila (<b>✕</b>) prima di presentare.</li>',
+    't.gifs.card2': 'Un’immagine solo sulla risposta giusta la tradisce appena sono tutte sullo schermo. Per questo ogni opzione ne riceve una. Una risposta che non si può illustrare — <i>42</i>, oppure <i>B</i> — riceve una reazione neutra invece di una celebrazione, perché una celebrazione su una risposta sbagliata è anch’essa un indizio.',
+    't.gifs.callout2': '<b>La tua immagine vince sempre.</b> Se una domanda ha già un’immagine scelta da te, la GIF non la sostituisce, e <b>Rimuovi tutti</b> cancella solo quelle trovate da PollSlide. Chi ha chiesto di ridurre il movimento vede un fotogramma fisso.',
+    't.gifs.callout3': '<b>Finiscono nello stesso campo in cui scrivi tu.</b> Una GIF trovata riempie il campo immagine della domanda, o quello di quella risposta — puoi sostituire l’URL, incollarne un altro o svuotarlo nell’editor come per qualsiasi altra immagine. Niente resta nascosto in un’impostazione separata.',
+    't.atmos.lead': 'Tra il lancio di una domanda e la rivelazione della risposta c’è un’attesa, e ciò che la riempie dovrebbe dipendere dalla sala. Una serata quiz e un consiglio di amministrazione vogliono cose opposte: quindi scegli tu.',
+    't.atmos.steps': '<li>Premi <b>▶ Presenta</b>. La finestra che chiede come vuoi condurlo ora ha una riga <b>Atmosfera</b>.</li> <li>Scegli <b>🌿 Tranquilla</b>, <b>🎓 Aula</b> o <b>🎤 Quiz show</b>.</li> <li>Premi <b>▶ Inizia a presentare</b>. La scelta viene ricordata per quel mazzo.</li>',
+    't.atmos.calm': 'Nessun suono, nessun dramma da orologio — i risultati compaiono e basta. Riunioni, webinar, biblioteche, ovunque un rumore sarebbe fuori luogo. <b>È l’impostazione predefinita.</b>',
+    't.atmos.classroom': 'Senti la sala che risponde e gli ultimi cinque secondi sono impossibili da ignorare, ma nulla ti scandisce il tempo. Adatta alla maggior parte delle lezioni e dei corsi.',
+    't.atmos.gameshow': 'Un orologio che accelera, risposte che si sentono arrivare e una pausa sospesa prima della rivelazione. Serate quiz, conferenze, una finale.',
+    't.atmos.callout1': '<b>Non cambia nulla del quiz.</b> Stesse domande, stesso punteggio, stessa rivelazione, stessi risultati — cambia solo come si vive l’attesa. È indipendente dalle modalità di gioco: puoi giocare a Sopravvivenza con calma, o un sondaggio classico come un quiz show.',
+    't.atmos.callout2': '<b>Silenziare il dispositivo vince sempre.</b> Se hai premuto <b>🔇</b>, un mazzo impostato su Quiz show resta in silenzio — un’impostazione scelta la settimana scorsa non può prevalere sulla sala in cui ti trovi oggi. Il suono è sintetizzato nel browser, quindi non c’è nulla da scaricare.',
+  },
+});
