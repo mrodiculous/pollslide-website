@@ -108,3 +108,11 @@
   window.PS_I18N = window.PS_I18N || {};
   for (var l in T) { window.PS_I18N[l] = Object.assign(window.PS_I18N[l] || {}, T[l]); }
 })();
+
+/* Portuguese -> European — 2026-09-08. Rod chose one variant; the app already spoke it.
+   This file is one of EIGHT dictionaries in the repo. The first pass did translations.js,
+   every parity and coverage gate went green, and the browser still showed Brazilian text on
+   help.html — because the page reads four dictionaries and the gate only knew about three.
+   Same rules everywhere now, gender included: tela (f) -> ecrã (m), aplicativo (m) ->
+   aplicação (f), so the articles move with the nouns. */
+;(function(H){for(var l in H){window.PS_I18N[l]=Object.assign(window.PS_I18N[l]||{},H[l]);}})({"pt":{"⬇︎ Download / Print (PDF)":"⬇︎ Transferir / Imprimir (PDF)"}});
