@@ -48,3 +48,8 @@ window.PS_I18N=window.PS_I18N||{};(function(H){for(var l in H){window.PS_I18N[l]
    appeared at a sentence START; these only ever occur mid-chain, so the inventory missed
    them and the browser found them. ("tappez" was a typo for "tapez" in the source.) */
 ;(function(H){for(var l in H){window.PS_I18N[l]=Object.assign(window.PS_I18N[l]||{},H[l]);}})({"fr":{"PollSlide Help Center · For the most up-to-date help, visit":"Centre d'aide PollSlide · Pour l'aide la plus récente, visite","✨ Draft it with Polly AI":"✨ Rédige-le avec Polly AI"}});
+
+/* German -> du — 2026-09-08. Missed by the first pass for the same reason as
+   companion-i18n.js. "Die richtige Wahl, wenn es Ihre Präsentations-QR-Code sieht" was also
+   a mistranslation — "the right POLL", not the right choice — with the wrong gender on top. */
+;(function(H){for(var l in H){window.PS_I18N[l]=Object.assign(window.PS_I18N[l]||{},H[l]);}})({"de":{"Sign in at":"Melde dich an unter","Pick a product tab — for this example,":"Wähl einen Produkt-Tab — für dieses Beispiel,","Click":"Klick auf","Your audience points their phone camera at the":"Dein Publikum richtet die Handykamera auf den","— its icon appears in your menu bar (top-right).":"— das Symbol erscheint in deiner Menüleiste (oben rechts).","the right poll when it sees your slide's QR code.":"die richtige Umfrage, sobald er den QR-Code deiner Folie sieht."}});
