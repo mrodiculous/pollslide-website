@@ -85,6 +85,11 @@
   .ss-illo{filter:drop-shadow(0 10px 26px rgba(0,0,0,.4))}
   .ss-illo svg{width:100%;height:auto;display:block;border-radius:12px}
   .setup-tip{margin-top:20px}
+  /* The step people get stuck on (typing the code on the Mac) is outlined, so a reader
+     skimming for "where does the code go" lands on it without reading every card. */
+  .setup-step.is-key{border:2px solid var(--accent)}
+  .setup-trouble-h{font-size:19px;margin:34px 0 14px;scroll-margin-top:80px}
+  .setup-trouble-h + .cards .card h3{font-size:15px;line-height:1.35}
   /* ── Flow explainer illustrations (Polly / Share / Results) ── */
   .flow-illo{margin:2px 0 24px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.42))}
   .flow-illo svg{width:100%;height:auto;display:block;border-radius:14px}
@@ -169,6 +174,7 @@
     <h4>Mac Companion</h4>
     <a href="#companion">What it is</a>
     <a href="#connect">Set it up (step-by-step)</a>
+    <a href="#connect-trouble">If it doesn't connect</a>
     <h4>Plans &amp; account</h4>
     <a href="#products">Poll · Survey · Quiz · Study</a>
     <a href="#plans">Plans &amp; billing</a>
@@ -913,7 +919,15 @@
 
     <section id="connect">
       <h2>🔗 Set up the Mac Companion — step by step</h2>
-      <p class="lead">Follow these seven steps once and you're set for every presentation. It takes about two minutes. <b>Requirements:</b> a Mac on macOS 14 (Sonoma) or later — it's free.</p>
+      <p class="lead">Follow these eight steps once and you're set for every presentation. It takes about five minutes. <b>Requirements:</b> a Mac on macOS 14 (Sonoma) or later — it's free.</p>
+      <!-- The support ticket that reshaped this section: a teacher had the code in hand and
+           could not find where on the Mac it goes. The old step 6 sent people to a
+           "Connect Mac App" item in the Mac menu, which has never existed — that label is the
+           WEB menu. So the answer to "where does the code go" now sits above the steps, and
+           the code has its own step with a picture of the real window and the real menu.
+           Every label in quotes below is the English the Mac app literally shows (it is not
+           localised), so those are data-i18n-skip and stay English in every language. -->
+      <div class="callout" style="margin:0 0 18px"><b>Have a code but don't know where to type it?</b> The <b data-i18n-skip>“Connect to PollSlide”</b> window doesn't open on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Show / Hide Poll Window”</b>. That's where the code goes. <a href="#connect-code">Step 6 shows it with a picture ↓</a></div>
 
       <div class="setup">
 
@@ -921,7 +935,7 @@
         <div class="setup-step">
           <div class="ss-body">
             <h3><span class="ss-num">1</span> Download it</h3>
-            <p>Go to <a href="/download">pollslide.com/download</a> and click <b>Download for Mac</b>. A file called <b>PollSlideCompanion.dmg</b> lands in your Downloads. It's signed &amp; notarized by Apple.</p>
+            <p>In your browser, go to <a href="/download">pollslide.com/download</a> and press the <b>Download for Mac</b> button. A file called <b>PollSlideCompanion.dmg</b> lands in your Downloads. It's signed &amp; notarized by Apple.</p>
           </div>
           <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Click the Download for Mac button">
             <rect x="8" y="10" width="404" height="230" rx="14" fill="#16161f" stroke="#2a2a3a"/>
@@ -930,7 +944,7 @@
             <rect x="86" y="18" width="298" height="18" rx="9" fill="#0d0d18"/>
             <text x="100" y="31" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#9a9ab0">pollslide.com/download</text>
             <rect x="118" y="118" width="184" height="48" rx="12" fill="#6c63ff"/>
-            <text x="210" y="147" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff">⬇  Download for Mac</text>
+            <text x="210" y="147" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13.5" font-weight="700" fill="#fff">⬇  Download for Mac</text>
             <rect x="110" y="110" width="200" height="64" rx="16" fill="none" stroke="#26d07c" stroke-width="2.5" stroke-dasharray="7 6"/>
             <g transform="translate(236,150)"><path d="M0 0 L0 22 L6 16 L10 25 L13 24 L9 15 L16 15 Z" fill="#fff" stroke="#0a0a12" stroke-width="1.2" stroke-linejoin="round"/></g>
           </svg></div>
@@ -940,7 +954,7 @@
         <div class="setup-step rev">
           <div class="ss-body">
             <h3><span class="ss-num">2</span> Open the disk image</h3>
-            <p>In your <b>Downloads</b>, double-click <b>PollSlideCompanion.dmg</b>. A little install window opens.</p>
+            <p>In your Downloads folder, double-click <b>PollSlideCompanion.dmg</b>. A little install window opens.</p>
           </div>
           <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Double-click the downloaded disk image">
             <rect x="8" y="10" width="404" height="230" rx="14" fill="#16161f" stroke="#2a2a3a"/>
@@ -986,7 +1000,7 @@
         <div class="setup-step rev">
           <div class="ss-body">
             <h3><span class="ss-num">4</span> Open it the first time</h3>
-            <p>Open your <b>Applications</b> folder and double-click <b>PollSlide Companion</b>. macOS asks once whether you're sure — click <b>Open</b>. A small chart icon 📊 appears in your menu bar (top-right).</p>
+            <p>Open the Applications folder and double-click PollSlide Companion. macOS asks once whether you're sure — click Open. A small bar-chart icon (three vertical bars) then appears in the menu bar at the top right of your screen — that's it running. Nothing else opens yet; you'll bring up its window yourself in step 6.</p>
           </div>
           <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Click Open on the first-launch dialog">
             <rect x="60" y="34" width="300" height="182" rx="16" fill="#20202c" stroke="#3a3a52"/>
@@ -1001,68 +1015,145 @@
           </svg></div>
         </div>
 
-        <!-- 5 · Screen Recording (CRITICAL) -->
+        <!-- 5 · Get the code (web) -->
         <div class="setup-step">
           <div class="ss-body">
-            <h3><span class="ss-num">5</span> Allow Screen Recording</h3>
-            <p>The app asks for <b>Screen Recording</b> — this is how it spots the QR code on your slide. It opens Settings for you: turn the switch <b>ON</b> for PollSlide Companion, then <b>Quit &amp; Reopen</b> the app when macOS offers.</p>
-            <span class="ss-req">⚠ Needed for auto-detect</span>
-            <div class="ss-note">It's used <i>only</i> to read your PollSlide QR — nothing is recorded, saved, or sent anywhere.</div>
+            <h3><span class="ss-num">5</span> Get your code — in your browser</h3>
+            <p>Sign in at app.pollslide.com/presenter. Click your email address at the top right, then choose <b>🔗 Connect Mac App</b>. You get a 6-character code — it expires in 10 minutes.</p>
+            <div class="ss-note">Get the code right before you type it in. Each code works once and only for 10 minutes — if it runs out, just get a new one the same way.</div>
+          </div>
+          <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Click your email address at the top right, then Connect Mac App, to get a 6-character code">
+            <rect x="8" y="10" width="404" height="230" rx="14" fill="#16161f" stroke="#2a2a3a"/>
+            <rect x="8" y="10" width="404" height="34" rx="14" fill="#1e1e2b"/><rect x="8" y="30" width="404" height="14" fill="#1e1e2b"/>
+            <circle cx="28" cy="27" r="4.5" fill="#ff6584"/><circle cx="44" cy="27" r="4.5" fill="#f7b731"/><circle cx="60" cy="27" r="4.5" fill="#26d07c"/>
+            <rect x="86" y="18" width="298" height="18" rx="9" fill="#0d0d18"/>
+            <text x="100" y="31" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#9a9ab0" data-i18n-skip>app.pollslide.com/presenter</text>
+            <!-- account chip: avatar initial + email + ▾, as the presenter draws it -->
+            <rect x="262" y="54" width="140" height="26" rx="13" fill="#1e1e2b" stroke="#3a3a52"/>
+            <circle cx="276" cy="67" r="8.5" fill="#6c63ff"/><text x="276" y="71" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#fff" data-i18n-skip>Y</text>
+            <text x="290" y="71" font-family="system-ui,sans-serif" font-size="10" fill="#f4f4f8" data-i18n-skip>you@example.com</text>
+            <text x="392" y="71" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9a9ab0">▾</text>
+            <rect x="257" y="49" width="150" height="36" rx="18" fill="none" stroke="#26d07c" stroke-width="2" stroke-dasharray="6 5"/>
+            <!-- dropdown: other items are left as blank bars on purpose, so the picture never
+                 names a menu label the presenter does not show -->
+            <rect x="226" y="90" width="176" height="84" rx="10" fill="#20202c" stroke="#3a3a52"/>
+            <rect x="240" y="101" width="96" height="7" rx="3" fill="#3a3a52"/><rect x="240" y="116" width="80" height="7" rx="3" fill="#3a3a52"/>
+            <rect x="232" y="129" width="164" height="24" rx="6" fill="#6c63ff"/>
+            <text x="242" y="145" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#fff">🔗 Connect Mac App</text>
+            <rect x="240" y="162" width="70" height="7" rx="3" fill="#3a3a52"/>
+            <g transform="translate(350,140)"><path d="M0 0 L0 22 L6 16 L10 25 L13 24 L9 15 L16 15 Z" fill="#fff" stroke="#0a0a12" stroke-width="1.2" stroke-linejoin="round"/></g>
+            <!-- the code modal -->
+            <rect x="22" y="96" width="196" height="130" rx="12" fill="#20202c" stroke="#3a3a52"/>
+            <text x="120" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#f4f4f8">Connect Mac App</text>
+            <rect x="47" y="134" width="146" height="44" rx="10" fill="#0d0d18" stroke="#6c63ff" stroke-width="1.5"/>
+            <!-- A pairing code never contains 0/O or 1/I, so the example does not either. -->
+            <text x="120" y="164" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="800" letter-spacing="4" fill="#8b84ff" data-i18n-skip>AB34CD</text>
+            <text x="120" y="206" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#f7b731">⏱ expires in 10 minutes</text>
+          </svg></div>
+        </div>
+
+        <!-- 6 · Type the code on the Mac — the step the ticket could not find -->
+        <div class="setup-step rev is-key" id="connect-code">
+          <div class="ss-body">
+            <h3><span class="ss-num">6</span> Type the code on your Mac</h3>
+            <p>Go back to your Mac. Nothing opens on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Show / Hide Poll Window”</b>. That opens the <b data-i18n-skip>“Connect to PollSlide”</b> window. Click the <b data-i18n-skip>“Enter code”</b> box, type the 6 characters and click <b data-i18n-skip>“Connect”</b>. When it says <b data-i18n-skip>“Connected!”</b>, you're linked.</p>
+            <span class="ss-req">⚠ This is where the code goes</span>
+            <div class="ss-note"><b>This is the step people get stuck on</b> — the window is never open by default, so if you don't click the bar-chart icon first, there is nothing on screen to type into.</div>
+          </div>
+          <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Type the code into the Connect to PollSlide window, or reopen it from the bar-chart icon in the menu bar">
+            <!-- Drawn from the shipped build's own strings: the window and every menu item are
+                 exactly what the app shows, in its order. English on purpose (skip). -->
+            <g data-i18n-skip>
+              <!-- menu bar -->
+              <rect x="8" y="6" width="404" height="24" rx="6" fill="#12121b"/>
+              <rect x="334" y="13" width="16" height="10" rx="2" fill="#3a3a52"/><rect x="358" y="13" width="44" height="10" rx="2" fill="#3a3a52"/>
+              <!-- the companion's icon: SF Symbol chart.bar.fill, three bars -->
+              <rect x="298" y="10" width="26" height="16" rx="4" fill="#6c63ff"/>
+              <rect x="303" y="18" width="4" height="6" rx="1" fill="#fff"/><rect x="309" y="15" width="4" height="9" rx="1" fill="#fff"/><rect x="315" y="12" width="4" height="12" rx="1" fill="#fff"/>
+              <rect x="293" y="5" width="36" height="26" rx="8" fill="none" stroke="#26d07c" stroke-width="2" stroke-dasharray="5 4"/>
+              <!-- the menu -->
+              <rect x="190" y="34" width="218" height="140" rx="8" fill="#20202c" stroke="#3a3a52"/>
+              <rect x="195" y="40" width="208" height="19" rx="4" fill="#6c63ff"/>
+              <text x="203" y="53" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#fff">Show / Hide Poll Window</text>
+              <text x="203" y="72" font-family="system-ui,sans-serif" font-size="10.5" fill="#6a6a80">Global hotkey: Control-Option-Y</text>
+              <line x1="198" y1="80" x2="400" y2="80" stroke="#3a3a52"/>
+              <text x="203" y="96" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">Disconnect Account (Re-pair)</text>
+              <line x1="198" y1="104" x2="400" y2="104" stroke="#3a3a52"/>
+              <text x="203" y="120" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">▶ Start Auto-Show (QR detect)</text>
+              <text x="203" y="138" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">About PollSlide Companion</text>
+              <text x="203" y="156" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">Quit</text>
+              <text x="398" y="156" text-anchor="end" font-family="system-ui,sans-serif" font-size="10.5" fill="#9a9ab0">⌘Q</text>
+              <!-- the "Connect to PollSlide" window -->
+              <rect x="12" y="40" width="172" height="176" rx="12" fill="#0a0a17" stroke="#34344c"/>
+              <rect x="12" y="40" width="172" height="26" rx="12" fill="#1a1a29"/><rect x="12" y="54" width="172" height="12" fill="#1a1a29"/>
+              <circle cx="26" cy="53" r="3.5" fill="#6c63ff"/>
+              <text x="34" y="57" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#fff">PollSlide</text>
+              <text x="24" y="86" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#fff">Connect to PollSlide</text>
+              <rect x="24" y="95" width="132" height="5" rx="2" fill="#2e2e44"/><rect x="24" y="104" width="118" height="5" rx="2" fill="#2e2e44"/><rect x="24" y="113" width="140" height="5" rx="2" fill="#2e2e44"/>
+              <rect x="24" y="128" width="148" height="34" rx="8" fill="#1a1a2e" stroke="#6c63ff" stroke-width="1.5"/>
+              <text x="98" y="151" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="17" font-weight="800" letter-spacing="3" fill="#fff">AB34CD</text>
+              <rect x="19" y="123" width="158" height="44" rx="10" fill="none" stroke="#26d07c" stroke-width="2" stroke-dasharray="6 5"/>
+              <rect x="24" y="174" width="148" height="26" rx="7" fill="#6c63ff"/>
+              <text x="98" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#fff">Connect</text>
+              <g transform="translate(120,184)"><path d="M0 0 L0 22 L6 16 L10 25 L13 24 L9 15 L16 15 Z" fill="#fff" stroke="#0a0a12" stroke-width="1.2" stroke-linejoin="round"/></g>
+              <!-- "Show / Hide Poll Window" brings this window back -->
+              <path d="M195 50 q-6 0 -10 6" fill="none" stroke="#26d07c" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>
+            </g>
+            <text x="98" y="234" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#26d07c">type the code here</text>
+            <text x="299" y="194" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#26d07c">window closed? reopen it here ↑</text>
+          </svg></div>
+        </div>
+
+        <!-- 7 · Screen Recording + auto-show. After connecting, not before: the app only
+             asks for Screen Recording once it is paired, so the old order (permission first,
+             code second) described a prompt that never came. -->
+        <div class="setup-step">
+          <div class="ss-body">
+            <h3><span class="ss-num">7</span> Turn on auto-show</h3>
+            <p>Auto-show pops your results up whenever your QR is on screen. It needs the <b>Screen Recording</b> permission — that's how the app spots the QR. Nothing is recorded, saved, or sent anywhere.</p>
+            <span class="ss-req">⚠ Needed for auto-show</span>
+            <div class="ss-note"><b>System Settings → Privacy &amp; Security → Screen Recording</b> → switch <b>PollSlide Companion</b> ON → <b>quit the app and open it again</b> (macOS only applies the permission to a freshly opened app).</div>
+            <div class="ss-note"><b>Is auto-show on?</b> It normally starts by itself. To check, click the <b>bar-chart icon</b>: if the menu shows <b data-i18n-skip>“▶ Start Auto-Show (QR detect)”</b>, click it. It's on when the item reads <b data-i18n-skip>“■ Stop Auto-Show (QR detect)”</b>.</div>
           </div>
           <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Turn on the Screen Recording switch for PollSlide Companion">
             <rect x="8" y="10" width="404" height="230" rx="14" fill="#16161f" stroke="#2a2a3a"/>
             <rect x="8" y="10" width="150" height="230" rx="14" fill="#12121b"/><rect x="140" y="10" width="18" height="230" fill="#12121b"/>
-            <text x="26" y="40" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#9a9ab0">Privacy &amp; Security</text>
-            <rect x="20" y="88" width="122" height="26" rx="7" fill="#6c63ff"/><text x="34" y="105" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" fill="#fff">Screen Recording</text>
+            <text x="22" y="40" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#9a9ab0">Privacy &amp; Security</text>
+            <rect x="14" y="88" width="140" height="26" rx="7" fill="#6c63ff"/><text x="22" y="105" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#fff">Screen Recording</text>
             <text x="180" y="52" font-family="system-ui,sans-serif" font-size="14" font-weight="800" fill="#f4f4f8">Screen Recording</text>
             <rect x="180" y="78" width="212" height="52" rx="10" fill="#1e1e2b" stroke="#2a2a3a"/>
             <rect x="194" y="92" width="24" height="24" rx="6" fill="#6c63ff"/>
-            <text x="230" y="102" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#f4f4f8">PollSlide Companion</text>
+            <text x="230" y="102" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#f4f4f8" data-i18n-skip>PollSlide Companion</text>
             <text x="230" y="118" font-family="system-ui,sans-serif" font-size="10" fill="#9a9ab0">Reads your QR only</text>
             <!-- toggle ON -->
             <rect x="342" y="93" width="38" height="22" rx="11" fill="#26d07c"/><circle cx="369" cy="104" r="9" fill="#fff"/>
             <rect x="336" y="86" width="52" height="36" rx="12" fill="none" stroke="#26d07c" stroke-width="2.5" stroke-dasharray="7 6"/>
             <g transform="translate(374,112)"><path d="M0 0 L0 22 L6 16 L10 25 L13 24 L9 15 L16 15 Z" fill="#fff" stroke="#0a0a12" stroke-width="1.2" stroke-linejoin="round"/></g>
-            <text x="286" y="168" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#f7b731">then Quit &amp; Reopen the app</text>
+            <text x="286" y="168" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#f7b731">then quit the app and open it again</text>
           </svg></div>
         </div>
 
-        <!-- 6 · Pair -->
+        <!-- 8 · Place the window, dry run & present -->
         <div class="setup-step rev">
           <div class="ss-body">
-            <h3><span class="ss-num">6</span> Pair with your account</h3>
-            <p>On <b>pollslide.com</b>, open your <b>account menu → Connect Mac App</b> to get a <b>6-character code</b>. Click the menu-bar chart icon 📊 → <b>Connect Mac App</b>, and type that code in. Done — you're linked.</p>
+            <h3><span class="ss-num">8</span> Place the window, then do a dry run</h3>
+            <p>Present your slides as usual — the results window <b>pops up on its own</b> whenever your QR is on screen, and hides as soon as the QR is gone. Show or hide it yourself anytime with <span class="kbd" data-i18n-skip>Control-Option-Y</span>.</p>
+            <!-- Why not to cover the QR is the AUDIENCE, not detection: the capture leaves the
+                 companion's own windows out, so it still sees a QR underneath. What it cannot
+                 do is let a phone scan through it. -->
+            <div class="ss-note"><b>Don't let the window cover the QR</b> — your audience has to scan it. Drag the window by its top bar, or put the QR in a corner of your slide.</div>
+            <div class="ss-note"><b>Projector or second screen?</b> Do a quick dry run before your audience arrives: bring up a QR slide, and if the window opens on the wrong display, drag it onto the screen your slides are on — it stays there for the whole talk.</div>
           </div>
-          <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enter the 6-character pairing code">
-            <rect x="8" y="8" width="404" height="26" rx="8" fill="#12121b"/>
-            <rect x="322" y="14" width="16" height="14" rx="3" fill="#9a9ab0"/><path d="M326 25 v-7 M330 25 v-11 M334 25 v-4" stroke="#12121b" stroke-width="1.5"/>
-            <circle cx="360" cy="21" r="7" fill="#6c63ff"/><path d="M356 24 v-4 M360 24 v-6 M364 24 v-3" stroke="#fff" stroke-width="1.6"/>
-            <rect x="356" y="30" width="150" height="0"/>
-            <rect x="250" y="70" width="150" height="120" rx="12" fill="#16161f" stroke="#2a2a3a"/>
-            <text x="325" y="96" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#f4f4f8">Connect Mac App</text>
-            <rect x="268" y="112" width="114" height="40" rx="9" fill="#0d0d18" stroke="#6c63ff" stroke-width="1.5"/>
-            <text x="325" y="139" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="20" font-weight="800" letter-spacing="4" fill="#f4f4f8">AB12CD</text>
-            <rect x="268" y="162" width="114" height="16" rx="6" fill="#6c63ff"/><text x="325" y="174" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#fff">Connect</text>
-            <text x="120" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#9a9ab0">Get the code from</text>
-            <text x="120" y="138" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#6c63ff">pollslide.com →</text>
-            <text x="120" y="156" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#9a9ab0">account menu</text>
-          </svg></div>
-        </div>
-
-        <!-- 7 · Dry run & present -->
-        <div class="setup-step">
-          <div class="ss-body">
-            <h3><span class="ss-num">7</span> Dry run, then present</h3>
-            <p>Present your slides as usual — the results window <b>pops up on its own</b> whenever your QR slide is on screen, and hides when you move on. Toggle it anytime with <span class="kbd">Control-Option-Y</span>.</p>
-            <div class="ss-note">Using a projector or second screen? Do a quick dry run first: if the window opens on the wrong display, <b>drag it by its top bar onto the screen your slides are on</b> — it stays there for the whole talk.</div>
-          </div>
-          <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drag the results window onto the display your slides are on">
+          <div class="ss-illo"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drag the results window onto the display your slides are on, clear of the QR code">
             <!-- laptop screen -->
             <rect x="20" y="60" width="150" height="96" rx="8" fill="#16161f" stroke="#2a2a3a"/><rect x="80" y="156" width="30" height="8" fill="#2a2a3a"/><rect x="60" y="164" width="70" height="5" rx="2" fill="#3a3a52"/>
             <text x="95" y="112" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9a9ab0">your Mac</text>
             <!-- projector screen -->
             <rect x="230" y="40" width="170" height="120" rx="8" fill="#0d0d18" stroke="#2a2a3a"/>
             <rect x="245" y="56" width="140" height="70" rx="5" fill="#1a1a28"/>
+            <!-- the slide's QR, in a corner, left uncovered -->
+            <rect x="350" y="90" width="30" height="30" rx="3" fill="#fff"/>
+            <rect x="353" y="93" width="9" height="9" fill="#0d0d18"/><rect x="368" y="93" width="9" height="9" fill="#0d0d18"/><rect x="353" y="108" width="9" height="9" fill="#0d0d18"/><rect x="367" y="107" width="4" height="4" fill="#0d0d18"/><rect x="373" y="113" width="4" height="4" fill="#0d0d18"/>
             <text x="315" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9a9ab0">projector · where your slides are</text>
             <!-- results window on wrong (laptop) screen, being dragged over -->
             <g opacity="0.5"><rect x="96" y="78" width="70" height="60" rx="7" fill="#1e1e2b" stroke="#6c63ff"/></g>
@@ -1072,12 +1163,26 @@
             <path d="M150 108 q55 -30 96 -40" fill="none" stroke="#26d07c" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
             <path d="M246 68 l-11 0 l6 9 z" fill="#26d07c"/>
             <g transform="translate(286,58)"><path d="M0 0 L0 22 L6 16 L10 25 L13 24 L9 15 L16 15 Z" fill="#fff" stroke="#0a0a12" stroke-width="1.2" stroke-linejoin="round"/></g>
+            <text x="315" y="186" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#26d07c">keep the QR uncovered</text>
           </svg></div>
         </div>
 
       </div>
 
-      <div class="callout setup-tip"><b>Still not popping up on your QR slide?</b> 99% of the time it's one of two things: (1) the app isn't in your <b>Applications</b> folder — move it there (Step 3); or (2) Screen Recording is off, or the app needs a restart after you turned it on — check Step 5, then <b>quit the app (menu-bar icon → Quit) and reopen it</b>. Make sure you're on <b>version 1.3.3 or later</b>.</div>
+      <!-- Symptom → fix, each headed by what the person actually sees. The three error
+           lines are the app's own wording (English, skip) so they can be matched by eye. -->
+      <h3 class="setup-trouble-h" id="connect-trouble">If it doesn't connect — or doesn't pop up</h3>
+      <div class="cards">
+        <div class="card"><h3 data-i18n-skip>“This code has expired. Generate a new one.”</h3><p>Codes last 10 minutes and work once. Get a new one the same way — your email address at the top right, then Connect Mac App — and type it in straight away.</p></div>
+        <div class="card"><h3 data-i18n-skip>“Invalid code. Check it and try again.”</h3><p>Retype all 6 characters carefully. Codes never contain the look-alikes 0, O, 1 or I. If it still fails, get a fresh code.</p></div>
+        <div class="card"><h3 data-i18n-skip>“Connection error. Check your internet.”</h3><p>Your Mac has to be online to connect. Check your Wi-Fi and try again — the same code works until its 10 minutes are up.</p></div>
+        <div class="card"><h3>I can't find the window to type the code</h3><p>In the menu bar at the top right of your screen, click the <b>bar-chart icon</b> → <b data-i18n-skip>“Show / Hide Poll Window”</b>. No icon there? Open PollSlide Companion from your Applications folder.</p></div>
+        <div class="card"><h3>The results never pop up</h3><p>Check three things: the app is in your Applications folder (not Downloads or the disk image); Screen Recording is ON for PollSlide Companion and you quit and reopened the app afterwards; and the menu reads <b data-i18n-skip>“■ Stop Auto-Show (QR detect)”</b>.</p></div>
+        <div class="card"><h3>The app says it's running from a temporary location</h3><p>It was opened from Downloads or the disk image, so Screen Recording can never stick. Quit it, drag PollSlide Companion into Applications, and open it from there.</p></div>
+        <div class="card"><h3>The window covers the QR</h3><p>Your audience can't scan a QR the window is sitting on. Drag the window by its top bar, or move the QR to a corner of the slide — and test before you present.</p></div>
+        <div class="card"><h3>Switching to another PollSlide account</h3><p>In the menu bar at the top right of your screen, click the <b>bar-chart icon</b> → <b data-i18n-skip>“Disconnect Account (Re-pair)”</b>. The connect window comes back: get a code while signed in to the other account and type it in.</p></div>
+      </div>
+      <div class="callout setup-tip">Still stuck? Email <a href="mailto:help@pollslide.com">help@pollslide.com</a> — and make sure you have the latest version from <a href="/download">pollslide.com/download</a></div>
     </section>
 
     <section id="products">
@@ -1145,11 +1250,13 @@
     <section id="troubleshoot">
       <h2>🛠️ Troubleshooting</h2>
       <p class="lead">The quick fixes for the handful of things that trip people up.</p>
-      <details><summary>The companion isn't popping up on my QR slide</summary><p>99% of the time it's one of two things: (1) the app isn't in your <b>Applications</b> folder — move it there; or (2) <b>Screen Recording</b> is off, or the app needs a restart after you enabled it. Turn it on in System Settings, then quit the app from its menu-bar icon and reopen it. Make sure you're on the latest version from <a href="/download">pollslide.com/download</a>.</p></details>
+      <details><summary>I have the code — where do I type it on my Mac?</summary><p>The <b data-i18n-skip>“Connect to PollSlide”</b> window doesn't open on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Show / Hide Poll Window”</b>. That's where the code goes. <a href="#connect-code">Step 6 shows it with a picture ↓</a></p></details>
+      <details><summary>The companion isn't popping up on my QR slide</summary><p>Check three things: the app is in your Applications folder (not Downloads or the disk image); Screen Recording is ON for PollSlide Companion and you quit and reopened the app afterwards; and the menu reads <b data-i18n-skip>“■ Stop Auto-Show (QR detect)”</b>. If it reads <b data-i18n-skip>“▶ Start Auto-Show (QR detect)”</b>, click it. Make sure you're on the latest version from <a href="/download">pollslide.com/download</a>.</p></details>
       <details><summary>My audience can't join or results aren't updating</summary><p>PollSlide needs an <b>internet connection</b> on both your device and your audience's. Check you're online, then have them re-scan the QR or go to <b>pollslide.com/join</b> and enter the code. Refresh the presenter page if a session looks stuck.</p></details>
       <details><summary>The QR code won't scan</summary><p>Make it bigger on your slide and keep good contrast (dark on light). Most phone cameras scan automatically — if not, any QR app works, or use the <b>pollslide.com/join</b> + code option instead.</p></details>
       <details><summary>Polly AI is slow or didn't generate</summary><p>Try again — the first request after a while can be slower. If you've hit your monthly Polly allowance, you'll be told; you can still add questions by hand or upgrade for more. See <a href="#plans">Plans &amp; billing</a>.</p></details>
       <details><summary>The results window opened on the wrong screen</summary><p>Drag it by its top bar onto the display your slides are on — it stays there for the rest of your talk. With a projector or second display, always do a quick dry run first so you can position it once.</p></details>
+      <details><summary>The window covers the QR</summary><p>Your audience can't scan a QR the window is sitting on. Drag the window by its top bar, or move the QR to a corner of the slide — and test before you present.</p></details>
       <details><summary>My study streak reset even though I studied</summary><p>The streak counts calendar days and only banks when you <em>finish</em> a session, so closing the tab halfway through won't count. It's also per-device (it lives in that browser), so studying on your phone and laptop keeps two separate streaks. Note it's now a single streak across all your sets — studying any set keeps it alive.</p></details>
       <details><summary>Study progress vanished / cards reset to Learning</summary><p>Study progress is stored in that browser, not your account — so clearing site data, using private browsing, or switching device starts fresh. The cards themselves are safe; only the schedule and streak are local.</p></details>
       <details><summary>I picked a game mode but scores look normal</summary><p>Check the mode actually took: the picker appears each time you press Present, and whatever is selected there is what runs. If people joined <em>before</em> you switched modes, ask them to reload the answer page. Also note Classic and the other modes score the same on a single question — the differences build up across a round. See <a href="#gamemodes">Game modes</a>.</p></details>
@@ -1194,7 +1301,7 @@
 <script src="/help-translations.js?v=afd501f7"></script>
 <script src="/help-translations-teachers.js?v=fff5899c"></script>
 <script src="/help-teachers-blocks.js?v=a8912589"></script>
-<script src="/companion-i18n.js?v=3f5a195b"></script>
+<script src="/companion-i18n.js?v=4e58dbaf"></script>
 <script src="/i18n.js?v=05643162"></script>
 <script src="/consent.js?v=73cc2b90"></script>
 </body>
