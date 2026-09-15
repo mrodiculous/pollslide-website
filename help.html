@@ -927,7 +927,7 @@
            the code has its own step with a picture of the real window and the real menu.
            Every label in quotes below is the English the Mac app literally shows (it is not
            localised), so those are data-i18n-skip and stay English in every language. -->
-      <div class="callout" style="margin:0 0 18px"><b>Have a code but don't know where to type it?</b> The <b data-i18n-skip>“Connect to PollSlide”</b> window doesn't open on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Show / Hide Poll Window”</b>. That's where the code goes. <a href="#connect-code">Step 6 shows it with a picture ↓</a></div>
+      <div class="callout" style="margin:0 0 18px"><b>Have a code but don't know where to type it?</b> The <b data-i18n-skip>“Connect to PollSlide”</b> window doesn't open on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Disconnect Account (Re-pair)”</b>. That's where the code goes. <a href="#connect-code">Step 6 shows it with a picture ↓</a></div>
 
       <div class="setup">
 
@@ -1056,7 +1056,7 @@
         <div class="setup-step rev is-key" id="connect-code">
           <div class="ss-body">
             <h3><span class="ss-num">6</span> Type the code on your Mac</h3>
-            <p>Go back to your Mac. Nothing opens on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Show / Hide Poll Window”</b>. That opens the <b data-i18n-skip>“Connect to PollSlide”</b> window. Click the <b data-i18n-skip>“Enter code”</b> box, type the 6 characters and click <b data-i18n-skip>“Connect”</b>. When it says <b data-i18n-skip>“Connected!”</b>, you're linked.</p>
+            <p>Go back to your Mac. Nothing opens on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Disconnect Account (Re-pair)”</b>. That opens the <b data-i18n-skip>“Connect to PollSlide”</b> window. Click the <b data-i18n-skip>“Enter code”</b> box, type the 6 characters and click <b data-i18n-skip>“Connect”</b>. When it says <b data-i18n-skip>“Connected!”</b>, you're linked.</p>
             <span class="ss-req">⚠ This is where the code goes</span>
             <div class="ss-note"><b>This is the step people get stuck on</b> — the window is never open by default, so if you don't click the bar-chart icon first, there is nothing on screen to type into.</div>
           </div>
@@ -1073,11 +1073,11 @@
               <rect x="293" y="5" width="36" height="26" rx="8" fill="none" stroke="#26d07c" stroke-width="2" stroke-dasharray="5 4"/>
               <!-- the menu -->
               <rect x="190" y="34" width="218" height="140" rx="8" fill="#20202c" stroke="#3a3a52"/>
-              <rect x="195" y="40" width="208" height="19" rx="4" fill="#6c63ff"/>
-              <text x="203" y="53" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#fff">Show / Hide Poll Window</text>
+              <text x="203" y="53" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">Show / Hide Poll Window</text>
               <text x="203" y="72" font-family="system-ui,sans-serif" font-size="10.5" fill="#6a6a80">Global hotkey: Control-Option-Y</text>
               <line x1="198" y1="80" x2="400" y2="80" stroke="#3a3a52"/>
-              <text x="203" y="96" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">Disconnect Account (Re-pair)</text>
+              <rect x="195" y="85" width="208" height="19" rx="4" fill="#6c63ff"/>
+              <text x="203" y="98" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#fff">Disconnect Account (Re-pair)</text>
               <line x1="198" y1="104" x2="400" y2="104" stroke="#3a3a52"/>
               <text x="203" y="120" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">▶ Start Auto-Show (QR detect)</text>
               <text x="203" y="138" font-family="system-ui,sans-serif" font-size="10.5" fill="#e6e6ef">About PollSlide Companion</text>
@@ -1096,8 +1096,10 @@
               <rect x="24" y="174" width="148" height="26" rx="7" fill="#6c63ff"/>
               <text x="98" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#fff">Connect</text>
               <g transform="translate(120,184)"><path d="M0 0 L0 22 L6 16 L10 25 L13 24 L9 15 L16 15 Z" fill="#fff" stroke="#0a0a12" stroke-width="1.2" stroke-linejoin="round"/></g>
-              <!-- "Show / Hide Poll Window" brings this window back -->
-              <path d="M195 50 q-6 0 -10 6" fill="none" stroke="#26d07c" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>
+              <!-- "Disconnect Account (Re-pair)" brings this window back — it forces a
+                   fresh pairing screen unconditionally, where "Show / Hide Poll Window"
+                   only shows whatever the window already contains. -->
+              <path d="M195 94 q-6 0 -10 6" fill="none" stroke="#26d07c" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>
             </g>
             <text x="98" y="234" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#26d07c">type the code here</text>
             <text x="299" y="194" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#26d07c">window closed? reopen it here ↑</text>
@@ -1176,7 +1178,7 @@
         <div class="card"><h3 data-i18n-skip>“This code has expired. Generate a new one.”</h3><p>Codes last 10 minutes and work once. Get a new one the same way — your email address at the top right, then Connect Mac App — and type it in straight away.</p></div>
         <div class="card"><h3 data-i18n-skip>“Invalid code. Check it and try again.”</h3><p>Retype all 6 characters carefully. Codes never contain the look-alikes 0, O, 1 or I. If it still fails, get a fresh code.</p></div>
         <div class="card"><h3 data-i18n-skip>“Connection error. Check your internet.”</h3><p>Your Mac has to be online to connect. Check your Wi-Fi and try again — the same code works until its 10 minutes are up.</p></div>
-        <div class="card"><h3>I can't find the window to type the code</h3><p>In the menu bar at the top right of your screen, click the <b>bar-chart icon</b> → <b data-i18n-skip>“Show / Hide Poll Window”</b>. No icon there? Open PollSlide Companion from your Applications folder.</p></div>
+        <div class="card"><h3>I can't find the window to type the code</h3><p>In the menu bar at the top right of your screen, click the <b>bar-chart icon</b> → <b data-i18n-skip>“Disconnect Account (Re-pair)”</b>. No icon there? Open PollSlide Companion from your Applications folder.</p></div>
         <div class="card"><h3>The results never pop up</h3><p>Check three things: the app is in your Applications folder (not Downloads or the disk image); Screen Recording is ON for PollSlide Companion and you quit and reopened the app afterwards; and the menu reads <b data-i18n-skip>“■ Stop Auto-Show (QR detect)”</b>.</p></div>
         <div class="card"><h3>The app says it's running from a temporary location</h3><p>It was opened from Downloads or the disk image, so Screen Recording can never stick. Quit it, drag PollSlide Companion into Applications, and open it from there.</p></div>
         <div class="card"><h3>The window covers the QR</h3><p>Your audience can't scan a QR the window is sitting on. Drag the window by its top bar, or move the QR to a corner of the slide — and test before you present.</p></div>
@@ -1250,7 +1252,7 @@
     <section id="troubleshoot">
       <h2>🛠️ Troubleshooting</h2>
       <p class="lead">The quick fixes for the handful of things that trip people up.</p>
-      <details><summary>I have the code — where do I type it on my Mac?</summary><p>The <b data-i18n-skip>“Connect to PollSlide”</b> window doesn't open on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Show / Hide Poll Window”</b>. That's where the code goes. <a href="#connect-code">Step 6 shows it with a picture ↓</a></p></details>
+      <details><summary>I have the code — where do I type it on my Mac?</summary><p>The <b data-i18n-skip>“Connect to PollSlide”</b> window doesn't open on its own — in the menu bar at the top right of your screen, click the <b>bar-chart icon</b>, then <b data-i18n-skip>“Disconnect Account (Re-pair)”</b>. That's where the code goes. <a href="#connect-code">Step 6 shows it with a picture ↓</a></p></details>
       <details><summary>The companion isn't popping up on my QR slide</summary><p>Check three things: the app is in your Applications folder (not Downloads or the disk image); Screen Recording is ON for PollSlide Companion and you quit and reopened the app afterwards; and the menu reads <b data-i18n-skip>“■ Stop Auto-Show (QR detect)”</b>. If it reads <b data-i18n-skip>“▶ Start Auto-Show (QR detect)”</b>, click it. Make sure you're on the latest version from <a href="/download">pollslide.com/download</a>.</p></details>
       <details><summary>My audience can't join or results aren't updating</summary><p>PollSlide needs an <b>internet connection</b> on both your device and your audience's. Check you're online, then have them re-scan the QR or go to <b>pollslide.com/join</b> and enter the code. Refresh the presenter page if a session looks stuck.</p></details>
       <details><summary>The QR code won't scan</summary><p>Make it bigger on your slide and keep good contrast (dark on light). Most phone cameras scan automatically — if not, any QR app works, or use the <b>pollslide.com/join</b> + code option instead.</p></details>
@@ -1297,7 +1299,7 @@
 <footer>
   PollSlide Help Center · For the most up-to-date help, visit <a href="https://pollslide.com">pollslide.com</a>. · <a href="/accessibility">Accessibility</a>
 </footer>
-<script src="/translations.js?v=e663866a"></script>
+<script src="/translations.js?v=bb2d22a3"></script>
 <script src="/help-translations.js?v=afd501f7"></script>
 <script src="/help-translations-teachers.js?v=fff5899c"></script>
 <script src="/help-teachers-blocks.js?v=a8912589"></script>
