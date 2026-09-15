@@ -327,10 +327,12 @@ var PLANS=[
     // tests p.mo<0 for "Custom", so it matches what is already here rather than a
     // second convention.
     mo:-1, yr:-1,
-    // No url: buildPlans() renders a <button onclick> for a plan with no url instead
-    // of an <a href> — Enterprise opens the lead form in place rather than navigating,
-    // and a javascript: href is the kind of thing a future CSP quietly breaks.
-    cta:'Contact us', onclick:'openEnterpriseContact()', ctaClass:'cta-outline',
+    // No Stripe price exists for Enterprise — it's negotiated by size — so this is a
+    // plain mailto link, pre-addressed and pre-filled, rather than a checkout link or
+    // a lead-capture form. No API involved: the visitor's own mail client sends it.
+    cta:'Contact us',
+    url:'mailto:help@pollslide.com?subject='+encodeURIComponent('Enterprise plan inquiry')+'&body='+encodeURIComponent("Hi PollSlide team,\n\nWe'd like to talk about the Enterprise plan.\n\nOrganisation size: \nWhat we're looking to do: \n"),
+    ctaClass:'cta-outline',
     features:[
       [true,'Everything in Team Large'],
       [true,'Unlimited team members'],
@@ -341,103 +343,6 @@ var PLANS=[
     ]
   }
 ];
-
-/* ── ENTERPRISE — "Contact us", not a checkout link ───────────────────────────
-   No Stripe price exists for Enterprise (see api/enterprise-lead.js), so there is
-   nothing for this page to link to. Posts cross-origin to the app's API — this site
-   is pollslide.com, the endpoint lives on app.pollslide.com — which is why that
-   endpoint checks Origin against an allowlist instead of the single hardcoded origin
-   every other endpoint in the app answers to. Same endpoint, same lead record, as the
-   in-app plan picker's "Contact us" card — one inbox, wherever the visitor asked from. */
-var ENT_API='https://app.pollslide.com/api/enterprise-lead';
-/* Curated keys, not bare data-i18n. This file's i18n.js is keyed (data-i18n="path.key"
- * looked up in PS_I18N_KEYS/I18N), unlike presenter.html's SEPARATE ui-lang.js, which
- * matches a bare data-i18n by exact text — copying that convention here would tag these
- * elements as "already translated" (excluding them from the general walker below) while
- * looking up an empty-string key that matches nothing, so they'd render in English forever
- * in every language. Needed only for <option>/<select>/placeholder — i18n.js's own
- * SKIP_TAGS excludes OPTION, SELECT and TEXTAREA from the general walker, so those three
- * element types have no other way to be translated at all. Defined here rather than in
- * help-teachers-blocks.js because this page never loads that file. */
-window.PS_I18N_KEYS = window.PS_I18N_KEYS || {};
-(function(H){ for(var l in H){ window.PS_I18N_KEYS[l] = Object.assign(window.PS_I18N_KEYS[l]||{}, H[l]); } })({
-  en:{'ent.name':'Your name','ent.email':'Work email','ent.msg':'What are you looking to do? (optional)','ent.size0':'Organisation size…','ent.size1':'1–50 people','ent.size2':'51–200 people','ent.size3':'201–1,000 people','ent.size4':'1,000+ people'},
-  es:{'ent.name':'Tu nombre','ent.email':'Correo del trabajo','ent.msg':'¿Qué quieres hacer? (opcional)','ent.size0':'Tamaño de la organización…','ent.size1':'1–50 personas','ent.size2':'51–200 personas','ent.size3':'201–1.000 personas','ent.size4':'Más de 1.000 personas'},
-  de:{'ent.name':'Dein Name','ent.email':'Geschäftliche E-Mail','ent.msg':'Was hast du vor? (optional)','ent.size0':'Größe deiner Organisation…','ent.size1':'1–50 Personen','ent.size2':'51–200 Personen','ent.size3':'201–1.000 Personen','ent.size4':'Über 1.000 Personen'},
-  fr:{'ent.name':'Ton nom','ent.email':'E-mail professionnel','ent.msg':'Que veux-tu faire ? (facultatif)','ent.size0':'Taille de ton organisation…','ent.size1':'1 à 50 personnes','ent.size2':'51 à 200 personnes','ent.size3':'201 à 1 000 personnes','ent.size4':'Plus de 1 000 personnes'},
-  pt:{'ent.name':'O seu nome','ent.email':'Email profissional','ent.msg':'O que pretende fazer? (opcional)','ent.size0':'Dimensão da organização…','ent.size1':'1–50 pessoas','ent.size2':'51–200 pessoas','ent.size3':'201–1000 pessoas','ent.size4':'Mais de 1000 pessoas'},
-  it:{'ent.name':'Il tuo nome','ent.email':'Email di lavoro','ent.msg':'Cosa vuoi fare? (facoltativo)','ent.size0':'Dimensione dell’organizzazione…','ent.size1':'1–50 persone','ent.size2':'51–200 persone','ent.size3':'201–1.000 persone','ent.size4':'Oltre 1.000 persone'},
-});
-function openEnterpriseContact(){
-  var old=document.getElementById('entModal'); if(old) old.remove();
-  var ov=document.createElement('div');
-  ov.id='entModal';
-  ov.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto;backdrop-filter:blur(6px);';
-  ov.onclick=function(e){ if(e.target===ov) ov.remove(); };
-  var field='width:100%;margin-bottom:9px;padding:11px 13px;border-radius:9px;background:var(--surface2);border:1px solid var(--border2);color:var(--text);font-family:inherit;font-size:14px;box-sizing:border-box;';
-  // Plain sentences carry NO data-i18n at all — same as every FAQ answer on this page —
-  // so i18n.js's general walker translates them by exact English text, which is where
-  // their entries live (translations.js), not here.
-  ov.innerHTML=
-    '<div style="background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:28px;max-width:420px;width:100%;">'+
-      '<div style="font-family:\'Syne\',sans-serif;font-weight:800;font-size:19px;margin-bottom:6px;">Talk to us about Enterprise</div>'+
-      '<div style="font-size:13px;color:var(--muted);margin-bottom:18px;">Tell us the size of your organisation and what you need — we\'ll follow up with pricing.</div>'+
-      '<div id="entForm">'+
-        '<input id="entName" placeholder="Your name" data-i18n-ph="ent.name" style="'+field+'">'+
-        '<input id="entEmail" type="email" placeholder="Work email" data-i18n-ph="ent.email" style="'+field+'">'+
-        '<select id="entSize" style="'+field+'">'+
-          '<option value="" data-i18n="ent.size0">Organisation size…</option>'+
-          '<option value="1-50" data-i18n="ent.size1">1–50 people</option>'+
-          '<option value="51-200" data-i18n="ent.size2">51–200 people</option>'+
-          '<option value="201-1000" data-i18n="ent.size3">201–1,000 people</option>'+
-          '<option value="1000+" data-i18n="ent.size4">1,000+ people</option>'+
-        '</select>'+
-        '<textarea id="entMsg" rows="3" placeholder="What are you looking to do? (optional)" data-i18n-ph="ent.msg" style="'+field+'resize:vertical;"></textarea>'+
-        '<div id="entErr" style="display:none;color:var(--accent2);font-size:12px;margin-bottom:8px;line-height:1.4;"></div>'+
-        '<button type="button" id="entBtn" class="btn bp" style="width:100%;justify-content:center;" onclick="submitEnterpriseLead()">Send</button>'+
-      '</div>'+
-      '<div style="margin-top:12px;text-align:center;">'+
-        '<button type="button" onclick="document.getElementById(\'entModal\').remove()" style="background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;">Cancel</button>'+
-      '</div>'+
-    '</div>';
-  document.body.appendChild(ov);
-  // i18n.js watches document.body with a MutationObserver and re-runs apply() whenever
-  // nodes are added (see reapply()/startObserver() in i18n.js) — this modal is translated
-  // by that, the same path the cookie-consent banner already relies on. No manual call.
-}
-function entShowErr(m){
-  var el=document.getElementById('entErr');
-  if(el){ el.textContent=m; el.style.display='block'; }
-}
-function submitEnterpriseLead(){
-  var name=(document.getElementById('entName')||{}).value||'';
-  var email=((document.getElementById('entEmail')||{}).value||'').trim();
-  var size=(document.getElementById('entSize')||{}).value||'';
-  var message=(document.getElementById('entMsg')||{}).value||'';
-  var errEl=document.getElementById('entErr'); if(errEl) errEl.style.display='none';
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ entShowErr('Enter a valid email address.'); return; }
-  if(!size){ entShowErr('Choose your organisation size.'); return; }
-  var btn=document.getElementById('entBtn');
-  if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
-  fetch(ENT_API,{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name:name,email:email,size:size,message:message})})
-    .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok,data:d}; }); })
-    .then(function(res){
-      if(!res.ok) throw new Error((res.data&&res.data.error)||'Something went wrong.');
-      var form=document.getElementById('entForm');
-      if(form) form.innerHTML=
-        '<div style="text-align:center;padding:8px 0;">'+
-          '<div style="font-size:32px;margin-bottom:10px;">✅</div>'+
-          '<div style="font-weight:700;margin-bottom:6px;">Thanks — we\'ll be in touch.</div>'+
-          '<div style="font-size:12.5px;color:var(--muted);">Usually within one business day. You can also email '+
-            '<a href="mailto:help@pollslide.com" style="color:var(--accent);">help@pollslide.com</a> directly.</div>'+
-        '</div>';
-    })
-    .catch(function(e){
-      if(btn){ btn.disabled=false; btn.textContent='Send'; }
-      entShowErr('Could not send: '+e.message);
-    });
-}
 
 function buildPlans(){
   var g=document.getElementById('PG');
@@ -491,9 +396,7 @@ function buildPlans(){
       '<div class="plan-desc">'+p.desc+'</div>'+
       '<div class="price-block">'+priceHTML+'</div>'+
       '<div class="price-note">'+noteHTML+'</div>'+
-      (p.onclick
-        ? '<button type="button" onclick="'+p.onclick+'" class="plan-cta '+p.ctaClass+'">'+p.cta+'</button>'
-        : '<a href="'+p.url+'" class="plan-cta '+p.ctaClass+'">'+p.cta+'</a>')+
+      '<a href="'+p.url+'" class="plan-cta '+p.ctaClass+'">'+p.cta+'</a>'+
       '<div class="divider"></div>'+
       '<ul class="features-list">'+featHTML+'</ul>';
     g.appendChild(card);
@@ -578,7 +481,7 @@ function injectFAQSchema(){
 }
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
-<script src="/translations.js?v=bb2d22a3"></script>
+<script src="/translations.js?v=4c3d9219"></script>
 <script src="/companion-i18n.js?v=4e58dbaf"></script>
 <script src="/i18n.js?v=05643162"></script>
 </body>
