@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PollSlide for PowerPoint — Live Polls Over Your Slides</title>
+<meta name="description" content="Run live polls, quizzes and Q&A right over your PowerPoint slides. Works today with a QR code — no plugin needed. Native PowerPoint add-in is in review with Microsoft.">
+<link rel="canonical" href="https://pollslide.com/pollslide-for-powerpoint">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PollSlide">
+<meta property="og:url" content="https://pollslide.com/pollslide-for-powerpoint">
+<meta property="og:title" content="PollSlide for PowerPoint — Live Polls Over Your Slides">
+<meta property="og:description" content="Run live polls, quizzes and Q&A right over your PowerPoint slides. Works today with a QR code — no plugin needed. Native add-in in review with Microsoft.">
+<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PollSlide for PowerPoint — Live Polls Over Your Slides">
+<meta name="twitter:description" content="Run live polls, quizzes and Q&A right over your PowerPoint slides. Works today with a QR code — no plugin needed.">
+<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+    --accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+  body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.14);--text:#15152a;--muted:#5a5a78;}
+  body,body *{transition:background-color .3s,border-color .3s,color .3s;}*{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .nav-links{display:flex;align-items:center;gap:20px;font-size:14.5px;font-weight:500;}
+  .nav-links a{color:var(--muted);}.nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;}
+  .btn:hover{background:var(--accent-l);}
+  .btn-lg{padding:15px 30px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);}
+  #langSelWrap select{max-width:112px;}
+  .hero{padding:56px 0 8px;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;}
+  .hero p.lead{color:var(--muted);font-size:clamp(16px,2vw,18px);margin-bottom:8px;}
+  .byline{color:var(--muted);font-size:13px;margin-bottom:30px;padding-bottom:26px;border-bottom:1px solid var(--border);}
+  article h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(20px,2.8vw,26px);margin:40px 0 12px;letter-spacing:-.01em;}
+  article h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:22px 0 8px;}
+  article p{margin-bottom:14px;font-size:15.5px;}
+  article ul,article ol{margin:0 0 16px 22px;font-size:15.5px;}
+  article li{margin-bottom:7px;}
+  article strong{color:var(--text);}
+  .callout{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 18px;margin:20px 0;font-size:14.5px;color:var(--muted);}
+  .callout b{color:var(--text);}
+  .checklist{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:6px 20px;margin:20px 0;}
+  .checklist li{list-style:none;position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--border);}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{content:'☐';color:var(--accent);position:absolute;left:0;top:10px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:17px 19px;}
+  .card h4{font-family:'Syne',sans-serif;font-size:15px;margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:13.5px;}
+  .sec{padding:30px 0;}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  summary{cursor:pointer;font-weight:600;font-size:15px;}
+  details p{color:var(--muted);font-size:14px;margin-top:8px;}
+  .final{text-align:center;padding:46px 0 56px;border-top:1px solid var(--border);margin-top:20px;}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;}
+  footer{border-top:1px solid var(--border);padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
+  footer .wrap{max-width:1080px;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media(max-width:640px){.nav-links a:not(.btn):not(#langSelWrap){display:none;}}
+</style>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+<link rel="stylesheet" href="/consent-mobile.css?v=c60e4fd2">
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
+  <div class="nav-links">
+    <a href="/#features" data-i18n="nav.features">Features</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="/study-games">Study</a>
+    <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="/help" data-i18n="nav.help">Help</a>
+    <span id="langSelWrap"></span>
+    <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/presenter" class="btn">Try Free</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">PollSlide for PowerPoint</div>
+  <h1>Run live polls over the PowerPoint deck you already built</h1>
+  <p class="lead">No new tool to learn and no deck to rebuild. Drop a QR code onto any PowerPoint slide, present exactly like you always do, and your audience answers live on their own phone — polls, quizzes, surveys or study questions, your choice.</p>
+  <div class="cta-row">
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free — no card</a>
+    <a href="#how-it-works" class="btn btn-lg btn-ghost">See how it works</a>
+  </div>
+  <div class="byline">Works in PowerPoint on Windows, Mac and the web · free plan runs real sessions</div>
+</div></header>
+
+<main class="wrap">
+<article>
+
+<p>PollSlide isn't a PowerPoint theme or a slide template — it's a separate live-response layer that sits on top of whatever you're already presenting. You keep your PowerPoint file exactly as it is; PollSlide handles the question, the QR code, the live results and the scoring. This page walks through the real, working setup for PowerPoint specifically — not a hypothetical future version of it.</p>
+
+<div class="callout"><b>The honest short version:</b> the method below works <b>today</b>, on any computer that can open PowerPoint, with nothing to install. A native PowerPoint add-in has also been built and is currently <b>in review with Microsoft</b> — it isn't available to install yet, so this guide covers the method that actually ships right now.</div>
+
+<h2 id="how-it-works">How it works with PowerPoint</h2>
+<p>Six steps, and the first two only need to happen once per question — after that it's just present and go.</p>
+<ol>
+  <li><strong>Write your question in PollSlide.</strong> Build a poll, survey, quiz or study question at <a href="https://app.pollslide.com/presenter" style="color:var(--accent);">app.pollslide.com</a> — type it yourself, or describe the topic (or paste a PDF or your notes) and let Polly AI draft the questions and answers for you.</li>
+  <li><strong>Copy the QR box.</strong> Open that question's live view in PollSlide and click <strong>“Copy QR box for slide.”</strong> That copies a ready-made image containing the QR code and the join code.</li>
+  <li><strong>Paste it into PowerPoint.</strong> Click onto the slide you want it on, then <strong>Home → Paste</strong> (or Ctrl/Cmd+V) to drop it straight in — this works the same way in PowerPoint on Windows, Mac and PowerPoint for the web. If you'd rather save it as an image file first, <strong>Insert → Pictures</strong> does the same job. Resize it and tuck it in a corner so it doesn't fight with your content.</li>
+  <li><strong>Present as normal.</strong> Start your PowerPoint slide show exactly like you always do — Slide Show → From Beginning, or presenter view, or a Teams/Zoom screen share. Nothing about your presentation workflow changes.</li>
+  <li><strong>Your audience scans and answers.</strong> When that slide is on screen, people scan the QR with their phone's camera, or go to <strong>pollslide.com/join</strong> and type the short code. It opens in their phone's browser — no app to install, no account to create.</li>
+  <li><strong>Watch results come in live.</strong> Check the live results in a browser tab on a second screen or monitor. On a Mac, you can instead open the free PollSlide companion app, which detects which question's QR is on screen and floats the matching results window on top of PowerPoint automatically — no alt-tabbing mid-sentence.</li>
+</ol>
+
+<div class="callout">The companion app that auto-floats results is currently <b>macOS only</b>. Presenting from Windows or PowerPoint for the web works exactly the same way for steps 1–5 — for step 6, just keep PollSlide open in a browser tab (or on a second monitor) instead of relying on the floating window.</div>
+
+<h2>PowerPoint, Google Slides or Keynote — one trick, three tools</h2>
+<p>The QR-on-slide method is universal, but pasting an image works a little differently depending what you're presenting from:</p>
+<div class="cards">
+  <div class="card"><h4>📊 PowerPoint</h4><p>Home → Paste (or Insert → Pictures) drops the QR box straight onto the slide. Identical on Windows, Mac and PowerPoint for the web.</p></div>
+  <div class="card"><h4>🅶 Google Slides</h4><p>Paste the QR image directly onto a slide in the browser. If a straight paste doesn't work, Insert → Image does the same thing.</p></div>
+  <div class="card"><h4>🍎 Keynote</h4><p>Paste it onto a slide the same way. Keynote has no third-party plugin ecosystem, so the free Mac companion app — floating live results over Keynote automatically — is the real integration here, not a native plugin.</p></div>
+</div>
+
+<h2>What you can run over your PowerPoint slides</h2>
+<div class="cards">
+  <div class="card"><h4>📊 Live polls</h4><p>Ask a question, watch the results fill in over your slide as answers land.</p></div>
+  <div class="card"><h4>📝 Surveys</h4><p>Multiple choice, rating scales and open text, gathered right alongside your deck.</p></div>
+  <div class="card"><h4>🎯 Quizzes</h4><p>Speed rounds, streaks, survival and wager rounds, with team scores that average per player so bigger tables don't automatically win.</p></div>
+  <div class="card"><h4>📚 Study sets</h4><p>Review questions your audience can work through and revisit after the presentation ends.</p></div>
+  <div class="card"><h4>✨ Polly AI</h4><p>Give it a topic, a PDF or your notes and Polly drafts the questions, answers and matching images for you.</p></div>
+  <div class="card"><h4>🆓 Free to start</h4><p>3 saved presentations, 25 participants per session, 5 Polly AI generations a month — no credit card.</p></div>
+</div>
+
+<h2>Why presenters pair PollSlide with PowerPoint</h2>
+<div class="cards">
+  <div class="card"><h4>🖥️ Keep the deck you built</h4><p>No rebuilding your PowerPoint file inside a browser-based quiz tool — PollSlide sits on top of the slides you already made.</p></div>
+  <div class="card"><h4>🙈 Nothing for your audience to install</h4><p>A phone camera and a browser is the whole requirement. No app, no account, no download.</p></div>
+  <div class="card"><h4>🧩 One tool, not four</h4><p>Polls, surveys, quizzes and study sets in a single product and a single price, instead of stitching several tools together.</p></div>
+</div>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Do I need to install a plugin or add-in to use PollSlide with PowerPoint?</summary><p>No, not to get started. Open your question's live view in PollSlide, click “Copy QR box for slide,” and paste it onto any PowerPoint slide. Present normally — your audience scans it with their phone. It works today, on any PowerPoint you already have.</p></details>
+<details><summary>Does this work on Windows, Mac and PowerPoint for the web?</summary><p>Yes. The QR code is just a pasted image, so it works identically in PowerPoint on Windows, Mac and PowerPoint for the web. Viewing live results in a browser tab also works on every platform. The free companion app that floats results over your deck automatically is macOS only.</p></details>
+<details><summary>Is there a native PowerPoint add-in I can install right now?</summary><p>Not yet. A PollSlide add-in built on Office.js has been submitted and is currently in review with Microsoft — it isn't available to install today. Until it's approved, the QR-on-slide method above gives you the same live results with zero installs, on any OS running PowerPoint.</p></details>
+<details><summary>Is PollSlide free to use with PowerPoint?</summary><p>Yes. The free plan runs full, real presentations — 3 saved presentations, 25 participants per session and 5 Polly AI question generations a month, with no credit card required.</p></details>
+<details><summary>Does my audience need to download an app to answer?</summary><p>No. They scan the QR code on your slide, or go to pollslide.com/join and type the short code, then answer right in their phone's browser. No app and no account needed.</p></details>
+
+</article>
+</main>
+
+<section class="final"><div class="wrap">
+  <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3.6vw,32px);margin-bottom:12px;">Try it on your next PowerPoint deck</h2>
+  <p style="color:var(--muted);max-width:480px;margin:0 auto 24px;">Free to start, no card, and no plugin to wait for — paste a QR on a slide and you're live in minutes.</p>
+  <div class="cta-row">
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free</a>
+    <a href="/integrations" class="btn btn-lg btn-ghost">Add-in status</a>
+  </div>
+  <div class="note">Also works with: <a href="/pollslide-for-google-slides" style="color:var(--accent);">Google Slides</a> · <a href="/pollslide-for-keynote" style="color:var(--accent);">Keynote</a></div>
+  <div class="note">More: <a href="/game-modes" style="color:var(--accent);">pub quiz game modes</a> · <a href="/how-to-run-a-pub-quiz" style="color:var(--accent);">how to run a pub quiz</a></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
+    <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
+  </div>
+  <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "PollSlide", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, macOS, Windows", "url": "https://pollslide.com", "description": "PollSlide runs live polls, surveys, quizzes and study sets over any presentation, drafted by Polly AI.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Live polls, surveys, quizzes, study sets, audience Q&A, word clouds, Polly AI question generation, present over any slides"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do I need to install a plugin or add-in to use PollSlide with PowerPoint?","acceptedAnswer":{"@type":"Answer","text":"No, not to get started. Open your question's live view in PollSlide, click \"Copy QR box for slide,\" and paste it onto any PowerPoint slide. Present normally — your audience scans it with their phone. It works today, on any PowerPoint you already have."}},
+{"@type":"Question","name":"Does this work on Windows, Mac and PowerPoint for the web?","acceptedAnswer":{"@type":"Answer","text":"Yes. The QR code is just a pasted image, so it works identically in PowerPoint on Windows, Mac and PowerPoint for the web. Viewing live results in a browser tab also works on every platform. The free companion app that floats results over your deck automatically is macOS only."}},
+{"@type":"Question","name":"Is there a native PowerPoint add-in I can install right now?","acceptedAnswer":{"@type":"Answer","text":"Not yet. A PollSlide add-in built on Office.js has been submitted and is currently in review with Microsoft — it isn't available to install today. Until it's approved, the QR-on-slide method above gives you the same live results with zero installs, on any OS running PowerPoint."}},
+{"@type":"Question","name":"Is PollSlide free to use with PowerPoint?","acceptedAnswer":{"@type":"Answer","text":"Yes. The free plan runs full, real presentations — 3 saved presentations, 25 participants per session and 5 Polly AI question generations a month, with no credit card required."}},
+{"@type":"Question","name":"Does my audience need to download an app to answer?","acceptedAnswer":{"@type":"Answer","text":"No. They scan the QR code on your slide, or go to pollslide.com/join and type the short code, then answer right in their phone's browser. No app and no account needed."}}
+]}
+</script>
+<script>
+document.getElementById('footYr').textContent=new Date().getFullYear();
+function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('ps_theme',document.body.classList.contains('light')?'light':'dark');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';}
+if(localStorage.getItem('ps_theme')==='light'){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+</script>
+<script src="/consent.js?v=73cc2b90"></script>
+<script src="/translations.js?v=99669a44"></script>
+<script src="/i18n.js?v=05643162"></script>
+</body>
+</html>

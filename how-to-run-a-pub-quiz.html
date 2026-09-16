@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Run a Pub Quiz | PollSlide</title>
+<meta name="description" content="A practical guide to running a pub quiz people actually want to come back to: planning rounds, writing fair questions, scoring teams honestly, and keeping the night moving.">
+<link rel="canonical" href="https://pollslide.com/how-to-run-a-pub-quiz">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PollSlide">
+<meta property="og:url" content="https://pollslide.com/how-to-run-a-pub-quiz">
+<meta property="og:title" content="How to Run a Pub Quiz People Actually Want to Come Back To">
+<meta property="og:description" content="Planning, question-writing, fair team scoring and pacing — the practical parts nobody tells you before your first night hosting.">
+<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Run a Pub Quiz People Actually Want to Come Back To">
+<meta name="twitter:description" content="Planning, question-writing, fair team scoring and pacing — the practical parts nobody tells you before your first night hosting.">
+<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+    --accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+  body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.14);--text:#15152a;--muted:#5a5a78;}
+  body,body *{transition:background-color .3s,border-color .3s,color .3s;}*{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .nav-links{display:flex;align-items:center;gap:20px;font-size:14.5px;font-weight:500;}
+  .nav-links a{color:var(--muted);}.nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;}
+  .btn:hover{background:var(--accent-l);}
+  .btn-lg{padding:15px 30px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);}
+  #langSelWrap select{max-width:112px;}
+  .hero{padding:56px 0 8px;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;}
+  .hero p.lead{color:var(--muted);font-size:clamp(16px,2vw,18px);margin-bottom:8px;}
+  .byline{color:var(--muted);font-size:13px;margin-bottom:30px;padding-bottom:26px;border-bottom:1px solid var(--border);}
+  article h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(20px,2.8vw,26px);margin:40px 0 12px;letter-spacing:-.01em;}
+  article h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:22px 0 8px;}
+  article p{margin-bottom:14px;font-size:15.5px;}
+  article ul,article ol{margin:0 0 16px 22px;font-size:15.5px;}
+  article li{margin-bottom:7px;}
+  article strong{color:var(--text);}
+  .callout{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 18px;margin:20px 0;font-size:14.5px;color:var(--muted);}
+  .callout b{color:var(--text);}
+  .checklist{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:6px 20px;margin:20px 0;}
+  .checklist li{list-style:none;position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--border);}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{content:'☐';color:var(--accent);position:absolute;left:0;top:10px;}
+  .sec{padding:30px 0;}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  summary{cursor:pointer;font-weight:600;font-size:15px;}
+  details p{color:var(--muted);font-size:14px;margin-top:8px;}
+  .final{text-align:center;padding:46px 0 56px;border-top:1px solid var(--border);margin-top:20px;}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;}
+  footer{border-top:1px solid var(--border);padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
+  footer .wrap{max-width:1080px;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media(max-width:640px){.nav-links a:not(.btn):not(#langSelWrap){display:none;}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
+  <div class="nav-links">
+    <a href="/game-modes">Game modes</a>
+    <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="/help" data-i18n="nav.help">Help</a>
+    <span id="langSelWrap"></span>
+    <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/presenter" class="btn">Try Free</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Guide</div>
+  <h1>How to run a pub quiz people actually want to come back to</h1>
+  <p class="lead">The planning, the questions and the pacing that separate a quiz night people talk about from one they quietly stop attending.</p>
+  <div class="byline">10-minute read · for first-time and returning hosts</div>
+</div></header>
+
+<main class="wrap">
+<article>
+
+<p>Anyone can write ten questions and read them off a phone. Running a quiz people <em>look forward to</em> is a different job — it's closer to hosting a small event than reading a list. The good news: almost all of it is planning you do once, not talent you either have or don't.</p>
+
+<h2>Before the night: the planning that actually matters</h2>
+<p>Most quiz nights that fall flat didn't fail on question quality — they failed on logistics nobody thought about until it was too late. Settle these before you write a single question:</p>
+
+<ul class="checklist">
+  <li><strong>Round count and length.</strong> Six rounds of eight questions (48 total) runs about 60–75 minutes with scoring breaks — long enough to feel like an event, short enough that nobody's checking their watch.</li>
+  <li><strong>Team size cap.</strong> Cap tables at 4–6. Bigger teams don't need to be smarter to win — they just need more people who might know any given answer, which quietly punishes anyone who came in a pair.</li>
+  <li><strong>How scoring gets tallied.</strong> Paper score sheets passed table to table are the single biggest source of quiz-night arguments. Decide upfront how scores get collected and added — by hand, or automatically (more on this below).</li>
+  <li><strong>A prize that isn't just "bragging rights."</strong> It doesn't need to be expensive. A bar tab, a bottle, or a silly trophy that travels to next week's winner all work better than nothing.</li>
+  <li><strong>A tie-breaker plan, decided before anyone needs it.</strong> Deciding on the spot in front of a tied room looks unfair even when it isn't.</li>
+</ul>
+
+<h2>Writing questions people enjoy answering</h2>
+<p>The best quiz questions aren't the hardest ones — they're the ones that make a table go "ohh, I know this" a few seconds after reading it, or genuinely argue about the answer. A few rules that hold up across almost every good quiz:</p>
+
+<h3>Mix the difficulty on purpose</h3>
+<p>A round that's all hard questions demoralises everyone except the one table that happens to specialise in it. Aim for roughly: 2 easy (everyone gets these — momentum matters), 4 medium, 2 genuinely hard. The easy ones aren't filler; they're what keeps a struggling table in the game emotionally, not just mathematically.</p>
+
+<h3>Avoid anything answerable by reflex phone-check</h3>
+<p>"What year did X happen" with X being extremely googleable invites cheating and nobody enjoys policing it. Questions with a twist, a connection, or that need reasoning from a clue age much better — and they're more fun even for people who wouldn't cheat anyway.</p>
+
+<h3>Specialist rounds should still let non-specialists score</h3>
+<p>A pure sports or pure music round can shut out half the room. Better: a themed round with a spread of angles (a sports question about a scandal everyone heard about, not just a scoreline) so it rewards the specialist table without being unplayable for everyone else.</p>
+
+<h3>Picture and audio rounds are worth the setup effort</h3>
+<p>A "name the logo," "guess the film from one frame," or "name that intro" round breaks up the rhythm of straight Q&A and is consistently the round people mention afterwards. It takes a bit more prep than typing ten questions, and it's usually worth it.</p>
+
+<div class="callout">One structure that works reliably for a 6-round night: <b>General knowledge → Themed specialist → Picture round → Music → Wildcard/connections → Finale.</b> Save your hardest or highest-stakes round for last, not first — a brutal opening round loses people before they've warmed up.</div>
+
+<h2>Team scoring that's actually fair</h2>
+<p>The most common structural mistake in home-run quizzes: scoring by <em>team total</em>, which silently rewards the biggest table. If Team A has 8 people and Team B has 3, Team A doesn't need to be smarter to win a general-knowledge round — it just needs more lottery tickets. Score by <strong>average per player</strong> instead, or cap team size hard, and a table of two has a genuine shot against a table of six.</p>
+<p>It also matters that scores update <em>during</em> the night, not just at the very end. A leaderboard that only appears once, at the finale, removes the tension that makes people play the last round harder. Showing a running leaderboard between rounds — even just top 3 — measurably changes how engaged the room stays.</p>
+
+<h2>Keeping the night moving</h2>
+<p>The single biggest killer of pace is manual scoring: reading answers aloud, collecting paper sheets, walking them to a table, adding up columns by hand while the room waits and starts checking phones. Every minute spent tallying is a minute the energy in the room drops.</p>
+<p>This is the one part of quiz hosting that's genuinely easier now than it used to be. Instead of paper and a calculator, teams answer on their own phones (a QR code or a short link is enough — nobody needs to install anything), and the leaderboard updates itself the instant the last answer comes in. <a href="/game-modes" style="color:var(--accent);">PollSlide</a> was built around exactly this: you write the questions once, present them however you're already presenting (even just from your own screen), and scoring, team averaging, and the leaderboard are handled automatically — so the only thing you're managing live is the room, not a spreadsheet.</p>
+<p>If you'd rather stay with pen and paper, that's a completely reasonable choice too — just budget real time for scoring between rounds, and consider a "scorer" role separate from the host so the person reading questions never has to also do arithmetic under pressure.</p>
+
+<h2>A finale that people talk about afterwards</h2>
+<p>The last round is what people remember on the way home, more than the average of everything before it. A few formats that consistently land:</p>
+<ul>
+  <li><strong>Last-one-standing:</strong> one wrong answer and you're out, sudden-death style, run until one table remains. High drama, works especially well as a genuine tie-breaker.</li>
+  <li><strong>Wager round:</strong> teams bet a portion of their score on their confidence before answering — it lets a team in last place claw back into contention, which keeps everyone invested until the literal final question instead of checking out once they're mathematically out of it.</li>
+  <li><strong>Speed final:</strong> same questions, but the fastest correct answer scores highest — turns a close leaderboard into genuine tension in the room.</li>
+</ul>
+<p>Whichever you pick, announce that it's the finale before it starts. People play differently — and pay more attention — when they know it's the round that decides the night.</p>
+
+<h2>Common mistakes worth avoiding</h2>
+<ul>
+  <li><strong>Questions with an ambiguous "correct" answer.</strong> If two tables can reasonably argue their answer is right, you'll spend the next five minutes refereeing instead of quizzing. Test genuinely ambiguous questions on a friend before the night.</li>
+  <li><strong>No warm-up while people arrive.</strong> The first ten minutes of a quiz night is often people trickling in and ordering drinks. A light trivia loop on a screen gives latecomers something to do and signals the night has already started.</li>
+  <li><strong>Reading every answer explanation at length.</strong> A one-line "fun fact" after a reveal is memorable; a two-minute tangent after every single question drags a 60-minute night into 100.</li>
+  <li><strong>No plan for a dead heat.</strong> Decide your tie-breaker format before you need it — see the finale section above.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How many people do I need to run a good pub quiz?</summary><p>It works from as few as 2 teams, though the energy noticeably improves from about 4 teams (roughly 15–20 people) upward — enough that the leaderboard has real movement and there's a bit of table-to-table banter.</p></details>
+<details><summary>How long should a pub quiz last?</summary><p>60–75 minutes is the sweet spot for a casual weekly night — six rounds of about eight questions, with brief scoring pauses. Longer than 90 minutes and attention reliably drops off, even for a good quiz.</p></details>
+<details><summary>Do I need special equipment?</summary><p>No. A screen or a loud enough voice for questions, and something for players to answer on — paper, or their own phones if you're using a tool like PollSlide. No buzzers or extra hardware required.</p></details>
+<details><summary>How do I stop one table from dominating every week?</summary><p>Score by average-per-player rather than team total so bigger tables don't have a structural advantage, and rotate in genuinely varied round themes so no single specialty wins every night.</p></details>
+<details><summary>What's the easiest way to run this if I've never hosted before?</summary><p>Start with six rounds, the difficulty mix above, and a running leaderboard between rounds. The format does most of the work — you mostly just need good questions and a room that can hear you.</p></details>
+
+</article>
+</main>
+
+<section class="final"><div class="wrap">
+  <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3.6vw,32px);margin-bottom:12px;">Ready to run one?</h2>
+  <p style="color:var(--muted);max-width:480px;margin:0 auto 24px;">PollSlide handles the QR codes, live scoring and team averaging automatically — free to start, no card needed.</p>
+  <div class="cta-row">
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free</a>
+    <a href="/game-modes" class="btn btn-lg btn-ghost">See the game modes</a>
+  </div>
+  <div class="note">More: <a href="/game-modes" style="color:var(--accent);">pub quiz game modes</a> · <a href="/free-templates" style="color:var(--accent);">free question templates</a> · <a href="/blog" style="color:var(--accent);">blog</a> · <a href="/vs-kahoot" style="color:var(--accent);">vs Kahoot</a></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
+    <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
+  </div>
+  <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"How to Run a Pub Quiz People Actually Want to Come Back To",
+ "description":"A practical guide to running a pub quiz: planning rounds, writing fair questions, scoring teams honestly, and keeping the night moving.",
+ "image":"https://pollslide.com/og-image.png",
+ "author":{"@type":"Organization","name":"PollSlide"},
+ "publisher":{"@type":"Organization","name":"PollSlide","logo":{"@type":"ImageObject","url":"https://pollslide.com/og-image.png"}},
+ "mainEntityOfPage":"https://pollslide.com/how-to-run-a-pub-quiz"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How many people do I need to run a good pub quiz?","acceptedAnswer":{"@type":"Answer","text":"It works from as few as 2 teams, though the energy noticeably improves from about 4 teams (roughly 15–20 people) upward — enough that the leaderboard has real movement and there's a bit of table-to-table banter."}},
+{"@type":"Question","name":"How long should a pub quiz last?","acceptedAnswer":{"@type":"Answer","text":"60–75 minutes is the sweet spot for a casual weekly night — six rounds of about eight questions, with brief scoring pauses. Longer than 90 minutes and attention reliably drops off, even for a good quiz."}},
+{"@type":"Question","name":"Do I need special equipment?","acceptedAnswer":{"@type":"Answer","text":"No. A screen or a loud enough voice for questions, and something for players to answer on — paper, or their own phones if you're using a tool like PollSlide. No buzzers or extra hardware required."}},
+{"@type":"Question","name":"How do I stop one table from dominating every week?","acceptedAnswer":{"@type":"Answer","text":"Score by average-per-player rather than team total so bigger tables don't have a structural advantage, and rotate in genuinely varied round themes so no single specialty wins every night."}},
+{"@type":"Question","name":"What's the easiest way to run this if I've never hosted before?","acceptedAnswer":{"@type":"Answer","text":"Start with six rounds, the difficulty mix above, and a running leaderboard between rounds. The format does most of the work — you mostly just need good questions and a room that can hear you."}}
+]}
+</script>
+
+<script>
+document.getElementById('footYr').textContent=new Date().getFullYear();
+function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('ps_theme',document.body.classList.contains('light')?'light':'dark');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';}
+if(localStorage.getItem('ps_theme')==='light'){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+</script>
+<script src="/consent.js?v=73cc2b90"></script>
+<script src="/translations.js?v=99669a44"></script>
+<script src="/i18n.js?v=05643162"></script>
+</body>
+</html>
