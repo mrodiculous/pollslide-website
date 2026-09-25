@@ -138,6 +138,66 @@
   .hv-fill { height:100%; border-radius:100px; background:linear-gradient(90deg,var(--accent),var(--accent-light)); animation:grow 2s cubic-bezier(0.16,1,0.3,1) forwards; transform-origin:left; }
   .hv-fill.win { background:linear-gradient(90deg,var(--accent3),#6bffb5); }
   @keyframes grow { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+  /* ── Hero stage (TV + phone) ─────────────────────────────────────────────── */
+  .ps2 { max-width:1040px; margin:46px auto 0; position:relative; }
+  .ps2-tabs { display:inline-flex; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:100px; padding:5px; margin-bottom:22px; }
+  .ps2-tabs button { border:0; background:transparent; color:var(--muted); font:600 14px 'DM Sans',sans-serif; padding:8px 16px; border-radius:100px; cursor:pointer; transition:background .2s,color .2s; }
+  .ps2-tabs button.on { background:var(--accent); color:#fff; }
+  .ps2-tabs button:focus-visible { outline:3px solid var(--accent-light); outline-offset:2px; }
+  .ps2-stage { display:grid; grid-template-columns:1fr 230px; gap:28px; align-items:center; }
+  .ps2-screen { position:relative; aspect-ratio:16/9; background:#07070f; border:10px solid #1c1c2a; border-bottom-width:14px; border-radius:18px; box-shadow:0 40px 100px rgba(108,99,255,.28),0 0 0 1px rgba(255,255,255,.06) inset; overflow:hidden; text-align:left; }
+  .ps2-screen:after { content:''; position:absolute; left:50%; bottom:-40px; width:30%; height:20px; transform:translateX(-50%); background:#1c1c2a; border-radius:0 0 12px 12px; }
+  .ps2-in { position:absolute; inset:0; padding:3.4% 3.8%; color:#f3f3ff; font-size:clamp(8px,1.3vw,14px); display:grid; grid-template-columns:1fr 24%; gap:3%; }
+  .ps2-main { display:flex; flex-direction:column; min-width:0; }
+  .ps2-top { display:flex; align-items:center; gap:.8em; font-size:.85em; color:#9a9ac0; margin-bottom:1em; }
+  .ps2-top .lg { font-family:'Syne',sans-serif; font-weight:800; color:#fff; font-size:1.15em; }
+  .ps2-top .live { margin-left:auto; color:#43e97b; font-weight:700; }
+  .ps2-q { font-family:'Syne',sans-serif; font-weight:800; font-size:2.1em; line-height:1.12; margin-bottom:.9em; }
+  .ps2-opts { display:flex; flex-direction:column; gap:.55em; }
+  .ps2-opt { position:relative; overflow:hidden; background:#11111f; border:.14em solid #1d1d36; border-radius:.7em; padding:.65em .9em; display:flex; align-items:center; gap:.7em; font-weight:700; font-size:1.12em; transition:opacity .4s,border-color .4s,box-shadow .4s; }
+  .ps2-opt .fill { position:absolute; inset:0 auto 0 0; width:0; background:linear-gradient(90deg,rgba(108,99,255,.45),rgba(139,132,255,.25)); transition:width .8s cubic-bezier(.2,.8,.2,1); }
+  .ps2-opt > span { position:relative; z-index:1; }
+  .ps2-opt .L { width:1.7em; height:1.7em; border-radius:50%; background:#6c63ff; display:inline-flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; flex-shrink:0; }
+  .ps2-opt .pc { margin-left:auto; font-family:'Syne',sans-serif; color:#c9c5ff; }
+  .ps2-opt.good { border-color:#43e97b; box-shadow:0 0 1.6em rgba(67,233,123,.35); }
+  .ps2-opt.good .fill { background:linear-gradient(90deg,rgba(67,233,123,.45),rgba(67,233,123,.2)); }
+  .ps2-opt.good .L { background:#43e97b; color:#062; }
+  .ps2-opt.dim { opacity:.35; }
+  .ps2-side { display:flex; flex-direction:column; gap:.8em; }
+  .ps2-card { background:#11111f; border:.1em solid #1d1d36; border-radius:.8em; padding:.8em; text-align:center; }
+  .ps2-qr { background:#fff; border-radius:.5em; padding:.45em; display:grid; grid-template-columns:repeat(9,1fr); gap:1px; aspect-ratio:1; }
+  .ps2-qr i { background:#0b0b15; border-radius:1px; } .ps2-qr i.o { background:transparent; }
+  .ps2-card b { display:block; font-family:'Syne',sans-serif; font-size:2.2em; line-height:1; }
+  .ps2-small { font-size:.8em; color:#9a9ac0; margin-top:.3em; }
+  .ps2-count { font-family:'Syne',sans-serif; font-weight:800; font-size:3.2em; line-height:1; color:#f7b731; }
+  .ps2-rows { display:flex; flex-direction:column; gap:.45em; }
+  .ps2-row { display:flex; align-items:center; gap:.8em; background:#11111f; border-radius:.6em; padding:.55em .9em; font-weight:700; font-size:1.15em; animation:ps2in .5s cubic-bezier(.2,.8,.2,1.2) both; }
+  .ps2-row .pt { margin-left:auto; font-family:'Syne',sans-serif; color:#f7b731; }
+  .ps2-row.you { background:rgba(108,99,255,.28); box-shadow:0 0 0 .12em #6c63ff inset; }
+  .ps2-cloud { flex:1; display:flex; flex-wrap:wrap; align-content:center; justify-content:center; gap:.2em .7em; }
+  .ps2-cloud span { font-family:'Syne',sans-serif; font-weight:800; line-height:1.1; transition:font-size .6s cubic-bezier(.2,.8,.2,1.2); animation:ps2in .6s both; }
+  @keyframes ps2in { from { opacity:0; transform:translateY(.6em) scale(.9); } }
+  .ps2-phone { background:#07070f; border:9px solid #1c1c2a; border-radius:34px; aspect-ratio:9/19; padding:22px 12px 16px; position:relative; overflow:hidden; color:#f3f3ff; text-align:left; box-shadow:0 30px 70px rgba(255,101,132,.22); }
+  .ps2-phone:before { content:''; position:absolute; top:6px; left:50%; width:36%; height:14px; transform:translateX(-50%); background:#1c1c2a; border-radius:10px; }
+  .ps2-ph-top { font-family:'Syne',sans-serif; font-weight:800; font-size:12px; color:#c9c5ff; margin:4px 0 8px; display:flex; }
+  .ps2-ph-top span:last-child { margin-left:auto; color:#f7b731; }
+  .ps2-ph-q { font-family:'Syne',sans-serif; font-weight:800; font-size:14.5px; line-height:1.25; margin-bottom:10px; }
+  .ps2-btn { width:100%; display:flex; gap:8px; align-items:center; text-align:left; background:#11111f; color:#f3f3ff; border:2px solid #1d1d36; border-radius:11px; padding:9px; margin-bottom:7px; font:700 12.5px 'DM Sans',sans-serif; cursor:pointer; transition:transform .12s,border-color .2s; }
+  .ps2-btn:hover { border-color:#6c63ff; } .ps2-btn:active { transform:scale(.97); }
+  .ps2-btn .L { width:21px; height:21px; border-radius:50%; background:#6c63ff; display:inline-flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-size:10.5px; flex-shrink:0; }
+  .ps2-btn.picked { border-color:#43e97b; background:rgba(67,233,123,.12); }
+  .ps2-btn[disabled] { cursor:default; }
+  .ps2-chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .ps2-chips .ps2-btn { width:auto; padding:8px 11px; margin:0; }
+  .ps2-st { font-size:11.5px; color:#9a9ac0; margin-top:8px; line-height:1.4; }
+  .ps2-big { font-family:'Syne',sans-serif; font-weight:800; font-size:26px; line-height:1.05; margin:18px 0 6px; }
+  .ps2-hint { position:absolute; right:-6px; top:42%; transform:translateX(100%); background:var(--accent2); color:#fff; font:700 12px 'DM Sans',sans-serif; padding:6px 10px; border-radius:10px; white-space:nowrap; animation:ps2bob 1.6s ease-in-out infinite; }
+  @keyframes ps2bob { 50% { transform:translateX(100%) translateY(-6px); } }
+  .ps2-note { font-size:13px; color:var(--muted); margin-top:18px; }
+  .ps2-conf { position:absolute; width:8px; height:12px; top:-12px; animation:ps2fall 1.8s ease-in forwards; z-index:5; }
+  @keyframes ps2fall { to { transform:translateY(600px) rotate(540deg); opacity:0; } }
+  @media (max-width:860px) { .ps2-stage { grid-template-columns:1fr; } .ps2-phone { max-width:240px; margin:0 auto; } .ps2-hint { display:none; } }
+  @media (prefers-reduced-motion: reduce) { .ps2 *, .ps2 *:before { animation:none !important; transition:none !important; } }
   .hv-phone {
     background:var(--bg2); border:1px solid var(--border2); border-radius:22px;
     padding:22px 18px; max-width:215px; margin:0 auto; text-align:center;
@@ -402,38 +462,22 @@
     </div>
     <p class="hero-note reveal" data-i18n-html="hero.note"><strong>No credit card.</strong> No app downloads for your audience. Free to try.</p>
 
-    <!-- Hero visual -->
-    <div class="hero-visual reveal">
-      <div class="hv-bar">
-        <span class="hv-dot r"></span><span class="hv-dot y"></span><span class="hv-dot g"></span>
+    <!-- Hero stage: PollSlide on the big screen + the phone in your hand. PLAYABLE:
+         the visitor answers on the phone and watches the room's screen react. Three scenes
+         (live poll → quiz with reveal and leaderboard → word cloud) loop on their own, and the
+         tabs jump between them. Built in HTML/CSS/JS (hero-stage block below), no video, so
+         it is sharp at any size and every word goes through the site translator. -->
+    <div class="ps2 reveal" id="ps2">
+      <div class="ps2-tabs" role="tablist" aria-label="Demo">
+        <button type="button" role="tab" data-s="0" class="on">📊 Live poll</button>
+        <button type="button" role="tab" data-s="1">🏆 Quiz</button>
+        <button type="button" role="tab" data-s="2">☁️ Word cloud</button>
       </div>
-      <div class="hv-body">
-        <div class="hv-q">
-          <div class="qlabel">● Live · 47 responses</div>
-          <h3>Which feature should we build next?</h3>
-          <div class="hv-bars">
-            <div class="hv-opt">
-              <div class="lbl"><span>Word clouds</span><span class="pct">52%</span></div>
-              <div class="hv-track"><div class="hv-fill win" style="width:52%"></div></div>
-            </div>
-            <div class="hv-opt">
-              <div class="lbl"><span>Live Q&amp;A</span><span class="pct">31%</span></div>
-              <div class="hv-track"><div class="hv-fill" style="width:31%"></div></div>
-            </div>
-            <div class="hv-opt">
-              <div class="lbl"><span>Spin the wheel</span><span class="pct">17%</span></div>
-              <div class="hv-track"><div class="hv-fill" style="width:17%"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="hv-phone">
-          <div class="pq">Which feature next?</div>
-          <div class="hv-choice sel"><span class="letter">A</span>Word clouds</div>
-          <div class="hv-choice"><span class="letter">B</span>Live Q&amp;A</div>
-          <div class="hv-choice"><span class="letter">C</span>Spin the wheel</div>
-          <div class="hv-scan">📱 Scanned in 2 seconds</div>
-        </div>
+      <div class="ps2-stage">
+        <div class="ps2-screen" aria-live="polite"><div class="ps2-in" id="ps2Screen"></div></div>
+        <div class="ps2-phone" id="ps2Phone"></div>
       </div>
+      <div class="ps2-note">Tap an answer on the phone — this is how it works in the room, just smaller.</div>
     </div>
   </div>
 </header>
@@ -1123,8 +1167,148 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
+<script>
+/* ── Hero stage: a playable PollSlide session ──────────────────────────────────
+   Big screen on the left, the audience's phone on the right. A small simulated room
+   votes alongside the visitor so the screen always looks alive; the visitor's own tap
+   is counted too, and the scenes react to it (their vote lands, they climb the quiz
+   leaderboard, their word grows in the cloud). Pauses when off screen. Every sentence
+   is its own text node (numbers in their own spans) so i18n.js translates it. */
+(function () {
+  var root = document.getElementById('ps2'); if (!root) return;
+  var screen = document.getElementById('ps2Screen'), phone = document.getElementById('ps2Phone');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var L = ['A', 'B', 'C', 'D'];
+  var SCENES = [
+    { kind: 'poll', q: 'Where should the team offsite be? 🌍', o: ['Lisbon', 'Barcelona', 'Berlin', 'Rome'], seed: [9, 14, 5, 7] },
+    { kind: 'quiz', q: 'Which planet is closest to the Sun? ☀️', o: ['Venus', 'Mercury', 'Earth', 'Mars'], c: 1, seed: [4, 11, 2, 3] },
+    { kind: 'cloud', q: 'One word for this week?', o: ['Busy', 'Exciting', 'Productive', 'Chaotic', 'Fun'], seed: [6, 4, 5, 3, 2] }
+  ];
+  var cur = 0, counts = [], mine = null, phase = '', t0 = 0, crowd = null, next = null, visible = true, you = 0;
+  var el = function (tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  var total = function () { return counts.reduce(function (a, b) { return a + b; }, 0); };
+
+  function qr() { var q = el('div', 'ps2-qr'), pat = [1,1,1,0,1,0,1,1,1, 1,0,1,0,0,1,1,0,1, 1,1,1,1,0,1,1,1,1, 0,1,0,1,1,0,1,0,0, 1,1,0,0,1,1,0,1,1, 0,0,1,1,0,1,1,0,1, 1,1,1,0,1,0,0,1,0, 1,0,1,1,0,1,1,1,0, 1,1,1,0,1,1,0,1,1];
+    pat.forEach(function (v) { q.appendChild(el('i', v ? '' : 'o')); }); return q; }
+  function top(n) {
+    var t = el('div', 'ps2-top'); t.appendChild(el('span', 'lg', 'PollSlide'));
+    var qn = el('span'); qn.appendChild(el('span', null, 'Question')); qn.appendChild(document.createTextNode(' ' + (n + 1) + ' / 3')); t.appendChild(qn);
+    var live = el('span', 'live'); live.appendChild(el('span', null, '● Live')); t.appendChild(live); return t;
+  }
+  function side() {
+    var s = el('div', 'ps2-side');
+    var c1 = el('div', 'ps2-card'); c1.appendChild(qr()); c1.appendChild(el('div', 'ps2-small', 'Scan to answer')); s.appendChild(c1);
+    var c2 = el('div', 'ps2-card'); var b = el('b', null, String(total())); b.id = 'ps2Count'; c2.appendChild(b); c2.appendChild(el('div', 'ps2-small', 'responses')); s.appendChild(c2);
+    return s;
+  }
+  function paintScreen() {
+    var S = SCENES[cur]; screen.innerHTML = '';
+    var m = el('div', 'ps2-main'); m.appendChild(top(cur)); m.appendChild(el('div', 'ps2-q', S.q));
+    if (S.kind === 'cloud') {
+      var cloud = el('div', 'ps2-cloud'); var max = Math.max.apply(null, counts);
+      var cols = ['#8b84ff', '#ff6584', '#43e97b', '#f7b731', '#4facfe'];
+      S.o.forEach(function (w, i) { var sp = el('span', null, w); sp.style.fontSize = (1 + counts[i] / max * 2.6).toFixed(2) + 'em'; sp.style.color = cols[i % cols.length]; if (mine === i) sp.style.textShadow = '0 0 .6em rgba(255,255,255,.5)'; cloud.appendChild(sp); });
+      m.appendChild(cloud);
+    } else if (phase === 'board') {
+      m.appendChild(el('div', 'ps2-top', '🏆 Leaderboard'));
+      var rows = [{ n: 'Maya', p: 2840 }, { n: 'Leo', p: 2410 }, { n: 'Priya', p: 1990 }, { n: 'Sam', p: 1520 }];
+      if (you) rows.push({ n: 'You', p: you, me: true });
+      rows.sort(function (a, b) { return b.p - a.p; });
+      var list = el('div', 'ps2-rows');
+      rows.slice(0, 5).forEach(function (r, i) { var row = el('div', 'ps2-row' + (r.me ? ' you' : '')); row.style.animationDelay = (i * .08) + 's';
+        row.appendChild(el('span', null, ['🥇', '🥈', '🥉'][i] || ('#' + (i + 1)))); row.appendChild(el('span', null, r.n)); row.appendChild(el('span', 'pt', r.p.toLocaleString())); list.appendChild(row); });
+      m.appendChild(list);
+    } else {
+      var box = el('div', 'ps2-opts'), tot = total() || 1;
+      S.o.forEach(function (o, i) {
+        var reveal = phase === 'reveal';
+        var row = el('div', 'ps2-opt' + (reveal ? (i === S.c ? ' good' : ' dim') : ''));
+        var f = el('span', 'fill'); row.appendChild(f);
+        row.appendChild(el('span', 'L', reveal && i === S.c ? '✓' : L[i])); row.appendChild(el('span', null, o));
+        var hide = S.kind === 'quiz' && !reveal;            // quiz: the split stays hidden until the reveal
+        row.appendChild(el('span', 'pc', hide ? '' : Math.round(counts[i] * 100 / tot) + '%'));
+        box.appendChild(row);
+        if (!hide) requestAnimationFrame(function () { f.style.width = Math.round(counts[i] * 100 / tot) + '%'; });
+      });
+      m.appendChild(box);
+      if (S.kind === 'quiz' && phase === 'answer') { var cd = el('div', 'ps2-top'); cd.style.marginTop = '.8em'; cd.appendChild(el('span', null, 'Answers stay hidden until the reveal')); m.appendChild(cd); }
+    }
+    screen.appendChild(m); screen.appendChild(side());
+  }
+  function updateCount() { var b = document.getElementById('ps2Count'); if (b) b.textContent = String(total()); }
+
+  function paintPhone() {
+    var S = SCENES[cur]; phone.innerHTML = '';
+    var t = el('div', 'ps2-ph-top'); t.appendChild(el('span', null, 'PollSlide')); t.appendChild(el('span', null, you ? you.toLocaleString() : '')); phone.appendChild(t);
+    if (phase === 'reveal' || phase === 'board') {
+      if (mine === S.c) { phone.appendChild(el('div', 'ps2-big', 'Correct!')).style.color = '#43e97b'; var pl = el('div', 'ps2-st'); pl.appendChild(el('span', null, '+')); pl.appendChild(el('span', null, '850')); pl.appendChild(document.createTextNode(' ')); pl.appendChild(el('span', null, 'points')); phone.appendChild(pl); }
+      else if (mine !== null) { phone.appendChild(el('div', 'ps2-big', 'Not this time')).style.color = '#ff6584'; phone.appendChild(el('div', 'ps2-st', 'The answer was Mercury.')); }
+      else { phone.appendChild(el('div', 'ps2-big', 'Watch the screen!')); phone.appendChild(el('div', 'ps2-st', 'Tap an answer next time to get on the board.')); }
+      return;
+    }
+    phone.appendChild(el('div', 'ps2-ph-q', S.q));
+    var wrap = S.kind === 'cloud' ? el('div', 'ps2-chips') : phone;
+    S.o.forEach(function (o, i) {
+      var b = el('button', 'ps2-btn' + (mine === i ? ' picked' : '')); b.type = 'button';
+      if (S.kind !== 'cloud') b.appendChild(el('span', 'L', L[i]));
+      b.appendChild(el('span', null, o));
+      if (mine !== null) b.disabled = true;
+      b.onclick = function () { vote(i); };
+      wrap.appendChild(b);
+    });
+    if (wrap !== phone) phone.appendChild(wrap);
+    phone.appendChild(el('div', 'ps2-st', mine === null ? (S.kind === 'quiz' ? 'Faster right answers score more.' : 'Tap to answer — no app, no sign-up.') : (S.kind === 'quiz' ? 'Locked in — watch the screen for the reveal.' : 'Your answer is on the big screen.')));
+    if (mine === null && cur === 0 && !root._tapped) { var h = el('div', 'ps2-hint', 'Try it — tap! 👆'); phone.appendChild(h); }
+  }
+
+  function vote(i) {
+    if (mine !== null) return;
+    root._tapped = true; mine = i; counts[i] += 1;
+    if (SCENES[cur].kind === 'quiz' && i === SCENES[cur].c) you += 850;
+    paintPhone(); paintScreen();
+  }
+  function confetti() {
+    if (reduce) return; var sc = screen.parentNode, cols = ['#6c63ff', '#ff6584', '#43e97b', '#f7b731'];
+    for (var k = 0; k < 28; k++) { var c = el('i', 'ps2-conf'); c.style.left = Math.random() * 100 + '%'; c.style.background = cols[k % 4]; c.style.animationDelay = (Math.random() * .4) + 's'; sc.appendChild(c); (function (x) { setTimeout(function () { x.remove(); }, 2400); })(c); }
+  }
+
+  function go(n) {
+    clearInterval(crowd); clearTimeout(next);
+    cur = n; mine = null; phase = SCENES[n].kind === 'quiz' ? 'answer' : 'live';
+    counts = SCENES[n].seed.slice();
+    if (n === 0) you = 0;
+    [].forEach.call(root.querySelectorAll('.ps2-tabs button'), function (b) { var on = +b.getAttribute('data-s') === n; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    paintScreen(); paintPhone();
+    // The room keeps voting while the scene is open.
+    crowd = setInterval(function () {
+      if (!visible || document.hidden || phase === 'reveal' || phase === 'board') return;
+      var S = SCENES[cur], tot = total(), r = Math.random() * tot, i = 0;
+      while (r > counts[i]) { r -= counts[i]; i++; }
+      if (Math.random() < .3) i = Math.floor(Math.random() * S.o.length);
+      counts[i] += 1;
+      if (S.kind === 'quiz') updateCount(); else paintScreen();
+    }, 900);
+    schedule();
+  }
+  function schedule() {
+    if (reduce) return;                                   // no auto-advance: visitors use the tabs
+    var S = SCENES[cur];
+    if (S.kind === 'quiz') {
+      next = setTimeout(function () {
+        phase = 'reveal'; paintScreen(); paintPhone(); if (mine === S.c) confetti();
+        next = setTimeout(function () { phase = 'board'; paintScreen(); paintPhone(); next = setTimeout(advance, 4200); }, 3600);
+      }, 9000);
+    } else next = setTimeout(advance, 9500);
+  }
+  function advance() { if (!visible || document.hidden) { next = setTimeout(advance, 1500); return; } go((cur + 1) % SCENES.length); }
+
+  [].forEach.call(root.querySelectorAll('.ps2-tabs button'), function (b) { b.onclick = function () { go(+b.getAttribute('data-s')); }; });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(root);
+  go(0);
+})();
+</script>
 <script src="/consent.js?v=73cc2b90"></script>
-<script src="/translations.js?v=6a62408d"></script>
+<script src="/translations.js?v=562a9e33"></script>
 <script src="/companion-i18n.js?v=4e58dbaf"></script>
 <script src="/i18n.js?v=dd4d1d2b"></script>
 <script src="/announce.js?v=9eb8a27d"></script>
