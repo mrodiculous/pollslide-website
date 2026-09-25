@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tv",
+      "destination": "https://app.pollslide.com/tv",
+      "permanent": false
+    }
+  ]
 }

@@ -248,6 +248,7 @@
         {id:'polly',name:'Polly AI',group:'products',status:'degraded',note:'Running on backup capacity — may respond slightly differently.'},
         {id:'companion',name:'Mac Companion',group:'products',status:'up'},
         {id:'ppt',name:'PowerPoint Add-in',group:'products',status:'up'},
+        {id:'loops',name:'LoopSlide',group:'products',status:'up'},
         
         {id:'hosting',name:'Web app & API hosting',group:'platform',status:'up'},
         {id:'realtime',name:'Live sessions & responses',group:'platform',status:'up'},
@@ -256,7 +257,7 @@
         {id:'email',name:'Email delivery',group:'platform',status:'up'},
         {id:'billing',name:'Billing',group:'platform',status:'up'}],
       uptime:{ hosting:U(100), realtime:U(99.94), ai_text:{pct24h:97.9,pct7d:99.2,bars:bars('mix')}, ai_images:U(100), email:U(100), billing:U(100),
-               polls:U(99.94), surveys:U(99.94), quizzes:U(99.94), study:U(99.94), presentslide:U(100), polly:{pct24h:97.9,pct7d:99.2,bars:bars('mix')}, companion:U(99.94), ppt:U(99.94), gslides:U(99.94) } };
+               polls:U(99.94), surveys:U(99.94), quizzes:U(99.94), study:U(99.94), presentslide:U(100), polly:{pct24h:97.9,pct7d:99.2,bars:bars('mix')}, companion:U(99.94), ppt:U(99.94), loops:U(99.94) } };
   })();
 
   async function check(){
@@ -274,7 +275,9 @@
   check();
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
-<script src="/translations.js?v=8478ad59"></script>
-<script src="/i18n.js?v=05643162"></script>
+<script src="/translations.js?v=6a62408d"></script>
+<script src="/i18n.js?v=dd4d1d2b"></script>
+<script src="/announce.js?v=9eb8a27d"></script>
+<script src="/wow.js?v=423ef466"></script>
 </body>
 </html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoopSlide — Interactive Trivia &amp; Polls for TVs and Venue Screens | PollSlide</title>
+<meta name="description" content="Turn any TV into a game people play from their phones. LoopSlide loops your questions, runs live leaderboards and shows your offers between rounds — for bars, events, lobbies and stores.">
+<link rel="canonical" href="https://pollslide.com/loopslide">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PollSlide">
+<meta property="og:url" content="https://pollslide.com/loopslide">
+<meta property="og:title" content="LoopSlide — turn any screen into a game the room plays">
+<meta property="og:description" content="Looping trivia and polls for TVs and venue screens. People scan, play on their phones, and fight for the top of the leaderboard — while your offers play between rounds.">
+<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LoopSlide — turn any screen into a game the room plays">
+<meta name="twitter:description" content="Looping trivia and polls for TVs and venue screens, with live leaderboards and sponsor cards.">
+<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+    --accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+  body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.14);--text:#15152a;--muted:#5a5a78;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .nav-links{display:flex;align-items:center;gap:20px;font-size:14.5px;font-weight:500;}
+  .nav-links a{color:var(--muted);}.nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;transition:transform .15s,background .15s;}
+  .btn:hover{background:var(--accent-l);transform:translateY(-1px);}
+  .btn-lg{padding:15px 30px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+  .btn-ghost:hover{background:var(--surface2);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);}
+
+  /* ambient background */
+  .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none;z-index:0;animation:drift 18s ease-in-out infinite alternate;}
+  .orb.a{width:520px;height:520px;background:#6c63ff;top:-160px;left:-120px;}
+  .orb.b{width:420px;height:420px;background:#ff6584;top:40px;right:-140px;animation-delay:-6s;}
+  .orb.c{width:360px;height:360px;background:#f7b731;top:420px;left:30%;opacity:.16;animation-delay:-11s;}
+  @keyframes drift{to{transform:translate(60px,40px) scale(1.1);}}
+  .hero{position:relative;padding:64px 0 26px;text-align:center;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:1;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;background:rgba(255,101,132,.1);border:1px solid rgba(255,101,132,.3);padding:6px 14px;border-radius:100px;}
+  .eyebrow .new{background:var(--accent2);color:#fff;border-radius:6px;padding:1px 7px;letter-spacing:.06em;}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(34px,6vw,64px);line-height:1.02;letter-spacing:-.025em;margin-bottom:18px;}
+  .g{background:linear-gradient(120deg,var(--accent-l),var(--accent2) 55%,var(--accent4));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 100%;animation:shimmer 6s linear infinite;}
+  @keyframes shimmer{to{background-position:-200% 0;}}
+  .lead{color:var(--muted);font-size:clamp(16px,2.1vw,20px);max-width:720px;margin:0 auto 26px;}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;}
+
+  /* ── the playable demo ── */
+  .stage{position:relative;z-index:1;display:grid;grid-template-columns:1fr 250px;gap:26px;align-items:center;max-width:1000px;margin:40px auto 0;}
+  .tv{background:#050509;border:10px solid #1c1c2a;border-bottom-width:14px;border-radius:18px;aspect-ratio:16/9;box-shadow:0 40px 90px rgba(108,99,255,.25),0 0 0 1px rgba(255,255,255,.06) inset;position:relative;overflow:hidden;text-align:left;}
+  .tv:after{content:'';position:absolute;left:50%;bottom:-40px;width:34%;height:20px;transform:translateX(-50%);background:#1c1c2a;border-radius:0 0 12px 12px;}
+  .tvIn{position:absolute;inset:0;display:grid;grid-template-columns:1fr 26%;gap:3%;padding:4%;color:#f3f3ff;font-size:clamp(8px,1.35vw,14px);}
+  .tvMain{display:flex;flex-direction:column;min-width:0;}
+  .tvBrand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3em;margin-bottom:.6em;}
+  .tvBar{height:.45em;background:#1b1b33;border-radius:1em;overflow:hidden;margin-bottom:1em;}
+  .tvBar i{display:block;height:100%;background:var(--accent);transform-origin:left;}
+  .tvKick{font-size:.8em;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-l);margin-bottom:.5em;}
+  .tvQ{font-family:'Syne',sans-serif;font-weight:800;font-size:2em;line-height:1.1;margin-bottom:.8em;}
+  .tvOpts{display:grid;grid-template-columns:1fr 1fr;gap:.6em;}
+  .tvOpt{position:relative;overflow:hidden;background:#11111f;border:.15em solid #1b1b33;border-radius:.7em;padding:.8em .9em;font-weight:700;font-size:1.15em;display:flex;gap:.6em;align-items:center;transition:opacity .4s,border-color .4s,box-shadow .4s;}
+  .tvOpt .L{width:1.8em;height:1.8em;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;flex-shrink:0;position:relative;z-index:1;}
+  .tvOpt span{position:relative;z-index:1;}
+  .tvOpt .fill{position:absolute;inset:0 auto 0 0;width:0;background:rgba(255,255,255,.07);transition:width 1s cubic-bezier(.2,.8,.2,1);z-index:0;}
+  .tvOpt .pct{margin-left:auto;font-family:'Syne',sans-serif;color:#9a9ac0;}
+  .tvOpt.good{border-color:var(--accent3);box-shadow:0 0 1.4em rgba(67,233,123,.35);}
+  .tvOpt.good .L{background:var(--accent3);color:#062;}
+  .tvOpt.dim{opacity:.35;}
+  .tvSide{display:flex;flex-direction:column;gap:.7em;}
+  .tvCard{background:#11111f;border:.1em solid #1b1b33;border-radius:.8em;padding:.8em;}
+  .qr{background:#fff;border-radius:.5em;aspect-ratio:1;display:grid;grid-template-columns:repeat(9,1fr);gap:1px;padding:.4em;}
+  .qr i{background:#0b0b15;border-radius:1px;}.qr i.o{background:transparent;}
+  .tvScan{text-align:center;font-weight:700;font-size:.9em;margin-top:.4em;}
+  .tvCount{font-family:'Syne',sans-serif;font-size:2.2em;line-height:1;}
+  .tvSmall{font-size:.75em;color:#9a9ac0;}
+  .crown{font-size:.85em;line-height:1.35;}.crown b{color:var(--accent4);}
+  .rows{display:flex;flex-direction:column;gap:.45em;}
+  .row{display:flex;align-items:center;gap:.7em;background:#11111f;border-radius:.6em;padding:.55em .8em;font-weight:700;font-size:1.2em;transition:transform .6s cubic-bezier(.2,.8,.2,1),background .4s;}
+  .row .pt{margin-left:auto;font-family:'Syne',sans-serif;color:var(--accent4);}
+  .row.you{background:rgba(108,99,255,.25);box-shadow:0 0 0 .12em var(--accent) inset;}
+  .ad{display:flex;flex-direction:column;justify-content:center;flex:1;gap:.5em;}
+  .ad .tag{align-self:flex-start;background:#1b1b33;color:#9a9ac0;border-radius:1em;padding:.2em .8em;font-size:.75em;font-weight:700;}
+  .ad h3{font-family:'Syne',sans-serif;font-size:2.6em;line-height:1.05;}
+  .ad p{color:#d8d8f0;font-size:1.15em;}
+  .ai{display:inline-block;background:rgba(108,99,255,.18);color:#c9c5ff;border:1px solid rgba(108,99,255,.5);border-radius:1em;padding:.05em .6em;font-size:.72em;margin-left:.5em;text-transform:none;letter-spacing:0;vertical-align:middle;}
+  .phone{background:#050509;border:9px solid #1c1c2a;border-radius:34px;aspect-ratio:9/19;padding:16px 12px;box-shadow:0 30px 70px rgba(255,101,132,.2);position:relative;overflow:hidden;color:#f3f3ff;text-align:left;}
+  .phone:before{content:'';position:absolute;top:6px;left:50%;width:36%;height:14px;transform:translateX(-50%);background:#1c1c2a;border-radius:10px;}
+  .pTop{display:flex;align-items:center;gap:6px;font-weight:700;font-size:12px;margin:10px 0 8px;}
+  .pTop .pts{margin-left:auto;font-family:'Syne',sans-serif;color:var(--accent4);}
+  .pQ{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;line-height:1.2;margin:6px 0 10px;}
+  .pOpt{width:100%;display:flex;gap:8px;align-items:center;text-align:left;background:#11111f;color:#f3f3ff;border:2px solid #1b1b33;border-radius:10px;padding:9px;margin-bottom:7px;font:700 12.5px 'DM Sans',sans-serif;cursor:pointer;transition:transform .12s,border-color .2s;}
+  .pOpt:hover{border-color:var(--accent);}.pOpt:active{transform:scale(.97);}
+  .pOpt .L{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:11px;flex-shrink:0;}
+  .pOpt.picked{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,99,255,.3);}
+  .pOpt[disabled]{cursor:default;}
+  .pBig{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;line-height:1;margin:14px 0 6px;}
+  .pSub{font-size:12px;color:#9a9ac0;line-height:1.45;}
+  .tapHint{position:absolute;right:-8px;top:46%;background:var(--accent2);color:#fff;font:700 12px 'DM Sans',sans-serif;padding:6px 10px;border-radius:10px;transform:translateX(100%);white-space:nowrap;animation:bob 1.6s ease-in-out infinite;}
+  @keyframes bob{50%{transform:translateX(100%) translateY(-6px);}}
+  .toastP{position:absolute;left:10px;right:10px;bottom:14px;background:#1b1b33;border-left:3px solid var(--accent4);border-radius:10px;padding:9px 10px;font-weight:700;font-size:12px;animation:pop .4s cubic-bezier(.2,.8,.2,1.3);}
+  @keyframes pop{from{transform:translateY(20px);opacity:0;}}
+  .demoNote{position:relative;z-index:1;font-size:13px;color:var(--muted);margin-top:18px;}
+  .confetti{position:absolute;width:8px;height:12px;top:-12px;animation:fall 1.8s ease-in forwards;z-index:5;}
+  @keyframes fall{to{transform:translateY(560px) rotate(540deg);opacity:0;}}
+
+  /* ── sections ── */
+  .sec{padding:64px 0;border-top:1px solid var(--border);position:relative;}
+  .sec h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3.6vw,38px);margin-bottom:10px;letter-spacing:-.015em;}
+  .sub{color:var(--muted);margin-bottom:30px;max-width:720px;font-size:16.5px;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s;}
+  .step{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;position:relative;}
+  .step:before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:20px;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:'Syne',sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .step h3{font-family:'Syne',sans-serif;font-size:18px;margin:8px 0 6px;}
+  .step p{color:var(--muted);font-size:14.5px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s;}
+  .card:hover{transform:translateY(-4px);border-color:rgba(108,99,255,.45);}
+  .card .ic{font-size:26px;margin-bottom:10px;display:block;}
+  .card h3{font-family:'Syne',sans-serif;font-size:16.5px;margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:14px;}
+  .uses{display:flex;flex-wrap:wrap;gap:10px;}
+  .use{background:var(--surface);border:1px solid var(--border2);border-radius:100px;padding:10px 18px;font-weight:600;font-size:14.5px;transition:transform .2s,background .2s;}
+  .use:hover{transform:scale(1.05);background:var(--surface2);}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;}
+  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .chip{background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:10px 14px;font-weight:700;font-size:14px;}
+  .arrow{color:var(--accent2);font-size:20px;animation:nudge 1.4s ease-in-out infinite;}
+  @keyframes nudge{50%{transform:translateX(4px);}}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;}
+  .stat b{display:block;font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,42px);background:linear-gradient(120deg,var(--accent-l),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .stat span{color:var(--muted);font-size:14px;}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:10px;}
+  summary{cursor:pointer;font-weight:600;font-size:15.5px;}
+  details p{color:var(--muted);font-size:14.5px;margin-top:8px;}
+  .final{text-align:center;padding:72px 0;}
+  .final h2{font-family:'Syne',sans-serif;font-size:clamp(28px,4.4vw,46px);margin-bottom:12px;}
+  footer{border-top:1px solid var(--border);padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+  /* pairing demo — an 8s loop: code on the TV, phone scans, TV starts playing */
+  .pairSteps{margin:0 0 16px 20px;line-height:1.9;font-size:16px;}
+  .pairDemo{position:relative;display:flex;align-items:center;gap:18px;}
+  .pairDemo .pTv{flex:1;}
+  .pairDemo .pPh{width:120px;flex-shrink:0;padding:12px 10px;}
+  .pLayer{position:absolute;inset:0;display:flex;flex-direction:column;}
+  .pTv .pLayer{padding:6%;}
+  .pPh .pLayer{padding:22px 10px;}
+  .pCode{align-items:flex-start;animation:psA 8s infinite;}
+  .pPlay{opacity:0;animation:psB 8s infinite;}
+  .pScan{animation:psA 8s infinite;} .pDone{opacity:0;animation:psB 8s infinite;}
+  .pk{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4em;margin-bottom:.4em;}
+  .pc{font-family:'Syne',sans-serif;font-weight:800;font-size:1.7em;display:flex;gap:.08em;}
+  .pc span{background:#11111f;border:1px solid #2a2a4a;border-radius:.2em;padding:0 .12em;min-width:.8em;text-align:center;}
+  .pc i{width:.25em;}
+  .pQr{width:26%;flex-shrink:0;}
+  .pCode{flex-direction:row;align-items:center;justify-content:space-between;gap:5%;}
+  .scanBox{margin:14px auto 0;width:78px;height:78px;border:2px solid var(--accent3);border-radius:10px;position:relative;overflow:hidden;}
+  .scanBox i{position:absolute;left:0;right:0;height:2px;background:var(--accent3);box-shadow:0 0 10px var(--accent3);animation:psScan 1.4s ease-in-out infinite alternate;}
+  @keyframes psScan{from{top:6%}to{top:92%}}
+  @keyframes psA{0%,52%{opacity:1}58%,96%{opacity:0}100%{opacity:1}}
+  @keyframes psB{0%,52%{opacity:0}58%,96%{opacity:1}100%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.pCode,.pScan{opacity:0}.pPlay,.pDone{opacity:1}}
+  @media(max-width:560px){.pairDemo .pPh{width:96px;}}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media(max-width:860px){.stage{grid-template-columns:1fr;}.phone{max-width:250px;margin:0 auto;}.tapHint{display:none;}.steps,.split,.stats{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.steps,.split,.stats{grid-template-columns:1fr;}.nav-links a:not(.btn){display:none;}}
+  @media (max-width:640px){.nav-inner{flex-wrap:wrap;row-gap:8px;}.nav-links{margin-left:auto;gap:10px;flex-wrap:wrap;justify-content:flex-end;}#langSelWrap select{max-width:112px;}}
+  @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;}.reveal{opacity:1;transform:none;}}
+</style>
+<link rel="stylesheet" href="/consent-mobile.css?v=c60e4fd2">
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
+  <div class="nav-links">
+    <a href="/#features" data-i18n="nav.features">Features</a>
+    <a href="/game-modes">Game modes</a>
+    <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="/help#loopslide" data-i18n="nav.help">Help</a>
+    <span id="langSelWrap"></span>
+    <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/loop" class="btn">Try Free</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="wrap">
+    <div class="eyebrow"><span class="new">NEW</span><span>LoopSlide</span></div>
+    <h1>Turn any screen into<br><span class="g">a game the room plays</span></h1>
+    <p class="lead">LoopSlide plays your questions on a TV, over and over. People scan the code, play on their phones, and fight for the top of the leaderboard — while your offers play between rounds.</p>
+    <div class="cta-row">
+      <a href="https://app.pollslide.com/loop" class="btn btn-lg">Make your first loop — free</a>
+      <a href="#how" class="btn btn-lg btn-ghost">See how it works</a>
+    </div>
+    <div class="note">No app to install · works on any smart TV browser · import any PollSlide deck</div>
+
+    <div class="stage" aria-label="Interactive demo">
+      <div class="tv" aria-live="polite"><div class="tvIn">
+        <div class="tvMain" id="tvMain"></div>
+        <div class="tvSide">
+          <div class="tvCard"><div class="qr" id="qr" aria-hidden="true"></div><div class="tvScan">Scan to play</div></div>
+          <div class="tvCard"><div class="tvCount" id="tvCount">0</div><div class="tvSmall">answered this one</div></div>
+          <div class="tvCard crown" id="crown"></div>
+        </div>
+      </div></div>
+      <div class="phone" id="phone"><div class="tapHint" id="tapHint">Tap an answer! 👆</div></div>
+    </div>
+    <div class="demoNote">This is a live demo — answer on the phone and watch yourself climb the board.</div>
+  </div>
+</header>
+
+<main>
+<section class="sec" id="how"><div class="wrap">
+  <h2 class="reveal">Three steps. Then it runs itself.</h2>
+  <p class="sub reveal">No presenter, no clicker, no one standing at the front. Set it up once and the screen keeps the room playing all night.</p>
+  <div class="steps">
+    <div class="step reveal"><h3>Build your loop</h3><p>Write questions, import any deck you already have in PollSlide, or let Polly draft a round. Add photos, GIFs, videos and emojis.</p></div>
+    <div class="step reveal"><h3>Put it on a screen</h3><p>On the TV, go to pollslide.com/tv and scan the code it shows with your phone. No typing, no cables, no computer. It stays awake, stays in sync, and recovers from power cuts on its own.</p></div>
+    <div class="step reveal"><h3>The room plays</h3><p>People scan the code, pick a nickname and an emoji, and play along on their phones. Fast right answers score more — and everyone wants to see their name on the big screen.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2 class="reveal">Built to keep people coming back</h2>
+  <p class="sub reveal">Every loop is a little tournament. The best way to get a room looking at your screen is to put their names on it.</p>
+  <div class="cards">
+    <div class="card reveal"><span class="ic">⚡</span><h3>Speed points</h3><p>A right answer is worth more the faster it lands, so every question is a race.</p></div>
+    <div class="card reveal"><span class="ic">🔥</span><h3>Streak bonus</h3><p>Answers in a row multiply your points — up to double. One wrong answer and the streak is gone.</p></div>
+    <div class="card reveal"><span class="ic">👑</span><h3>Beat the leader</h3><p>The screen always names who is on top and how many points it takes to knock them off.</p></div>
+    <div class="card reveal"><span class="ic">🏁</span><h3>Round and overall boards</h3><p>Each round ends with its own winners, and bundled rounds finish with the overall leaderboard.</p></div>
+    <div class="card reveal"><span class="ic">📈</span><h3>Rank-up alerts</h3><p>Phones cheer the moment a player climbs a place, and show their personal best to beat next time.</p></div>
+    <div class="card reveal"><span class="ic">🗓️</span><h3>Leaderboards that reset when you want</h3><p>Every loop, every day, every week — or an all-time board that never resets. Tonight's champion, or the legend of the season.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="split">
+    <div>
+      <h2 class="reveal">Your screen, your brand, your offers</h2>
+      <p class="sub reveal">Between questions, LoopSlide plays your sponsor cards — a deal, an event, a product — with a scannable code that goes straight to the offer. Add your logo and colours, and run the same loop on every screen in the building, perfectly in sync.</p>
+      <div class="cards" style="grid-template-columns:1fr 1fr;">
+        <div class="card reveal"><span class="ic">📣</span><h3>Sponsor cards</h3><p>Offers with a scannable code, labelled clearly as sponsored.</p></div>
+        <div class="card reveal"><span class="ic">🖼️</span><h3>Media cards</h3><p>Announcements, birthdays, photos, GIFs and muted videos.</p></div>
+        <div class="card reveal"><span class="ic">🎨</span><h3>Your branding</h3><p>Your logo, your title and your colour on every slide.</p></div>
+        <div class="card reveal"><span class="ic">📺</span><h3>Every screen in sync</h3><p>Ten TVs, one loop — all on the same question at the same moment.</p></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="tv" style="aspect-ratio:16/9;"><div class="tvIn" style="grid-template-columns:1fr;">
+        <div class="ad"><span class="tag">Sponsored by Crown &amp; Anchor Kitchen</span><h3>2-for-1 wings until 9pm 🍗</h3><p>Scan the code for the offer.</p></div>
+      </div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="tv"><div class="wrap">
+  <div class="split">
+    <div>
+      <h2 class="reveal">On the TV in 30 seconds</h2>
+      <p class="sub reveal">No cables, no computer, no typing long links with a remote. The TV shows a code; you scan it with your phone and pick a loop. From then on you switch loops from your phone — the TV looks after itself.</p>
+      <ol class="pairSteps reveal">
+        <li><b>On the TV</b> go to <b>pollslide.com/tv</b></li>
+        <li><b>Scan the code</b> it shows with your phone</li>
+        <li><b>Pick your loop.</b> The TV starts playing.</li>
+      </ol>
+      <p class="note reveal" style="text-align:left;">Works on Samsung and LG smart TVs, Amazon Fire TV, and signage players. <a href="/help#loopslide-tv" style="color:var(--accent-l);">Which TVs work →</a></p>
+    </div>
+    <div class="pairDemo reveal" aria-hidden="true">
+      <div class="tv pTv"><div class="tvIn" style="grid-template-columns:1fr;">
+        <div class="pLayer pCode">
+          <div style="min-width:0;"><div class="pk">Pair this TV</div>
+          <div class="pc"><span>K</span><span>7</span><span>P</span><i></i><span>4</span><span>Q</span><span>X</span></div></div>
+          <div class="qr pQr" id="qr2"></div>
+        </div>
+        <div class="pLayer pPlay">
+          <div class="tvKick">Round 1</div>
+          <div class="tvQ" style="font-size:1.7em;">Which planet is known as the Red Planet? 🪐</div>
+          <div class="tvOpts"><div class="tvOpt"><span class="L">A</span><span>Venus</span></div><div class="tvOpt"><span class="L">B</span><span>Mars</span></div></div>
+        </div>
+      </div></div>
+      <div class="phone pPh">
+        <div class="pLayer pScan"><div class="pSub" style="margin-top:30px;text-align:center;">Scanning…</div><div class="scanBox"><i></i></div></div>
+        <div class="pLayer pDone"><div class="pBig" style="color:var(--accent3);text-align:center;margin-top:40px;">✓</div><div class="pSub" style="text-align:center;">Paired — Bar TV</div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2 class="reveal">Part of the PollSlide family</h2>
+  <p class="sub reveal">Everything you have already made works here. Import a poll, a quiz, a survey or a study set as a LoopSlide round — study flashcards even become multiple-choice questions — and send any round back to any PollSlide product.</p>
+  <div class="flow reveal">
+    <span class="chip">🗳️ PollSlide</span><span class="chip">🏆 QuizSlide</span><span class="chip">📋 SurveySlide</span><span class="chip">📚 StudySlide</span>
+    <span class="arrow">⇄</span><span class="chip" style="border-color:var(--accent2);">🔁 LoopSlide</span>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2 class="reveal">Made for anywhere people wait, watch or gather</h2>
+  <p class="sub reveal">The bigger the screen and the busier the room, the more people play.</p>
+  <div class="uses reveal">
+    <span class="use">🍺 Bars and pubs</span><span class="use">🎤 Events and conferences</span><span class="use">🏟️ Stadium concourses</span><span class="use">🏨 Hotel lobbies</span>
+    <span class="use">🛍️ Stores and showrooms</span><span class="use">🎓 Campuses</span><span class="use">🏢 Office break rooms</span><span class="use">🩺 Waiting rooms</span>
+    <span class="use">🎪 Trade-show booths</span><span class="use">🍿 Cinemas before the film</span>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2 class="reveal">Public screens, handled responsibly</h2>
+  <p class="sub reveal">A screen in a public place has to be safe to leave running. LoopSlide is built for that from the start.</p>
+  <div class="cards">
+    <div class="card reveal"><span class="ic">✨</span><h3>AI labels</h3><p>Anything written or made with AI is labelled on the screen and the phone, as new transparency laws require.</p></div>
+    <div class="card reveal"><span class="ic">🏷️</span><h3>Clear ad labels</h3><p>Sponsor cards say they are sponsored and who they are from.</p></div>
+    <div class="card reveal"><span class="ic">🧼</span><h3>Nickname filter</h3><p>Offensive nicknames are blocked before they reach the screen, and you can remove any player in one tap.</p></div>
+    <div class="card reveal"><span class="ic">🔞</span><h3>Age limits</h3><p>Set 18+ or 21+ for bars, and players confirm their age before they play.</p></div>
+    <div class="card reveal"><span class="ic">🔒</span><h3>Privacy by design</h3><p>No sign-up and no real names. Answers are deleted automatically once a leaderboard resets.</p></div>
+    <div class="card reveal"><span class="ic">🎁</span><h3>Prize-ready</h3><p>Offer a prize and LoopSlide shows your official rules — and play never needs a purchase.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="stats">
+    <div class="stat reveal"><b data-count="0">0</b><span>apps to install</span></div>
+    <div class="stat reveal"><b data-count="10">0</b><span>seconds to join from a scan</span></div>
+    <div class="stat reveal"><b data-count="30">0</b><span>seconds to put it on a TV</span></div>
+    <div class="stat reveal"><b data-count="24">0</b><span>hours a day it can run</span></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2 class="reveal">Questions</h2>
+  <details class="reveal"><summary>What do I need to show it on a TV?</summary><p>A TV with a web browser and an internet connection — most Samsung and LG smart TVs, an Amazon Fire TV Stick, or a digital-signage player. Go to pollslide.com/tv on the TV, scan the code with your phone, pick your loop. No computer needed.</p></details>
+  <details class="reveal"><summary>My TV has no web browser. What now?</summary><p>Plug in an Amazon Fire TV Stick (about $30) and use its Silk browser. Roku and Apple TV have no browser, so they can't show LoopSlide on their own.</p></details>
+  <details class="reveal"><summary>Do players need to download anything?</summary><p>No. They scan the code with their phone camera, pick a nickname and play in the browser. No account, no app.</p></details>
+  <details class="reveal"><summary>Can I use questions I have already made in PollSlide?</summary><p>Yes. Import any poll, quiz, survey or study set as a round, and send any LoopSlide round back to any PollSlide product.</p></details>
+  <details class="reveal"><summary>How do leaderboards reset?</summary><p>You choose: every time the loop starts again, every day, every few days, or never. Players' answers are deleted automatically once their leaderboard is over.</p></details>
+  <details class="reveal"><summary>Can I show my own ads between questions?</summary><p>Yes. Sponsor cards can carry an image, GIF or muted video and a scannable code to your offer. They are always labelled as sponsored.</p></details>
+  <details class="reveal"><summary>Can I run a contest with prizes?</summary><p>Yes. Add the prize and a link to your official rules, and LoopSlide shows them to players. Winners are decided by skill and speed, and nobody ever has to buy anything to play. You are responsible for the rules of your own promotion.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2 class="reveal">Put your screen to work tonight</h2>
+  <p class="sub reveal" style="margin:0 auto 26px;">Free to start. Your first loop takes about ten minutes.</p>
+  <div class="cta-row reveal">
+    <a href="https://app.pollslide.com/loop" class="btn btn-lg">Make your first loop — free</a>
+    <a href="/help#loopslide" class="btn btn-lg btn-ghost">Read the guide</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
+    <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
+  </div>
+  <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LoopSlide by PollSlide","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Looping trivia and polls for TVs and venue screens with live leaderboards, sponsor cards and phone play by QR code."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What do I need to show LoopSlide on a TV?","acceptedAnswer":{"@type":"Answer","text":"A TV with a web browser and an internet connection, such as a Samsung or LG smart TV, an Amazon Fire TV Stick or a digital-signage player. Go to pollslide.com/tv on the TV and scan the code with your phone. No computer needed."}},
+{"@type":"Question","name":"Do players need to download anything?","acceptedAnswer":{"@type":"Answer","text":"No. They scan the code with their phone camera and play in the browser, with no account or app."}},
+{"@type":"Question","name":"Can I show my own ads between questions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sponsor cards can carry an image, GIF or muted video and a scannable code, and are always labelled as sponsored."}}
+]}
+</script>
+<script>
+  document.getElementById('footYr').textContent=new Date().getFullYear();
+  function toggleTheme(){const l=document.body.classList.toggle('light');localStorage.setItem('pollslide_theme',l?'light':'dark');document.getElementById('themeToggle').textContent=l?'☀️':'🌙';}
+  if(localStorage.getItem('pollslide_theme')==='light'){document.body.classList.add('light');var t=document.getElementById('themeToggle');if(t)t.textContent='☀️';}
+
+/* ── The playable demo ────────────────────────────────────────────────────────
+   A scripted mini-loop: question → reveal → leaderboard → sponsor card, then the next
+   question. The visitor is a real player: tap on the phone and your score, rank and the
+   board react. Every sentence is its own text node, so the page translator can localise it. */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const LET=['A','B','C','D'];
+  const QS=[
+    {q:'Which planet is known as the Red Planet? 🪐', o:['Venus','Mars','Jupiter','Mercury'], c:1, ai:false},
+    {q:'How many players are on a football team on the pitch? ⚽', o:['9','10','11','12'], c:2, ai:false},
+    {q:'Which of these is a fruit? 🍅', o:['Carrot','Tomato','Potato','Onion'], c:1, ai:true},
+    {q:'What does a bee make? 🐝', o:['Silk','Wax only','Honey','Milk'], c:2, ai:false},
+  ];
+  const CROWD=[{n:'Mia',a:'🦊',p:1240},{n:'Big Dave',a:'🦁',p:980},{n:'QuizWiz',a:'🚀',p:720},{n:'Sam',a:'🐸',p:410}];
+  const me={n:'You',a:'😎',p:0,best:0};
+  let qi=0, phase='', t0=0, dur=0, picked=null, pickMs=0, lastRank=null, timer=null;
+  const $=id=>document.getElementById(id);
+  const tvMain=$('tvMain'), phone=$('phone');
+
+  // a fake but convincing QR
+  (function(){const q=$('qr');let h='';const pat=[1,1,1,0,1,0,1,1,1, 1,0,1,0,0,1,1,0,1, 1,1,1,1,0,1,1,1,1, 0,1,0,1,1,0,1,0,0, 1,1,0,0,1,1,0,1,1, 0,0,1,1,0,1,1,0,1, 1,1,1,0,1,0,0,1,0, 1,0,1,1,0,1,1,1,0, 1,1,1,0,1,1,0,1,1];pat.forEach(v=>h+='<i class="'+(v?'':'o')+'"></i>');q.innerHTML=h;const q2=$('qr2');if(q2)q2.innerHTML=h;})();
+
+  function board(){return CROWD.concat(me.p?[me]:[]).slice().sort((a,b)=>b.p-a.p);}
+  function crown(){const b=board()[0];$('crown').innerHTML='👑 <b>'+b.a+' '+b.n+'</b><br><span class="tvSmall">is on top.</span><br><span class="tvSmall">Can you beat them?</span>';}
+  function topBar(){return '<div class="pTop"><span>'+me.a+'</span><span>You</span><span class="pts">'+(me.p?me.p.toLocaleString():'')+'</span></div><div class="tvBar"><i id="pBar"></i></div>';}
+
+  function go(next,d){phase=next;t0=performance.now();dur=d;render();}
+  function render(){
+    const Q=QS[qi];
+    if(phase==='q'){
+      picked=null;$('tvCount').textContent='0';crown();
+      tvMain.innerHTML='<div class="tvBrand">The Crown &amp; Anchor</div><div class="tvBar"><i id="tvBar"></i></div><div class="tvKick"><span>Round 1</span>'+(Q.ai?'<span class="ai">✨ AI-generated</span>':'')+'</div><div class="tvQ">'+Q.q+'</div><div class="tvOpts">'+Q.o.map((o,i)=>'<div class="tvOpt"><span class="fill"></span><span class="L">'+LET[i]+'</span><span>'+o+'</span></div>').join('')+'</div>';
+      phone.innerHTML=topBar()+'<div class="pQ">'+Q.q+'</div>'+Q.o.map((o,i)=>'<button class="pOpt" data-i="'+i+'"><span class="L">'+LET[i]+'</span><span>'+o+'</span></button>').join('')+'<div class="pSub">Faster right answers score more.</div>';
+      if(qi===0&&!me.p)phone.insertAdjacentHTML('beforeend','<div class="tapHint" id="tapHint">Tap an answer! 👆</div>');
+      phone.querySelectorAll('.pOpt').forEach(b=>b.onclick=()=>pick(+b.dataset.i,b));
+    } else if(phase==='r'){
+      const n=12+Math.floor(Math.random()*9);$('tvCount').textContent=n;
+      const pct=Q.o.map((_,i)=>i===Q.c?55+Math.floor(Math.random()*20):0);let rest=100-pct[Q.c];Q.o.forEach((_,i)=>{if(i!==Q.c){const v=i===Q.o.length-1||i===Q.o.length-2&&Q.c===Q.o.length-1?rest:Math.floor(rest*Math.random()*.7);pct[i]=v;rest-=v;}});
+      tvMain.querySelector('.tvKick').innerHTML='<span>'+pct[Q.c]+'%</span> <span>got it right</span>';
+      tvMain.querySelectorAll('.tvOpt').forEach((el,i)=>{el.classList.add(i===Q.c?'good':'dim');if(i===Q.c)el.querySelector('.L').textContent='✓';el.insertAdjacentHTML('beforeend','<span class="pct">'+pct[i]+'%</span>');setTimeout(()=>{el.querySelector('.fill').style.width=pct[i]+'%';},60);});
+      let gained=0;
+      if(picked!==null&&picked===Q.c){gained=500+Math.round(500*(1-Math.min(1,pickMs/dur)));me.p+=gained;me.best=Math.max(me.best,me.p);confetti();}
+      CROWD.forEach(c=>{if(Math.random()<.55)c.p+=250+Math.floor(Math.random()*350);});
+      phone.innerHTML=topBar()+(picked===null?'<div class="pBig" style="font-size:20px;">You missed this one</div><div class="pSub"><span>The answer was</span> <b>'+Q.o[Q.c]+'</b></div>'
+        :picked===Q.c?'<div class="pBig" style="color:var(--accent3)">Correct!</div><div class="pSub"><span>+</span><span>'+gained+'</span> <span>points</span></div>'
+        :'<div class="pBig" style="color:var(--accent2)">Not this time</div><div class="pSub"><span>It was</span> <b>'+Q.o[Q.c]+'</b></div>');
+    } else if(phase==='b'){
+      const b=board().slice(0,5);
+      tvMain.innerHTML='<div class="tvBrand">The Crown &amp; Anchor</div><div class="tvBar"><i id="tvBar"></i></div><div class="tvKick">🏆 Tonight\'s leaders</div><div class="rows">'+b.map((r,i)=>'<div class="row'+(r===me?' you':'')+'"><span>'+(['🥇','🥈','🥉'][i]||'#'+(i+1))+'</span><span>'+r.a+'</span><span>'+r.n+'</span><span class="pt">'+r.p.toLocaleString()+'</span></div>').join('')+'</div>';
+      const rank=board().indexOf(me)+1;
+      phone.innerHTML=topBar()+(me.p?'<div class="pSub">Your rank</div><div class="pBig" style="color:var(--accent4)">#'+rank+'</div>'+(rank>1?'<div class="pSub"><span>Answer fast to take the crown.</span></div>':'<div class="pSub"><span>You are on top of the leaderboard!</span></div>'):'<div class="pBig" style="font-size:20px;">Answer a question to get on the board.</div>');
+      if(me.p&&lastRank&&rank<lastRank)toast('⬆️ <span>You moved up!</span>');
+      if(me.p)lastRank=rank;
+    } else if(phase==='a'){
+      tvMain.innerHTML='<div class="tvBrand">The Crown &amp; Anchor</div><div class="tvBar"><i id="tvBar"></i></div><div class="ad"><span class="tag">Sponsored by Crown &amp; Anchor Kitchen</span><h3>2-for-1 wings until 9pm 🍗</h3><p>Scan the code for the offer.</p></div>';
+      phone.innerHTML=topBar()+'<div class="pSub" style="margin-top:14px;">Next question coming up</div><div class="pBig" style="font-size:20px;">2-for-1 wings until 9pm 🍗</div>';
+    }
+  }
+  function pick(i,btn){
+    if(picked!==null||phase!=='q')return;picked=i;pickMs=performance.now()-t0;
+    phone.querySelectorAll('.pOpt').forEach(b=>b.disabled=true);btn.classList.add('picked');
+    const h=$('tapHint');if(h)h.remove();
+    phone.querySelector('.pSub').textContent='Locked in — watch the screen for the answer.';
+    $('tvCount').textContent=String(1+ +$('tvCount').textContent);
+  }
+  function toast(html){const t=document.createElement('div');t.className='toastP';t.innerHTML=html;phone.appendChild(t);setTimeout(()=>t.remove(),2600);}
+  function confetti(){if(reduce)return;const tv=document.querySelector('.tv');const cols=['#6c63ff','#ff6584','#43e97b','#f7b731'];for(let k=0;k<26;k++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'%';c.style.background=cols[k%4];c.style.animationDelay=(Math.random()*.4)+'s';tv.appendChild(c);setTimeout(()=>c.remove(),2400);}}
+  function loop(now){
+    const el=now-t0, left=Math.max(0,1-el/dur);
+    ['tvBar','pBar'].forEach(id=>{const b=$(id);if(b)b.style.transform='scaleX('+left+')';});
+    if(phase==='q'){const c=$('tvCount');if(c&&Math.random()<.035)c.textContent=String(+c.textContent+1);}
+    if(el>=dur){ if(phase==='q')go('r',4500); else if(phase==='r')go('b',4500); else if(phase==='b')go(qi%2?'a':'q2',qi%2?3500:0); else if(phase==='a'||phase==='q2'){qi=(qi+1)%QS.length;go('q',9000);} }
+    requestAnimationFrame(loop);
+  }
+  // pause the demo when it is off screen (saves battery, and the room is somewhere else)
+  go('q',9000); requestAnimationFrame(loop);
+})();
+
+// Scroll reveal and count-up stats (card spotlight comes from the shared /wow.js)
+(function(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const b=e.target,end=+b.dataset.count;let s=null;const step=t=>{s=s||t;const p=Math.min(1,(t-s)/1200);b.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);cio.unobserve(b);}),{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(b=>cio.observe(b));
+})();
+</script>
+<script src="/consent.js?v=73cc2b90"></script>
+<script src="/translations.js?v=6a62408d"></script>
+<script src="/i18n.js?v=dd4d1d2b"></script>
+<script src="/announce.js?v=9eb8a27d"></script>
+</body>
+</html>
