@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PollSlide LIVE for PowerPoint — Help &amp; Support</title>
-<meta name="description" content="How to add PollSlide LIVE to a PowerPoint slide, choose a question and show live audience results while you present — plus troubleshooting and support.">
-<link rel="canonical" href="https://pollslide.com/powerpoint-live">
+<title>Your first quiz in 2 minutes — PollSlide getting started video</title>
+<meta name="description" content="A 2-minute video: build your first quiz or poll in PollSlide, let Polly write the questions, add GIFs to questions and answers, and run it live.">
+<link rel="canonical" href="https://pollslide.com/getting-started">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PollSlide">
-<meta property="og:url" content="https://pollslide.com/powerpoint-live">
-<meta property="og:title" content="PollSlide LIVE for PowerPoint — Help & Support">
-<meta property="og:description" content="Live audience results on your PowerPoint slide, updating while you present.">
-<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:url" content="https://pollslide.com/getting-started">
+<meta property="og:title" content="Your first quiz in 2 minutes — PollSlide">
+<meta property="og:description" content="Build a quiz, let Polly help, add GIFs and go live — in 2 minutes.">
+<meta property="og:image" content="https://pollslide.com/videos/getting-started-poster.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PollSlide LIVE for PowerPoint — Help & Support">
-<meta name="twitter:description" content="Live audience results on your PowerPoint slide, updating while you present.">
-<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<meta name="twitter:title" content="Your first quiz in 2 minutes — PollSlide">
+<meta name="twitter:description" content="Build a quiz, let Polly help, add GIFs and go live — in 2 minutes.">
+<meta name="twitter:image" content="https://pollslide.com/videos/getting-started-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -71,6 +71,16 @@
   footer a{color:var(--muted);}footer a:hover{color:var(--text);}
   :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
   @media(max-width:640px){.nav-links a:not(.btn):not(#langSelWrap){display:none;}}
+
+  .player{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border2);background:#000;box-shadow:0 24px 60px rgba(0,0,0,.45);margin:8px 0 18px;}
+  .player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;}
+  .chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:6px 0 26px;}
+  .chapters button{display:flex;gap:10px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 13px;color:var(--text);font:500 14px 'DM Sans',sans-serif;cursor:pointer;}
+  .chapters button:hover{border-color:var(--accent);}
+  .chapters b{font:700 12px 'DM Sans',sans-serif;color:var(--accent-l);min-width:34px;}
+  .steps-list{counter-reset:s;list-style:none;margin:0 0 18px 0 !important;}
+  .steps-list li{counter-increment:s;position:relative;padding:14px 16px 14px 56px;background:var(--surface);border:1px solid var(--border);border-radius:13px;margin-bottom:10px !important;}
+  .steps-list li::before{content:counter(s);position:absolute;left:14px;top:13px;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font:800 14px 'Syne',sans-serif;display:grid;place-items:center;}
 </style>
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -82,7 +92,7 @@
   <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
   <div class="nav-links">
     <a href="/#features" data-i18n="nav.features">Features</a>
-    <a href="#how-it-works">How it works</a>
+    <a href="/#how-it-works">How it works</a>
     <a href="/study-games">Study</a>
     <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
     <a href="/help" data-i18n="nav.help">Help</a>
@@ -93,68 +103,51 @@
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">PollSlide LIVE · Help &amp; support</div>
-  <h1>Live audience results, right on your PowerPoint slide</h1>
-  <p class="lead">PollSlide LIVE is a PowerPoint add-in that sits on a slide like a picture or a chart. Your audience answers on their phones, and the results on the slide update in real time — including during your slide show.</p>
-  <div class="cta-row">
-    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Create a free account</a>
-    <a href="#support" class="btn btn-lg btn-ghost">Contact support</a>
-  </div>
-  <div class="byline">Works in PowerPoint on Windows, Mac and the web · free individual accounts — no enterprise purchase, licence key or admin setup</div>
+  <div class="eyebrow">Getting started · 2-minute video</div>
+  <h1>Your first quiz in 2 minutes</h1>
+  <p class="lead">Build a quiz or a poll, let Polly write the questions for you, add GIFs to questions and answers, and run it live — your audience answers on their phones.</p>
 </div></header>
 
 <main class="wrap">
+<div class="player">
+  <video id="gsVideo" controls playsinline preload="metadata" poster="/videos/getting-started-poster.jpg" aria-label="Video: your first PollSlide quiz in 2 minutes">
+    <source src="/videos/getting-started.mp4" type="video/mp4">
+    <track kind="captions" src="/videos/getting-started.en.vtt" srclang="en" label="English" default>
+    <track kind="captions" src="/videos/getting-started.es.vtt" srclang="es" label="Español">
+    <track kind="captions" src="/videos/getting-started.de.vtt" srclang="de" label="Deutsch">
+    <track kind="captions" src="/videos/getting-started.fr.vtt" srclang="fr" label="Français">
+    <track kind="captions" src="/videos/getting-started.pt.vtt" srclang="pt" label="Português">
+    <track kind="captions" src="/videos/getting-started.it.vtt" srclang="it" label="Italiano">
+  </video>
+</div>
+<div class="chapters" aria-label="Chapters">
+  <button onclick="gsSeek(0)"><b>0:00</b><span>Welcome</span></button>
+  <button onclick="gsSeek(10)"><b>0:10</b><span>Pick a poll or a quiz</span></button>
+  <button onclick="gsSeek(24)"><b>0:24</b><span>Write your first question</span></button>
+  <button onclick="gsSeek(35)"><b>0:35</b><span>Add GIFs</span></button>
+  <button onclick="gsSeek(51)"><b>0:51</b><span>Let Polly write the rest</span></button>
+  <button onclick="gsSeek(65)"><b>1:05</b><span>GIFs for everything</span></button>
+  <button onclick="gsSeek(81)"><b>1:21</b><span>Present it live</span></button>
+</div>
+
 <article>
-
-<h2 id="account">1. Get a PollSlide account</h2>
-<p>You need a PollSlide account to choose which question a slide shows. Anyone can create one for free at <a href="https://app.pollslide.com/presenter" style="color:var(--accent);">app.pollslide.com/presenter</a> in about a minute — no credit card, no licence key and no administrator approval. Then create a presentation and add a few questions: a poll, a quiz, a survey, a word cloud or a rating.</p>
-<p>Your audience never needs an account or an app. They scan a QR code or type a short code at <b>pollslide.com/join</b>.</p>
-
-<h2 id="add">2. Put PollSlide LIVE on a slide</h2>
-<ol>
-  <li>In PowerPoint, open the slide where you want the results.</li>
-  <li>Go to <b>Insert → Add-ins</b> (on the web: <b>Insert → Add-ins</b>, then <b>My Add-ins</b>) and choose <b>PollSlide LIVE</b>.</li>
-  <li>It appears on the slide as a box. Move and resize it like any picture — full width, or a narrow column beside your content.</li>
+<h2>The same steps, in writing</h2>
+<ol class="steps-list">
+  <li><b>Pick a poll or a quiz.</b> <span>Polls ask the room what it thinks. Quizzes have right answers, scores and a leaderboard. Choose the tab at the top left of the app.</span></li>
+  <li><b>Create it.</b> <span>Click “+ Blank Quiz” or “+ Blank Poll” and give it a name. Everything saves automatically.</span></li>
+  <li><b>Write a question.</b> <span>Type the question and the answers. In a quiz, tick the right answer with ✓.</span></li>
+  <li><b>Add GIFs.</b> <span>Click “🔍 GIF” beside the question or beside any answer, search, and click the GIF you like.</span></li>
+  <li><b>Let Polly write the rest.</b> <span>Click “✨ Ask Polly”, describe your topic and choose how many questions. Polly writes them with the right answers marked. Free accounts get 5 Polly drafts a month.</span></li>
+  <li><b>GIFs for everything, in one go.</b> <span>Open the deck’s “⋯” menu, choose “GIFs”, tick questions and answers, and click “Find GIFs”. Review them before you present. Safe search is always on.</span></li>
+  <li><b>Present.</b> <span>Press “▶ Present”, then “Present here”. Your audience scans the QR code with no app and no sign-up, and the results appear live. Press “Reveal” to show the answer.</span></li>
 </ol>
-<div class="callout">If your organisation manages Office add-ins, your IT administrator may need to allow PollSlide LIVE first.</div>
-
-<h2 id="choose">3. Choose the question for this slide</h2>
-<ol>
-  <li>Click the box and sign in with your PollSlide account.</li>
-  <li>Pick a presentation, then the question this slide should show.</li>
-  <li>The box now shows that question and its live results. Each slide can show a different question — put a PollSlide LIVE box on each one.</li>
-</ol>
-<p>While you are editing, small buttons in the corner of the box let you change the text size (<b>A−</b> / <b>A+</b>), show or hide answer images (<b>🖼</b>), switch between light and dark (<b>🌙</b>) to match your slide, or <b>Change question</b>. They are never shown during the slide show.</p>
-
-<h2 id="present">4. Present</h2>
-<ul>
-  <li>Start your slide show as usual. The box keeps showing the results and updates as answers arrive.</li>
-  <li>Put the question's QR code on the slide so people can answer: in PollSlide, open the question's live view, click <b>Copy QR box for slide</b>, and paste it next to the results.</li>
-  <li><b>Reveal:</b> if the question has a right answer, it is revealed when the countdown ends — or click <b>Reveal now</b>. The right answer turns green.</li>
-  <li>Polls show animated bars, word clouds show the words people send, ratings show the average, and open questions list the latest answers.</li>
-  <li>If you chose to hide results until the reveal in PollSlide, the slide shows only how many people have answered until then.</li>
-</ul>
-
-<h2 id="troubleshooting">Troubleshooting</h2>
-<details><summary>The box says “Not linked to a question”</summary><p>Leave the slide show, click the box in editing view and choose a question. It remembers the choice from then on.</p></details>
-<details><summary>A copied slide shows the wrong question</summary><p>In PowerPoint on the web, a copied or pasted slide can pick up the question of the original. Click the box in editing view and choose the question again.</p></details>
-<details><summary>The slide show won't move to the next slide</summary><p>Clicking inside the box during a slide show gives it the keyboard focus. Click anywhere outside the box, then use your clicker or arrow keys as usual.</p></details>
-<details><summary>The box stays on “Loading…”</summary><p>PollSlide LIVE needs an internet connection. Check you are online, then close and reopen the presentation.</p></details>
-<details><summary>Nobody's answers appear</summary><p>Make sure the QR code on the slide belongs to the same question as the box, and that people can reach pollslide.com/join from their phones.</p></details>
-
-<h2 id="privacy">Your data</h2>
-<p>PollSlide LIVE shows results from your PollSlide account. It saves only which question each box shows and how it looks, inside your presentation file. Signing in uses your PollSlide account; your password is never stored in the presentation. Audience answers are handled as described in our <a href="/privacy" style="color:var(--accent);">privacy policy</a>. Use of PollSlide is covered by our <a href="/terms" style="color:var(--accent);">terms</a>.</p>
-
-<h2 id="support">Contact support</h2>
-<p>Email <a href="mailto:help@pollslide.com" style="color:var(--accent);">help@pollslide.com</a> — we usually reply within one business day. Tell us which PowerPoint you use (Windows, Mac or web) and what you see, and include a screenshot if you can.</p>
-<p>More help: the <a href="/help" style="color:var(--accent);">PollSlide help centre</a>.</p>
-
+<div class="callout"><b>Presenting from Keynote, PowerPoint or Google Slides?</b> <span>Copy the QR box onto your slide.</span> <a href="/help" style="color:var(--accent);">Step-by-step guides for each app are in the help centre.</a></div>
 </article>
 </main>
 
 <section class="final"><div class="wrap">
   <div class="cta-row">
-    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Create a free account</a>
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Make your first quiz</a>
     <a href="mailto:help@pollslide.com" class="btn btn-lg btn-ghost">Email support</a>
   </div>
 </div></section>
@@ -170,6 +163,19 @@
 document.getElementById('footYr').textContent=new Date().getFullYear();
 function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('ps_theme',document.body.classList.contains('light')?'light':'dark');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';}
 if(localStorage.getItem('ps_theme')==='light'){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+</script>
+<script>
+/* Chapters, and captions in the language the visitor reads the site in (the site's own
+   language picker sets <html lang>; the captions follow it, including when it changes). */
+function gsSeek(t){const v=document.getElementById('gsVideo');v.currentTime=t;v.play().catch(()=>{});}
+(function(){
+  const v=document.getElementById('gsVideo'); if(!v) return;
+  const pick=()=>{const l=(document.documentElement.lang||'en').slice(0,2);
+    const tr=[...v.textTracks]; const has=tr.some(t=>t.language===l);
+    tr.forEach(t=>{t.mode=(t.language===(has?l:'en'))?'showing':'disabled';});};
+  v.addEventListener('loadedmetadata',pick); pick();
+  new MutationObserver(pick).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+})();
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
 <script src="/translations.js?v=cab88d56"></script>

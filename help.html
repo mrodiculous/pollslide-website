@@ -205,8 +205,25 @@
         <div class="card"><h3>3 · Go live</h3><p>Present. Your audience scans the QR, answers, and results animate in real time.</p></div>
       </div>
       <div style="margin-top:26px">
-        <video controls preload="metadata" src="help-assets/how-to/howto_full_walkthrough.mp4"></video>
-        <figcaption>▶ Full 45-second tour of the PollSlide editor and live presenting.</figcaption>
+        <video id="gsVideo" controls playsinline preload="metadata" poster="/videos/getting-started-poster.jpg">
+          <source src="/videos/getting-started.mp4" type="video/mp4">
+          <track kind="captions" src="/videos/getting-started.en.vtt" srclang="en" label="English" default>
+          <track kind="captions" src="/videos/getting-started.es.vtt" srclang="es" label="Español">
+          <track kind="captions" src="/videos/getting-started.de.vtt" srclang="de" label="Deutsch">
+          <track kind="captions" src="/videos/getting-started.fr.vtt" srclang="fr" label="Français">
+          <track kind="captions" src="/videos/getting-started.pt.vtt" srclang="pt" label="Português">
+          <track kind="captions" src="/videos/getting-started.it.vtt" srclang="it" label="Italiano">
+        </video>
+        <figcaption>▶ Your first quiz in 2 minutes: create it, let Polly write the rest, add GIFs and go live.</figcaption>
+        <p style="margin-top:8px;"><a href="/getting-started" style="color:var(--accent);">Chapters and the written steps are on the getting-started page.</a></p>
+        <script>
+        /* Captions follow the language the visitor reads the site in. */
+        (function(){const v=document.getElementById('gsVideo');if(!v)return;
+          const pick=()=>{const l=(document.documentElement.lang||'en').slice(0,2);const tr=[...v.textTracks];const has=tr.some(t=>t.language===l);
+            tr.forEach(t=>{t.mode=(t.language===(has?l:'en'))?'showing':'disabled';});};
+          v.addEventListener('loadedmetadata',pick);pick();
+          new MutationObserver(pick).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});})();
+        </script>
       </div>
     </section>
 
@@ -1385,7 +1402,7 @@
 <footer>
   PollSlide Help Center · For the most up-to-date help, visit <a href="https://pollslide.com">pollslide.com</a>. · <a href="/accessibility">Accessibility</a>
 </footer>
-<script src="/translations.js?v=f5e36193"></script>
+<script src="/translations.js?v=cab88d56"></script>
 <script src="/help-translations.js?v=afd501f7"></script>
 <script src="/help-translations-teachers.js?v=fff5899c"></script>
 <script src="/help-teachers-blocks.js?v=a8912589"></script>
