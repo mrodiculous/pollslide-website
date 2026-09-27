@@ -1327,16 +1327,36 @@
 
     <section id="teams">
       <h2>👥 Teams &amp; workspaces</h2>
-      <p class="lead">A Team plan gives your whole group one shared home for presentations and billing.</p>
+      <p class="lead">A Team plan puts everyone in your group on the same plan, on one bill.</p>
+      <div style="margin:4px 0 22px">
+        <video id="teamVideo" controls playsinline preload="metadata" poster="/videos/team-setup-poster.jpg">
+          <source src="/videos/team-setup.mp4" type="video/mp4">
+          <track kind="captions" src="/videos/team-setup.en.vtt" srclang="en" label="English" default>
+          <track kind="captions" src="/videos/team-setup.es.vtt" srclang="es" label="Español">
+          <track kind="captions" src="/videos/team-setup.de.vtt" srclang="de" label="Deutsch">
+          <track kind="captions" src="/videos/team-setup.fr.vtt" srclang="fr" label="Français">
+          <track kind="captions" src="/videos/team-setup.pt.vtt" srclang="pt" label="Português">
+          <track kind="captions" src="/videos/team-setup.it.vtt" srclang="it" label="Italiano">
+        </video>
+        <figcaption>▶ Set up your team in 2 minutes: invite people, roles, seats and billing.</figcaption>
+        <script>
+        (function(){const v=document.getElementById('teamVideo');if(!v)return;
+          const pick=()=>{const l=(document.documentElement.lang||'en').slice(0,2);const tr=[...v.textTracks];const has=tr.some(t=>t.language===l);
+            tr.forEach(t=>{t.mode=(t.language===(has?l:'en'))?'showing':'disabled';});};
+          v.addEventListener('loadedmetadata',pick);pick();
+          new MutationObserver(pick).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});})();
+        </script>
+      </div>
       <div class="grid">
         <ol class="steps">
-          <li>Upgrade to a <b>Team</b> plan, then open <b>account menu → Team</b>.</li>
-          <li><b>Invite members</b> by email — they get Pro-level features under your workspace automatically.</li>
-          <li>Set each member's <b>role</b> (admin or member) and remove anyone whenever you need.</li>
-          <li>One <b>central bill</b> covers every seat — no chasing individual subscriptions.</li>
+          <li>The person who buys the Team plan is the team's owner. Team admin opens by itself at their first sign-in, and is always in the avatar menu at the top right.</li>
+          <li>Invite people by email as a member or an admin. They join automatically the next time they sign in with that address, on the team's plan.</li>
+          <li>Admins can invite and remove people. Only the owner can turn an admin back into a member. Members can leave on their own at any time.</li>
+          <li>One bill covers every seat. If the team plan ends, members keep all their work and go back to the Free plan.</li>
         </ol>
-        <div class="callout" style="margin-top:0"><b>Seats:</b> Team plans come with a fixed number of seats; you can see how many are used and invite up to your limit at any time. Need more? Move up a tier from the pricing page.</div>
+        <div class="callout" style="margin-top:0"><b>Seats:</b> Team Small has 5 seats and Team Large has 25, including the owner. A pending invite holds a seat until it is accepted or revoked. Need more? Move up a tier, or email help@pollslide.com.</div>
       </div>
+      <p style="margin-top:12px;"><a href="/team-setup" style="color:var(--accent);">Chapters and the written steps are on the team setup page.</a></p>
     </section>
 
     <section id="privacy">
@@ -1402,7 +1422,7 @@
 <footer>
   PollSlide Help Center · For the most up-to-date help, visit <a href="https://pollslide.com">pollslide.com</a>. · <a href="/accessibility">Accessibility</a>
 </footer>
-<script src="/translations.js?v=cab88d56"></script>
+<script src="/translations.js?v=5701854e"></script>
 <script src="/help-translations.js?v=afd501f7"></script>
 <script src="/help-translations-teachers.js?v=fff5899c"></script>
 <script src="/help-teachers-blocks.js?v=a8912589"></script>
