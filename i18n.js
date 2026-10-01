@@ -135,6 +135,89 @@
     });
   }
 
+  /* The Mac companion's own labels (menu items, window title, messages). The app is
+     translated from 1.3.5 (L10n.swift — these must match it exactly; checked by
+     scripts/tests/companion-lang.test.js in the app repo), but 1.3.4 and older are
+     English-only. So a translated page shows BOTH, matching whichever copy is on the
+     user's screen: «Konto trennen (neu verbinden)» / „Disconnect Account (Re-pair)“.
+     Only data-i18n-skip elements whose whole text is one of these labels are touched. */
+  const APP_LABELS = {
+    "es": {
+    "Disconnect Account (Re-pair)": "Desconectar cuenta (volver a conectar)",
+    "Connect to PollSlide": "Conectar con PollSlide",
+    "▶ Start Auto-Show (QR detect)": "▶ Iniciar aparición automática (detección QR)",
+    "■ Stop Auto-Show (QR detect)": "■ Detener aparición automática (detección QR)",
+    "Enter code": "Escribe el código",
+    "Connect": "Conectar",
+    "Connected!": "¡Conectado!",
+    "This code has expired. Generate a new one.": "Este código ha caducado. Genera uno nuevo.",
+    "Invalid code. Check it and try again.": "Código no válido. Revísalo y vuelve a intentarlo.",
+    "Connection error. Check your internet.": "Error de conexión. Revisa tu conexión a internet."
+    },
+    "de": {
+    "Disconnect Account (Re-pair)": "Konto trennen (neu verbinden)",
+    "Connect to PollSlide": "Mit PollSlide verbinden",
+    "▶ Start Auto-Show (QR detect)": "▶ Automatisch einblenden starten (QR-Erkennung)",
+    "■ Stop Auto-Show (QR detect)": "■ Automatisch einblenden stoppen (QR-Erkennung)",
+    "Enter code": "Code eingeben",
+    "Connect": "Verbinden",
+    "Connected!": "Verbunden!",
+    "This code has expired. Generate a new one.": "Dieser Code ist abgelaufen. Erstell einen neuen.",
+    "Invalid code. Check it and try again.": "Ungültiger Code. Prüf ihn und versuch es noch einmal.",
+    "Connection error. Check your internet.": "Verbindungsfehler. Prüf deine Internetverbindung."
+    },
+    "fr": {
+    "Disconnect Account (Re-pair)": "Déconnecter le compte (reconnecter)",
+    "Connect to PollSlide": "Se connecter à PollSlide",
+    "▶ Start Auto-Show (QR detect)": "▶ Lancer l’affichage automatique (détection QR)",
+    "■ Stop Auto-Show (QR detect)": "■ Arrêter l’affichage automatique (détection QR)",
+    "Enter code": "Saisis le code",
+    "Connect": "Connecter",
+    "Connected!": "Connecté !",
+    "This code has expired. Generate a new one.": "Ce code a expiré. Génères-en un nouveau.",
+    "Invalid code. Check it and try again.": "Code non valide. Vérifie-le et réessaie.",
+    "Connection error. Check your internet.": "Erreur de connexion. Vérifie ta connexion Internet."
+    },
+    "pt": {
+    "Disconnect Account (Re-pair)": "Desligar conta (voltar a ligar)",
+    "Connect to PollSlide": "Ligar ao PollSlide",
+    "▶ Start Auto-Show (QR detect)": "▶ Iniciar apresentação automática (deteção de QR)",
+    "■ Stop Auto-Show (QR detect)": "■ Parar apresentação automática (deteção de QR)",
+    "Enter code": "Introduza o código",
+    "Connect": "Ligar",
+    "Connected!": "Ligado!",
+    "This code has expired. Generate a new one.": "Este código expirou. Gere um novo.",
+    "Invalid code. Check it and try again.": "Código inválido. Verifique-o e tente novamente.",
+    "Connection error. Check your internet.": "Erro de ligação. Verifique a sua ligação à internet."
+    },
+    "it": {
+    "Disconnect Account (Re-pair)": "Scollega account (ricollega)",
+    "Connect to PollSlide": "Collegati a PollSlide",
+    "▶ Start Auto-Show (QR detect)": "▶ Avvia comparsa automatica (rilevamento QR)",
+    "■ Stop Auto-Show (QR detect)": "■ Ferma comparsa automatica (rilevamento QR)",
+    "Enter code": "Inserisci il codice",
+    "Connect": "Collega",
+    "Connected!": "Collegato!",
+    "This code has expired. Generate a new one.": "Questo codice è scaduto. Generane uno nuovo.",
+    "Invalid code. Check it and try again.": "Codice non valido. Controllalo e riprova.",
+    "Connection error. Check your internet.": "Errore di connessione. Controlla la connessione a Internet."
+    }
+    };
+  const Q = { es: ['«', '»'], de: ['„', '“'], fr: ['« ', ' »'], pt: ['«', '»'], it: ['«', '»'] };
+  function appLabels(l) {
+    document.querySelectorAll('[data-i18n-skip]').forEach(el => {
+      if (el.children.length) return;
+      if (el._psAppEn === undefined) {
+        const t = el.textContent.trim(), m = /^[“"](.*)[”"]$/.exec(t), core = m ? m[1] : t;
+        el._psAppEn = APP_LABELS.es[core] ? { text: el.textContent, core: core } : null;
+      }
+      const o = el._psAppEn; if (!o) return;
+      if (l === 'en' || !APP_LABELS[l] || !APP_LABELS[l][o.core]) { el.textContent = o.text; return; }
+      const q = Q[l] || ['“', '”'];
+      el.textContent = q[0] + APP_LABELS[l][o.core] + q[1] + ' / ' + q[0] + o.core + q[1];
+    });
+  }
+
   function apply(l) {
     lang = l;
     document.documentElement.lang = l;
@@ -153,6 +236,7 @@
       const v = get(el.getAttribute('data-i18n-html')); el.innerHTML = (v != null) ? v : el._psOrigHTML; });
     document.querySelectorAll('[data-i18n-ph]').forEach(el => { const v = get(el.getAttribute('data-i18n-ph')); if (v != null) el.setAttribute('placeholder', v); });
     walkAndTranslate(l);   // translate the rest of the page
+    appLabels(l);          // the Mac app's labels: translated / English (see APP_LABELS)
     // Legal bodies are data-i18n-skip (dense inline markup would fragment); legal-i18n.js
     // swaps whole blocks by content hash instead.
     if (window.psApplyLegal) window.psApplyLegal(l);
