@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Update PollSlide Companion for Mac · PollSlide</title>
-<meta name="description" content="How to update PollSlide Companion for Mac: remove the old version, install the new one, and keep your pairing — step by step.">
-<link rel="canonical" href="https://pollslide.com/mac-update">
+<title>Put your questions in order — move questions and decks · PollSlide</title>
+<meta name="description" content="How to move questions in a PollSlide deck: drag them, use Up and Down, and put your decks in your own order. QR codes, links and answers move with the question. A 1-minute video and step-by-step guide.">
+<link rel="canonical" href="https://pollslide.com/reorder-questions">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PollSlide">
-<meta property="og:url" content="https://pollslide.com/mac-update">
-<meta property="og:title" content="Update PollSlide Companion">
-<meta property="og:description" content="Remove the old version, install the new one — and stay connected.">
-<meta property="og:image" content="https://pollslide.com/icon-192.png">
+<meta property="og:url" content="https://pollslide.com/reorder-questions">
+<meta property="og:title" content="Put your PollSlide questions in order">
+<meta property="og:description" content="Drag questions into the order you want. QR codes, links and answers move with them.">
+<meta property="og:image" content="https://pollslide.com/videos/move-questions-poster.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Update PollSlide Companion">
-<meta name="twitter:description" content="Remove the old version, install the new one — and stay connected.">
-<meta name="twitter:image" content="https://pollslide.com/icon-192.png">
+<meta name="twitter:title" content="Put your PollSlide questions in order">
+<meta name="twitter:description" content="Drag questions into the order you want. QR codes, links and answers move with them.">
+<meta name="twitter:image" content="https://pollslide.com/videos/move-questions-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -81,6 +81,7 @@
   .steps-list{counter-reset:s;list-style:none;margin:0 0 18px 0 !important;}
   .steps-list li{counter-increment:s;position:relative;padding:14px 16px 14px 56px;background:var(--surface);border:1px solid var(--border);border-radius:13px;margin-bottom:10px !important;}
   .steps-list li::before{content:counter(s);position:absolute;left:14px;top:13px;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font:800 14px 'Syne',sans-serif;display:grid;place-items:center;}
+  .steps-list.facts li::before{content:'✓';}
 </style>
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -103,38 +104,50 @@
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">PollSlide Companion for Mac</div>
-  <h1>Update PollSlide Companion</h1>
-  <p class="lead">It takes about two minutes. You stay connected to your account — no new code needed.</p>
-  <p class="lead" id="yourVer" style="display:none;"></p>
+  <div class="eyebrow">Moving questions · 1-minute video</div>
+  <h1>Put your questions in order</h1>
+  <p class="lead">Drag questions into the order you want to ask them. Their QR codes, links and answers move with them.</p>
 </div></header>
 
 <main class="wrap">
-<article>
-<h2>Which version do I have?</h2>
-<p>Click the bar-chart icon in the menu bar at the top right of your screen, then “About PollSlide Companion”. From version 1.3.5 the version number is shown there. If you see no number, you have version 1.3.4 or older — please update.</p>
+<div class="player">
+  <video id="gsVideo" controls playsinline preload="metadata" poster="/videos/move-questions-poster.jpg" aria-label="Video: put your PollSlide questions in order">
+    <source src="/videos/move-questions.mp4" type="video/mp4">
+    <track kind="captions" src="/videos/move-questions.en.vtt" srclang="en" label="English" default>
+  </video>
+</div>
+<div class="chapters" id="gsChapters" aria-label="Chapters"></div>
 
-<h2>Update in six steps</h2>
+<article>
+<h2>The same steps, in writing</h2>
 <ol class="steps-list">
-  <li><b>Quit the old app.</b> <span>Click the bar-chart icon in the menu bar, then “Quit”.</span></li>
-  <li><b>Remove the old version.</b> <span>In Finder, open Applications and drag PollSlide Companion to the Trash. If you have another copy in Downloads or on a disk image, remove that too — two copies confuse macOS permissions.</span></li>
-  <li><b>Download the new version.</b> <span>Get it from pollslide.com/download.</span></li>
-  <li><b>Install it.</b> <span>Open the downloaded .dmg file and drag PollSlide Companion into your Applications folder. Then eject the disk image.</span></li>
-  <li><b>Open it from Applications.</b> <span>You stay connected to your PollSlide account — you don't need a new code.</span></li>
-  <li><b>Check Screen Recording.</b> <span>Open System Settings → Privacy &amp; Security → Screen Recording (on newer macOS: Screen &amp; System Audio Recording) and make sure PollSlide Companion is switched on. Then quit the app and open it again.</span></li>
+  <li><b>Open the question editor.</b> <span>Open your deck, click a question, then click “✏️ Edit this question”.</span></li>
+  <li><b>Drag it to its new place.</b> <span>While you're editing, drag any question in the list on the left and drop it where you want it. A line shows where it will land.</span></li>
+  <li><b>Or use “↑ Up” and “↓ Down”.</b> <span>They're at the bottom of the editor. Each click moves the question one place.</span></li>
+  <li><b>Put your decks in your order too.</b> <span>In the sort menu above your decks, choose “My order”, then drag your decks. Your order is saved to your account. New decks appear at the top until you place them, and pinned decks stay at the top.</span></li>
 </ol>
 
-<div class="callout"><b>Slides not detected after updating?</b> <span>macOS sometimes keeps the old app's permission. In Screen Recording, switch PollSlide Companion off and on again, then quit and reopen the app. If it is listed twice, remove both entries with the minus button, open the app again and allow it once.</span></div>
+<h2>What stays the same</h2>
+<ul class="steps-list facts">
+  <li><b>QR codes and links still open the same question.</b> <span>That includes codes on your Keynote, PowerPoint and Google Slides slides, printed handouts and the Mac companion. You don't need to copy anything again.</span></li>
+  <li><b>Answers stay with their question.</b> <span>Results, reports, leaderboards and exports are not affected.</span></li>
+  <li><b>Live sessions carry on.</b> <span>If you move the question that is showing, your audience stays on it and keeps what they have chosen.</span></li>
+  <li><b>PollSlide LIVE slides follow too.</b> <span>A PollSlide LIVE box on a PowerPoint slide finds its question in its new place by itself.</span></li>
+  <li><b>Only the number changes.</b> <span>Questions are numbered by where they are now, so a question you move from 2nd to 5th shows as “Question 5”.</span></li>
+</ul>
 
-<h2>Check it worked</h2>
-<p>Open “About PollSlide Companion” again — it now shows the new version number. Present a slide with a PollSlide QR code and the results window appears as usual.</p>
-<div class="callout"><b>Need a hand?</b> <span>Ask Slidekick in PollSlide (your avatar menu → Ask Slidekick), or email help@pollslide.com.</span></div>
+<h2>Questions</h2>
+<details><summary>Why can't I drag while the results are showing?</summary><p>While a question's live results are on screen, its buttons (such as “↺ Reset this question”) belong to that place in the list. To keep them pointing at the right question, drag in the editor: click “✏️ Edit this question” first.</p></details>
+<details><summary>My slide still says “Question 2”</summary><p>Titles you typed on your own slides don't change. Update them if you want the numbers to match. The QR code on the slide still opens the right question.</p></details>
+<details><summary>I deleted a question — what happens to its QR code?</summary><p>Anyone who scans it is told the question isn't available, then follows along with the next question you show. A PollSlide LIVE slide for it says “Question not found”: click the box, click “Change question” and choose another.</p></details>
+<details><summary>An old QR code opens the wrong question</summary><p>A QR code made before 1 October 2026 opens whichever question was in its place the first time you signed in after that date. Copy that question's QR code again and replace the old one.</p></details>
+<details><summary>Dragging doesn't work on my device</summary><p>Use “↑ Up” and “↓ Down” in the editor instead — they do the same thing.</p></details>
 </article>
 </main>
 
 <section class="final"><div class="wrap">
   <div class="cta-row">
-    <a href="/download" class="btn btn-lg">Download the latest version</a>
+    <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Open PollSlide</a>
     <a href="mailto:help@pollslide.com" class="btn btn-lg btn-ghost">Email support</a>
   </div>
 </div></section>
@@ -152,12 +165,37 @@ function toggleTheme(){document.body.classList.toggle('light');localStorage.setI
 if(localStorage.getItem('ps_theme')==='light'){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
 </script>
 <script>
-/* "You have version X" — the app's "Check for Updates…" opens this page with ?v=<its version>. */
-(function(){ var v=new URLSearchParams(location.search).get('v'); if(!v||!/^[0-9.]{1,12}$/.test(v)) return;
-  var el=document.getElementById('yourVer'); el.style.display='block';
-  var tpl={en:'You have version {v}.',es:'Tienes la versión {v}.',de:'Du hast Version {v}.',fr:'Tu as la version {v}.',pt:'Tem a versão {v}.',it:'Hai la versione {v}.'};
-  var paint=function(){ var l=(document.documentElement.lang||'en').slice(0,2); el.textContent=(tpl[l]||tpl.en).replace('{v}',v); };
-  paint(); new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:['lang']}); })();
+/* The video in the visitor's language (2026-09-30): each language has its OWN recording —
+   the app on screen in that language, narrated in it, with matching captions. It follows the
+   site's language picker (which sets <html lang>), including when it changes mid-visit.
+   Chapter buttons use each recording's own scene times, since narration lengths differ. */
+const GS_LANGS = ['en','es','de','fr','pt','it'];
+const GS_NAMES = { en:'English', es:'Español', de:'Deutsch', fr:'Français', pt:'Português', it:'Italiano' };
+const GS_CH = { intro:'Welcome', open:'Open the question editor', drag:'Drag it to its new place', arrows:'Or use Up and Down', links:'Its QR code still works', answers:'Answers stay with their question', decks:'Your decks, in your order' };
+let gsScenes = {}, gsLang = null;
+function gsSeek(t){const v=document.getElementById('gsVideo');v.currentTime=t;v.play().catch(()=>{});}
+function gsT(s){ const d=(window.PS_I18N||{})[gsLang]||{}; return d[s]||s; }
+function gsChapters(){
+  const el=document.getElementById('gsChapters'); const sc=gsScenes[gsLang]||gsScenes.en||[];
+  const fmt=t=>Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');
+  el.innerHTML=sc.filter(x=>GS_CH[x.id]).map(x=>`<button onclick="gsSeek(${x.t})"><b>${fmt(x.t)}</b><span data-i18n-skip>${gsT(GS_CH[x.id])}</span></button>`).join('');
+}
+function gsPick(){
+  const l=(document.documentElement.lang||'en').slice(0,2); const lang=GS_LANGS.includes(l)?l:'en';
+  if(lang===gsLang) return; gsLang=lang;
+  const v=document.getElementById('gsVideo'); const base='/videos/move-questions'+(lang==='en'?'':'-'+lang);
+  v.pause();
+  v.querySelector('source').src=base+'.mp4';
+  v.querySelectorAll('track').forEach(t=>t.remove());
+  const tr=document.createElement('track'); tr.kind='captions'; tr.srclang=lang; tr.label=GS_NAMES[lang]; tr.default=true;
+  tr.src=lang==='en'?'/videos/move-questions.en.vtt':base+'.vtt'; v.appendChild(tr);
+  v.load();
+  v.addEventListener('loadedmetadata',()=>{ [...v.textTracks].forEach(t=>{t.mode='disabled';}); },{once:true});
+  if(!gsScenes[lang]) fetch(base+'.scenes.json').then(r=>r.ok?r.json():[]).then(j=>{gsScenes[lang]=j;gsChapters();}).catch(()=>{});
+  gsChapters();
+}
+gsPick();
+new MutationObserver(gsPick).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
 <script src="/translations.js?v=751bea0e"></script>
