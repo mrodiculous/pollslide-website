@@ -58,6 +58,10 @@
   .band p{color:var(--muted);margin-bottom:20px;}
   .otherlinks{text-align:center;font-size:14px;color:var(--muted);margin:24px 0;}
   .otherlinks a{color:var(--accent-l);font-weight:600;}
+  .faq details{background:var(--surface,#14142a);border:1px solid var(--border,#26264a);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  .faq summary{cursor:pointer;font-weight:600;font-size:15px;}
+  .faq details p{color:var(--muted);font-size:14.5px;margin-top:8px;line-height:1.6;}
+  .price-note{font-size:12.5px;color:var(--muted);margin-top:8px;}
   footer{padding:34px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:13.5px;margin-top:30px;}
   footer a{color:var(--muted);}.disc{font-size:12px;color:var(--muted);opacity:.75;max-width:640px;margin:14px auto 0;}
   @media(max-width:720px){.cards{grid-template-columns:1fr;}.nav-links a:not(.btn){display:none;}}
@@ -85,6 +89,8 @@
   <meta name="twitter:image" content="https://pollslide.com/og-image.png">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "PollSlide", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, macOS, Windows", "url": "https://pollslide.com", "description": "PollSlide runs live polls, surveys, quizzes and study sets over any presentation, drafted by Polly AI.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Live polls, surveys, quizzes, study sets, audience Q&A, word clouds, Polly AI question generation, present over any slides"}</script>
 <!-- seo:auto end -->
+<!-- facts checked 2026-10-07: https://community.slido.com/powerpoint-google-slides-243 · https://community.slido.com/news-announcements-3/slido-s-switcher-app-was-sunsetted-in-january-2025-4416 · https://www.slido.com/pricing -->
+<!-- seo:faq --><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is PollSlide a good Slido alternative?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you want polls, quizzes, surveys and Q&A in one plan over the slides you already have. Slido is strongest for moderated Q&A in large meetings, especially in Webex. PollSlide adds graded quizzes with game modes, surveys and study sets, and works over Keynote as well as PowerPoint and Google Slides."}},{"@type":"Question","name":"Can I keep using my PowerPoint or Keynote slides?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paste your poll's QR code onto any slide and your audience answers on their phones. On a Mac, the free PollSlide companion floats live results over your slideshow — Keynote, PowerPoint or a PDF — and shows the right poll when that slide is on screen."}},{"@type":"Question","name":"Does Slido work inside PowerPoint and Google Slides?","acceptedAnswer":{"@type":"Answer","text":"Yes. Slido offers a PowerPoint add-in and a Google Slides add-on, according to its help community. Its Mac Switcher app, which other presentation tools relied on, was retired in January 2025. PollSlide's PowerPoint add-in is in review with Microsoft; the QR-on-slide method works today in PowerPoint, Google Slides and Keynote."}},{"@type":"Question","name":"How do PollSlide and Slido prices compare?","acceptedAnswer":{"@type":"Answer","text":"PollSlide has a free plan and Pro at $12 a month ($10 billed annually), covering polls, surveys, quizzes and study sets. Slido sells one-time and annual plans; check slido.com/pricing for current prices. Checked 7 October 2026."}},{"@type":"Question","name":"Does my audience need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No — with either tool. In PollSlide, people scan the QR or go to pollslide.com/join and answer in their phone's browser, with no app and no account."}}]}</script><!-- /seo:faq -->
 </head>
 <body>
 <nav><div class="nav-inner">
@@ -119,6 +125,8 @@
     <div class="tbl-wrap"><table>
       <thead><tr><th>What matters</th><th class="ps">PollSlide</th><th>Slido</th></tr></thead>
       <tbody>
+<tr><td class="dim">Live results over a Keynote slide while you present</td><td><span class="yes">✓</span></td><td><span class="part">~</span></td></tr>
+<tr><td class="dim">PowerPoint add-in available today</td><td><span class="part">~</span></td><td><span class="yes">✓</span></td></tr>
 <tr><td class="dim">Runs over your existing Keynote / PowerPoint / PDF</td><td><span class="yes">✓</span></td><td><span class="part">~</span></td></tr>
 <tr><td class="dim">Polls, surveys, quizzes and study — one product</td><td><span class="yes">✓</span></td><td><span class="part">~</span></td></tr>
 <tr><td class="dim">AI drafts your questions</td><td><span class="yes">✓</span></td><td><span class="part">~</span></td></tr>
@@ -140,15 +148,38 @@
     </div>
   </section>
 
+
+  <section class="cmp">
+    <h2 class="sec">Pricing at a glance</h2>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Plan</th><th class="ps">PollSlide</th><th>Slido</th></tr></thead>
+      <tbody>
+<tr><td class="dim">Free</td><td>$0 — 25 participants per session, 3 saved presentations</td><td>Free plan available</td></tr>
+<tr><td class="dim">Individual</td><td>Pro — $12/month, or $10/month billed annually</td><td>Paid one-time and annual plans — see slido.com/pricing</td></tr>
+<tr><td class="dim">Teams</td><td>Team Small $39/month (up to 5) · Team Large $199/month (up to 25)</td><td>Annual and enterprise plans</td></tr>
+<tr><td class="dim">Large organisations</td><td>Enterprise — custom</td><td>Enterprise — custom</td></tr>
+      </tbody>
+    </table></div>
+    <p class="price-note">Prices in US dollars where shown, checked on 7 October 2026 on each company's own pricing page. They change — please confirm on <a href="/pricing">our pricing page</a> and the other company's before you decide.</p>
+  </section>
   <div class="fair"><h3>🤝 When Slido might be the better fit</h3><p>If your world is enterprise Webex meetings and large-scale moderated Q&A is your #1 need, Slido is purpose-built for that and integrates deeply there. PollSlide is the better fit when you want the whole engagement suite, an over-any-deck overlay, and AI recap of what people wrote.</p></div>
 
+
+  <section class="cmp faq">
+    <h2 class="sec">Questions people ask</h2>
+    <details><summary>Is PollSlide a good Slido alternative?</summary><p>Yes, if you want polls, quizzes, surveys and Q&A in one plan over the slides you already have. Slido is strongest for moderated Q&A in large meetings, especially in Webex. PollSlide adds graded quizzes with game modes, surveys and study sets, and works over Keynote as well as PowerPoint and Google Slides.</p></details>
+    <details><summary>Can I keep using my PowerPoint or Keynote slides?</summary><p>Yes. Paste your poll's QR code onto any slide and your audience answers on their phones. On a Mac, the free PollSlide companion floats live results over your slideshow — Keynote, PowerPoint or a PDF — and shows the right poll when that slide is on screen.</p></details>
+    <details><summary>Does Slido work inside PowerPoint and Google Slides?</summary><p>Yes. Slido offers a PowerPoint add-in and a Google Slides add-on, according to its help community. Its Mac Switcher app, which other presentation tools relied on, was retired in January 2025. PollSlide's PowerPoint add-in is in review with Microsoft; the QR-on-slide method works today in PowerPoint, Google Slides and Keynote.</p></details>
+    <details><summary>How do PollSlide and Slido prices compare?</summary><p>PollSlide has a free plan and Pro at $12 a month ($10 billed annually), covering polls, surveys, quizzes and study sets. Slido sells one-time and annual plans; check slido.com/pricing for current prices. Checked 7 October 2026.</p></details>
+    <details><summary>Does my audience need to download an app?</summary><p>No — with either tool. In PollSlide, people scan the QR or go to pollslide.com/join and answer in their phone's browser, with no app and no account.</p></details>
+  </section>
   <div class="band">
     <h2>Try PollSlide over your next slide</h2>
     <p>Free to start. No audience app, no credit card. Drop a QR on any slide and watch the room light up.</p>
     <a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free →</a>
   </div>
 
-  <div class="otherlinks">See also: <a href="/game-modes">game modes</a> · <a href="/study-games">study games</a></div>
+  <div class="otherlinks">See also: <a href="/pollslide-for-powerpoint">PollSlide for PowerPoint</a> · <a href="/pollslide-for-keynote">PollSlide for Keynote</a> · <a href="/pricing">pricing</a> · <a href="/game-modes">game modes</a> · <a href="/study-games">study games</a></div>
   <div class="otherlinks">More comparisons: <a href="/vs-kahoot">PollSlide vs Kahoot</a> · <a href="/vs-mentimeter">PollSlide vs Mentimeter</a> · <a href="/vs-poll-everywhere">PollSlide vs Poll Everywhere</a> · <a href="/vs-wooclap">PollSlide vs Wooclap</a> · <a href="/vs-ahaslides">PollSlide vs AhaSlides</a></div>
 </main>
 
@@ -157,7 +188,7 @@
     <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
   </div>
   <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
-  <p class="disc">Comparison based on publicly available information, July 2026. Competitor features and pricing change often — please verify on their site. Slido and other names are trademarks of their respective owners; this page is not endorsed by or affiliated with them.</p>
+  <p class="disc">Comparison based on publicly available information, checked 7 October 2026. Competitor features and pricing change often — please verify on their site. Slido and other names are trademarks of their respective owners; this page is not endorsed by or affiliated with them.</p>
 </div></footer>
 <script>
   document.getElementById('footYr').textContent=new Date().getFullYear();
@@ -166,7 +197,7 @@
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
 <script src="/translations.js?v=60e35756"></script>
-<script src="/compare-translations.js?v=ea4be23f"></script>
+<script src="/compare-translations.js?v=c5563b12"></script>
 <script src="/i18n.js?v=bd0a8538"></script>
 <script src="/announce.js?v=9eb8a27d"></script>
 <script src="/wow.js?v=423ef466"></script>
