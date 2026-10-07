@@ -94,6 +94,10 @@
     .nav-links{margin-left:auto;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
     #langSelWrap select{max-width:112px;}
   }
+
+  #faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  #faq summary{cursor:pointer;font-weight:600;font-size:15px;}
+  #faq details p{color:var(--muted);font-size:14px;margin-top:8px;line-height:1.55;}
 </style>
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -116,6 +120,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "PollSlide", "applicationCategory": "BusinessApplication", "operatingSystem": "Web, macOS, Windows", "url": "https://pollslide.com", "description": "PollSlide runs live polls, surveys, quizzes and study sets over any presentation, drafted by Polly AI.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Live polls, surveys, quizzes, study sets, audience Q&A, word clouds, Polly AI question generation, present over any slides"}</script>
 <!-- seo:auto end -->
 <link rel="stylesheet" href="/consent-mobile.css?v=c60e4fd2">
+<!-- seo:faq --><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need an add-in to use PollSlide with my slides?","acceptedAnswer":{"@type":"Answer","text":"No. Paste your poll's QR code onto any slide — Keynote, PowerPoint, Google Slides or a PDF — and your audience scans it and answers on their phones. The add-in and the Mac companion add live results on top; neither is required to run a poll."}},{"@type":"Question","name":"Is there a PowerPoint add-in?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is built and in review with Microsoft. Once approved it works in PowerPoint on Windows, Mac and the web: in PowerPoint, choose Insert → Get Add-ins and search for “PollSlide”. Until then, the QR-on-slide method works in PowerPoint today."}},{"@type":"Question","name":"What does the Mac companion do?","acceptedAnswer":{"@type":"Answer","text":"It is a free floating window that shows live results over any presentation — Keynote, PowerPoint or a PDF — and auto-detects your poll's QR, so the matching poll appears whenever that slide is on screen. It is signed and notarized by Apple."}},{"@type":"Question","name":"Does the companion app work on Windows?","acceptedAnswer":{"@type":"Answer","text":"No — the companion is for Mac (macOS 14 Sonoma or later, Apple Silicon and Intel). On Windows, put the QR on your slide and follow results in PollSlide; the PowerPoint add-in will show them on the slide once Microsoft approves it."}},{"@type":"Question","name":"Does PollSlide work with Google Slides?","acceptedAnswer":{"@type":"Answer","text":"Yes, with the QR-on-slide method: paste the QR onto any slide and your audience votes on their phones. A native Google Slides integration is planned but not yet available."}},{"@type":"Question","name":"Does my audience need to install anything?","acceptedAnswer":{"@type":"Answer","text":"No. They scan the QR or go to pollslide.com/join and type the code, then answer in their phone's browser — no app and no account."}}]}</script><!-- /seo:faq -->
 </head>
 <body>
 
@@ -215,6 +220,19 @@
 
   <div class="otherlinks" style="text-align:center;font-size:14px;color:var(--muted);margin:24px 0;">Setup guides for a specific tool: <a href="/pollslide-for-powerpoint" style="color:var(--accent-l);font-weight:600;">PowerPoint</a> · <a href="/pollslide-for-google-slides" style="color:var(--accent-l);font-weight:600;">Google Slides</a> · <a href="/pollslide-for-keynote" style="color:var(--accent-l);font-weight:600;">Keynote</a></div>
 
+
+  <section class="card" id="faq">
+    <div class="card-head">
+      <div class="card-ico">❓</div>
+      <div class="grow"><h2>Frequently asked questions</h2></div>
+    </div>
+    <details><summary>Do I need an add-in to use PollSlide with my slides?</summary><p>No. Paste your poll's QR code onto any slide — Keynote, PowerPoint, Google Slides or a PDF — and your audience scans it and answers on their phones. The add-in and the Mac companion add live results on top; neither is required to run a poll.</p></details>
+    <details><summary>Is there a PowerPoint add-in?</summary><p>Yes. It is built and in review with Microsoft. Once approved it works in PowerPoint on Windows, Mac and the web: in PowerPoint, choose Insert → Get Add-ins and search for “PollSlide”. Until then, the QR-on-slide method works in PowerPoint today.</p></details>
+    <details><summary>What does the Mac companion do?</summary><p>It is a free floating window that shows live results over any presentation — Keynote, PowerPoint or a PDF — and auto-detects your poll's QR, so the matching poll appears whenever that slide is on screen. It is signed and notarized by Apple.</p></details>
+    <details><summary>Does the companion app work on Windows?</summary><p>No — the companion is for Mac (macOS 14 Sonoma or later, Apple Silicon and Intel). On Windows, put the QR on your slide and follow results in PollSlide; the PowerPoint add-in will show them on the slide once Microsoft approves it.</p></details>
+    <details><summary>Does PollSlide work with Google Slides?</summary><p>Yes, with the QR-on-slide method: paste the QR onto any slide and your audience votes on their phones. A native Google Slides integration is planned but not yet available.</p></details>
+    <details><summary>Does my audience need to install anything?</summary><p>No. They scan the QR or go to pollslide.com/join and type the code, then answer in their phone's browser — no app and no account.</p></details>
+  </section>
 </main>
 
 <section class="cta">
@@ -255,7 +273,7 @@
   }
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
-<script src="/translations.js?v=129e4bca"></script>
+<script src="/translations.js?v=60e35756"></script>
 <script src="/companion-i18n.js?v=a8d4204e"></script>
 <script src="/i18n.js?v=bd0a8538"></script>
 <script src="/announce.js?v=9eb8a27d"></script>
