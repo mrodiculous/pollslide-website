@@ -1,7 +1,25 @@
+# PollSlide marketing site. Search engines and AI assistants are welcome to read it.
 User-agent: *
 Allow: /
-
 # The presenter is the signed-in app UI, not a marketing page.
+Disallow: /presenter
+
+# Named explicitly so there is no doubt they are allowed (search + AI answer engines).
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: Google-Extended
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: CCBot
+Allow: /
 Disallow: /presenter
 
 Sitemap: https://pollslide.com/sitemap.xml

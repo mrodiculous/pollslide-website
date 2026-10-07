@@ -1,0 +1,53 @@
+# PollSlide
+
+> PollSlide runs live polls, quizzes, surveys and Q&A over the slides you already have — Keynote, PowerPoint, Google Slides or a PDF. The audience scans a QR code and answers on their own phones (no app, no sign-up); results appear instantly. Free to start. Made by PollSlide Technologies LLC.
+
+PollSlide is one suite of products on the same account:
+- **PollSlide** — live audience polls and Q&A during a presentation.
+- **SurveySlide** — async surveys and forms people answer in their own time.
+- **QuizSlide** — graded quizzes and game modes (speed rounds, streaks, survival, wagers, team play) — also used as pub quiz software.
+- **StudySlide** — flashcards with spaced repetition, streaks and study games.
+- **LoopSlide** — questions that loop on a TV or venue screen with live leaderboards.
+
+How it works with each presentation tool:
+- **Keynote (Mac):** paste a QR onto any slide; the free PollSlide Companion for Mac floats live results over the deck and follows along as you present.
+- **PowerPoint:** works today with a QR on any slide, no plugin needed; a native PowerPoint add-in is in review with Microsoft.
+- **Google Slides:** paste a QR onto any slide; the audience votes on their phones.
+- **Anything else** (PDF, webpage, video): present from PollSlide or use the Mac companion overlay.
+
+Polly, the built-in AI, drafts questions from a topic or from your own material (PDF or notes), and groups open answers into themes.
+
+## Main pages
+- [Home](https://pollslide.com/): overview of live polls, quizzes and surveys over any slides
+- [Pricing](https://pollslide.com/pricing): free plan, paid plans, team and Enterprise
+- [PollSlide for PowerPoint](https://pollslide.com/pollslide-for-powerpoint): live polls over PowerPoint slides
+- [PollSlide for Google Slides](https://pollslide.com/pollslide-for-google-slides): live polls over Google Slides
+- [PollSlide for Keynote](https://pollslide.com/pollslide-for-keynote): live polls in Keynote on Mac
+- [Download the Mac companion](https://pollslide.com/download): free app that floats results over any presentation
+- [Integrations](https://pollslide.com/integrations): add-ins, companion and setup guides
+- [Game modes / pub quiz software](https://pollslide.com/game-modes): quiz game modes played on phones
+- [Study games](https://pollslide.com/study-games): flashcards and spaced repetition
+- [LoopSlide](https://pollslide.com/loopslide): interactive trivia and polls for TVs and venue screens
+- [Join a session](https://pollslide.com/join): where audience members enter a session code
+
+## Guides
+- [Getting started (2-minute video)](https://pollslide.com/getting-started)
+- [Help center](https://pollslide.com/help): step-by-step guides
+- [How to run a pub quiz](https://pollslide.com/how-to-run-a-pub-quiz)
+- [Free poll and quiz question templates](https://pollslide.com/free-templates)
+- [Glossary of live polling terms](https://pollslide.com/glossary)
+- [Blog](https://pollslide.com/blog)
+
+## Comparisons
+- [PollSlide vs Mentimeter](https://pollslide.com/vs-mentimeter)
+- [PollSlide vs Slido](https://pollslide.com/vs-slido)
+- [PollSlide vs Kahoot](https://pollslide.com/vs-kahoot)
+- [PollSlide vs Poll Everywhere](https://pollslide.com/vs-poll-everywhere)
+- [PollSlide vs AhaSlides](https://pollslide.com/vs-ahaslides)
+- [PollSlide vs Wooclap](https://pollslide.com/vs-wooclap)
+
+## Trust
+- [Trust & Safety](https://pollslide.com/trust-safety)
+- [Accessibility statement](https://pollslide.com/accessibility)
+- [Privacy policy](https://pollslide.com/privacy)
+- [Terms](https://pollslide.com/terms)
