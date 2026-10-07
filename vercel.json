@@ -3,9 +3,25 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.pollslide.com"
+        }
+      ],
+      "destination": "https://pollslide.com/$1",
+      "permanent": true
+    },
+    {
       "source": "/tv",
       "destination": "https://app.pollslide.com/tv",
       "permanent": false
+    },
+    {
+      "source": "/presenter",
+      "destination": "https://app.pollslide.com/presenter",
+      "permanent": true
     }
   ]
 }
