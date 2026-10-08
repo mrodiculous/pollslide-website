@@ -395,6 +395,62 @@
   @media (max-width:460px){
     .ps-grid{grid-template-columns:1fr;}
   }
+  /* ── ON THEIR PHONE (2026-10-08): what each phone gets — every claim checked against answer.html ── */
+  #pocket { padding:64px 0 70px; border-top:1px solid var(--border); position:relative; overflow:hidden; }
+  #pocket:before { content:''; position:absolute; left:50%; top:120px; width:780px; height:420px; transform:translateX(-50%); background:radial-gradient(closest-side, rgba(108,99,255,0.22), transparent); pointer-events:none; }
+  .pk-phones { position:relative; display:flex; justify-content:center; align-items:flex-start; gap:34px; margin:6px auto 56px; }
+  .pk-col { display:flex; flex-direction:column; align-items:center; gap:16px; flex:0 0 auto; }
+  .pk-col:nth-child(1), .pk-col:nth-child(3) { margin-top:18px; }
+  .pk-col:nth-child(1) .pk-phone { rotate:-4deg; }
+  .pk-col:nth-child(3) .pk-phone { rotate:4deg; }
+  .pk-phone { width:218px; height:430px; border-radius:34px; padding:11px; background:#1c1c2a; box-shadow:0 30px 70px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(255,255,255,0.08); animation:pkfloat 6s ease-in-out infinite; }
+  .pk-col:nth-child(2) .pk-phone { animation-delay:-2s; }
+  .pk-col:nth-child(3) .pk-phone { animation-delay:-4s; }
+  @keyframes pkfloat { 50% { transform:translateY(-10px); } }
+  .pk-scr { position:relative; height:100%; border-radius:25px; overflow:hidden; background:linear-gradient(180deg,#141428,#0d0d18); color:#f4f4fc; padding:40px 13px 14px; font-family:'DM Sans',sans-serif; text-align:left; }
+  .pk-scr:before { content:''; position:absolute; top:9px; left:50%; width:34%; height:13px; transform:translateX(-50%); background:#1c1c2a; border-radius:9px; }
+  .pk-top { position:absolute; top:30px; left:10px; right:10px; display:flex; justify-content:flex-end; gap:5px; }
+  .pk-pill { font-size:10px; font-weight:700; padding:4px 8px; border-radius:8px; background:rgba(13,13,24,0.92); border:1px solid rgba(255,255,255,0.22); color:#fff; white-space:nowrap; }
+  .pk-pill.alt { background:rgba(108,99,255,0.25); border-color:rgba(108,99,255,0.6); animation:pkpulse 2.4s ease-in-out infinite; }
+  @keyframes pkpulse { 50% { box-shadow:0 0 0 5px rgba(108,99,255,0.18); } }
+  .pk-top + .pk-qn { margin-top:36px; }
+  .pk-qn { font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8b84ff; margin:30px 0 7px; }
+  .pk-q { font-family:'Syne',sans-serif; font-weight:800; font-size:16px; line-height:1.22; margin-bottom:12px; }
+  .pk-opt { display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; padding:9px 10px; border-radius:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); margin-bottom:7px; }
+  .pk-opt b { width:20px; height:20px; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:11px; background:#6c63ff; color:#fff; flex-shrink:0; }
+  .pk-opt.sel { border-color:#6c63ff; background:rgba(108,99,255,0.18); }
+  .pk-opt.ok { border-color:#43e97b; background:rgba(67,233,123,0.16); }
+  .pk-opt.ok b { background:#43e97b; color:#0d0d18; }
+  .pk-opt.dim { opacity:0.38; }
+  .pk-media { height:118px; border-radius:13px; margin:6px 0 11px; position:relative; overflow:hidden; background:linear-gradient(135deg,#ff6584,#6c63ff 55%,#38d9f5); display:flex; align-items:center; justify-content:center; font-size:62px; }
+  .pk-media span.e { animation:pkwiggle 2.8s ease-in-out infinite; display:inline-block; }
+  @keyframes pkwiggle { 25% { transform:rotate(-8deg) scale(1.05); } 75% { transform:rotate(8deg) scale(1.05); } }
+  .pk-media i { position:absolute; left:8px; bottom:7px; font-style:normal; font-size:10px; font-weight:800; padding:3px 7px; border-radius:6px; background:rgba(0,0,0,0.55); color:#fff; letter-spacing:0.06em; }
+  .pk-verdict { border-radius:13px; padding:12px; margin:30px 0 12px; background:rgba(67,233,123,0.14); border:1px solid rgba(67,233,123,0.55); animation:pkpop 3.2s ease-in-out infinite; }
+  .pk-verdict strong { display:block; font-family:'Syne',sans-serif; font-size:19px; color:#43e97b; }
+  .pk-verdict span { font-size:12px; color:#d8d8ee; }
+  @keyframes pkpop { 0%,100% { transform:scale(1); } 8% { transform:scale(1.05); } 16% { transform:scale(1); } }
+  .pk-label { font-family:'Syne',sans-serif; font-weight:700; font-size:14px; color:var(--text); text-align:center; max-width:220px; }
+  .pk-label small { display:block; font-family:'DM Sans',sans-serif; font-weight:500; font-size:12.5px; color:var(--muted); margin-top:3px; }
+  .pk-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1080px; margin:0 auto; }
+  .pk-card { background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:22px 20px; transition:all 0.25s; }
+  .pk-card:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:0 14px 40px rgba(108,99,255,0.18); }
+  .pk-card .ficon { font-size:24px; display:block; margin-bottom:10px; }
+  .pk-card h3 { font-family:'Syne',sans-serif; font-size:16.5px; font-weight:700; margin-bottom:7px; }
+  .pk-card p { color:var(--muted); font-size:14.5px; line-height:1.55; }
+  .pk-stats { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin:0 auto 46px; }
+  .pk-stat { display:flex; align-items:baseline; gap:8px; padding:10px 18px; border-radius:100px; border:1px solid var(--border); background:var(--surface); font-size:14px; color:var(--muted); }
+  .pk-stat b { font-family:'Syne',sans-serif; font-size:26px; line-height:1; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  @media (max-width:900px) { .pk-grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:760px) {
+    .pk-phones { justify-content:flex-start; overflow-x:auto; scroll-snap-type:x mandatory; gap:18px; padding:8px 16px 26px; margin:6px -16px 40px; -webkit-overflow-scrolling:touch; }
+    .pk-col { scroll-snap-align:center; }
+    .pk-col:nth-child(1), .pk-col:nth-child(3) { margin-top:0; }
+    .pk-col .pk-phone { rotate:0deg !important; }
+  }
+  @media (max-width:560px) { .pk-grid { grid-template-columns:1fr; } }
+  @media (prefers-reduced-motion: reduce) { #pocket *, #pocket *:before { animation:none !important; } }
+
 </style>
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -419,7 +475,7 @@
 <!-- seo:auto end -->
 <link rel="stylesheet" href="/demos.css?v=b12eeb23">
 <link rel="stylesheet" href="/consent-mobile.css?v=c60e4fd2">
-<!-- seo:faq --><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do my audience members need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. They simply scan a QR code with their phone camera and answer right in their browser. Nothing to install, no account to create."}},{"@type":"Question","name":"Can two of us build the same quiz at the same time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Invite someone to edit and you both work on the same deck, seeing each other's changes as they happen. A question someone is typing into is marked so you can't write over them. You stay the owner throughout, and ending their access takes effect immediately — there's no session to wait out."}},{"@type":"Question","name":"Do we need to be in the same workspace or on the same plan?","acceptedAnswer":{"@type":"Answer","text":"No. That's the point. Collaboration is per-deck, not per-workspace — two people on separate personal plans, at different organisations, can build one quiz together. Your collaborator sees that deck and nothing else in your account."}},{"@type":"Question","name":"Can I share a quiz with a colleague who isn't on my team?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share any poll, survey, quiz or study set with any email address — no shared workspace, no matching plan, and they don't even need a PollSlide account yet. If they're new, the share is waiting the first time they sign in."}},{"@type":"Question","name":"If someone edits a deck I shared, does mine change too?","acceptedAnswer":{"@type":"Answer","text":"No. Accepting a share creates their own independent copy. They can rewrite every question and run it with their own class; your original is untouched. Equally, edits you make afterwards don't reach a copy you already sent."}},{"@type":"Question","name":"I teach several classes. Can I keep hundreds of decks organised?","acceptedAnswer":{"@type":"Answer","text":"Folders group by class, unit or event, and one folder holds any mix of products — so a lesson's warm-up poll, graded quiz and revision set sit together instead of in four separate tabs. Search looks inside your questions, not just their titles, and finds them wherever they're filed. Pin the ones you run weekly, and archive last term without deleting anything."}},{"@type":"Question","name":"Does it work with Keynote, PowerPoint and PDFs?","acceptedAnswer":{"@type":"Answer","text":"Yes — all of them. PollSlide works alongside any presentation software. Drop the QR code on your slide, and the free Mac companion floats live results over whatever's on your screen — Keynote, PowerPoint, a PDF, even a webpage. You can also show a poll in a separate window or on a second screen."}},{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can create presentations and run live polls for free, no credit card required. Paid plans with higher limits, image hosting and advanced features are coming soon."}},{"@type":"Question","name":"How many people can answer at once?","acceptedAnswer":{"@type":"Answer","text":"PollSlide handles audiences large and small in real time. Whether it's a classroom of 20 or an auditorium of hundreds, responses appear live on your screen as they come in."}},{"@type":"Question","name":"What kinds of questions can I ask?","acceptedAnswer":{"@type":"Answer","text":"Single choice, multiple choice, open text, and rating scales — with quizzes that track correct answers and crown a winner. You can add images and GIFs to your questions and answers, set countdown timers, and choose how results display."}},{"@type":"Question","name":"Is my data private and secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your account and presentations are private to you, protected by secure sign-in. Your audience answers anonymously unless you ask for their name."}}]}</script><!-- /seo:faq -->
+<!-- seo:faq --><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do my audience members need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. They simply scan a QR code with their phone camera and answer right in their browser. Nothing to install, no account to create."}},{"@type":"Question","name":"Can my audience answer in their own language?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each phone shows your questions in the language it is set to, translated live into any of 11 languages, and anyone can switch with the globe. One tap on “See original” shows your exact wording. For wordplay, spelling or language lessons, tick “Keep in original language” on a question and it is never translated."}},{"@type":"Question","name":"Can two of us build the same quiz at the same time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Invite someone to edit and you both work on the same deck, seeing each other's changes as they happen. A question someone is typing into is marked so you can't write over them. You stay the owner throughout, and ending their access takes effect immediately — there's no session to wait out."}},{"@type":"Question","name":"Do we need to be in the same workspace or on the same plan?","acceptedAnswer":{"@type":"Answer","text":"No. That's the point. Collaboration is per-deck, not per-workspace — two people on separate personal plans, at different organisations, can build one quiz together. Your collaborator sees that deck and nothing else in your account."}},{"@type":"Question","name":"Can I share a quiz with a colleague who isn't on my team?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share any poll, survey, quiz or study set with any email address — no shared workspace, no matching plan, and they don't even need a PollSlide account yet. If they're new, the share is waiting the first time they sign in."}},{"@type":"Question","name":"If someone edits a deck I shared, does mine change too?","acceptedAnswer":{"@type":"Answer","text":"No. Accepting a share creates their own independent copy. They can rewrite every question and run it with their own class; your original is untouched. Equally, edits you make afterwards don't reach a copy you already sent."}},{"@type":"Question","name":"I teach several classes. Can I keep hundreds of decks organised?","acceptedAnswer":{"@type":"Answer","text":"Folders group by class, unit or event, and one folder holds any mix of products — so a lesson's warm-up poll, graded quiz and revision set sit together instead of in four separate tabs. Search looks inside your questions, not just their titles, and finds them wherever they're filed. Pin the ones you run weekly, and archive last term without deleting anything."}},{"@type":"Question","name":"Does it work with Keynote, PowerPoint and PDFs?","acceptedAnswer":{"@type":"Answer","text":"Yes — all of them. PollSlide works alongside any presentation software. Drop the QR code on your slide, and the free Mac companion floats live results over whatever's on your screen — Keynote, PowerPoint, a PDF, even a webpage. You can also show a poll in a separate window or on a second screen."}},{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can create presentations and run live polls for free, no credit card required. When you need more, paid plans add unlimited participants and projects, more Polly AI and team workspaces."}},{"@type":"Question","name":"How many people can answer at once?","acceptedAnswer":{"@type":"Answer","text":"PollSlide handles audiences large and small in real time. Whether it's a classroom of 20 or an auditorium of hundreds, responses appear live on your screen as they come in."}},{"@type":"Question","name":"What kinds of questions can I ask?","acceptedAnswer":{"@type":"Answer","text":"Single choice, multiple choice, open text, and rating scales — with quizzes that track correct answers and crown a winner. You can add images and GIFs to your questions and answers, set countdown timers, and choose how results display."}},{"@type":"Question","name":"Is my data private and secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your account and presentations are private to you, protected by secure sign-in. Your audience answers anonymously unless you ask for their name."}}]}</script><!-- /seo:faq -->
 </head>
 <body>
 
@@ -592,6 +648,64 @@
      autoplay + loop + playsinline so it behaves like a moving screenshot on every device;
      `controls` so anyone who wants to scrub or hear it still can. preload="metadata"
      keeps it off the critical path. -->
+<section id="pocket">
+  <div class="container">
+    <div class="section-tag reveal">On their phone</div>
+    <h2 class="section-title reveal">And this is what every phone gets</h2>
+    <p class="section-sub reveal">One scan, and each phone follows you slide by slide — in its own language, with your pictures and video, and with the answer the moment you reveal it.</p>
+
+    <div class="pk-phones reveal" aria-label="Three phones showing a question translated into Spanish, a question with a picture, and the answer after the reveal">
+      <div class="pk-col">
+        <div class="pk-phone"><div class="pk-scr">
+          <div class="pk-top" data-i18n-skip><span class="pk-pill">🌐 Español ▾</span><span class="pk-pill alt">🌐 Ver original</span></div>
+          <div class="pk-qn" data-i18n-skip>Pregunta 3 de 8</div>
+          <div class="pk-q" data-i18n-skip>¿Qué animal tiene tres corazones?</div>
+          <div class="pk-opt" data-i18n-skip><b>A</b>Cangrejo</div>
+          <div class="pk-opt sel" data-i18n-skip><b>B</b>Pulpo</div>
+          <div class="pk-opt" data-i18n-skip><b>C</b>Delfín</div>
+          <div class="pk-opt" data-i18n-skip><b>D</b>Caballito de mar</div>
+        </div></div>
+        <div class="pk-label">In their own language<small>You wrote it in English. This phone is set to Spanish.</small></div>
+      </div>
+      <div class="pk-col">
+        <div class="pk-phone"><div class="pk-scr">
+          <div class="pk-qn">Question 4 of 8</div>
+          <div class="pk-q">Who is this?</div>
+          <div class="pk-media"><span class="e" aria-hidden="true">🐙</span><i>GIF</i></div>
+          <div class="pk-opt"><b>A</b>Squid</div>
+          <div class="pk-opt sel"><b>B</b>Octopus</div>
+          <div class="pk-opt"><b>C</b>Jellyfish</div>
+        </div></div>
+        <div class="pk-label">With your pictures and video<small>The back row sees what the front row sees.</small></div>
+      </div>
+      <div class="pk-col">
+        <div class="pk-phone"><div class="pk-scr">
+          <div class="pk-verdict"><strong>✓ Correct!</strong><span>Answer: B. Octopus</span></div>
+          <div class="pk-opt dim"><b>A</b>Squid</div>
+          <div class="pk-opt ok"><b>B</b>Octopus</div>
+          <div class="pk-opt dim"><b>C</b>Jellyfish</div>
+        </div></div>
+        <div class="pk-label">With the answer, on the spot<small>Correct, partly right or not quite — the moment you reveal.</small></div>
+      </div>
+    </div>
+
+    <div class="pk-stats reveal">
+      <div class="pk-stat"><b>11</b> languages, translated live</div>
+      <div class="pk-stat"><b>0</b> apps to install</div>
+      <div class="pk-stat"><b>1</b> scan, then it follows you</div>
+    </div>
+
+    <div class="pk-grid">
+      <div class="pk-card reveal"><span class="ficon">🌐</span><h3>Their language, automatically</h3><p>Every question appears in the language each phone is set to — English, Spanish, German, French, Portuguese, Italian, Dutch, Japanese, Chinese, Arabic or Hindi. Anyone can switch with the globe.</p></div>
+      <div class="pk-card reveal"><span class="ficon">↩️</span><h3>See original, in one tap</h3><p>Want the exact words you wrote? One tap on “See original” shows the question just as it was presented, and one more tap switches back.</p></div>
+      <div class="pk-card reveal"><span class="ficon">🔒</span><h3>Lock what must not change</h3><p>Wordplay, a spelling test, a language lesson? Tick “Keep in original language” on that question and every phone shows it exactly as you wrote it.</p></div>
+      <div class="pk-card reveal"><span class="ficon">🖼️</span><h3>Your media, in their hand</h3><p>Images, GIFs and video — on the question and on each answer — show right on the phone, so nobody has to squint at the screen.</p></div>
+      <div class="pk-card reveal"><span class="ficon">✅</span><h3>The answer, on their phone</h3><p>When you reveal, each phone shows Correct, Partly right or Not quite, plus the right answer — whether you present from PollSlide or with the Mac companion.</p></div>
+      <div class="pk-card reveal"><span class="ficon">📶</span><h3>Answers survive bad Wi-Fi</h3><p>If the connection drops, the answer is kept on the phone and sent the moment it is back — even if they close the tab. You can see who sent late.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="see-it" style="padding:10px 0 56px;">
   <div class="container" style="text-align:center;">
     <div class="section-tag reveal">See it in 30 seconds</div>
@@ -754,9 +868,11 @@
       <div class="feat reveal"><span class="ficon">📤</span><h3>Share with anyone</h3><p>Send any deck to a colleague by email — on your team or not. They get their own copy to edit; yours never changes.</p></div>
       <div class="feat reveal"><span class="ficon">📁</span><h3>Folders &amp; search</h3><p>Group a whole lesson together whatever its type, pin what you run weekly, and search inside your questions — not just their titles.</p></div>
       <div class="feat reveal"><span class="ficon">👥</span><h3>Team workspaces</h3><p>Invite your team with roles and a shared library — admin panel and seats included.</p></div>
+      <div class="feat reveal"><span class="ficon">🍻</span><h3>Team play</h3><p>Switch on teams for a pub quiz or a class contest — everyone picks or starts a team as they join, and every answer counts for their team.</p></div>
+      <div class="feat reveal"><span class="ficon">🎓</span><h3>Class rosters &amp; gradebook</h3><p>Students pick their name from your class list and confirm it with a PIN, class code or email. Export one row per student, ready for Google Classroom or Canvas.</p></div>
       <div class="feat reveal"><span class="ficon">🛡️</span><h3>Classroom-safe</h3><p>Built-in profanity filtering keeps open text and Q&amp;A clean, automatically.</p></div>
       <div class="feat reveal"><span class="ficon">📱</span><h3>No app required</h3><p>Your audience just scans a QR code. Works on any phone, instantly.</p></div>
-      <div class="feat reveal"><span class="ficon">🖥️</span><h3>Runs over any deck</h3><p>Three ways to go live — present from PollSlide itself, from PowerPoint with our add-in, or over any app with the Mac companion. See the three paths below.</p></div>
+      <div class="feat reveal"><span class="ficon">🖥️</span><h3>Runs over any deck</h3><p>Two ways to go live today — present from PollSlide itself, or over any app with the Mac companion. Our PowerPoint add-in is in review with Microsoft. See the paths below.</p></div>
     </div>
   </div>
 </section>
@@ -1028,6 +1144,12 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Can my audience answer in their own language?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes. Each phone shows your questions in the language it is set to, translated live into any of 11 languages, and anyone can switch with the globe. One tap on “See original” shows your exact wording. For wordplay, spelling or language lessons, tick “Keep in original language” on a question and it is never translated.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
           <span>Can two of us build the same quiz at the same time?</span><span class="faq-icon">+</span>
         </button>
         <div class="faq-a"><p>Yes. Invite someone to edit and you both work on the same deck, seeing each other's changes as they happen. A question someone is typing into is marked so you can't write over them. You stay the owner throughout, and ending their access takes effect immediately — there's no session to wait out.</p></div>
@@ -1066,7 +1188,7 @@
         <button class="faq-q" onclick="toggleFaq(this)">
           <span>Is it really free?</span><span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>Yes — you can create presentations and run live polls for free, no credit card required. Paid plans with higher limits, image hosting and advanced features are coming soon.</p></div>
+        <div class="faq-a"><p>Yes — you can create presentations and run live polls for free, no credit card required. When you need more, paid plans add unlimited participants and projects, more Polly AI and team workspaces.</p></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -1309,7 +1431,7 @@
 })();
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
-<script src="/translations.js?v=60e35756"></script>
+<script src="/translations.js?v=812e2a29"></script>
 <script src="/companion-i18n.js?v=a8d4204e"></script>
 <script src="/i18n.js?v=bd0a8538"></script>
 <script src="/announce.js?v=9eb8a27d"></script>
