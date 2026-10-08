@@ -499,7 +499,7 @@ function buildPlans(){
       '<div class="price-note">'+noteHTML+'</div>'+
       (p.onclick
         ? '<button type="button" onclick="'+p.onclick+'" class="plan-cta '+p.ctaClass+'">'+p.cta+'</button>'
-        : '<a href="'+p.url+'" class="plan-cta '+p.ctaClass+'">'+p.cta+'</a>')+
+        : '<a href='+JSON.stringify(p.url)+' class="plan-cta '+p.ctaClass+'">'+p.cta+'</a>')+
       '<div class="divider"></div>'+
       '<ul class="features-list">'+featHTML+'</ul>';
     g.appendChild(card);
