@@ -11,7 +11,8 @@ PollSlide is one suite of products on the same account:
 - **PresentSlide** — import a deck (PDF or images) and present it from PollSlide, with live polls, quizzes and reveals built in.
 
 On the audience's phone:
-- Questions appear in the language each phone is set to, translated live into 11 languages (English, Spanish, German, French, Portuguese, Italian, Dutch, Japanese, Chinese, Arabic, Hindi); a "See original" tap shows the exact wording, and the presenter can keep any question in its original language.
+- Questions and answer options appear in the language each phone is set to, translated live into 11 languages (English, Spanish, German, French, Portuguese, Italian, Dutch, Japanese, Chinese, Arabic, Hindi); a "See original" tap shows the exact wording, and the presenter can keep any question in its original language.
+- The phone's buttons, the website and the PollSlide app itself are available in 6 languages: English, Spanish, German, French, Portuguese and Italian.
 - Images, GIFs and video on questions and answers show on the phone.
 - After the reveal, each phone shows Correct / Partly right / Not quite plus the right answer.
 - Answers are kept and re-sent if the connection drops; team play, class rosters with PIN/code/email check-in, and a gradebook export are built in.
