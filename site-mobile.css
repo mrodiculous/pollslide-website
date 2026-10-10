@@ -1,0 +1,19 @@
+/* PollSlide site — phone-width fixes shared by every page (2026-10-10).
+   The top nav (logo + language picker + theme button + Try Free) was ~470px wide, so 23 of
+   40 pages scrolled sideways on a phone. Measured at 320/360/390px in Chromium after this
+   file: no page is wider than the screen. !important because each page carries its own
+   inline <style>, which may load before or after this file. */
+@media (max-width: 640px) {
+  .nav-inner { padding: 0 16px !important; }
+  .nav-links { gap: 8px !important; }
+  #langSelWrap select { max-width: 84px !important; }
+  .nav-links .btn { padding: 8px 13px !important; }
+  .nav-links .theme-btn { display: none !important; }   /* the saved theme still applies */
+}
+@media (max-width: 380px) {
+  .nav-inner .logo { font-size: 0 !important; gap: 0 !important; }   /* keep the mark, drop the word */
+}
+/* Decorative glows sit partly off-screen on purpose; clip (not hidden) keeps sticky navs working. */
+html, body { overflow-x: clip; }
+/* Nav labels never break mid-label ("Wie es / funktioniert"), at any width or language. */
+.nav-links > a, .nav-links .btn { white-space: nowrap; }

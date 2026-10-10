@@ -130,7 +130,16 @@
       if (isCuratedOrSkipped(node)) return;
       if (node._psOrig === undefined) node._psOrig = raw;      // pristine English (with whitespace) — captured once
       const orig = node._psOrig, trimmed = orig.trim();
-      const outTrim = (l !== 'en' && auto && auto[trimmed] != null) ? auto[trimmed] : trimmed;
+      /* A button name in bold (help steps: "click <b>📤 Share a copy…</b>") uses the APP's own
+         translation when the page loaded it (help.html loads app ui-lang.js), so the help says
+         exactly what the button on screen says. 2026-10-10. */
+      const ui = (l !== 'en' && window.PS_UI && window.PS_UI[l]) || null;
+      const inBold = node.parentElement && node.parentElement.tagName === 'B';
+      /* The app often keys a menu item without its icon ("Share a copy…" for "📤 Share a copy…"). */
+      const lead = (trimmed.match(/^[^\p{L}\p{N}]+/u) || [''])[0], bare = trimmed.slice(lead.length);
+      const uiHit = inBold && ui ? (ui[trimmed] != null ? ui[trimmed] : (lead && ui[bare] != null ? lead + ui[bare] : null)) : null;
+      const outTrim = uiHit != null ? uiHit
+                    : (l !== 'en' && auto && auto[trimmed] != null) ? auto[trimmed] : trimmed;
       node.nodeValue = orig.replace(trimmed, outTrim);          // string arg = literal, preserves surrounding whitespace
     });
   }
