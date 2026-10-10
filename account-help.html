@@ -166,7 +166,7 @@ const GS_NAMES = { en:'English', es:'Español', de:'Deutsch', fr:'Français', pt
 const GS_CH = { intro:'Welcome', open:'Open Account settings', password:'Change your password', email:'Change your email', confirm:'Confirm the new address', data:'Download your data', delete:'Delete your account' };
 let gsScenes = {}, gsLang = null;
 function gsSeek(t){const v=document.getElementById('gsVideo');v.currentTime=t;v.play().catch(()=>{});}
-function gsT(s){ const d=(window.PS_I18N||{})[gsLang]||{}; return d[s]||s; }
+function gsT(s){ /* the page's language, even when the video is in another */ const l=(document.documentElement.lang||'en').slice(0,2); const d=(window.PS_I18N||{})[l]||{}; return d[s]||s; }
 function gsChapters(){
   const el=document.getElementById('gsChapters'); const sc=gsScenes[gsLang]||gsScenes.en||[];
   const fmt=t=>Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');
@@ -174,7 +174,7 @@ function gsChapters(){
 }
 function gsPick(){
   const l=(document.documentElement.lang||'en').slice(0,2); const lang=GS_LANGS.includes(l)?l:'en';
-  if(lang===gsLang) return; gsLang=lang;
+  if(lang===gsLang){ gsChapters(); return; } gsLang=lang;
   const v=document.getElementById('gsVideo'); const base='/videos/account-settings'+(lang==='en'?'':'-'+lang);
   v.pause();
   v.querySelector('source').src=base+'.mp4';
@@ -191,7 +191,7 @@ new MutationObserver(gsPick).observe(document.documentElement,{attributes:true,a
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
 <script src="/translations.js?v=0f11a226"></script>
-<script src="/i18n.js?v=1349b3e7"></script>
+<script src="/i18n.js?v=ed167c5a"></script>
 <script src="/announce.js?v=9eb8a27d"></script>
 <script src="/wow.js?v=423ef466"></script>
 </body>

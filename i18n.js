@@ -7,8 +7,37 @@
      or data-i18n-ph="key" (placeholder). English originals stay in the markup as the fallback.
 */
 (function () {
-  const NAMES = { en: 'English', es: 'Español', de: 'Deutsch', fr: 'Français', pt: 'Português', it: 'Italiano' };
+  const NAMES = { en: 'English', es: 'Español', de: 'Deutsch', fr: 'Français', pt: 'Português', it: 'Italiano',
+                  nl: 'Nederlands' };
   const SUP = Object.keys(NAMES);
+  /* Languages added 2026-10-11 so the site speaks the same eleven as the app. Each one lives in
+     its own file (i18n-<lang>.js, ~0.5 MB) and is fetched only when someone reads the site in it,
+     so English and the first five download nothing extra. The value is that file's ?v= — the
+     content hash, kept in step by the app repo's scripts/qa-site-assets.js like every other. */
+  const LAZY = { nl: 'ec904ea4' };
+  const lazyState = {};   // lang → 'loading' | 'ready' | 'failed'
+  function ensureLang(l, then) {
+    if (!LAZY[l] || lazyState[l] === 'ready' || (window.PS_I18N && window.PS_I18N[l] && window.PS_I18N_CURATED && window.PS_I18N_CURATED[l])) { lazyState[l] = 'ready'; then(); return; }
+    if (lazyState[l] === 'loading') return;      // the onload below applies whatever is current
+    lazyState[l] = 'loading';
+    const sc = document.createElement('script');
+    sc.src = '/i18n-' + l + '.js?v=' + LAZY[l];
+    sc.onload = () => { lazyState[l] = 'ready'; if (lang === l) reapply(); };
+    sc.onerror = () => { lazyState[l] = 'failed'; };   // the page simply stays in English
+    (document.head || document.documentElement).appendChild(sc);
+  }
+  /* Arabic reads right to left. As in the app, the layout is not mirrored; each block of text
+     takes its direction from its own first letter, so Arabic runs right to left while a brand
+     name, a code or a URL beside it stays left to right. */
+  function textDir(l) {
+    const d = document, id = 'ps-site-rtl';
+    if (l === 'ar' && !d.getElementById(id)) {
+      const st = d.createElement('style'); st.id = id;
+      st.textContent = 'html.ps-rtl-text body *{unicode-bidi:plaintext}html.ps-rtl-text input,html.ps-rtl-text textarea{text-align:start}';
+      (d.head || d.documentElement).appendChild(st);
+    }
+    d.documentElement.classList.toggle('ps-rtl-text', l === 'ar');
+  }
 
   const I18N = {
     en: {
@@ -212,7 +241,18 @@
     "Connection error. Check your internet.": "Errore di connessione. Controlla la connessione a Internet."
     }
     };
-  const Q = { es: ['«', '»'], de: ['„', '“'], fr: ['« ', ' »'], pt: ['«', '»'], it: ['«', '»'] };
+  /* The Mac app speaks nl/ja/zh/ar/hi from 1.3.6. Only the two labels whose exact wording is
+     confirmed (quoted by the app's own help text in ui-lang.js) are listed; the rest stay
+     English rather than risk naming a menu item that isn't on the screen (2026-10-11). */
+  Object.assign(APP_LABELS, {
+    nl: { 'Disconnect Account (Re-pair)': 'Account ontkoppelen (opnieuw koppelen)', 'Connect to PollSlide': 'Verbinden met PollSlide' },
+    ja: { 'Disconnect Account (Re-pair)': 'アカウントの接続を解除（再接続）', 'Connect to PollSlide': 'PollSlide に接続' },
+    zh: { 'Disconnect Account (Re-pair)': '断开账户（重新配对）', 'Connect to PollSlide': '连接到 PollSlide' },
+    ar: { 'Disconnect Account (Re-pair)': 'قطع اتصال الحساب (إعادة الربط)', 'Connect to PollSlide': 'الاتصال بـ PollSlide' },
+    hi: { 'Disconnect Account (Re-pair)': 'खाता डिस्कनेक्ट करें (फिर से जोड़ें)', 'Connect to PollSlide': 'PollSlide से कनेक्ट करें' }
+  });
+  const Q = { es: ['«', '»'], de: ['„', '“'], fr: ['« ', ' »'], pt: ['«', '»'], it: ['«', '»'],
+              nl: ['“', '”'], ja: ['「', '」'], zh: ['“', '”'], ar: ['"', '"'], hi: ['“', '”'] };
   function appLabels(l) {
     document.querySelectorAll('[data-i18n-skip]').forEach(el => {
       if (el.children.length) return;
@@ -230,7 +270,9 @@
   function apply(l) {
     lang = l;
     document.documentElement.lang = l;
-    const dict = I18N[l] || {}, en = I18N.en;
+    textDir(l);
+    if (LAZY[l] && lazyState[l] !== 'ready') ensureLang(l, () => {});   // apply() runs again on load
+    const dict = I18N[l] || (window.PS_I18N_CURATED && window.PS_I18N_CURATED[l]) || {}, en = I18N.en;
     // External keyed dictionaries (e.g. legal-body-translations.js) merge in here, so
     // long block-level content lives in its own file instead of bloating i18n.js.
     const ext = (window.PS_I18N_KEYS && window.PS_I18N_KEYS[l]) || {};
