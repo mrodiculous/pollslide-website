@@ -73,13 +73,15 @@
   @media(max-width:640px){.nav-links a:not(.btn):not(#langSelWrap){display:none;}}
   .tpl{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin:20px 0;} .tpl h3{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;margin-bottom:6px;} .tpl .meta{font-size:12.5px;color:var(--muted);margin-bottom:14px;} .tpl ol,.tpl ul{margin-left:20px;font-size:14.5px;} .tpl li{margin-bottom:8px;}
 </style>
+<link rel="stylesheet" href="/site-mobile.css?v=915b0706">
 </head>
 <body>
 
 <nav><div class="nav-inner">
   <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
   <div class="nav-links">
-    <a href="/#features" data-i18n="nav.features">Features</a>
+    <a href="/features" data-i18n="nav.features">Features</a>
+    <a href="/teams">For teams</a>
     <a href="/blog">Blog</a>
     <a href="/study-games">Study</a>
     <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
@@ -205,7 +207,7 @@ function toggleTheme(){document.body.classList.toggle('light');localStorage.setI
 if(localStorage.getItem('ps_theme')==='light'){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
 </script>
 <script src="/consent.js?v=73cc2b90"></script>
-<script src="/translations.js?v=4ddf196e"></script>
+<script src="/translations.js?v=c016b91d"></script>
 <script src="/i18n.js?v=bd0a8538"></script>
 <script src="/announce.js?v=9eb8a27d"></script>
 <script src="/wow.js?v=423ef466"></script>

@@ -40,6 +40,8 @@ Polly, the built-in AI, drafts questions from a topic or from your own material 
 
 ## Guides
 - [Getting started (2-minute video)](https://pollslide.com/getting-started)
+- [Features](https://pollslide.com/features): every PollSlide feature, grouped by job, each linked to its guide
+- [PollSlide for teams](https://pollslide.com/teams): step-by-step recipes for new-employee onboarding, weekly online meetings (Zoom, Microsoft Teams, Google Meet) and keeping an audience engaged and accountable
 - [Help center](https://pollslide.com/help): step-by-step guides
 - [How to run a pub quiz](https://pollslide.com/how-to-run-a-pub-quiz)
 - [Free poll and quiz question templates](https://pollslide.com/free-templates)

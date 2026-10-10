@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PollSlide for teams — onboarding, online meetings, engagement</title>
+<meta name="description" content="How teams use PollSlide to speed up new-employee onboarding, run weekly online meetings people actually join in, and keep an audience engaged and accountable — step by step.">
+<link rel="canonical" href="https://pollslide.com/teams">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PollSlide">
+<meta property="og:url" content="https://pollslide.com/teams">
+<meta property="og:title" content="PollSlide for teams">
+<meta property="og:description" content="Onboard new people faster, run better online meetings, and keep everyone engaged and accountable.">
+<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PollSlide for teams">
+<meta name="twitter:description" content="Onboard new people faster, run better online meetings, and keep everyone engaged and accountable.">
+<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<link href="/fonts/fonts.css?v=9f799e41" rel="stylesheet">
+<style>
+  :root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+    --accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+  body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.14);--text:#15152a;--muted:#5a5a78;}
+  body,body *{transition:background-color .3s,border-color .3s,color .3s;}*{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}.wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .nav-links{display:flex;align-items:center;gap:20px;font-size:14.5px;font-weight:500;}
+  .nav-links a{color:var(--muted);}.nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;}
+  .btn:hover{background:var(--accent-l);}
+  .btn-lg{padding:15px 30px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);}
+  #langSelWrap select{max-width:112px;}
+  .hero{padding:56px 0 8px;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;}
+  .hero p.lead{color:var(--muted);font-size:clamp(16px,2vw,18px);margin-bottom:8px;}
+  .byline{color:var(--muted);font-size:13px;margin-bottom:30px;padding-bottom:26px;border-bottom:1px solid var(--border);}
+  article h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(20px,2.8vw,26px);margin:40px 0 12px;letter-spacing:-.01em;}
+  article h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:22px 0 8px;}
+  article p{margin-bottom:14px;font-size:15.5px;}
+  article ul,article ol{margin:0 0 16px 22px;font-size:15.5px;}
+  article li{margin-bottom:7px;}
+  article strong{color:var(--text);}
+  .callout{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 18px;margin:20px 0;font-size:14.5px;color:var(--muted);}
+  .callout b{color:var(--text);}
+  .checklist{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:6px 20px;margin:20px 0;}
+  .checklist li{list-style:none;position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--border);}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{content:'☐';color:var(--accent);position:absolute;left:0;top:10px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:17px 19px;}
+  .card h4{font-family:'Syne',sans-serif;font-size:15px;margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:13.5px;}
+  .sec{padding:30px 0;}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  summary{cursor:pointer;font-weight:600;font-size:15px;}
+  details p{color:var(--muted);font-size:14px;margin-top:8px;}
+  .final{text-align:center;padding:46px 0 56px;border-top:1px solid var(--border);margin-top:20px;}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;}
+  footer{border-top:1px solid var(--border);padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
+  footer .wrap{max-width:1080px;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media(max-width:640px){.nav-links a:not(.btn):not(#langSelWrap){display:none;}}
+
+  .player{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border2);background:#000;box-shadow:0 24px 60px rgba(0,0,0,.45);margin:8px 0 18px;}
+  .player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;}
+  .chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:6px 0 26px;}
+  .chapters button{display:flex;gap:10px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 13px;color:var(--text);font:500 14px 'DM Sans',sans-serif;cursor:pointer;}
+  .chapters button:hover{border-color:var(--accent);}
+  .chapters b{font:700 12px 'DM Sans',sans-serif;color:var(--accent-l);min-width:34px;}
+  .steps-list{counter-reset:s;list-style:none;margin:0 0 18px 0 !important;}
+  .steps-list li{counter-increment:s;position:relative;padding:14px 16px 14px 56px;background:var(--surface);border:1px solid var(--border);border-radius:13px;margin-bottom:10px !important;}
+  .steps-list li::before{content:counter(s);position:absolute;left:14px;top:13px;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font:800 14px 'Syne',sans-serif;display:grid;place-items:center;}
+</style>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+<link rel="stylesheet" href="/consent-mobile.css?v=c60e4fd2">
+<link rel="stylesheet" href="/site-mobile.css?v=915b0706">
+<style>
+  .jump{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px;}
+  .jump a{background:var(--surface);border:1px solid var(--border2);border-radius:100px;padding:7px 14px;font-size:13.5px;font-weight:600;color:var(--text);}
+  .jump a:hover{border-color:var(--accent);}
+  .group{padding:34px 0 6px;border-top:1px solid var(--border);margin-top:22px;scroll-margin-top:76px;}
+  main .group:first-child,main article>.group:first-child{border-top:none;margin-top:0;padding-top:12px;}
+  .group h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(22px,3vw,28px);letter-spacing:-.01em;margin-bottom:6px;}
+  .group .sub{color:var(--muted);font-size:15.5px;margin-bottom:16px;max-width:680px;}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;}
+  .feat{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;color:var(--text);}
+  a.feat:hover{border-color:var(--accent);}
+  .feat .ic{font-size:22px;line-height:1;margin-bottom:9px;}
+  .feat h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;}
+  .feat p{color:var(--muted);font-size:14px;line-height:1.55;flex:1;}
+  .feat .more{color:var(--accent-l);font-size:13px;font-weight:600;margin-top:10px;}
+  .usecases{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:14px;}
+  .uc{background:linear-gradient(135deg,rgba(108,99,255,.14),rgba(255,101,132,.08));border:1px solid var(--border2);border-radius:16px;padding:20px;color:var(--text);display:block;}
+  .uc:hover{border-color:var(--accent);}
+  .uc .ic{font-size:26px;}
+  .uc h3{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin:8px 0 6px;}
+  .uc p{color:var(--muted);font-size:14.5px;}
+  .uc .more{color:var(--accent-l);font-weight:700;font-size:14px;margin-top:10px;display:block;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent4);background:rgba(247,183,49,.12);border:1px solid rgba(247,183,49,.3);border-radius:100px;padding:2px 9px;margin-top:8px;align-self:flex-start;}
+  article.wide{max-width:760px;}
+  @media(max-width:640px){.wrap{padding:0 16px;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
+  <div class="nav-links">
+    <a href="/features" data-i18n="nav.features">Features</a>
+    <a href="/teams">For teams</a>
+    <a href="/study-games">Study</a>
+    <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="/help" data-i18n="nav.help">Help</a>
+    <span id="langSelWrap"></span>
+    <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/presenter" class="btn">Try Free</a>
+  </div>
+</div></nav>
+<header class="hero"><div class="wrap"><article class="wide">
+  <div class="eyebrow">PollSlide for teams</div>
+  <h1>Onboard faster. Run better meetings. Keep everyone with you.</h1>
+  <p class="lead">Three ways teams use PollSlide every week, with the exact steps, so you can copy them on Monday.</p>
+  <div class="jump" role="navigation" aria-label="On this page">
+    <a href="#onboarding">🚀 Onboarding</a>
+    <a href="#meetings">💻 Online meetings</a>
+    <a href="#accountable">🙋 Engaged and accountable</a>
+  </div>
+</article></div></header>
+<main class="wrap"><article class="wide">
+<section class="group" id="onboarding">
+  <h2>🚀 Speed up new-employee onboarding</h2>
+  <p class="sub">Most onboarding is a lot of talking and a hope that it stuck. PollSlide turns it into a conversation you can measure.</p>
+  <ol class="steps-list">
+    <li>Paste your handbook, a policy or your slides into Polly and ask for a quiz. It drafts the questions in seconds. Read them and fix anything before anyone sees them.</li>
+    <li>Add your new starters as a list, once. In PollSlide this is called a class, and from then on every answer is recorded by person.</li>
+    <li>Run it live in their first-week session, or send the link so they answer in their own time.</li>
+    <li>Allow a second attempt if you want them to learn rather than just pass, and choose which try counts.</li>
+    <li>Turn the same deck into a study set. Spaced repetition brings back the cards each person keeps missing.</li>
+    <li>Open the results and Progress over time to see who has it, and who needs a quick conversation.</li>
+  </ol>
+  <div class="callout">Tip: keep one onboarding deck in your team’s shared library. Each manager takes a copy, so every new group gets the same questions and its own results.</div>
+</section>
+<section class="group" id="meetings">
+  <h2>💻 Weekly meetings online: Zoom, Microsoft Teams, Google Meet</h2>
+  <p class="sub">Online meetings lose people fastest. A question every few minutes brings them back.</p>
+  <ol class="steps-list">
+    <li>Share your screen with PollSlide’s present mode. The QR code and the join code are on the slide.</li>
+    <li>People scan the code with their phone, or go to pollslide.com/join and type it in. There is nothing to install.</li>
+    <li>Open with a one-word check-in. AI Insights reads every answer and shows you the mood and the themes in seconds.</li>
+    <li>Keep Audience Q&amp;A open, so questions arrive during the meeting and the most-wanted ones rise to the top.</li>
+    <li>When the room splits, the live co-pilot suggests a follow-up question you can put on screen with one click.</li>
+    <li>Afterwards, send the recap link, so anyone who missed it can catch up.</li>
+  </ol>
+  <div class="callout">Same meeting every week? Keep the deck in your team library and take a fresh copy each week, so every meeting has its own results.</div>
+</section>
+<section class="group" id="accountable">
+  <h2>🙋 Keep people engaged, and accountable</h2>
+  <p class="sub">Attention is easier to keep when people know their answer counts.</p>
+  <div class="fgrid">
+    <div class="feat"><span class="ic" aria-hidden="true">👤</span><h3>Names, not just numbers</h3><p>With a list, every answer belongs to a person, so you know exactly who took part.</p></div>
+    <div class="feat"><span class="ic" aria-hidden="true">👁</span><h3>Know if someone drifts</h3><p>For a graded quiz, you are told when someone switches away from the screen, and so are they.</p></div>
+    <div class="feat"><span class="ic" aria-hidden="true">🏆</span><h3>A reason to pay attention</h3><p>Game modes, team play and leaderboards turn a check-in into something people want to win.</p></div>
+    <div class="feat"><span class="ic" aria-hidden="true">📶</span><h3>Nothing lost on bad wifi</h3><p>Answers wait on the phone and send themselves when the connection comes back.</p></div>
+    <div class="feat"><span class="ic" aria-hidden="true">📊</span><h3>Evidence afterwards</h3><p>Download the results as a spreadsheet, or a gradebook with one row per person.</p></div>
+    <div class="feat"><span class="ic" aria-hidden="true">📈</span><h3>Managers see usage, not answers</h3><p>Team analytics count decks, sessions and responses. Never what anyone answered.</p></div>
+  </div>
+</section>
+<section class="group" id="faq">
+  <h2>Questions teams ask</h2>
+  <details><summary>Do people need to install anything?</summary><p>No. They scan the QR code, or type the code at pollslide.com/join, and answer in their browser.</p></details>
+  <details><summary>Does it work with Zoom, Microsoft Teams and Google Meet?</summary><p>Yes. Share your screen with PollSlide’s present mode. People join from their phone, or from a second browser tab on their computer.</p></details>
+  <details><summary>Can a manager see what each person answered?</summary><p>Team usage analytics show counts only. Whoever runs a deck sees its results, as with any poll or quiz they run themselves.</p></details>
+  <details><summary>Which plan do I need?</summary><p>You can start on the Free plan. The shared team library and usage analytics come with Team plans, and the pricing page lists exactly what each plan includes.</p></details>
+</section>
+</article>
+<section class="final">
+  <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(22px,3vw,30px);margin-bottom:10px;">Try it on your next meeting</h2>
+  <p style="color:var(--muted);margin-bottom:20px;">Free to start. No card, and nothing for your audience to install.</p>
+  <div class="cta-row"><a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free →</a><a href="/features" class="btn btn-lg btn-ghost">See every feature</a></div>
+</section>
+</main>
+<footer><div class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
+    <a href="/">Home</a><a href="/features">Features</a><a href="/teams">For teams</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
+  </div>
+  <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
+</div></footer>
+
+<script>
+document.getElementById('footYr').textContent=new Date().getFullYear();
+function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('ps_theme',document.body.classList.contains('light')?'light':'dark');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';}
+if(localStorage.getItem('ps_theme')==='light'){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+</script>
+<script src="/consent.js?v=73cc2b90"></script>
+<script src="/translations.js?v=c016b91d"></script>
+<script src="/i18n.js?v=bd0a8538"></script>
+<script src="/announce.js?v=9eb8a27d"></script>
+<script src="/wow.js?v=423ef466"></script>
+</body>
+</html>

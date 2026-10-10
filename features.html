@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — everything PollSlide does</title>
+<meta name="description" content="Everything PollSlide does — live polls, surveys, quizzes, study sets, game modes, Polly AI, named answers, team libraries and 11 languages — with a link to how each one works.">
+<link rel="canonical" href="https://pollslide.com/features">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PollSlide">
+<meta property="og:url" content="https://pollslide.com/features">
+<meta property="og:title" content="Every PollSlide feature, in one place">
+<meta property="og:description" content="Polls, surveys, quizzes and study sets, Polly AI, game modes, team tools and 11 languages — every feature with a link to how it works.">
+<meta property="og:image" content="https://pollslide.com/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Every PollSlide feature, in one place">
+<meta name="twitter:description" content="Polls, surveys, quizzes and study sets, Polly AI, game modes, team tools and 11 languages — every feature with a link to how it works.">
+<meta name="twitter:image" content="https://pollslide.com/og-image.png">
+<link href="/fonts/fonts.css?v=9f799e41" rel="stylesheet">
+<style>
+  :root{--bg:#07070f;--bg2:#0d0d18;--surface:#13131f;--surface2:#1a1a2c;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+    --accent:#6c63ff;--accent-l:#8b84ff;--accent2:#ff6584;--accent3:#43e97b;--accent4:#f7b731;--text:#f4f4fc;--muted:#9090b8;}
+  body.light{--bg:#fff;--bg2:#f6f7fb;--surface:#fff;--surface2:#f0f2f8;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.14);--text:#15152a;--muted:#5a5a78;}
+  body,body *{transition:background-color .3s,border-color .3s,color .3s;}*{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}.wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,7,15,.7);border-bottom:1px solid var(--border);}
+  body.light nav{background:rgba(255,255,255,.82);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px;}
+  .nav-links{display:flex;align-items:center;gap:20px;font-size:14.5px;font-weight:500;}
+  .nav-links a{color:var(--muted);}.nav-links a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;border:none;cursor:pointer;background:var(--accent);color:#fff;}
+  .btn:hover{background:var(--accent-l);}
+  .btn-lg{padding:15px 30px;font-size:16px;border-radius:13px;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+  .theme-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;width:38px;height:38px;cursor:pointer;font-size:16px;color:var(--text);}
+  #langSelWrap select{max-width:112px;}
+  .hero{padding:56px 0 8px;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;}
+  .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;}
+  .hero p.lead{color:var(--muted);font-size:clamp(16px,2vw,18px);margin-bottom:8px;}
+  .byline{color:var(--muted);font-size:13px;margin-bottom:30px;padding-bottom:26px;border-bottom:1px solid var(--border);}
+  article h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(20px,2.8vw,26px);margin:40px 0 12px;letter-spacing:-.01em;}
+  article h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin:22px 0 8px;}
+  article p{margin-bottom:14px;font-size:15.5px;}
+  article ul,article ol{margin:0 0 16px 22px;font-size:15.5px;}
+  article li{margin-bottom:7px;}
+  article strong{color:var(--text);}
+  .callout{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 18px;margin:20px 0;font-size:14.5px;color:var(--muted);}
+  .callout b{color:var(--text);}
+  .checklist{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:6px 20px;margin:20px 0;}
+  .checklist li{list-style:none;position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--border);}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{content:'☐';color:var(--accent);position:absolute;left:0;top:10px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:17px 19px;}
+  .card h4{font-family:'Syne',sans-serif;font-size:15px;margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:13.5px;}
+  .sec{padding:30px 0;}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px 16px;margin-bottom:9px;}
+  summary{cursor:pointer;font-weight:600;font-size:15px;}
+  details p{color:var(--muted);font-size:14px;margin-top:8px;}
+  .final{text-align:center;padding:46px 0 56px;border-top:1px solid var(--border);margin-top:20px;}
+  .cta-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;}
+  footer{border-top:1px solid var(--border);padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
+  footer .wrap{max-width:1080px;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+  @media(max-width:640px){.nav-links a:not(.btn):not(#langSelWrap){display:none;}}
+
+  .player{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border2);background:#000;box-shadow:0 24px 60px rgba(0,0,0,.45);margin:8px 0 18px;}
+  .player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;}
+  .chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:6px 0 26px;}
+  .chapters button{display:flex;gap:10px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 13px;color:var(--text);font:500 14px 'DM Sans',sans-serif;cursor:pointer;}
+  .chapters button:hover{border-color:var(--accent);}
+  .chapters b{font:700 12px 'DM Sans',sans-serif;color:var(--accent-l);min-width:34px;}
+  .steps-list{counter-reset:s;list-style:none;margin:0 0 18px 0 !important;}
+  .steps-list li{counter-increment:s;position:relative;padding:14px 16px 14px 56px;background:var(--surface);border:1px solid var(--border);border-radius:13px;margin-bottom:10px !important;}
+  .steps-list li::before{content:counter(s);position:absolute;left:14px;top:13px;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font:800 14px 'Syne',sans-serif;display:grid;place-items:center;}
+</style>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+<link rel="stylesheet" href="/consent-mobile.css?v=c60e4fd2">
+<link rel="stylesheet" href="/site-mobile.css?v=915b0706">
+<style>
+  .jump{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px;}
+  .jump a{background:var(--surface);border:1px solid var(--border2);border-radius:100px;padding:7px 14px;font-size:13.5px;font-weight:600;color:var(--text);}
+  .jump a:hover{border-color:var(--accent);}
+  .group{padding:34px 0 6px;border-top:1px solid var(--border);margin-top:22px;scroll-margin-top:76px;}
+  main .group:first-child,main article>.group:first-child{border-top:none;margin-top:0;padding-top:12px;}
+  .group h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(22px,3vw,28px);letter-spacing:-.01em;margin-bottom:6px;}
+  .group .sub{color:var(--muted);font-size:15.5px;margin-bottom:16px;max-width:680px;}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;}
+  .feat{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;color:var(--text);}
+  a.feat:hover{border-color:var(--accent);}
+  .feat .ic{font-size:22px;line-height:1;margin-bottom:9px;}
+  .feat h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px;}
+  .feat p{color:var(--muted);font-size:14px;line-height:1.55;flex:1;}
+  .feat .more{color:var(--accent-l);font-size:13px;font-weight:600;margin-top:10px;}
+  .usecases{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:14px;}
+  .uc{background:linear-gradient(135deg,rgba(108,99,255,.14),rgba(255,101,132,.08));border:1px solid var(--border2);border-radius:16px;padding:20px;color:var(--text);display:block;}
+  .uc:hover{border-color:var(--accent);}
+  .uc .ic{font-size:26px;}
+  .uc h3{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin:8px 0 6px;}
+  .uc p{color:var(--muted);font-size:14.5px;}
+  .uc .more{color:var(--accent-l);font-weight:700;font-size:14px;margin-top:10px;display:block;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent4);background:rgba(247,183,49,.12);border:1px solid rgba(247,183,49,.3);border-radius:100px;padding:2px 9px;margin-top:8px;align-self:flex-start;}
+  article.wide{max-width:760px;}
+  @media(max-width:640px){.wrap{padding:0 16px;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22"><rect width="100" height="100" rx="22" fill="#0d0d18"/><rect x="18" y="58" width="16" height="24" rx="4" fill="#ff6584"/><rect x="42" y="42" width="16" height="40" rx="4" fill="#f7b731"/><rect x="66" y="22" width="16" height="60" rx="4" fill="#6c63ff"/></svg>PollSlide</a>
+  <div class="nav-links">
+    <a href="/features" data-i18n="nav.features">Features</a>
+    <a href="/teams">For teams</a>
+    <a href="/study-games">Study</a>
+    <a href="/pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="/help" data-i18n="nav.help">Help</a>
+    <span id="langSelWrap"></span>
+    <button onclick="toggleTheme()" id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    <a href="https://app.pollslide.com/presenter" class="btn">Try Free</a>
+  </div>
+</div></nav>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Features</div>
+  <h1>Everything PollSlide does</h1>
+  <p class="lead">Every feature in one place, grouped by what you are trying to do. Each card links to the step-by-step guide.</p>
+  <div class="jump" role="navigation" aria-label="Feature groups">
+    <a href="#ask">🗳️ Ask</a>
+    <a href="#present">⛶ Present</a>
+    <a href="#engage">🎮 Engage</a>
+    <a href="#ai">✨ Polly AI</a>
+    <a href="#accountable">✅ Know who is with you</a>
+    <a href="#teams">🤝 Work as a team</a>
+    <a href="#languages">🌐 Every language, every device</a>
+    <a href="#safe">🔒 Safe and private</a>
+    <a href="#use-cases">💼 Ideas for teams</a>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="group" id="ask">
+  <h2>🗳️ Ask</h2>
+  <p class="sub">Four kinds of question set, one way of working: build it, show the code, watch answers arrive.</p>
+  <div class="fgrid">
+    <a class="feat" href="/help#create">
+      <span class="ic" aria-hidden="true">🗳️</span>
+      <h3>Live polls</h3>
+      <p>Ask the room and watch the answers arrive on the big screen as people tap.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#share">
+      <span class="ic" aria-hidden="true">📝</span>
+      <h3>Surveys</h3>
+      <p>Send a link and let people answer at their own pace. No slide needed.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#reveal">
+      <span class="ic" aria-hidden="true">🎯</span>
+      <h3>Quizzes</h3>
+      <p>Graded questions with a reveal, scores and a leaderboard.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#studygames">
+      <span class="ic" aria-hidden="true">📚</span>
+      <h3>Study sets</h3>
+      <p>Turn any deck into flashcards with spaced repetition and a daily streak.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#present">
+      <span class="ic" aria-hidden="true">🙋</span>
+      <h3>Audience Q&amp;A</h3>
+      <p>People ask questions from their phones and upvote the ones they want answered.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#move-questions">
+      <span class="ic" aria-hidden="true">↕️</span>
+      <h3>Reorder freely</h3>
+      <p>Move questions around. Each one keeps its QR code and its link.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+<section class="group" id="present">
+  <h2>⛶ Present</h2>
+  <p class="sub">Use the slides you already have, or present straight from PollSlide.</p>
+  <div class="fgrid">
+    <a class="feat" href="/help#present">
+      <span class="ic" aria-hidden="true">⛶</span>
+      <h3>Present from PollSlide</h3>
+      <p>Full-screen questions with a QR code, live results and reveals, in any browser.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#companion">
+      <span class="ic" aria-hidden="true">🖥️</span>
+      <h3>Mac Companion</h3>
+      <p>Floats live results over Keynote, PowerPoint, a PDF or anything else on your Mac.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/integrations#powerpoint">
+      <span class="ic" aria-hidden="true">📊</span>
+      <h3>PowerPoint add-in</h3>
+      <p>Live results right on your PowerPoint slide.</p>
+      <span class="tag">In review with Microsoft</span>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#share">
+      <span class="ic" aria-hidden="true">🔗</span>
+      <h3>Share without presenting</h3>
+      <p>One link for surveys, quizzes and study sets that people answer in their own time.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/loopslide">
+      <span class="ic" aria-hidden="true">🔁</span>
+      <h3>LoopSlide</h3>
+      <p>Questions on a TV, on repeat, with nobody presenting. Built for venues and waiting areas.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+<section class="group" id="engage">
+  <h2>🎮 Engage</h2>
+  <p class="sub">Give people a reason to look up from their phones, and to keep looking.</p>
+  <div class="fgrid">
+    <a class="feat" href="/help#gamemodes">
+      <span class="ic" aria-hidden="true">🎮</span>
+      <h3>Game modes</h3>
+      <p>Speed, Streak, Survival and Wager change how points work. Same questions, new energy.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#teamplay">
+      <span class="ic" aria-hidden="true">👥</span>
+      <h3>Team play</h3>
+      <p>Tables answer as teams, and the leaderboard ranks teams instead of people.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#warmup">
+      <span class="ic" aria-hidden="true">🎪</span>
+      <h3>Waiting-room warm-up</h3>
+      <p>Light trivia on the big screen while people arrive and scan the code.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#atmosphere">
+      <span class="ic" aria-hidden="true">🎤</span>
+      <h3>Atmosphere</h3>
+      <p>Pick Calm, Classroom or Game show for how the wait between question and answer feels.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#gifs">
+      <span class="ic" aria-hidden="true">🎞</span>
+      <h3>GIFs, drafted for you</h3>
+      <p>PollSlide suggests a GIF for every question and answer. You review them before you present.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#recap">
+      <span class="ic" aria-hidden="true">🎁</span>
+      <h3>Session recap</h3>
+      <p>One link for everyone afterwards: the winner, the trickiest question and the highlights.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+<section class="group" id="ai">
+  <h2>✨ Polly AI</h2>
+  <p class="sub">Polly writes the first draft and reads the room. You stay in charge of what goes on screen.</p>
+  <div class="fgrid">
+    <a class="feat" href="/help#polly">
+      <span class="ic" aria-hidden="true">✨</span>
+      <h3>Drafts your questions</h3>
+      <p>Give it a topic or paste your notes, and it writes a full set in seconds.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#images">
+      <span class="ic" aria-hidden="true">🖼️</span>
+      <h3>Pictures for questions</h3>
+      <p>Generate an image for a question when you have nothing to hand.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#insights">
+      <span class="ic" aria-hidden="true">🧠</span>
+      <h3>AI Insights</h3>
+      <p>Reads every open answer and shows the themes, the mood and a one-line summary.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#copilot">
+      <span class="ic" aria-hidden="true">🎯</span>
+      <h3>Live co-pilot</h3>
+      <p>Suggests a follow-up question based on how the room just answered.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+<section class="group" id="accountable">
+  <h2>✅ Know who is with you</h2>
+  <p class="sub">Answers that belong to a person, and a record you can act on afterwards.</p>
+  <div class="fgrid">
+    <a class="feat" href="/help#classes">
+      <span class="ic" aria-hidden="true">👤</span>
+      <h3>Named lists</h3>
+      <p>Give a group its list of people once. Every deck then records who answered, person by person.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#verify">
+      <span class="ic" aria-hidden="true">🔐</span>
+      <h3>Check it is really them</h3>
+      <p>A PIN they choose, codes you hand out, or emailed codes.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#focus">
+      <span class="ic" aria-hidden="true">👁</span>
+      <h3>Screen-leaving notice</h3>
+      <p>For a graded quiz, you are told when someone switches away, and so are they.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#retakes">
+      <span class="ic" aria-hidden="true">🔁</span>
+      <h3>Second attempts</h3>
+      <p>Allow 2, 3 or 5 tries, and choose whether the best, the last or the first one counts.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#results">
+      <span class="ic" aria-hidden="true">📊</span>
+      <h3>Results and exports</h3>
+      <p>Every answer is saved. Review it live or later, and download the raw data.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#gradebook">
+      <span class="ic" aria-hidden="true">🎓</span>
+      <h3>Gradebook export</h3>
+      <p>One row per person and one column per question, ready for Google Classroom and Canvas.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#progress">
+      <span class="ic" aria-hidden="true">📈</span>
+      <h3>Progress over time</h3>
+      <p>See whether someone is getting it across sessions, not just today.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#offline">
+      <span class="ic" aria-hidden="true">📶</span>
+      <h3>Safe on bad wifi</h3>
+      <p>If a connection drops, the answer waits on the phone and sends itself when it can.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+<section class="group" id="teams">
+  <h2>🤝 Work as a team</h2>
+  <p class="sub">Build once, share with everyone, and see how it is being used.</p>
+  <div class="fgrid">
+    <a class="feat" href="/help#teamhub">
+      <span class="ic" aria-hidden="true">📚</span>
+      <h3>Shared team library</h3>
+      <p>Keep your best decks in one place. Anyone on the team can take their own copy.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#teamhub">
+      <span class="ic" aria-hidden="true">📈</span>
+      <h3>Usage analytics</h3>
+      <p>See how much your team uses PollSlide. Counts only, never what anyone answered.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#teamhub">
+      <span class="ic" aria-hidden="true">📋</span>
+      <h3>Bulk member tools</h3>
+      <p>Paste a list of emails to invite, remove or remind people in one go.</p>
+      <span class="tag">Team Large</span>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#collaborate">
+      <span class="ic" aria-hidden="true">🤝</span>
+      <h3>Build together</h3>
+      <p>Two people editing one deck at the same time.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#sharedecks">
+      <span class="ic" aria-hidden="true">📤</span>
+      <h3>Send someone a copy</h3>
+      <p>Share any deck with a colleague, even before they have an account.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#organise">
+      <span class="ic" aria-hidden="true">📁</span>
+      <h3>Folders and search</h3>
+      <p>Group decks into folders. Search looks inside your questions, not just their titles.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#teams">
+      <span class="ic" aria-hidden="true">🪑</span>
+      <h3>Seats, roles, one bill</h3>
+      <p>Team Small has 5 seats and Team Large has 25, all on one plan.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+<section class="group" id="languages">
+  <h2>🌐 Every language, every device</h2>
+  <p class="sub">Your audience answers on the phone they already have, in the language they read.</p>
+  <div class="fgrid">
+    <a class="feat" href="/help#phonelanguage">
+      <span class="ic" aria-hidden="true">🌐</span>
+      <h3>Phones in 11 languages</h3>
+      <p>Write a question once. Each phone reads it in its own language: English, Spanish, German, French, Portuguese, Italian, Dutch, Japanese, Chinese, Arabic or Hindi.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#phonelanguage">
+      <span class="ic" aria-hidden="true">🗣️</span>
+      <h3>Presenter in 6 languages</h3>
+      <p>The presenter app runs in English, Spanish, German, French, Portuguese and Italian.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/help#faq">
+      <span class="ic" aria-hidden="true">📱</span>
+      <h3>Nothing to install</h3>
+      <p>People scan a QR code, or type the code at pollslide.com/join, and answer in the browser.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/accessibility">
+      <span class="ic" aria-hidden="true">♿</span>
+      <h3>Accessibility</h3>
+      <p>Our accessibility statement and VPAT are public.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+<section class="group" id="safe">
+  <h2>🔒 Safe and private</h2>
+  <p class="sub">Your presentations and your audience’s answers are yours.</p>
+  <div class="fgrid">
+    <a class="feat" href="/privacy">
+      <span class="ic" aria-hidden="true">🔒</span>
+      <h3>Your data stays yours</h3>
+      <p>How we store answers, how long we keep them and how to delete them.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/trust-safety">
+      <span class="ic" aria-hidden="true">🛡️</span>
+      <h3>Audience text stays text</h3>
+      <p>Names and answers typed by an audience are always shown as plain text, never run as code.</p>
+      <span class="more">How it works →</span>
+    </a>
+    <a class="feat" href="/dpa">
+      <span class="ic" aria-hidden="true">📄</span>
+      <h3>DPA and subprocessors</h3>
+      <p>A data processing agreement and the full list of services we use.</p>
+      <span class="more">How it works →</span>
+    </a>
+  </div>
+</section>
+
+<section class="group" id="use-cases">
+  <h2>💼 Ideas for teams</h2>
+  <p class="sub">Not sure where to start? These are the three ways teams use PollSlide most, with the exact steps.</p>
+  <div class="usecases">
+    <a class="uc" href="/teams#onboarding"><span class="ic" aria-hidden="true">🚀</span><h3>Onboard new people faster</h3><p>Turn the handbook into a quiz, see who has it, and follow up with flashcards.</p><span class="more">See the steps →</span></a>
+    <a class="uc" href="/teams#meetings"><span class="ic" aria-hidden="true">💻</span><h3>Weekly meetings online</h3><p>Check-ins, open questions and Q&amp;A that work over Zoom, Microsoft Teams and Google Meet.</p><span class="more">See the steps →</span></a>
+    <a class="uc" href="/teams#accountable"><span class="ic" aria-hidden="true">🙋</span><h3>Engaged and accountable</h3><p>Know who took part, keep attention up, and have the evidence afterwards.</p><span class="more">See the steps →</span></a>
+  </div>
+</section>
+
+<section class="final">
+  <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(22px,3vw,30px);margin-bottom:10px;">Try it on your next meeting</h2>
+  <p style="color:var(--muted);margin-bottom:20px;">Free to start. No card, and nothing for your audience to install.</p>
+  <div class="cta-row"><a href="https://app.pollslide.com/presenter" class="btn btn-lg">Start free →</a><a href="/pricing" class="btn btn-lg btn-ghost">See plans</a></div>
+</section>
+</main>
+<footer><div class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;">
+    <a href="/">Home</a><a href="/features">Features</a><a href="/teams">For teams</a><a href="/pricing">Pricing</a><a href="/help">Help</a><a href="/download">Download</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/accessibility">Accessibility</a>
+  </div>
+  <div style="margin-top:12px;">© <span id="footYr"></span> PollSlide Technologies LLC</div>
+</div></footer>
+
+<script>
+document.getElementById('footYr').textContent=new Date().getFullYear();
+function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('ps_theme',document.body.classList.contains('light')?'light':'dark');document.getElementById('themeToggle').textContent=document.body.classList.contains('light')?'☀️':'🌙';}
+if(localStorage.getItem('ps_theme')==='light'){document.body.classList.add('light');document.getElementById('themeToggle').textContent='☀️';}
+</script>
+<script src="/consent.js?v=73cc2b90"></script>
+<script src="/translations.js?v=c016b91d"></script>
+<script src="/i18n.js?v=bd0a8538"></script>
+<script src="/announce.js?v=9eb8a27d"></script>
+<script src="/wow.js?v=423ef466"></script>
+</body>
+</html>
