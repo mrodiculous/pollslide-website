@@ -8,13 +8,13 @@
 */
 (function () {
   const NAMES = { en: 'English', es: 'Español', de: 'Deutsch', fr: 'Français', pt: 'Português', it: 'Italiano',
-                  nl: 'Nederlands' };
+                  nl: 'Nederlands', ja: '日本語' };
   const SUP = Object.keys(NAMES);
   /* Languages added 2026-10-11 so the site speaks the same eleven as the app. Each one lives in
      its own file (i18n-<lang>.js, ~0.5 MB) and is fetched only when someone reads the site in it,
      so English and the first five download nothing extra. The value is that file's ?v= — the
      content hash, kept in step by the app repo's scripts/qa-site-assets.js like every other. */
-  const LAZY = { nl: 'ec904ea4' };
+  const LAZY = { nl: 'ec904ea4', ja: '2f6c071e' };
   const lazyState = {};   // lang → 'loading' | 'ready' | 'failed'
   function ensureLang(l, then) {
     if (!LAZY[l] || lazyState[l] === 'ready' || (window.PS_I18N && window.PS_I18N[l] && window.PS_I18N_CURATED && window.PS_I18N_CURATED[l])) { lazyState[l] = 'ready'; then(); return; }
